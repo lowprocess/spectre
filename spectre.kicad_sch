@@ -1422,7 +1422,7 @@
 			)
 		)
 		(instances
-			(project "SimpleSpectrum"
+			(project "spectre"
 				(path "/e2b3a745-ca2b-407e-8017-842114c52164"
 					(page "3")
 				)
@@ -1467,7 +1467,7 @@
 			)
 		)
 		(instances
-			(project "SimpleSpectrum"
+			(project "spectre"
 				(path "/e2b3a745-ca2b-407e-8017-842114c52164"
 					(page "9")
 				)
@@ -1512,7 +1512,7 @@
 			)
 		)
 		(instances
-			(project "SimpleSpectrum"
+			(project "spectre"
 				(path "/e2b3a745-ca2b-407e-8017-842114c52164"
 					(page "6")
 				)
@@ -1557,7 +1557,7 @@
 			)
 		)
 		(instances
-			(project "SimpleSpectrum"
+			(project "spectre"
 				(path "/e2b3a745-ca2b-407e-8017-842114c52164"
 					(page "8")
 				)
@@ -1602,7 +1602,7 @@
 			)
 		)
 		(instances
-			(project "SimpleSpectrum"
+			(project "spectre"
 				(path "/e2b3a745-ca2b-407e-8017-842114c52164"
 					(page "11")
 				)
@@ -1647,7 +1647,7 @@
 			)
 		)
 		(instances
-			(project "SimpleSpectrum"
+			(project "spectre"
 				(path "/e2b3a745-ca2b-407e-8017-842114c52164"
 					(page "5")
 				)
@@ -1692,7 +1692,7 @@
 			)
 		)
 		(instances
-			(project "SimpleSpectrum"
+			(project "spectre"
 				(path "/e2b3a745-ca2b-407e-8017-842114c52164"
 					(page "4")
 				)
@@ -1737,7 +1737,7 @@
 			)
 		)
 		(instances
-			(project "SimpleSpectrum"
+			(project "spectre"
 				(path "/e2b3a745-ca2b-407e-8017-842114c52164"
 					(page "7")
 				)
@@ -1782,7 +1782,7 @@
 			)
 		)
 		(instances
-			(project "SimpleSpectrum"
+			(project "spectre"
 				(path "/e2b3a745-ca2b-407e-8017-842114c52164"
 					(page "2")
 				)

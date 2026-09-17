@@ -406,7 +406,7 @@
 			(uuid "1ca1d2cc-51a1-43b4-9b7a-b9919285635b")
 		)
 		(instances
-			(project "SimpleSpectrum"
+			(project "spectre"
 				(path "/e2b3a745-ca2b-407e-8017-842114c52164/bf6ae323-e177-4643-87bd-72d3f873e10e"
 					(reference "U2")
 					(unit 1)
@@ -573,7 +573,7 @@
 			(uuid "25e4b2da-c066-4aa7-8cf2-e9c64e513d21")
 		)
 		(instances
-			(project "SimpleSpectrum"
+			(project "spectre"
 				(path "/e2b3a745-ca2b-407e-8017-842114c52164/bf6ae323-e177-4643-87bd-72d3f873e10e"
 					(reference "U1")
 					(unit 1)

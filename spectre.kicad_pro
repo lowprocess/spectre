@@ -488,7 +488,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "SimpleSpectrum.kicad_pro",
+    "filename": "spectre.kicad_pro",
     "version": 3
   },
   "net_settings": {
@@ -656,18 +656,18 @@
     "subpart_id_separator": 0,
     "top_level_sheets": [
       {
-        "filename": "SimpleSpectrum.kicad_sch",
-        "name": "Root",
+        "filename": "spectre.kicad_sch",
+        "name": "spectre",
         "uuid": "e2b3a745-ca2b-407e-8017-842114c52164"
       }
     ],
-    "used_designators": "U1-4,Y1-2,#PWR1-4,FB1,C1-8,D1-3,L1-3,R1-2,J1,FL1,RN1,RV1,TH1",
+    "used_designators": "U1-4,Y1-2,#PWR1-20,FB1,C1-22,D1-3,L1-3,R1-2,J1,FL1,RN1,RV1,TH1",
     "variants": []
   },
   "sheets": [
     [
       "e2b3a745-ca2b-407e-8017-842114c52164",
-      "Root"
+      "spectre"
     ],
     [
       "d29017c7-873c-498f-bde0-2c20a1aea9c3",
