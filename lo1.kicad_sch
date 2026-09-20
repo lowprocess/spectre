@@ -3243,7 +3243,7 @@
 	)
 	(text "15"
 		(exclude_from_sim no)
-		(at 64.77 49.53 0)
+		(at 87.63 59.69 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3253,7 +3253,7 @@
 	)
 	(text "7"
 		(exclude_from_sim no)
-		(at 41.91 49.53 0)
+		(at 64.77 59.69 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3263,7 +3263,7 @@
 	)
 	(text "11"
 		(exclude_from_sim no)
-		(at 53.34 49.53 0)
+		(at 76.2 59.69 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3273,7 +3273,7 @@
 	)
 	(text "26"
 		(exclude_from_sim no)
-		(at 76.2 49.53 0)
+		(at 99.06 59.69 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3283,7 +3283,7 @@
 	)
 	(text "37"
 		(exclude_from_sim no)
-		(at 87.63 49.53 0)
+		(at 110.49 59.69 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3292,140 +3292,257 @@
 		(uuid "d0b11a1e-2a4f-40e4-ae82-ccf4de065214")
 	)
 	(junction
-		(at 50.8 52.07)
+		(at 73.66 62.23)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "09498c63-0cf3-49b5-8403-8c485f9c90f4")
 	)
 	(junction
-		(at 106.68 128.27)
+		(at 129.54 138.43)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "182aafb0-c91f-49fb-9deb-66d9f493538f")
 	)
 	(junction
-		(at 162.56 77.47)
+		(at 193.04 87.63)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "25fc757b-2393-43ff-9408-6f2fa0749768")
 	)
 	(junction
-		(at 114.3 128.27)
+		(at 137.16 138.43)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "37b0b3cc-0e75-4b19-812a-83b26870d1f7")
 	)
 	(junction
-		(at 93.98 67.31)
+		(at 116.84 77.47)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "43ea94c6-aafd-4b3b-a12a-3a07348e7e56")
 	)
 	(junction
-		(at 93.98 64.77)
+		(at 116.84 74.93)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "621aee5c-bef2-441b-ac6d-639923791f58")
 	)
 	(junction
-		(at 93.98 59.69)
+		(at 116.84 69.85)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "67259e63-be17-4858-a32a-97acea3a130b")
 	)
 	(junction
-		(at 62.23 52.07)
+		(at 85.09 62.23)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "680d650d-bbe1-4f90-b3ad-f9ca60219e80")
 	)
 	(junction
-		(at 111.76 128.27)
+		(at 134.62 138.43)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "7e153dcf-b277-48b0-bda4-3eb502019d0b")
 	)
 	(junction
-		(at 85.09 52.07)
+		(at 107.95 62.23)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "907cd0a1-e597-458b-a594-a767e811a8e7")
 	)
 	(junction
-		(at 140.97 77.47)
+		(at 171.45 87.63)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "90b2b6b6-6a36-4a74-a3d3-465d1e77c97b")
 	)
 	(junction
-		(at 116.84 128.27)
+		(at 139.7 138.43)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "982211d5-1409-42fb-a7ff-16961a0614ef")
 	)
 	(junction
-		(at 121.92 128.27)
+		(at 144.78 138.43)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "a28c37d0-e077-4944-b052-e2aa4dc6215d")
 	)
 	(junction
-		(at 124.46 128.27)
+		(at 147.32 138.43)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "aeecf3cb-e9b7-4b4d-a2b9-770341b4c947")
 	)
 	(junction
-		(at 119.38 128.27)
+		(at 142.24 138.43)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "b0de60a2-8bc4-43b5-8319-78294de9ac09")
 	)
 	(junction
-		(at 127 128.27)
+		(at 149.86 138.43)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "b11d2c67-23a5-4387-a7c2-b3ddef8ae781")
 	)
 	(junction
-		(at 73.66 73.66)
+		(at 96.52 83.82)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "bd3dfa82-251c-426b-a493-f0a771a4fac0")
 	)
 	(junction
-		(at 73.66 52.07)
+		(at 96.52 62.23)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "c9579508-69ed-4297-ab27-bd897df81589")
 	)
 	(junction
-		(at 39.37 52.07)
+		(at 62.23 62.23)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "d5ddae0e-6800-40e8-b118-9ac07a800767")
 	)
 	(junction
-		(at 153.67 77.47)
+		(at 184.15 87.63)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "f1801376-bee1-45fb-95f6-5bd73ca83f39")
 	)
 	(junction
-		(at 109.22 128.27)
+		(at 132.08 138.43)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "f3b6424b-e948-4a6a-8da6-da01326416fa")
 	)
 	(junction
-		(at 93.98 62.23)
+		(at 116.84 72.39)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "f689ae07-8314-4878-9263-3715d0c57e29")
 	)
+	(bus_entry
+		(at 195.58 72.39)
+		(size 2.54 -2.54)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "331e8231-1911-4707-b5ac-7a936060e80b")
+	)
+	(bus_entry
+		(at 83.82 132.08)
+		(size 2.54 2.54)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "42e48084-3faf-4cb1-8e99-0f6d6664c209")
+	)
+	(bus_entry
+		(at 195.58 80.01)
+		(size 2.54 2.54)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4bfdaebd-860f-4b32-acbe-09c4d78e606f")
+	)
+	(bus_entry
+		(at 83.82 134.62)
+		(size 2.54 2.54)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5e39cd50-c09e-4d66-bc7d-1865e72540b0")
+	)
+	(bus_entry
+		(at 195.58 69.85)
+		(size 2.54 -2.54)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6d0fd538-b6b7-4307-8e4c-880823500b8e")
+	)
+	(bus_entry
+		(at 83.82 139.7)
+		(size 2.54 2.54)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7aef50cf-0ab0-4103-a082-2b0c5ff31739")
+	)
+	(bus_entry
+		(at 195.58 77.47)
+		(size 2.54 2.54)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9043e39f-d814-4e7e-ad0c-d6ba9f2b82e9")
+	)
+	(bus_entry
+		(at 83.82 107.95)
+		(size 2.54 -2.54)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9c21b79d-2053-4179-8a9b-2f13e9caa0de")
+	)
+	(bus_entry
+		(at 83.82 142.24)
+		(size 2.54 2.54)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ae11f9d2-b797-44bb-8623-87bb62b15206")
+	)
+	(bus_entry
+		(at 83.82 129.54)
+		(size 2.54 2.54)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c6abc7e1-8f7e-404d-bf5d-0a0f2a4300df")
+	)
+	(bus_entry
+		(at 83.82 144.78)
+		(size 2.54 2.54)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d750314d-ce88-407f-b9e0-763d6e199495")
+	)
+	(bus_entry
+		(at 83.82 110.49)
+		(size 2.54 -2.54)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ee6c6ffa-5b92-4d7b-939c-9b38b3ff4616")
+	)
+	(bus_entry
+		(at 83.82 137.16)
+		(size 2.54 2.54)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fd648ad4-d59b-431d-98dd-b7756effee80")
+	)
 	(wire
 		(pts
-			(xy 172.72 80.01) (xy 172.72 77.47)
+			(xy 203.2 90.17) (xy 203.2 87.63)
 		)
 		(stroke
 			(width 0)
@@ -3435,17 +3552,7 @@
 	)
 	(wire
 		(pts
-			(xy 76.2 93.98) (xy 77.47 93.98)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "057d7700-04ba-46b6-9cd1-3668fdd50415")
-	)
-	(wire
-		(pts
-			(xy 86.36 78.74) (xy 96.52 78.74)
+			(xy 109.22 88.9) (xy 119.38 88.9)
 		)
 		(stroke
 			(width 0)
@@ -3455,7 +3562,7 @@
 	)
 	(wire
 		(pts
-			(xy 152.4 109.22) (xy 152.4 114.3)
+			(xy 181.61 119.38) (xy 181.61 124.46)
 		)
 		(stroke
 			(width 0)
@@ -3465,7 +3572,7 @@
 	)
 	(wire
 		(pts
-			(xy 50.8 60.96) (xy 50.8 59.69)
+			(xy 73.66 71.12) (xy 73.66 69.85)
 		)
 		(stroke
 			(width 0)
@@ -3475,7 +3582,7 @@
 	)
 	(wire
 		(pts
-			(xy 93.98 62.23) (xy 93.98 59.69)
+			(xy 116.84 72.39) (xy 116.84 69.85)
 		)
 		(stroke
 			(width 0)
@@ -3485,7 +3592,7 @@
 	)
 	(wire
 		(pts
-			(xy 86.36 88.9) (xy 96.52 88.9)
+			(xy 109.22 99.06) (xy 119.38 99.06)
 		)
 		(stroke
 			(width 0)
@@ -3495,7 +3602,7 @@
 	)
 	(wire
 		(pts
-			(xy 82.55 93.98) (xy 83.82 93.98)
+			(xy 105.41 105.41) (xy 119.38 105.41)
 		)
 		(stroke
 			(width 0)
@@ -3505,7 +3612,7 @@
 	)
 	(wire
 		(pts
-			(xy 111.76 125.73) (xy 111.76 128.27)
+			(xy 134.62 135.89) (xy 134.62 138.43)
 		)
 		(stroke
 			(width 0)
@@ -3515,17 +3622,17 @@
 	)
 	(wire
 		(pts
-			(xy 76.2 99.06) (xy 77.47 99.06)
+			(xy 160.02 109.22) (xy 227.33 109.22)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "1994875d-f8d4-46b6-8583-face1ff32e5f")
+		(uuid "1a8b10d7-ef3d-463d-9ba6-ae490c51002a")
 	)
 	(wire
 		(pts
-			(xy 129.54 128.27) (xy 129.54 125.73)
+			(xy 152.4 138.43) (xy 152.4 135.89)
 		)
 		(stroke
 			(width 0)
@@ -3533,9 +3640,29 @@
 		)
 		(uuid "221707c8-9de2-48ef-808f-5c23b64e0ff2")
 	)
+	(bus
+		(pts
+			(xy 198.12 82.55) (xy 199.39 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "25e1286d-1454-4266-9cee-efe9321c0ac6")
+	)
+	(bus
+		(pts
+			(xy 82.55 128.27) (xy 83.82 129.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "284ab73e-04ce-44b7-bf79-454c665367a9")
+	)
 	(wire
 		(pts
-			(xy 73.66 71.12) (xy 73.66 73.66)
+			(xy 96.52 81.28) (xy 96.52 83.82)
 		)
 		(stroke
 			(width 0)
@@ -3545,7 +3672,7 @@
 	)
 	(wire
 		(pts
-			(xy 93.98 52.07) (xy 93.98 59.69)
+			(xy 116.84 62.23) (xy 116.84 69.85)
 		)
 		(stroke
 			(width 0)
@@ -3555,7 +3682,7 @@
 	)
 	(wire
 		(pts
-			(xy 85.09 54.61) (xy 85.09 52.07)
+			(xy 107.95 64.77) (xy 107.95 62.23)
 		)
 		(stroke
 			(width 0)
@@ -3565,7 +3692,7 @@
 	)
 	(wire
 		(pts
-			(xy 39.37 60.96) (xy 39.37 59.69)
+			(xy 62.23 71.12) (xy 62.23 69.85)
 		)
 		(stroke
 			(width 0)
@@ -3575,7 +3702,7 @@
 	)
 	(wire
 		(pts
-			(xy 172.72 77.47) (xy 170.18 77.47)
+			(xy 203.2 87.63) (xy 200.66 87.63)
 		)
 		(stroke
 			(width 0)
@@ -3583,9 +3710,19 @@
 		)
 		(uuid "3612188e-e38f-47bf-9942-45c8a1451ad7")
 	)
+	(bus
+		(pts
+			(xy 83.82 110.49) (xy 82.55 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "36d8369e-93ce-4606-8f1e-044b1c1a6c9b")
+	)
 	(wire
 		(pts
-			(xy 83.82 99.06) (xy 82.55 99.06)
+			(xy 101.6 107.95) (xy 119.38 107.95)
 		)
 		(stroke
 			(width 0)
@@ -3595,7 +3732,7 @@
 	)
 	(wire
 		(pts
-			(xy 73.66 81.28) (xy 73.66 83.82)
+			(xy 96.52 91.44) (xy 96.52 93.98)
 		)
 		(stroke
 			(width 0)
@@ -3605,7 +3742,7 @@
 	)
 	(wire
 		(pts
-			(xy 106.68 125.73) (xy 106.68 128.27)
+			(xy 129.54 135.89) (xy 129.54 138.43)
 		)
 		(stroke
 			(width 0)
@@ -3615,7 +3752,7 @@
 	)
 	(wire
 		(pts
-			(xy 93.98 59.69) (xy 96.52 59.69)
+			(xy 116.84 69.85) (xy 119.38 69.85)
 		)
 		(stroke
 			(width 0)
@@ -3625,7 +3762,7 @@
 	)
 	(wire
 		(pts
-			(xy 63.5 95.25) (xy 74.93 95.25)
+			(xy 86.36 105.41) (xy 100.33 105.41)
 		)
 		(stroke
 			(width 0)
@@ -3635,7 +3772,7 @@
 	)
 	(wire
 		(pts
-			(xy 172.72 86.36) (xy 172.72 85.09)
+			(xy 203.2 96.52) (xy 203.2 95.25)
 		)
 		(stroke
 			(width 0)
@@ -3645,17 +3782,7 @@
 	)
 	(wire
 		(pts
-			(xy 137.16 101.6) (xy 186.69 101.6)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "49a68467-f25f-44c6-8b3e-de116728837b")
-	)
-	(wire
-		(pts
-			(xy 104.14 125.73) (xy 104.14 128.27)
+			(xy 127 135.89) (xy 127 138.43)
 		)
 		(stroke
 			(width 0)
@@ -3665,17 +3792,7 @@
 	)
 	(wire
 		(pts
-			(xy 96.52 97.79) (xy 85.09 97.79)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4c52515d-558f-4931-b75d-933e86b833d4")
-	)
-	(wire
-		(pts
-			(xy 127 128.27) (xy 129.54 128.27)
+			(xy 149.86 138.43) (xy 152.4 138.43)
 		)
 		(stroke
 			(width 0)
@@ -3685,17 +3802,7 @@
 	)
 	(wire
 		(pts
-			(xy 137.16 106.68) (xy 163.83 106.68)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4dd2f9a4-ac6e-4cf9-ba55-39d472f0d0d1")
-	)
-	(wire
-		(pts
-			(xy 62.23 52.07) (xy 73.66 52.07)
+			(xy 85.09 62.23) (xy 96.52 62.23)
 		)
 		(stroke
 			(width 0)
@@ -3705,7 +3812,7 @@
 	)
 	(wire
 		(pts
-			(xy 175.26 121.92) (xy 175.26 119.38)
+			(xy 204.47 132.08) (xy 204.47 129.54)
 		)
 		(stroke
 			(width 0)
@@ -3715,7 +3822,7 @@
 	)
 	(wire
 		(pts
-			(xy 93.98 64.77) (xy 93.98 62.23)
+			(xy 116.84 74.93) (xy 116.84 72.39)
 		)
 		(stroke
 			(width 0)
@@ -3725,17 +3832,7 @@
 	)
 	(wire
 		(pts
-			(xy 83.82 93.98) (xy 85.09 95.25)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "52a6f94c-2d66-4e3e-94fb-bc2513118a24")
-	)
-	(wire
-		(pts
-			(xy 140.97 121.92) (xy 140.97 119.38)
+			(xy 170.18 132.08) (xy 170.18 129.54)
 		)
 		(stroke
 			(width 0)
@@ -3745,7 +3842,7 @@
 	)
 	(wire
 		(pts
-			(xy 137.16 62.23) (xy 149.86 62.23)
+			(xy 160.02 72.39) (xy 177.8 72.39)
 		)
 		(stroke
 			(width 0)
@@ -3755,7 +3852,7 @@
 	)
 	(wire
 		(pts
-			(xy 162.56 77.47) (xy 162.56 90.17)
+			(xy 193.04 87.63) (xy 193.04 100.33)
 		)
 		(stroke
 			(width 0)
@@ -3765,17 +3862,7 @@
 	)
 	(wire
 		(pts
-			(xy 74.93 97.79) (xy 76.2 99.06)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "56444a58-1d76-436b-b371-ccb3fd07bfc6")
-	)
-	(wire
-		(pts
-			(xy 116.84 130.81) (xy 116.84 128.27)
+			(xy 139.7 140.97) (xy 139.7 138.43)
 		)
 		(stroke
 			(width 0)
@@ -3785,7 +3872,17 @@
 	)
 	(wire
 		(pts
-			(xy 163.83 121.92) (xy 163.83 119.38)
+			(xy 86.36 147.32) (xy 96.52 147.32)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5964939a-eb28-41a9-acad-f02c41d910da")
+	)
+	(wire
+		(pts
+			(xy 193.04 132.08) (xy 193.04 129.54)
 		)
 		(stroke
 			(width 0)
@@ -3795,7 +3892,7 @@
 	)
 	(wire
 		(pts
-			(xy 121.92 128.27) (xy 124.46 128.27)
+			(xy 144.78 138.43) (xy 147.32 138.43)
 		)
 		(stroke
 			(width 0)
@@ -3805,7 +3902,7 @@
 	)
 	(wire
 		(pts
-			(xy 119.38 125.73) (xy 119.38 128.27)
+			(xy 142.24 135.89) (xy 142.24 138.43)
 		)
 		(stroke
 			(width 0)
@@ -3815,17 +3912,7 @@
 	)
 	(wire
 		(pts
-			(xy 137.16 99.06) (xy 198.12 99.06)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5fbdb0c1-d05e-49e4-8379-514402f950cc")
-	)
-	(wire
-		(pts
-			(xy 96.52 67.31) (xy 93.98 67.31)
+			(xy 119.38 77.47) (xy 116.84 77.47)
 		)
 		(stroke
 			(width 0)
@@ -3835,7 +3922,7 @@
 	)
 	(wire
 		(pts
-			(xy 162.56 77.47) (xy 165.1 77.47)
+			(xy 193.04 87.63) (xy 195.58 87.63)
 		)
 		(stroke
 			(width 0)
@@ -3845,7 +3932,7 @@
 	)
 	(wire
 		(pts
-			(xy 73.66 60.96) (xy 73.66 59.69)
+			(xy 96.52 71.12) (xy 96.52 69.85)
 		)
 		(stroke
 			(width 0)
@@ -3855,7 +3942,7 @@
 	)
 	(wire
 		(pts
-			(xy 109.22 125.73) (xy 109.22 128.27)
+			(xy 132.08 135.89) (xy 132.08 138.43)
 		)
 		(stroke
 			(width 0)
@@ -3865,7 +3952,7 @@
 	)
 	(wire
 		(pts
-			(xy 186.69 121.92) (xy 186.69 119.38)
+			(xy 215.9 132.08) (xy 215.9 129.54)
 		)
 		(stroke
 			(width 0)
@@ -3875,7 +3962,17 @@
 	)
 	(wire
 		(pts
-			(xy 50.8 52.07) (xy 62.23 52.07)
+			(xy 96.52 142.24) (xy 86.36 142.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6e6a6408-721c-4c2a-96d4-6dbb686caa22")
+	)
+	(wire
+		(pts
+			(xy 73.66 62.23) (xy 85.09 62.23)
 		)
 		(stroke
 			(width 0)
@@ -3885,7 +3982,7 @@
 	)
 	(wire
 		(pts
-			(xy 137.16 77.47) (xy 140.97 77.47)
+			(xy 160.02 87.63) (xy 171.45 87.63)
 		)
 		(stroke
 			(width 0)
@@ -3895,7 +3992,7 @@
 	)
 	(wire
 		(pts
-			(xy 93.98 67.31) (xy 93.98 64.77)
+			(xy 116.84 77.47) (xy 116.84 74.93)
 		)
 		(stroke
 			(width 0)
@@ -3905,7 +4002,7 @@
 	)
 	(wire
 		(pts
-			(xy 86.36 109.22) (xy 96.52 109.22)
+			(xy 109.22 119.38) (xy 119.38 119.38)
 		)
 		(stroke
 			(width 0)
@@ -3915,17 +4012,7 @@
 	)
 	(wire
 		(pts
-			(xy 137.16 111.76) (xy 140.97 111.76)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7acf383e-f457-4223-925f-21852f8fa71a")
-	)
-	(wire
-		(pts
-			(xy 39.37 52.07) (xy 50.8 52.07)
+			(xy 62.23 62.23) (xy 73.66 62.23)
 		)
 		(stroke
 			(width 0)
@@ -3935,7 +4022,7 @@
 	)
 	(wire
 		(pts
-			(xy 198.12 121.92) (xy 198.12 119.38)
+			(xy 227.33 132.08) (xy 227.33 129.54)
 		)
 		(stroke
 			(width 0)
@@ -3945,7 +4032,7 @@
 	)
 	(wire
 		(pts
-			(xy 96.52 69.85) (xy 93.98 69.85)
+			(xy 119.38 80.01) (xy 116.84 80.01)
 		)
 		(stroke
 			(width 0)
@@ -3955,7 +4042,7 @@
 	)
 	(wire
 		(pts
-			(xy 153.67 80.01) (xy 153.67 77.47)
+			(xy 184.15 90.17) (xy 184.15 87.63)
 		)
 		(stroke
 			(width 0)
@@ -3965,7 +4052,7 @@
 	)
 	(wire
 		(pts
-			(xy 209.55 96.52) (xy 209.55 114.3)
+			(xy 238.76 106.68) (xy 238.76 124.46)
 		)
 		(stroke
 			(width 0)
@@ -3975,7 +4062,7 @@
 	)
 	(wire
 		(pts
-			(xy 62.23 60.96) (xy 62.23 59.69)
+			(xy 85.09 71.12) (xy 85.09 69.85)
 		)
 		(stroke
 			(width 0)
@@ -3985,7 +4072,7 @@
 	)
 	(wire
 		(pts
-			(xy 116.84 128.27) (xy 116.84 125.73)
+			(xy 139.7 138.43) (xy 139.7 135.89)
 		)
 		(stroke
 			(width 0)
@@ -3995,7 +4082,7 @@
 	)
 	(wire
 		(pts
-			(xy 151.13 59.69) (xy 158.75 59.69)
+			(xy 179.07 69.85) (xy 195.58 69.85)
 		)
 		(stroke
 			(width 0)
@@ -4005,7 +4092,17 @@
 	)
 	(wire
 		(pts
-			(xy 127 125.73) (xy 127 128.27)
+			(xy 160.02 121.92) (xy 170.18 121.92)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8a8e01c9-83ac-4700-a713-8692f40b3c47")
+	)
+	(wire
+		(pts
+			(xy 149.86 135.89) (xy 149.86 138.43)
 		)
 		(stroke
 			(width 0)
@@ -4015,7 +4112,17 @@
 	)
 	(wire
 		(pts
-			(xy 140.97 114.3) (xy 140.97 111.76)
+			(xy 160.02 116.84) (xy 193.04 116.84)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8b5c8462-41b7-430e-a0ec-cb6bf9c1cc87")
+	)
+	(wire
+		(pts
+			(xy 170.18 124.46) (xy 170.18 121.92)
 		)
 		(stroke
 			(width 0)
@@ -4025,7 +4132,27 @@
 	)
 	(wire
 		(pts
-			(xy 121.92 125.73) (xy 121.92 128.27)
+			(xy 160.02 106.68) (xy 238.76 106.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8cb03b5c-52b7-43b9-a6b5-db13fa3c91d1")
+	)
+	(bus
+		(pts
+			(xy 80.01 111.76) (xy 82.55 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8dc85cfc-e1a9-4cce-b007-ee1bea505382")
+	)
+	(wire
+		(pts
+			(xy 144.78 135.89) (xy 144.78 138.43)
 		)
 		(stroke
 			(width 0)
@@ -4035,7 +4162,7 @@
 	)
 	(wire
 		(pts
-			(xy 154.94 69.85) (xy 162.56 69.85)
+			(xy 182.88 80.01) (xy 195.58 80.01)
 		)
 		(stroke
 			(width 0)
@@ -4045,17 +4172,7 @@
 	)
 	(wire
 		(pts
-			(xy 137.16 96.52) (xy 209.55 96.52)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "96c7c447-1f03-48a1-93d6-a4b4a6de585a")
-	)
-	(wire
-		(pts
-			(xy 153.67 77.47) (xy 162.56 77.47)
+			(xy 184.15 87.63) (xy 193.04 87.63)
 		)
 		(stroke
 			(width 0)
@@ -4065,7 +4182,7 @@
 	)
 	(wire
 		(pts
-			(xy 96.52 64.77) (xy 93.98 64.77)
+			(xy 119.38 74.93) (xy 116.84 74.93)
 		)
 		(stroke
 			(width 0)
@@ -4075,7 +4192,7 @@
 	)
 	(wire
 		(pts
-			(xy 106.68 128.27) (xy 109.22 128.27)
+			(xy 129.54 138.43) (xy 132.08 138.43)
 		)
 		(stroke
 			(width 0)
@@ -4083,9 +4200,19 @@
 		)
 		(uuid "9ca873e7-007f-4631-b305-2452bc7ef880")
 	)
+	(bus
+		(pts
+			(xy 198.12 80.01) (xy 198.12 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a22a7ff3-9d82-4ac3-a462-288e3f18ef83")
+	)
 	(wire
 		(pts
-			(xy 73.66 52.07) (xy 85.09 52.07)
+			(xy 96.52 62.23) (xy 107.95 62.23)
 		)
 		(stroke
 			(width 0)
@@ -4095,7 +4222,7 @@
 	)
 	(wire
 		(pts
-			(xy 209.55 121.92) (xy 209.55 119.38)
+			(xy 238.76 132.08) (xy 238.76 129.54)
 		)
 		(stroke
 			(width 0)
@@ -4103,9 +4230,19 @@
 		)
 		(uuid "a316f69f-1725-4fcc-8cb5-a1803e285699")
 	)
+	(bus
+		(pts
+			(xy 83.82 129.54) (xy 83.82 144.78)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a34f179e-6268-4250-9acb-d7da1290be30")
+	)
 	(wire
 		(pts
-			(xy 93.98 69.85) (xy 93.98 67.31)
+			(xy 116.84 80.01) (xy 116.84 77.47)
 		)
 		(stroke
 			(width 0)
@@ -4115,7 +4252,7 @@
 	)
 	(wire
 		(pts
-			(xy 149.86 77.47) (xy 153.67 77.47)
+			(xy 180.34 87.63) (xy 184.15 87.63)
 		)
 		(stroke
 			(width 0)
@@ -4125,7 +4262,7 @@
 	)
 	(wire
 		(pts
-			(xy 163.83 106.68) (xy 163.83 114.3)
+			(xy 193.04 116.84) (xy 193.04 124.46)
 		)
 		(stroke
 			(width 0)
@@ -4135,7 +4272,7 @@
 	)
 	(wire
 		(pts
-			(xy 114.3 128.27) (xy 116.84 128.27)
+			(xy 137.16 138.43) (xy 139.7 138.43)
 		)
 		(stroke
 			(width 0)
@@ -4145,17 +4282,7 @@
 	)
 	(wire
 		(pts
-			(xy 85.09 97.79) (xy 83.82 99.06)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a7be3b25-d798-480c-85ff-0c428679a0f2")
-	)
-	(wire
-		(pts
-			(xy 114.3 125.73) (xy 114.3 128.27)
+			(xy 137.16 135.89) (xy 137.16 138.43)
 		)
 		(stroke
 			(width 0)
@@ -4165,7 +4292,7 @@
 	)
 	(wire
 		(pts
-			(xy 86.36 111.76) (xy 96.52 111.76)
+			(xy 109.22 121.92) (xy 119.38 121.92)
 		)
 		(stroke
 			(width 0)
@@ -4173,9 +4300,19 @@
 		)
 		(uuid "ab2459e2-c9d0-49d9-8c0e-febf9d583e97")
 	)
+	(bus
+		(pts
+			(xy 198.12 67.31) (xy 198.12 69.85)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ac43c665-8459-4d06-967c-645dbb871e64")
+	)
 	(wire
 		(pts
-			(xy 140.97 80.01) (xy 140.97 77.47)
+			(xy 171.45 90.17) (xy 171.45 87.63)
 		)
 		(stroke
 			(width 0)
@@ -4185,7 +4322,7 @@
 	)
 	(wire
 		(pts
-			(xy 104.14 128.27) (xy 106.68 128.27)
+			(xy 127 138.43) (xy 129.54 138.43)
 		)
 		(stroke
 			(width 0)
@@ -4195,7 +4332,17 @@
 	)
 	(wire
 		(pts
-			(xy 86.36 86.36) (xy 96.52 86.36)
+			(xy 86.36 144.78) (xy 96.52 144.78)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b53cf427-1b27-49e4-bcb0-bbbce308b293")
+	)
+	(wire
+		(pts
+			(xy 109.22 96.52) (xy 119.38 96.52)
 		)
 		(stroke
 			(width 0)
@@ -4203,9 +4350,19 @@
 		)
 		(uuid "b7fb15f9-e35f-497a-896f-876128d75ea1")
 	)
+	(bus
+		(pts
+			(xy 199.39 83.82) (xy 201.93 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b9823783-2cdc-4f61-b44b-01db91c222b2")
+	)
 	(wire
 		(pts
-			(xy 116.84 128.27) (xy 119.38 128.27)
+			(xy 139.7 138.43) (xy 142.24 138.43)
 		)
 		(stroke
 			(width 0)
@@ -4215,7 +4372,17 @@
 	)
 	(wire
 		(pts
-			(xy 73.66 54.61) (xy 73.66 52.07)
+			(xy 86.36 134.62) (xy 96.52 134.62)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ba98ed33-ea35-44de-9c53-ebf291fd04b7")
+	)
+	(wire
+		(pts
+			(xy 96.52 64.77) (xy 96.52 62.23)
 		)
 		(stroke
 			(width 0)
@@ -4225,17 +4392,7 @@
 	)
 	(wire
 		(pts
-			(xy 85.09 95.25) (xy 96.52 95.25)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c1da9324-123c-4586-aa6c-ce1b180c5f94")
-	)
-	(wire
-		(pts
-			(xy 186.69 101.6) (xy 186.69 114.3)
+			(xy 215.9 111.76) (xy 215.9 124.46)
 		)
 		(stroke
 			(width 0)
@@ -4245,7 +4402,7 @@
 	)
 	(wire
 		(pts
-			(xy 124.46 128.27) (xy 127 128.27)
+			(xy 147.32 138.43) (xy 149.86 138.43)
 		)
 		(stroke
 			(width 0)
@@ -4255,7 +4412,17 @@
 	)
 	(wire
 		(pts
-			(xy 154.94 62.23) (xy 162.56 62.23)
+			(xy 160.02 119.38) (xy 181.61 119.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c504e7dc-fab0-4960-bae5-b36cd1c271dd")
+	)
+	(wire
+		(pts
+			(xy 182.88 72.39) (xy 195.58 72.39)
 		)
 		(stroke
 			(width 0)
@@ -4265,7 +4432,17 @@
 	)
 	(wire
 		(pts
-			(xy 137.16 69.85) (xy 149.86 69.85)
+			(xy 86.36 139.7) (xy 96.52 139.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c756ab6b-9e89-4687-b6ea-a4aa2eda951a")
+	)
+	(wire
+		(pts
+			(xy 160.02 80.01) (xy 177.8 80.01)
 		)
 		(stroke
 			(width 0)
@@ -4275,17 +4452,17 @@
 	)
 	(wire
 		(pts
-			(xy 137.16 109.22) (xy 152.4 109.22)
+			(xy 86.36 137.16) (xy 96.52 137.16)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "c93a50eb-2b38-4a1b-bb9f-95929941b308")
+		(uuid "c8aabf9b-f3df-4cfb-948e-af7d797f822b")
 	)
 	(wire
 		(pts
-			(xy 137.16 90.17) (xy 162.56 90.17)
+			(xy 160.02 100.33) (xy 193.04 100.33)
 		)
 		(stroke
 			(width 0)
@@ -4295,7 +4472,7 @@
 	)
 	(wire
 		(pts
-			(xy 85.09 52.07) (xy 93.98 52.07)
+			(xy 107.95 62.23) (xy 116.84 62.23)
 		)
 		(stroke
 			(width 0)
@@ -4305,7 +4482,7 @@
 	)
 	(wire
 		(pts
-			(xy 63.5 97.79) (xy 74.93 97.79)
+			(xy 86.36 107.95) (xy 96.52 107.95)
 		)
 		(stroke
 			(width 0)
@@ -4315,7 +4492,7 @@
 	)
 	(wire
 		(pts
-			(xy 153.67 86.36) (xy 153.67 85.09)
+			(xy 184.15 96.52) (xy 184.15 95.25)
 		)
 		(stroke
 			(width 0)
@@ -4325,7 +4502,7 @@
 	)
 	(wire
 		(pts
-			(xy 62.23 54.61) (xy 62.23 52.07)
+			(xy 85.09 64.77) (xy 85.09 62.23)
 		)
 		(stroke
 			(width 0)
@@ -4335,7 +4512,7 @@
 	)
 	(wire
 		(pts
-			(xy 151.13 67.31) (xy 158.75 67.31)
+			(xy 179.07 77.47) (xy 195.58 77.47)
 		)
 		(stroke
 			(width 0)
@@ -4345,17 +4522,17 @@
 	)
 	(wire
 		(pts
-			(xy 137.16 104.14) (xy 175.26 104.14)
+			(xy 160.02 111.76) (xy 215.9 111.76)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "d070f4b8-ba8b-43a7-8517-d20265977acd")
+		(uuid "d0200359-f3f7-4c79-9543-1631d0438584")
 	)
 	(wire
 		(pts
-			(xy 137.16 67.31) (xy 146.05 67.31)
+			(xy 160.02 77.47) (xy 173.99 77.47)
 		)
 		(stroke
 			(width 0)
@@ -4363,9 +4540,19 @@
 		)
 		(uuid "d0e3349d-9192-47b3-936f-d580bcec7265")
 	)
+	(bus
+		(pts
+			(xy 199.39 66.04) (xy 198.12 67.31)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d1628371-cb1d-46f6-95fd-d19142e172d0")
+	)
 	(wire
 		(pts
-			(xy 86.36 83.82) (xy 96.52 83.82)
+			(xy 109.22 93.98) (xy 119.38 93.98)
 		)
 		(stroke
 			(width 0)
@@ -4375,7 +4562,7 @@
 	)
 	(wire
 		(pts
-			(xy 85.09 60.96) (xy 85.09 59.69)
+			(xy 107.95 71.12) (xy 107.95 69.85)
 		)
 		(stroke
 			(width 0)
@@ -4385,7 +4572,7 @@
 	)
 	(wire
 		(pts
-			(xy 96.52 73.66) (xy 73.66 73.66)
+			(xy 119.38 83.82) (xy 96.52 83.82)
 		)
 		(stroke
 			(width 0)
@@ -4395,7 +4582,7 @@
 	)
 	(wire
 		(pts
-			(xy 198.12 99.06) (xy 198.12 114.3)
+			(xy 227.33 109.22) (xy 227.33 124.46)
 		)
 		(stroke
 			(width 0)
@@ -4405,7 +4592,7 @@
 	)
 	(wire
 		(pts
-			(xy 96.52 62.23) (xy 93.98 62.23)
+			(xy 119.38 72.39) (xy 116.84 72.39)
 		)
 		(stroke
 			(width 0)
@@ -4415,7 +4602,7 @@
 	)
 	(wire
 		(pts
-			(xy 73.66 73.66) (xy 73.66 76.2)
+			(xy 96.52 83.82) (xy 96.52 86.36)
 		)
 		(stroke
 			(width 0)
@@ -4425,17 +4612,7 @@
 	)
 	(wire
 		(pts
-			(xy 74.93 95.25) (xy 76.2 93.98)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "dcd3fbf1-5b9f-443d-8cc6-a350811c544a")
-	)
-	(wire
-		(pts
-			(xy 119.38 128.27) (xy 121.92 128.27)
+			(xy 142.24 138.43) (xy 144.78 138.43)
 		)
 		(stroke
 			(width 0)
@@ -4445,7 +4622,7 @@
 	)
 	(wire
 		(pts
-			(xy 140.97 77.47) (xy 144.78 77.47)
+			(xy 171.45 87.63) (xy 175.26 87.63)
 		)
 		(stroke
 			(width 0)
@@ -4453,9 +4630,19 @@
 		)
 		(uuid "e3607054-945c-4e26-acf5-c0a8611496b4")
 	)
+	(bus
+		(pts
+			(xy 83.82 107.95) (xy 83.82 110.49)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e67b6fc2-1299-4382-88a3-f028b83d85a4")
+	)
 	(wire
 		(pts
-			(xy 175.26 104.14) (xy 175.26 114.3)
+			(xy 204.47 114.3) (xy 204.47 124.46)
 		)
 		(stroke
 			(width 0)
@@ -4465,7 +4652,7 @@
 	)
 	(wire
 		(pts
-			(xy 111.76 128.27) (xy 114.3 128.27)
+			(xy 134.62 138.43) (xy 137.16 138.43)
 		)
 		(stroke
 			(width 0)
@@ -4475,7 +4662,7 @@
 	)
 	(wire
 		(pts
-			(xy 39.37 54.61) (xy 39.37 52.07)
+			(xy 62.23 64.77) (xy 62.23 62.23)
 		)
 		(stroke
 			(width 0)
@@ -4485,7 +4672,17 @@
 	)
 	(wire
 		(pts
-			(xy 137.16 59.69) (xy 146.05 59.69)
+			(xy 86.36 132.08) (xy 96.52 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ec2ce663-20b6-4862-a247-d771944b9524")
+	)
+	(wire
+		(pts
+			(xy 160.02 69.85) (xy 173.99 69.85)
 		)
 		(stroke
 			(width 0)
@@ -4495,7 +4692,7 @@
 	)
 	(wire
 		(pts
-			(xy 50.8 54.61) (xy 50.8 52.07)
+			(xy 73.66 64.77) (xy 73.66 62.23)
 		)
 		(stroke
 			(width 0)
@@ -4505,7 +4702,17 @@
 	)
 	(wire
 		(pts
-			(xy 86.36 81.28) (xy 96.52 81.28)
+			(xy 160.02 114.3) (xy 204.47 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ed97e08b-d77e-4a9a-89dd-cd1884a03135")
+	)
+	(wire
+		(pts
+			(xy 109.22 91.44) (xy 119.38 91.44)
 		)
 		(stroke
 			(width 0)
@@ -4515,7 +4722,7 @@
 	)
 	(wire
 		(pts
-			(xy 124.46 125.73) (xy 124.46 128.27)
+			(xy 147.32 135.89) (xy 147.32 138.43)
 		)
 		(stroke
 			(width 0)
@@ -4523,9 +4730,19 @@
 		)
 		(uuid "ef4e014d-0fcf-4def-ad53-05a3488b6eea")
 	)
+	(bus
+		(pts
+			(xy 80.01 128.27) (xy 82.55 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f263349a-ef73-45c7-be13-d83f477f8a5c")
+	)
 	(wire
 		(pts
-			(xy 109.22 128.27) (xy 111.76 128.27)
+			(xy 132.08 138.43) (xy 134.62 138.43)
 		)
 		(stroke
 			(width 0)
@@ -4535,7 +4752,7 @@
 	)
 	(wire
 		(pts
-			(xy 39.37 49.53) (xy 39.37 52.07)
+			(xy 62.23 59.69) (xy 62.23 62.23)
 		)
 		(stroke
 			(width 0)
@@ -4545,7 +4762,7 @@
 	)
 	(wire
 		(pts
-			(xy 140.97 86.36) (xy 140.97 85.09)
+			(xy 171.45 96.52) (xy 171.45 95.25)
 		)
 		(stroke
 			(width 0)
@@ -4555,7 +4772,7 @@
 	)
 	(wire
 		(pts
-			(xy 152.4 121.92) (xy 152.4 119.38)
+			(xy 181.61 132.08) (xy 181.61 129.54)
 		)
 		(stroke
 			(width 0)
@@ -4563,8 +4780,38 @@
 		)
 		(uuid "fd979cc3-3ace-45c1-9d10-1013f6b86581")
 	)
-	(label "SYN_CE"
-		(at 86.36 88.9 0)
+	(bus
+		(pts
+			(xy 199.39 66.04) (xy 201.93 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ff53739c-a68e-433e-a54f-ba983e4dcb58")
+	)
+	(label "SYN.CE"
+		(at 96.52 142.24 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "032bcc22-62ea-437e-bf26-48f32c50feea")
+	)
+	(label "LO_B.N"
+		(at 195.58 80.01 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "0478907d-bbbe-4bb3-bd78-25d9c60f65d6")
+	)
+	(label "SYN.CE"
+		(at 109.22 99.06 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4573,8 +4820,8 @@
 		)
 		(uuid "0a9a8793-3af9-4a9e-854f-f0a5b257c976")
 	)
-	(label "SYN_MUX"
-		(at 86.36 81.28 0)
+	(label "SYN.MUX"
+		(at 109.22 91.44 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4583,8 +4830,8 @@
 		)
 		(uuid "16c55e26-d8ca-4b59-9ad8-01316d5d217a")
 	)
-	(label "SYN_SCK"
-		(at 86.36 78.74 0)
+	(label "SYN.SCK"
+		(at 109.22 88.9 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4593,8 +4840,8 @@
 		)
 		(uuid "1b0adb09-2af3-425b-a8cf-db2ee4137db4")
 	)
-	(label "SYN_SDI"
-		(at 86.36 83.82 0)
+	(label "SYN.SDI"
+		(at 109.22 93.98 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4603,8 +4850,68 @@
 		)
 		(uuid "1bc4a8aa-8f80-4e24-8b38-ccf771093092")
 	)
+	(label "SYN.SDI"
+		(at 96.52 137.16 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "1d9c2e7d-082a-4d8e-b592-725aed58da37")
+	)
+	(label "VrefVCO2"
+		(at 214.63 111.76 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "1ffde373-0d7c-4de6-8213-616bd569b7f9")
+	)
+	(label "SYN.RD"
+		(at 96.52 147.32 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "26458139-a539-4bf3-b21a-72a5772ceaea")
+	)
+	(label "VbiasVCO"
+		(at 191.77 116.84 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "26529bc7-c286-49fe-b5ca-90d483189038")
+	)
+	(label "RF_B_P"
+		(at 161.29 77.47 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "28324540-bb56-403b-b6fc-1d8ee9940cb1")
+	)
+	(label "RF_B_N"
+		(at 161.29 80.01 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "33172a0f-4342-428d-bc35-afb47f866be2")
+	)
 	(label "OSC_P"
-		(at 86.36 95.25 0)
+		(at 109.22 105.41 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4613,8 +4920,8 @@
 		)
 		(uuid "3b582b5a-acc8-47c2-82aa-269e27ba1558")
 	)
-	(label "SYN_RC"
-		(at 86.36 109.22 0)
+	(label "SYN.RC"
+		(at 109.22 119.38 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4623,8 +4930,8 @@
 		)
 		(uuid "44692a1a-d62a-4b9f-b18b-3b1f41b04186")
 	)
-	(label "REF_P"
-		(at 63.5 95.25 0)
+	(label "REF.P"
+		(at 86.36 105.41 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4633,8 +4940,68 @@
 		)
 		(uuid "4ffd8040-28ef-4401-94ed-b14ac66fdfa9")
 	)
+	(label "VrefVCO"
+		(at 226.06 109.22 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "628f7003-c194-422c-8075-ff60b33b4bad")
+	)
+	(label "CPOut"
+		(at 161.29 100.33 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "640812ab-9206-4395-b233-feeaf638d829")
+	)
+	(label "SYN.~{CS}"
+		(at 96.52 139.7 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "666abb11-4b4d-4638-8d64-6ca3e67198fe")
+	)
+	(label "LO_A.N"
+		(at 195.58 72.39 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "6f3d76cb-ebfd-4ae6-a4c6-b753b37a29d2")
+	)
+	(label "SYN.RC"
+		(at 96.52 144.78 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "82287515-a930-4000-9a42-0b72135919f3")
+	)
+	(label "VbiasVARAC"
+		(at 237.49 106.68 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "82679c6e-d58f-4848-a90f-1ba3e6985731")
+	)
 	(label "OSC_N"
-		(at 86.36 97.79 0)
+		(at 109.22 107.95 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4643,8 +5010,18 @@
 		)
 		(uuid "8279f690-3527-4158-9953-6ca1ff7ca486")
 	)
-	(label "SYN_RD"
-		(at 86.36 111.76 0)
+	(label "VregIN"
+		(at 203.2 114.3 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "89680ffb-cc4c-4e4e-814a-1c8ecf7f611e")
+	)
+	(label "SYN.RD"
+		(at 109.22 121.92 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4653,8 +5030,38 @@
 		)
 		(uuid "97015324-80d6-4006-bf6f-50d3c7a10ea9")
 	)
-	(label "REF_N"
-		(at 63.5 97.79 0)
+	(label "VTUNE"
+		(at 161.29 87.63 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "aa3a81ba-10cc-4774-a141-11fe79195efc")
+	)
+	(label "VregVCO"
+		(at 168.91 121.92 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "b2412583-3ccf-4d35-99ce-3e3d4ce89e8e")
+	)
+	(label "SYN.MUX"
+		(at 96.52 134.62 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "bb593c21-062b-49c8-a569-fb7c9ee4e28a")
+	)
+	(label "REF.N"
+		(at 86.36 107.95 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4663,8 +5070,8 @@
 		)
 		(uuid "bbd06f33-57ad-4133-bcbb-28a3e9ae67ba")
 	)
-	(label "SYN_~{CS}"
-		(at 86.36 86.36 0)
+	(label "SYN.~{CS}"
+		(at 109.22 96.52 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4673,9 +5080,113 @@
 		)
 		(uuid "bc1bf4c9-15cb-43da-8af9-188f542fd8b8")
 	)
+	(label "LO_A.P"
+		(at 195.58 69.85 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "c399b1f3-2b11-4faf-a7a1-a0577ccf19d7")
+	)
+	(label "SYN.SCK"
+		(at 96.52 132.08 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "c9ec5db5-08d9-4b6b-9803-e7bf5017353e")
+	)
+	(label "RF_A_N"
+		(at 161.29 72.39 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "cd6fdbc4-1527-471a-b17d-b3ec55f0b020")
+	)
+	(label "LO_B.P"
+		(at 195.58 77.47 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "ed0237d4-045f-49ea-a363-f48b0c8036bd")
+	)
+	(label "VbiasVCO2"
+		(at 180.34 119.38 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "f106a7aa-060e-49e7-8055-c9c5aa752344")
+	)
+	(label "RF_A_P"
+		(at 161.29 69.85 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "f71f1091-d6d2-40ff-a3c8-df5d6a843da5")
+	)
+	(hierarchical_label "{SYN_CTRL}"
+		(shape bidirectional)
+		(at 80.01 128.27 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "1b85ed3c-54c6-420c-92b5-ca25970e1f74")
+	)
+	(hierarchical_label "LO_A{P N}"
+		(shape output)
+		(at 201.93 66.04 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "a37b08fe-6f96-405c-b439-b8362ba823c2")
+	)
+	(hierarchical_label "REF{P N}"
+		(shape input)
+		(at 80.01 111.76 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "c7237e64-b15f-4158-b17c-fce7a5073fd9")
+	)
+	(hierarchical_label "LO_B{P N}"
+		(shape output)
+		(at 201.93 83.82 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "da399f55-7f3b-4cab-ac5f-69e78975fc61")
+	)
 	(symbol
 		(lib_id "power:GND")
-		(at 153.67 86.36 0)
+		(at 184.15 96.52 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -4687,7 +5198,7 @@
 		(fields_autoplaced yes)
 		(uuid "0d524ed4-d062-4e04-aa9e-a6c6b1b39ddc")
 		(property "Reference" "#PWR018"
-			(at 153.67 92.71 0)
+			(at 184.15 102.87 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4698,7 +5209,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 153.67 91.44 0)
+			(at 184.15 101.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4709,7 +5220,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 153.67 86.36 0)
+			(at 184.15 96.52 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4720,7 +5231,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 153.67 86.36 0)
+			(at 184.15 96.52 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4731,7 +5242,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 153.67 86.36 0)
+			(at 184.15 96.52 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4742,7 +5253,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "10d8bce5-13e6-4a6e-91a8-3f3d2af89f18")
+			(uuid "26bac348-7984-4157-ad87-95819ac9ce94")
 		)
 		(instances
 			(project "spectre"
@@ -4750,12 +5261,16 @@
 					(reference "#PWR018")
 					(unit 1)
 				)
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/e8db61a9-ea8d-4997-90db-6d7c76c362cb"
+					(reference "#PWR033")
+					(unit 1)
+				)
 			)
 		)
 	)
 	(symbol
 		(lib_id "#bt-db:capacitor/CAPC-00667")
-		(at 198.12 116.84 0)
+		(at 227.33 127 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4765,7 +5280,7 @@
 		(dnp no)
 		(uuid "1e2287e8-3eb1-4ca7-bd19-c1b0fac23a53")
 		(property "Reference" "C3"
-			(at 200.66 114.3062 0)
+			(at 229.87 124.4662 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4776,7 +5291,7 @@
 			)
 		)
 		(property "Value" "10uF"
-			(at 200.66 116.8462 0)
+			(at 229.87 127.0062 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4787,7 +5302,7 @@
 			)
 		)
 		(property "Footprint" "ar_passives:C_0402"
-			(at 198.12 116.84 0)
+			(at 227.33 127 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4798,7 +5313,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 198.12 116.84 0)
+			(at 227.33 127 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4809,7 +5324,7 @@
 			)
 		)
 		(property "Description" "Ceramic Capacitor, 10uF, ±20%, 6.3V, X5R, 0402"
-			(at 198.12 116.84 0)
+			(at 227.33 127 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4820,7 +5335,7 @@
 			)
 		)
 		(property "IPN" "CAPC-00667"
-			(at 198.12 116.84 0)
+			(at 227.33 127 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4831,7 +5346,7 @@
 			)
 		)
 		(property "PartNumber" "GRM155R60J106M"
-			(at 198.12 116.84 0)
+			(at 227.33 127 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4842,7 +5357,7 @@
 			)
 		)
 		(property "Manufacturer" "Murata"
-			(at 198.12 116.84 0)
+			(at 227.33 127 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4853,7 +5368,7 @@
 			)
 		)
 		(property "Type" "Ceramic"
-			(at 198.12 116.84 0)
+			(at 227.33 127 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4864,7 +5379,7 @@
 			)
 		)
 		(property "Tolerance" "20%"
-			(at 198.12 116.84 0)
+			(at 227.33 127 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4875,7 +5390,7 @@
 			)
 		)
 		(property "Voltage" "6.3V"
-			(at 200.66 119.3862 0)
+			(at 229.87 129.5462 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4886,7 +5401,7 @@
 			)
 		)
 		(property "Material" "X5R"
-			(at 198.12 116.84 0)
+			(at 227.33 127 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4897,10 +5412,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "601c22bd-ca53-4ee0-b26a-201f1963782b")
+			(uuid "038b7142-a83f-4191-9433-deb4d30efb3e")
 		)
 		(pin "2"
-			(uuid "b96edac6-b7f4-462b-965d-87b4213cc121")
+			(uuid "cb128948-b8ea-4e34-b406-22d7fa420f2a")
 		)
 		(instances
 			(project "spectre"
@@ -4908,12 +5423,16 @@
 					(reference "C3")
 					(unit 1)
 				)
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/e8db61a9-ea8d-4997-90db-6d7c76c362cb"
+					(reference "C37")
+					(unit 1)
+				)
 			)
 		)
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 198.12 121.92 0)
+		(at 227.33 132.08 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4924,7 +5443,7 @@
 		(fields_autoplaced yes)
 		(uuid "2b0696f6-0f19-42d2-b7f2-84aeca1d7e4f")
 		(property "Reference" "#PWR07"
-			(at 198.12 128.27 0)
+			(at 227.33 138.43 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4935,7 +5454,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 198.12 127 0)
+			(at 227.33 137.16 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4946,7 +5465,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 198.12 121.92 0)
+			(at 227.33 132.08 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4957,7 +5476,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 198.12 121.92 0)
+			(at 227.33 132.08 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4968,7 +5487,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 198.12 121.92 0)
+			(at 227.33 132.08 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4979,7 +5498,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "e17931f7-4fa2-42ab-a815-205c58839473")
+			(uuid "5323b15e-fa82-4cbb-8bf2-b2a8147fe1c0")
 		)
 		(instances
 			(project "spectre"
@@ -4987,12 +5506,16 @@
 					(reference "#PWR07")
 					(unit 1)
 				)
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/e8db61a9-ea8d-4997-90db-6d7c76c362cb"
+					(reference "#PWR038")
+					(unit 1)
+				)
 			)
 		)
 	)
 	(symbol
 		(lib_id "#bt-db:capacitor/CAPC-00021")
-		(at 152.4 62.23 90)
+		(at 180.34 72.39 90)
 		(mirror x)
 		(unit 1)
 		(body_style 1)
@@ -5003,7 +5526,7 @@
 		(dnp no)
 		(uuid "2c7604aa-6017-434b-baee-14b713259322")
 		(property "Reference" "C17"
-			(at 148.59 63.5 90)
+			(at 176.53 73.66 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5013,7 +5536,7 @@
 			)
 		)
 		(property "Value" "22pF"
-			(at 156.21 63.5 90)
+			(at 184.15 73.66 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5023,7 +5546,7 @@
 			)
 		)
 		(property "Footprint" "ar_passives:C_0201"
-			(at 152.4 62.23 0)
+			(at 180.34 72.39 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5034,7 +5557,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 152.4 62.23 0)
+			(at 180.34 72.39 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5045,7 +5568,7 @@
 			)
 		)
 		(property "Description" "Ceramic Capacitor, 22pF, ±5%, 25V, C0G, 0201"
-			(at 152.4 62.23 0)
+			(at 180.34 72.39 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5056,7 +5579,7 @@
 			)
 		)
 		(property "IPN" "CAPC-00021"
-			(at 152.4 62.23 0)
+			(at 180.34 72.39 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5067,7 +5590,7 @@
 			)
 		)
 		(property "PartNumber" "GRM0335C1E220J"
-			(at 152.4 62.23 0)
+			(at 180.34 72.39 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5078,7 +5601,7 @@
 			)
 		)
 		(property "Manufacturer" "Murata"
-			(at 152.4 62.23 0)
+			(at 180.34 72.39 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5089,7 +5612,7 @@
 			)
 		)
 		(property "Type" "Ceramic"
-			(at 152.4 62.23 0)
+			(at 180.34 72.39 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5100,7 +5623,7 @@
 			)
 		)
 		(property "Tolerance" "5%"
-			(at 152.4 62.23 0)
+			(at 180.34 72.39 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5111,7 +5634,7 @@
 			)
 		)
 		(property "Voltage" "25V"
-			(at 152.4063 66.04 90)
+			(at 180.3463 76.2 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5122,7 +5645,7 @@
 			)
 		)
 		(property "Material" "C0G"
-			(at 152.4 62.23 0)
+			(at 180.34 72.39 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5133,10 +5656,10 @@
 			)
 		)
 		(pin "2"
-			(uuid "9b98af93-6562-433c-83f0-8e569b5fcf7e")
+			(uuid "ba7c14f2-0666-4823-9448-ed0215248295")
 		)
 		(pin "1"
-			(uuid "300a6a39-5039-4c2d-a931-220515f0ddee")
+			(uuid "e7bfadaa-4817-4308-8beb-3c18ca2eae68")
 		)
 		(instances
 			(project "spectre"
@@ -5144,12 +5667,16 @@
 					(reference "C17")
 					(unit 1)
 				)
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/e8db61a9-ea8d-4997-90db-6d7c76c362cb"
+					(reference "C31")
+					(unit 1)
+				)
 			)
 		)
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 140.97 121.92 0)
+		(at 170.18 132.08 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5160,7 +5687,7 @@
 		(fields_autoplaced yes)
 		(uuid "2f04505a-1b24-44bd-b39d-8402eccf310f")
 		(property "Reference" "#PWR02"
-			(at 140.97 128.27 0)
+			(at 170.18 138.43 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5171,7 +5698,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 140.97 127 0)
+			(at 170.18 137.16 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5182,7 +5709,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 140.97 121.92 0)
+			(at 170.18 132.08 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5193,7 +5720,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 140.97 121.92 0)
+			(at 170.18 132.08 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5204,7 +5731,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 140.97 121.92 0)
+			(at 170.18 132.08 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5215,7 +5742,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "fd1d0afd-4273-4f5f-9d3e-2bac233aa809")
+			(uuid "b520a161-f0df-4699-b608-fa6bfaa73ca1")
 		)
 		(instances
 			(project "spectre"
@@ -5223,12 +5750,16 @@
 					(reference "#PWR02")
 					(unit 1)
 				)
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/e8db61a9-ea8d-4997-90db-6d7c76c362cb"
+					(reference "#PWR030")
+					(unit 1)
+				)
 			)
 		)
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 152.4 121.92 0)
+		(at 181.61 132.08 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5239,7 +5770,7 @@
 		(fields_autoplaced yes)
 		(uuid "3039f0aa-c902-46ec-b1e0-b3c1daec8f7a")
 		(property "Reference" "#PWR03"
-			(at 152.4 128.27 0)
+			(at 181.61 138.43 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5250,7 +5781,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 152.4 127 0)
+			(at 181.61 137.16 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5261,7 +5792,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 152.4 121.92 0)
+			(at 181.61 132.08 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5272,7 +5803,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 152.4 121.92 0)
+			(at 181.61 132.08 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5283,7 +5814,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 152.4 121.92 0)
+			(at 181.61 132.08 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5294,7 +5825,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "48f0f28f-1626-4c8f-ac23-3ec824e20358")
+			(uuid "149f098a-b8ea-4504-90da-2dd794efee27")
 		)
 		(instances
 			(project "spectre"
@@ -5302,12 +5833,16 @@
 					(reference "#PWR03")
 					(unit 1)
 				)
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/e8db61a9-ea8d-4997-90db-6d7c76c362cb"
+					(reference "#PWR032")
+					(unit 1)
+				)
 			)
 		)
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 140.97 86.36 0)
+		(at 171.45 96.52 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5318,7 +5853,7 @@
 		(fields_autoplaced yes)
 		(uuid "367b3876-7d6f-411f-9264-e339bcc362b5")
 		(property "Reference" "#PWR019"
-			(at 140.97 92.71 0)
+			(at 171.45 102.87 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5329,7 +5864,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 140.97 91.44 0)
+			(at 171.45 101.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5340,7 +5875,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 140.97 86.36 0)
+			(at 171.45 96.52 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5351,7 +5886,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 140.97 86.36 0)
+			(at 171.45 96.52 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5362,7 +5897,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 140.97 86.36 0)
+			(at 171.45 96.52 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5373,7 +5908,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "b685bb21-13c7-46c2-b0cc-32bb2ff60f2a")
+			(uuid "d1387992-34cc-41d0-92fd-e7e6c0ed66cc")
 		)
 		(instances
 			(project "spectre"
@@ -5381,12 +5916,16 @@
 					(reference "#PWR019")
 					(unit 1)
 				)
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/e8db61a9-ea8d-4997-90db-6d7c76c362cb"
+					(reference "#PWR031")
+					(unit 1)
+				)
 			)
 		)
 	)
 	(symbol
 		(lib_id "#bt-db:capacitor/CAPC-00622")
-		(at 175.26 116.84 0)
+		(at 204.47 127 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5396,7 +5935,7 @@
 		(dnp no)
 		(uuid "394d2c03-1be4-4a04-968a-26f0a4df8a2f")
 		(property "Reference" "C7"
-			(at 177.8 114.3062 0)
+			(at 207.01 124.4662 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5407,7 +5946,7 @@
 			)
 		)
 		(property "Value" "1uF"
-			(at 177.8 116.8462 0)
+			(at 207.01 127.0062 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5418,7 +5957,7 @@
 			)
 		)
 		(property "Footprint" "ar_passives:C_0402"
-			(at 175.26 116.84 0)
+			(at 204.47 127 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5429,7 +5968,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 175.26 116.84 0)
+			(at 204.47 127 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5440,7 +5979,7 @@
 			)
 		)
 		(property "Description" "Ceramic Capacitor, 1uF, ±10%, 6.3V, X7R, 0402"
-			(at 175.26 116.84 0)
+			(at 204.47 127 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5451,7 +5990,7 @@
 			)
 		)
 		(property "IPN" "CAPC-00622"
-			(at 175.26 116.84 0)
+			(at 204.47 127 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5462,7 +6001,7 @@
 			)
 		)
 		(property "PartNumber" "GRM155R70J105K"
-			(at 175.26 116.84 0)
+			(at 204.47 127 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5473,7 +6012,7 @@
 			)
 		)
 		(property "Manufacturer" "Murata"
-			(at 175.26 116.84 0)
+			(at 204.47 127 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5484,7 +6023,7 @@
 			)
 		)
 		(property "Type" "Ceramic"
-			(at 175.26 116.84 0)
+			(at 204.47 127 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5495,7 +6034,7 @@
 			)
 		)
 		(property "Tolerance" "10%"
-			(at 175.26 116.84 0)
+			(at 204.47 127 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5506,7 +6045,7 @@
 			)
 		)
 		(property "Voltage" "6.3V"
-			(at 177.8 119.3862 0)
+			(at 207.01 129.5462 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5517,7 +6056,7 @@
 			)
 		)
 		(property "Material" "X7R"
-			(at 175.26 116.84 0)
+			(at 204.47 127 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5528,10 +6067,10 @@
 			)
 		)
 		(pin "2"
-			(uuid "a158286f-f523-492b-8c4d-8224f06e35ad")
+			(uuid "d5394cb7-ed09-4b17-a039-5e171ce9c200")
 		)
 		(pin "1"
-			(uuid "6e812626-92bf-447b-b530-9e4e9d7d2d0e")
+			(uuid "cf230009-4964-4144-8308-e1598d6e855e")
 		)
 		(instances
 			(project "spectre"
@@ -5539,12 +6078,16 @@
 					(reference "C7")
 					(unit 1)
 				)
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/e8db61a9-ea8d-4997-90db-6d7c76c362cb"
+					(reference "C35")
+					(unit 1)
+				)
 			)
 		)
 	)
 	(symbol
 		(lib_id "#bt-db:capacitor/CAPC-00021")
-		(at 148.59 59.69 90)
+		(at 176.53 69.85 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5554,7 +6097,7 @@
 		(dnp no)
 		(uuid "3c7f6c1a-3213-41c2-a380-7a51c6006853")
 		(property "Reference" "C16"
-			(at 144.78 58.42 90)
+			(at 172.72 68.58 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5564,7 +6107,7 @@
 			)
 		)
 		(property "Value" "22pF"
-			(at 152.4 58.42 90)
+			(at 180.34 68.58 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5574,7 +6117,7 @@
 			)
 		)
 		(property "Footprint" "ar_passives:C_0201"
-			(at 148.59 59.69 0)
+			(at 176.53 69.85 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5585,7 +6128,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 148.59 59.69 0)
+			(at 176.53 69.85 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5596,7 +6139,7 @@
 			)
 		)
 		(property "Description" "Ceramic Capacitor, 22pF, ±5%, 25V, C0G, 0201"
-			(at 148.59 59.69 0)
+			(at 176.53 69.85 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5607,7 +6150,7 @@
 			)
 		)
 		(property "IPN" "CAPC-00021"
-			(at 148.59 59.69 0)
+			(at 176.53 69.85 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5618,7 +6161,7 @@
 			)
 		)
 		(property "PartNumber" "GRM0335C1E220J"
-			(at 148.59 59.69 0)
+			(at 176.53 69.85 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5629,7 +6172,7 @@
 			)
 		)
 		(property "Manufacturer" "Murata"
-			(at 148.59 59.69 0)
+			(at 176.53 69.85 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5640,7 +6183,7 @@
 			)
 		)
 		(property "Type" "Ceramic"
-			(at 148.59 59.69 0)
+			(at 176.53 69.85 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5651,7 +6194,7 @@
 			)
 		)
 		(property "Tolerance" "5%"
-			(at 148.59 59.69 0)
+			(at 176.53 69.85 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5662,7 +6205,7 @@
 			)
 		)
 		(property "Voltage" "25V"
-			(at 148.5963 55.88 90)
+			(at 176.5363 66.04 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5673,7 +6216,7 @@
 			)
 		)
 		(property "Material" "C0G"
-			(at 148.59 59.69 0)
+			(at 176.53 69.85 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5684,10 +6227,10 @@
 			)
 		)
 		(pin "2"
-			(uuid "56d8b5b7-3bf4-422e-9c36-52e56993b8ad")
+			(uuid "a27c1f60-4b1b-4b6c-9fa2-35c186ca5fad")
 		)
 		(pin "1"
-			(uuid "ed747fd4-58a3-44aa-85cb-4c9246ac5b6b")
+			(uuid "e467bc4c-60d5-4ff0-ac5d-6dcb0d870abc")
 		)
 		(instances
 			(project "spectre"
@@ -5695,12 +6238,16 @@
 					(reference "C16")
 					(unit 1)
 				)
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/e8db61a9-ea8d-4997-90db-6d7c76c362cb"
+					(reference "C29")
+					(unit 1)
+				)
 			)
 		)
 	)
 	(symbol
 		(lib_id "#bt-db:capacitor/CAPC-00573")
-		(at 152.4 116.84 0)
+		(at 181.61 127 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -5711,7 +6258,7 @@
 		(dnp no)
 		(uuid "3e120b32-c8d3-4f9c-beff-17e3740d0857")
 		(property "Reference" "C6"
-			(at 154.94 114.3062 0)
+			(at 184.15 124.4662 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5722,7 +6269,7 @@
 			)
 		)
 		(property "Value" "100nF"
-			(at 154.94 116.8462 0)
+			(at 184.15 127.0062 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5733,7 +6280,7 @@
 			)
 		)
 		(property "Footprint" "ar_passives:C_0402"
-			(at 152.4 116.84 0)
+			(at 181.61 127 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5744,7 +6291,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 152.4 116.84 0)
+			(at 181.61 127 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5755,7 +6302,7 @@
 			)
 		)
 		(property "Description" "Ceramic Capacitor, 100nF, ±10%, 10V, X7R, 0402"
-			(at 152.4 116.84 0)
+			(at 181.61 127 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5766,7 +6313,7 @@
 			)
 		)
 		(property "IPN" "CAPC-00573"
-			(at 152.4 116.84 0)
+			(at 181.61 127 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5777,7 +6324,7 @@
 			)
 		)
 		(property "PartNumber" "GRM155R71A104K"
-			(at 152.4 116.84 0)
+			(at 181.61 127 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5788,7 +6335,7 @@
 			)
 		)
 		(property "Manufacturer" "Murata"
-			(at 152.4 116.84 0)
+			(at 181.61 127 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5799,7 +6346,7 @@
 			)
 		)
 		(property "Type" "Ceramic"
-			(at 152.4 116.84 0)
+			(at 181.61 127 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5810,7 +6357,7 @@
 			)
 		)
 		(property "Tolerance" "10%"
-			(at 152.4 116.84 0)
+			(at 181.61 127 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5821,7 +6368,7 @@
 			)
 		)
 		(property "Voltage" "10V"
-			(at 154.94 119.3862 0)
+			(at 184.15 129.5462 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5832,7 +6379,7 @@
 			)
 		)
 		(property "Material" "X7R"
-			(at 152.4 116.84 0)
+			(at 181.61 127 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5843,10 +6390,10 @@
 			)
 		)
 		(pin "2"
-			(uuid "df846b50-8dc5-4607-b36b-2f4a92bc610e")
+			(uuid "1de26ba8-a216-4bd1-a597-7339dbfe6450")
 		)
 		(pin "1"
-			(uuid "f745f19f-82cc-45e5-abc5-c5585283b282")
+			(uuid "fe2d87b8-f442-49a8-a8c7-6376b25ae38b")
 		)
 		(instances
 			(project "spectre"
@@ -5854,12 +6401,16 @@
 					(reference "C6")
 					(unit 1)
 				)
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/e8db61a9-ea8d-4997-90db-6d7c76c362cb"
+					(reference "C33")
+					(unit 1)
+				)
 			)
 		)
 	)
 	(symbol
 		(lib_id "power:VCC")
-		(at 39.37 49.53 0)
+		(at 62.23 59.69 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5870,7 +6421,7 @@
 		(fields_autoplaced yes)
 		(uuid "3e19ff75-c2e0-47c4-aaa9-8514720f1d35")
 		(property "Reference" "#PWR015"
-			(at 39.37 53.34 0)
+			(at 62.23 63.5 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5880,8 +6431,8 @@
 				)
 			)
 		)
-		(property "Value" "LO1_3V3_SYN"
-			(at 39.37 44.45 0)
+		(property "Value" "LO2_3V3_SYN"
+			(at 62.23 54.61 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5891,7 +6442,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 39.37 49.53 0)
+			(at 62.23 59.69 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5902,7 +6453,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 39.37 49.53 0)
+			(at 62.23 59.69 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5913,7 +6464,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"VCC\""
-			(at 39.37 49.53 0)
+			(at 62.23 59.69 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5924,7 +6475,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "913ffe6d-d718-4c82-be18-b31ab48845bf")
+			(uuid "305fb659-28b6-4514-b250-05223eb2042c")
 		)
 		(instances
 			(project "spectre"
@@ -5932,12 +6483,16 @@
 					(reference "#PWR015")
 					(unit 1)
 				)
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/e8db61a9-ea8d-4997-90db-6d7c76c362cb"
+					(reference "#PWR021")
+					(unit 1)
+				)
 			)
 		)
 	)
 	(symbol
 		(lib_id "#bt-db:capacitor/CAPC-00667")
-		(at 186.69 116.84 0)
+		(at 215.9 127 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5947,7 +6502,7 @@
 		(dnp no)
 		(uuid "4eb094dc-14d4-4f1c-9f3d-31644af64dd3")
 		(property "Reference" "C8"
-			(at 189.23 114.3062 0)
+			(at 218.44 124.4662 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5958,7 +6513,7 @@
 			)
 		)
 		(property "Value" "10uF"
-			(at 189.23 116.8462 0)
+			(at 218.44 127.0062 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5969,7 +6524,7 @@
 			)
 		)
 		(property "Footprint" "ar_passives:C_0402"
-			(at 186.69 116.84 0)
+			(at 215.9 127 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5980,7 +6535,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 186.69 116.84 0)
+			(at 215.9 127 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5991,7 +6546,7 @@
 			)
 		)
 		(property "Description" "Ceramic Capacitor, 10uF, ±20%, 6.3V, X5R, 0402"
-			(at 186.69 116.84 0)
+			(at 215.9 127 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6002,7 +6557,7 @@
 			)
 		)
 		(property "IPN" "CAPC-00667"
-			(at 186.69 116.84 0)
+			(at 215.9 127 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6013,7 +6568,7 @@
 			)
 		)
 		(property "PartNumber" "GRM155R60J106M"
-			(at 186.69 116.84 0)
+			(at 215.9 127 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6024,7 +6579,7 @@
 			)
 		)
 		(property "Manufacturer" "Murata"
-			(at 186.69 116.84 0)
+			(at 215.9 127 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6035,7 +6590,7 @@
 			)
 		)
 		(property "Type" "Ceramic"
-			(at 186.69 116.84 0)
+			(at 215.9 127 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6046,7 +6601,7 @@
 			)
 		)
 		(property "Tolerance" "20%"
-			(at 186.69 116.84 0)
+			(at 215.9 127 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6057,7 +6612,7 @@
 			)
 		)
 		(property "Voltage" "6.3V"
-			(at 189.23 119.3862 0)
+			(at 218.44 129.5462 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6068,7 +6623,7 @@
 			)
 		)
 		(property "Material" "X5R"
-			(at 186.69 116.84 0)
+			(at 215.9 127 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6079,10 +6634,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "cc781ca5-f20c-48f6-8db3-21ac31ddc0e4")
+			(uuid "47687340-de53-4d51-ab08-90c93aff8246")
 		)
 		(pin "2"
-			(uuid "a2ed8aa7-f1c2-461d-9a25-bbccfe9046b5")
+			(uuid "784c9c0d-4ff6-436d-91b8-9f0f9df402a0")
 		)
 		(instances
 			(project "spectre"
@@ -6090,12 +6645,16 @@
 					(reference "C8")
 					(unit 1)
 				)
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/e8db61a9-ea8d-4997-90db-6d7c76c362cb"
+					(reference "C36")
+					(unit 1)
+				)
 			)
 		)
 	)
 	(symbol
 		(lib_id "#bt-db:resistor/RESI-00693")
-		(at 147.32 77.47 90)
+		(at 177.8 87.63 90)
 		(mirror x)
 		(unit 1)
 		(body_style 1)
@@ -6107,7 +6666,7 @@
 		(fields_autoplaced yes)
 		(uuid "4fa1ef31-6009-488f-a556-e9717fed0d2a")
 		(property "Reference" "RLF3"
-			(at 147.32 80.01 90)
+			(at 177.8 90.17 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6117,7 +6676,7 @@
 			)
 		)
 		(property "Value" "TBD"
-			(at 147.32 82.55 90)
+			(at 177.8 92.71 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6127,7 +6686,7 @@
 			)
 		)
 		(property "Footprint" "ar_passives:R_0402"
-			(at 147.32 77.47 0)
+			(at 177.8 87.63 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6138,7 +6697,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 147.32 77.47 0)
+			(at 177.8 87.63 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6149,7 +6708,7 @@
 			)
 		)
 		(property "Description" "Generic Resistor 0402"
-			(at 147.32 77.47 0)
+			(at 177.8 87.63 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6160,7 +6719,7 @@
 			)
 		)
 		(property "IPN" "RESI-00693"
-			(at 147.32 77.47 0)
+			(at 177.8 87.63 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6171,7 +6730,7 @@
 			)
 		)
 		(property "PartNumber" "0402_TBD"
-			(at 147.32 77.47 0)
+			(at 177.8 87.63 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6182,7 +6741,7 @@
 			)
 		)
 		(property "Manufacturer" "TBD"
-			(at 147.32 77.47 0)
+			(at 177.8 87.63 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6193,7 +6752,7 @@
 			)
 		)
 		(property "Type" "TBD"
-			(at 147.32 77.47 0)
+			(at 177.8 87.63 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6204,7 +6763,7 @@
 			)
 		)
 		(property "Tolerance" "TBD"
-			(at 147.32 77.47 0)
+			(at 177.8 87.63 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6215,7 +6774,7 @@
 			)
 		)
 		(property "Power" "TBD"
-			(at 147.32 77.47 0)
+			(at 177.8 87.63 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6226,7 +6785,7 @@
 			)
 		)
 		(property "MaxVoltage" "TBD"
-			(at 147.32 77.47 0)
+			(at 177.8 87.63 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6237,10 +6796,10 @@
 			)
 		)
 		(pin "2"
-			(uuid "6f09e3f8-6e55-4ce1-8b80-e861f2cac4d1")
+			(uuid "abef21bf-479b-45e8-b866-9d9a424ac93a")
 		)
 		(pin "1"
-			(uuid "fe1015bd-66ab-4f25-b574-1b0564d32b2b")
+			(uuid "db952592-a9bd-4c38-a9af-2e821420b003")
 		)
 		(instances
 			(project "spectre"
@@ -6248,12 +6807,16 @@
 					(reference "RLF3")
 					(unit 1)
 				)
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/e8db61a9-ea8d-4997-90db-6d7c76c362cb"
+					(reference "RLF4")
+					(unit 1)
+				)
 			)
 		)
 	)
 	(symbol
 		(lib_id "#bt-db:capacitor/CAPC-00573")
-		(at 80.01 93.98 90)
+		(at 102.87 105.41 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6264,7 +6827,7 @@
 		(fields_autoplaced yes)
 		(uuid "526dd09f-a40b-4e62-ab0c-695fedc822ce")
 		(property "Reference" "C1"
-			(at 80.0163 87.63 90)
+			(at 102.8763 99.06 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6274,7 +6837,7 @@
 			)
 		)
 		(property "Value" "100nF"
-			(at 80.0163 90.17 90)
+			(at 102.8763 101.6 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6284,7 +6847,7 @@
 			)
 		)
 		(property "Footprint" "ar_passives:C_0402"
-			(at 80.01 93.98 0)
+			(at 102.87 105.41 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6295,7 +6858,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 80.01 93.98 0)
+			(at 102.87 105.41 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6306,7 +6869,7 @@
 			)
 		)
 		(property "Description" "Ceramic Capacitor, 100nF, ±10%, 10V, X7R, 0402"
-			(at 80.01 93.98 0)
+			(at 102.87 105.41 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6317,7 +6880,7 @@
 			)
 		)
 		(property "IPN" "CAPC-00573"
-			(at 80.01 93.98 0)
+			(at 102.87 105.41 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6328,7 +6891,7 @@
 			)
 		)
 		(property "PartNumber" "GRM155R71A104K"
-			(at 80.01 93.98 0)
+			(at 102.87 105.41 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6339,7 +6902,7 @@
 			)
 		)
 		(property "Manufacturer" "Murata"
-			(at 80.01 93.98 0)
+			(at 102.87 105.41 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6350,7 +6913,7 @@
 			)
 		)
 		(property "Type" "Ceramic"
-			(at 80.01 93.98 0)
+			(at 102.87 105.41 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6361,7 +6924,7 @@
 			)
 		)
 		(property "Tolerance" "10%"
-			(at 80.01 93.98 0)
+			(at 102.87 105.41 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6372,7 +6935,7 @@
 			)
 		)
 		(property "Voltage" "10V"
-			(at 80.0163 90.17 90)
+			(at 102.8763 101.6 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6383,7 +6946,7 @@
 			)
 		)
 		(property "Material" "X7R"
-			(at 80.01 93.98 0)
+			(at 102.87 105.41 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6394,10 +6957,10 @@
 			)
 		)
 		(pin "2"
-			(uuid "5b3a394e-3d2c-4723-9bfc-ebd44d49faef")
+			(uuid "cf40663e-0d9a-4ae0-b42c-736d0ef2df87")
 		)
 		(pin "1"
-			(uuid "80945d34-1370-47c5-ba85-0011aed76730")
+			(uuid "56094ed8-eb12-42e8-b6a9-dacf340f1420")
 		)
 		(instances
 			(project "spectre"
@@ -6405,12 +6968,16 @@
 					(reference "C1")
 					(unit 1)
 				)
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/e8db61a9-ea8d-4997-90db-6d7c76c362cb"
+					(reference "C26")
+					(unit 1)
+				)
 			)
 		)
 	)
 	(symbol
 		(lib_id "#bt-db:resistor/RESI-00693")
-		(at 167.64 77.47 90)
+		(at 198.12 87.63 90)
 		(mirror x)
 		(unit 1)
 		(body_style 1)
@@ -6422,7 +6989,7 @@
 		(fields_autoplaced yes)
 		(uuid "69ce87aa-1c3c-405c-8867-ac8e5e141721")
 		(property "Reference" "RLF2"
-			(at 167.64 80.01 90)
+			(at 198.12 90.17 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6432,7 +6999,7 @@
 			)
 		)
 		(property "Value" "TBD"
-			(at 167.64 82.55 90)
+			(at 198.12 92.71 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6442,7 +7009,7 @@
 			)
 		)
 		(property "Footprint" "ar_passives:R_0402"
-			(at 167.64 77.47 0)
+			(at 198.12 87.63 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6453,7 +7020,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 167.64 77.47 0)
+			(at 198.12 87.63 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6464,7 +7031,7 @@
 			)
 		)
 		(property "Description" "Generic Resistor 0402"
-			(at 167.64 77.47 0)
+			(at 198.12 87.63 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6475,7 +7042,7 @@
 			)
 		)
 		(property "IPN" "RESI-00693"
-			(at 167.64 77.47 0)
+			(at 198.12 87.63 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6486,7 +7053,7 @@
 			)
 		)
 		(property "PartNumber" "0402_TBD"
-			(at 167.64 77.47 0)
+			(at 198.12 87.63 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6497,7 +7064,7 @@
 			)
 		)
 		(property "Manufacturer" "TBD"
-			(at 167.64 77.47 0)
+			(at 198.12 87.63 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6508,7 +7075,7 @@
 			)
 		)
 		(property "Type" "TBD"
-			(at 167.64 77.47 0)
+			(at 198.12 87.63 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6519,7 +7086,7 @@
 			)
 		)
 		(property "Tolerance" "TBD"
-			(at 167.64 77.47 0)
+			(at 198.12 87.63 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6530,7 +7097,7 @@
 			)
 		)
 		(property "Power" "TBD"
-			(at 167.64 77.47 0)
+			(at 198.12 87.63 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6541,7 +7108,7 @@
 			)
 		)
 		(property "MaxVoltage" "TBD"
-			(at 167.64 77.47 0)
+			(at 198.12 87.63 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6552,10 +7119,10 @@
 			)
 		)
 		(pin "2"
-			(uuid "113dc954-ad30-420b-a73d-d55d673ca286")
+			(uuid "ecd86a0a-1181-4bbd-a860-7f2a3fdb29bd")
 		)
 		(pin "1"
-			(uuid "fd421665-bc1f-4997-8774-b1cff645b4f9")
+			(uuid "1afdff21-b359-470d-9b70-a694253c3bdb")
 		)
 		(instances
 			(project "spectre"
@@ -6563,12 +7130,16 @@
 					(reference "RLF2")
 					(unit 1)
 				)
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/e8db61a9-ea8d-4997-90db-6d7c76c362cb"
+					(reference "RLF5")
+					(unit 1)
+				)
 			)
 		)
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 85.09 60.96 0)
+		(at 107.95 71.12 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6579,7 +7150,7 @@
 		(fields_autoplaced yes)
 		(uuid "7016e0d8-a12e-42ab-9177-66222fc72910")
 		(property "Reference" "#PWR010"
-			(at 85.09 67.31 0)
+			(at 107.95 77.47 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6590,7 +7161,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 85.09 66.04 0)
+			(at 107.95 76.2 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6601,7 +7172,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 85.09 60.96 0)
+			(at 107.95 71.12 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6612,7 +7183,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 85.09 60.96 0)
+			(at 107.95 71.12 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6623,7 +7194,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 85.09 60.96 0)
+			(at 107.95 71.12 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6634,7 +7205,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "c366cc90-9b21-4a7f-8401-398a43d6566e")
+			(uuid "31e6f2f3-73db-4a0b-8bea-cfbba084a467")
 		)
 		(instances
 			(project "spectre"
@@ -6642,12 +7213,16 @@
 					(reference "#PWR010")
 					(unit 1)
 				)
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/e8db61a9-ea8d-4997-90db-6d7c76c362cb"
+					(reference "#PWR028")
+					(unit 1)
+				)
 			)
 		)
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 73.66 60.96 0)
+		(at 96.52 71.12 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6658,7 +7233,7 @@
 		(fields_autoplaced yes)
 		(uuid "73099838-834a-49fc-9e44-6106cfb836c0")
 		(property "Reference" "#PWR011"
-			(at 73.66 67.31 0)
+			(at 96.52 77.47 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6669,7 +7244,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 73.66 66.04 0)
+			(at 96.52 76.2 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6680,7 +7255,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 73.66 60.96 0)
+			(at 96.52 71.12 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6691,7 +7266,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 73.66 60.96 0)
+			(at 96.52 71.12 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6702,7 +7277,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 73.66 60.96 0)
+			(at 96.52 71.12 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6713,7 +7288,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "6be47c9e-c1b4-4fcf-a35f-ce21c993d421")
+			(uuid "d4e8b8c4-d079-4fd4-9ea4-aab0e6508eee")
 		)
 		(instances
 			(project "spectre"
@@ -6721,12 +7296,16 @@
 					(reference "#PWR011")
 					(unit 1)
 				)
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/e8db61a9-ea8d-4997-90db-6d7c76c362cb"
+					(reference "#PWR025")
+					(unit 1)
+				)
 			)
 		)
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 116.84 130.81 0)
+		(at 139.7 140.97 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6737,7 +7316,7 @@
 		(fields_autoplaced yes)
 		(uuid "7331cf42-e7a0-4584-baa6-32a4d49e46d7")
 		(property "Reference" "#PWR016"
-			(at 116.84 137.16 0)
+			(at 139.7 147.32 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6748,7 +7327,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 116.84 135.89 0)
+			(at 139.7 146.05 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6759,7 +7338,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 116.84 130.81 0)
+			(at 139.7 140.97 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6770,7 +7349,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 116.84 130.81 0)
+			(at 139.7 140.97 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6781,7 +7360,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 116.84 130.81 0)
+			(at 139.7 140.97 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6792,7 +7371,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "85f37a81-067d-4868-9618-67b5fc0870f0")
+			(uuid "a132d9b9-83cf-439e-8d07-a97b51975a62")
 		)
 		(instances
 			(project "spectre"
@@ -6800,12 +7379,16 @@
 					(reference "#PWR016")
 					(unit 1)
 				)
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/e8db61a9-ea8d-4997-90db-6d7c76c362cb"
+					(reference "#PWR029")
+					(unit 1)
+				)
 			)
 		)
 	)
 	(symbol
 		(lib_id "#bt-db:capacitor/CAPC-00021")
-		(at 152.4 69.85 90)
+		(at 180.34 80.01 90)
 		(mirror x)
 		(unit 1)
 		(body_style 1)
@@ -6816,7 +7399,7 @@
 		(dnp no)
 		(uuid "74906bcf-adc1-48ef-a97f-5ee01f235576")
 		(property "Reference" "C19"
-			(at 148.59 71.12 90)
+			(at 176.53 81.28 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6826,7 +7409,7 @@
 			)
 		)
 		(property "Value" "22pF"
-			(at 156.21 71.12 90)
+			(at 184.15 81.28 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6836,7 +7419,7 @@
 			)
 		)
 		(property "Footprint" "ar_passives:C_0201"
-			(at 152.4 69.85 0)
+			(at 180.34 80.01 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6847,7 +7430,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 152.4 69.85 0)
+			(at 180.34 80.01 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6858,7 +7441,7 @@
 			)
 		)
 		(property "Description" "Ceramic Capacitor, 22pF, ±5%, 25V, C0G, 0201"
-			(at 152.4 69.85 0)
+			(at 180.34 80.01 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6869,7 +7452,7 @@
 			)
 		)
 		(property "IPN" "CAPC-00021"
-			(at 152.4 69.85 0)
+			(at 180.34 80.01 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6880,7 +7463,7 @@
 			)
 		)
 		(property "PartNumber" "GRM0335C1E220J"
-			(at 152.4 69.85 0)
+			(at 180.34 80.01 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6891,7 +7474,7 @@
 			)
 		)
 		(property "Manufacturer" "Murata"
-			(at 152.4 69.85 0)
+			(at 180.34 80.01 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6902,7 +7485,7 @@
 			)
 		)
 		(property "Type" "Ceramic"
-			(at 152.4 69.85 0)
+			(at 180.34 80.01 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6913,7 +7496,7 @@
 			)
 		)
 		(property "Tolerance" "5%"
-			(at 152.4 69.85 0)
+			(at 180.34 80.01 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6924,7 +7507,7 @@
 			)
 		)
 		(property "Voltage" "25V"
-			(at 152.4063 73.66 90)
+			(at 180.3463 83.82 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6935,7 +7518,7 @@
 			)
 		)
 		(property "Material" "C0G"
-			(at 152.4 69.85 0)
+			(at 180.34 80.01 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6946,10 +7529,10 @@
 			)
 		)
 		(pin "2"
-			(uuid "4eb5a09c-5db8-43ed-b6a1-007e6a4c7b0d")
+			(uuid "598bee97-71b4-410e-a275-dda8bea3042a")
 		)
 		(pin "1"
-			(uuid "a07f7f0c-c058-4a9b-b1a6-9e6fdecc2d55")
+			(uuid "dd60c031-92d9-4de3-9d95-c2337fe621ac")
 		)
 		(instances
 			(project "spectre"
@@ -6957,12 +7540,16 @@
 					(reference "C19")
 					(unit 1)
 				)
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/e8db61a9-ea8d-4997-90db-6d7c76c362cb"
+					(reference "C32")
+					(unit 1)
+				)
 			)
 		)
 	)
 	(symbol
 		(lib_id "#bt-db:capacitor/CAPC-00674")
-		(at 153.67 82.55 0)
+		(at 184.15 92.71 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -6974,7 +7561,7 @@
 		(fields_autoplaced yes)
 		(uuid "7e5eb8a4-df3d-4267-b37a-1a608694e1af")
 		(property "Reference" "CLF1"
-			(at 156.21 80.0162 0)
+			(at 186.69 90.1762 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6985,7 +7572,7 @@
 			)
 		)
 		(property "Value" "0pF"
-			(at 156.21 82.5562 0)
+			(at 186.69 92.7162 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6996,7 +7583,7 @@
 			)
 		)
 		(property "Footprint" "ar_passives:C_0603"
-			(at 153.67 82.55 0)
+			(at 184.15 92.71 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7007,7 +7594,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 153.67 82.55 0)
+			(at 184.15 92.71 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7018,7 +7605,7 @@
 			)
 		)
 		(property "Description" "Generic Ceramic Capacitor, vvvF, ±x%, uuV, DDD, 0603"
-			(at 153.67 82.55 0)
+			(at 184.15 92.71 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7029,7 +7616,7 @@
 			)
 		)
 		(property "IPN" "CAPC-00674"
-			(at 153.67 82.55 0)
+			(at 184.15 92.71 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7040,7 +7627,7 @@
 			)
 		)
 		(property "PartNumber" "0603_TBD"
-			(at 153.67 82.55 0)
+			(at 184.15 92.71 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7051,7 +7638,7 @@
 			)
 		)
 		(property "Manufacturer" "TBD"
-			(at 153.67 82.55 0)
+			(at 184.15 92.71 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7062,7 +7649,7 @@
 			)
 		)
 		(property "Type" "Ceramic"
-			(at 153.67 82.55 0)
+			(at 184.15 92.71 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7073,7 +7660,7 @@
 			)
 		)
 		(property "Tolerance" "TBD"
-			(at 153.67 82.55 0)
+			(at 184.15 92.71 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7084,7 +7671,7 @@
 			)
 		)
 		(property "Voltage" "TBD"
-			(at 156.21 85.0962 0)
+			(at 186.69 95.2562 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7095,7 +7682,7 @@
 			)
 		)
 		(property "Material" "TBD"
-			(at 153.67 82.55 0)
+			(at 184.15 92.71 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7106,10 +7693,10 @@
 			)
 		)
 		(pin "2"
-			(uuid "77b58b74-ceeb-4f03-9f85-74e7d98b7796")
+			(uuid "91510ffa-1b26-4e58-a76e-44f200d30fcb")
 		)
 		(pin "1"
-			(uuid "6f4df4d7-ff7d-4bf2-a4b8-89eb4c742d12")
+			(uuid "a88be9d5-95a6-4b61-b92d-50974e9591bc")
 		)
 		(instances
 			(project "spectre"
@@ -7117,12 +7704,16 @@
 					(reference "CLF1")
 					(unit 1)
 				)
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/e8db61a9-ea8d-4997-90db-6d7c76c362cb"
+					(reference "CLF5")
+					(unit 1)
+				)
 			)
 		)
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 50.8 60.96 0)
+		(at 73.66 71.12 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -7133,7 +7724,7 @@
 		(fields_autoplaced yes)
 		(uuid "8d65b2ea-cf70-4469-aaf6-09d78428f7f8")
 		(property "Reference" "#PWR013"
-			(at 50.8 67.31 0)
+			(at 73.66 77.47 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7144,7 +7735,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 50.8 66.04 0)
+			(at 73.66 76.2 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7155,7 +7746,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 50.8 60.96 0)
+			(at 73.66 71.12 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7166,7 +7757,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 50.8 60.96 0)
+			(at 73.66 71.12 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7177,7 +7768,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 50.8 60.96 0)
+			(at 73.66 71.12 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7188,7 +7779,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "36244507-bf3e-4254-b21a-afe6abbe4795")
+			(uuid "fd1147a6-3b53-44b1-84fc-72c0151a9899")
 		)
 		(instances
 			(project "spectre"
@@ -7196,12 +7787,16 @@
 					(reference "#PWR013")
 					(unit 1)
 				)
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/e8db61a9-ea8d-4997-90db-6d7c76c362cb"
+					(reference "#PWR023")
+					(unit 1)
+				)
 			)
 		)
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 186.69 121.92 0)
+		(at 215.9 132.08 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -7212,7 +7807,7 @@
 		(fields_autoplaced yes)
 		(uuid "8df8c6ec-9cf2-4954-833b-3be492dd41bb")
 		(property "Reference" "#PWR06"
-			(at 186.69 128.27 0)
+			(at 215.9 138.43 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7223,7 +7818,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 186.69 127 0)
+			(at 215.9 137.16 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7234,7 +7829,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 186.69 121.92 0)
+			(at 215.9 132.08 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7245,7 +7840,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 186.69 121.92 0)
+			(at 215.9 132.08 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7256,7 +7851,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 186.69 121.92 0)
+			(at 215.9 132.08 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7267,7 +7862,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "96ef0bd2-0c9c-482a-ac5b-a6eaeb442372")
+			(uuid "e171d167-83b6-4cae-b122-405142f2a639")
 		)
 		(instances
 			(project "spectre"
@@ -7275,12 +7870,16 @@
 					(reference "#PWR06")
 					(unit 1)
 				)
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/e8db61a9-ea8d-4997-90db-6d7c76c362cb"
+					(reference "#PWR037")
+					(unit 1)
+				)
 			)
 		)
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 163.83 121.92 0)
+		(at 193.04 132.08 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -7291,7 +7890,7 @@
 		(fields_autoplaced yes)
 		(uuid "8e088b6d-76f4-43fb-9019-23c18fff7216")
 		(property "Reference" "#PWR04"
-			(at 163.83 128.27 0)
+			(at 193.04 138.43 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7302,7 +7901,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 163.83 127 0)
+			(at 193.04 137.16 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7313,7 +7912,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 163.83 121.92 0)
+			(at 193.04 132.08 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7324,7 +7923,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 163.83 121.92 0)
+			(at 193.04 132.08 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7335,7 +7934,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 163.83 121.92 0)
+			(at 193.04 132.08 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7346,7 +7945,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "4d0b1d4f-ab2e-4a22-a6f5-15637f3c5ffb")
+			(uuid "ca3323fc-a8bf-4529-933d-828d97ff630d")
 		)
 		(instances
 			(project "spectre"
@@ -7354,12 +7953,16 @@
 					(reference "#PWR04")
 					(unit 1)
 				)
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/e8db61a9-ea8d-4997-90db-6d7c76c362cb"
+					(reference "#PWR034")
+					(unit 1)
+				)
 			)
 		)
 	)
 	(symbol
 		(lib_id "#bt-db:capacitor/CAPC-00573")
-		(at 50.8 57.15 0)
+		(at 73.66 67.31 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -7369,7 +7972,7 @@
 		(dnp no)
 		(uuid "90f67de5-95ed-478d-a119-9aa139affce6")
 		(property "Reference" "C11"
-			(at 48.26 54.6162 0)
+			(at 71.12 64.7762 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7380,7 +7983,7 @@
 			)
 		)
 		(property "Value" "100nF"
-			(at 48.26 57.1562 0)
+			(at 71.12 67.3162 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7391,7 +7994,7 @@
 			)
 		)
 		(property "Footprint" "ar_passives:C_0402"
-			(at 50.8 57.15 0)
+			(at 73.66 67.31 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7402,7 +8005,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 50.8 57.15 0)
+			(at 73.66 67.31 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7413,7 +8016,7 @@
 			)
 		)
 		(property "Description" "Ceramic Capacitor, 100nF, ±10%, 10V, X7R, 0402"
-			(at 50.8 57.15 0)
+			(at 73.66 67.31 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7424,7 +8027,7 @@
 			)
 		)
 		(property "IPN" "CAPC-00573"
-			(at 50.8 57.15 0)
+			(at 73.66 67.31 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7435,7 +8038,7 @@
 			)
 		)
 		(property "PartNumber" "GRM155R71A104K"
-			(at 50.8 57.15 0)
+			(at 73.66 67.31 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7446,7 +8049,7 @@
 			)
 		)
 		(property "Manufacturer" "Murata"
-			(at 50.8 57.15 0)
+			(at 73.66 67.31 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7457,7 +8060,7 @@
 			)
 		)
 		(property "Type" "Ceramic"
-			(at 50.8 57.15 0)
+			(at 73.66 67.31 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7468,7 +8071,7 @@
 			)
 		)
 		(property "Tolerance" "10%"
-			(at 50.8 57.15 0)
+			(at 73.66 67.31 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7479,7 +8082,7 @@
 			)
 		)
 		(property "Voltage" "10V"
-			(at 48.26 59.6962 0)
+			(at 71.12 69.8562 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7490,7 +8093,7 @@
 			)
 		)
 		(property "Material" "X7R"
-			(at 50.8 57.15 0)
+			(at 73.66 67.31 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7501,10 +8104,10 @@
 			)
 		)
 		(pin "2"
-			(uuid "7ca329ac-dd8d-46b9-b946-4fd8c809bc1c")
+			(uuid "84038164-f11e-438e-b84c-aca489c5a958")
 		)
 		(pin "1"
-			(uuid "3b1bc606-7972-4263-b822-e4f3fa26cc59")
+			(uuid "551d340f-12f9-453d-9f27-1387b6b722de")
 		)
 		(instances
 			(project "spectre"
@@ -7512,12 +8115,16 @@
 					(reference "C11")
 					(unit 1)
 				)
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/e8db61a9-ea8d-4997-90db-6d7c76c362cb"
+					(reference "C21")
+					(unit 1)
+				)
 			)
 		)
 	)
 	(symbol
 		(lib_id "#bt-db:ic/ICIR-00204")
-		(at 116.84 91.44 0)
+		(at 139.7 101.6 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -7528,7 +8135,7 @@
 		(fields_autoplaced yes)
 		(uuid "93ffcef6-8d0d-46b7-b4a9-e3f5d559577a")
 		(property "Reference" "U3"
-			(at 116.84 52.07 0)
+			(at 139.7 62.23 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7538,7 +8145,7 @@
 			)
 		)
 		(property "Value" ""
-			(at 115.57 95.25 0)
+			(at 138.43 105.41 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7550,7 +8157,7 @@
 			)
 		)
 		(property "Footprint" "ar_ic:QFN40"
-			(at 116.84 91.44 0)
+			(at 139.7 101.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7561,7 +8168,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 116.84 91.44 0)
+			(at 139.7 101.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7572,7 +8179,7 @@
 			)
 		)
 		(property "Description" "RF Synthesiser, 20~5500MHz, dual differential outputs, low power, JESD204B"
-			(at 116.84 91.44 0)
+			(at 139.7 101.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7583,7 +8190,7 @@
 			)
 		)
 		(property "CreatedBy" "AR"
-			(at 115.57 97.79 0)
+			(at 138.43 107.95 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7595,7 +8202,7 @@
 			)
 		)
 		(property "CreationDate" "2023-11-22"
-			(at 115.57 97.79 0)
+			(at 138.43 107.95 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7607,7 +8214,7 @@
 			)
 		)
 		(property "IPN" "ICIR-00204"
-			(at 116.84 91.44 0)
+			(at 139.7 101.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7618,7 +8225,7 @@
 			)
 		)
 		(property "PartNumber" "LMX2572RHA"
-			(at 116.84 55.88 0)
+			(at 139.7 66.04 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7628,7 +8235,7 @@
 			)
 		)
 		(property "Manufacturer" "Texas Instruments"
-			(at 115.57 97.79 0)
+			(at 138.43 107.95 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7640,7 +8247,7 @@
 			)
 		)
 		(property "Temperature" ""
-			(at 116.84 91.44 0)
+			(at 139.7 101.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7651,7 +8258,7 @@
 			)
 		)
 		(property "Notes" ""
-			(at 116.84 91.44 0)
+			(at 139.7 101.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7662,127 +8269,127 @@
 			)
 		)
 		(pin "14"
-			(uuid "e2685611-f25b-41f0-a0db-4dfb84bf478f")
+			(uuid "83b30ecb-c9eb-4ae0-b082-6ec6e2cf3460")
 		)
 		(pin "32"
-			(uuid "0d698a65-7f4c-4c49-a38a-c0bfcf1df68e")
+			(uuid "8e96abb0-ad12-431f-87d8-3839c58844d2")
 		)
 		(pin "EP"
-			(uuid "d760d741-7cf6-42e6-ae79-e460cb28aaa6")
+			(uuid "eed39d53-426d-4b1f-b0e5-1b1c5cb80b6f")
 		)
 		(pin "24"
-			(uuid "d51e11a8-5560-424a-b1e0-804aaa54ecde")
+			(uuid "7086eeed-889f-45ff-9fff-bd5e207a798b")
 		)
 		(pin "39"
-			(uuid "54f23e3e-bd53-4b38-a0f2-671775d27528")
+			(uuid "0da184e7-c5ac-490c-8924-867888d06547")
 		)
 		(pin "16"
-			(uuid "30317b9f-3be9-4144-b829-5c2084560b62")
+			(uuid "91a0fe01-e529-42f4-8fae-af7a33d124eb")
 		)
 		(pin "26"
-			(uuid "1f01218a-4b13-44a7-b1ba-f08a6edb2faa")
+			(uuid "d9aedff6-c10e-48af-910d-9d5324367ff4")
 		)
 		(pin "8"
-			(uuid "14146979-d4d9-4d33-8a5d-1dd1a11206d7")
+			(uuid "bb78e2e3-7bbe-4cae-a613-a04ee56291ab")
 		)
 		(pin "25"
-			(uuid "d302efff-610d-4728-b310-0c6695b53250")
+			(uuid "e5a231ac-4869-4d32-8e95-47d990582a7a")
 		)
 		(pin "28"
-			(uuid "d615a762-2640-42dd-9d8f-01e16e3444ac")
+			(uuid "fa34f81f-8b48-4f85-8fd5-45bb76337b59")
 		)
 		(pin "31"
-			(uuid "313c736e-55d2-4772-826d-78bfb01a81a8")
+			(uuid "eace2abb-4bbd-4b7a-b7a4-f22785261da4")
 		)
 		(pin "37"
-			(uuid "ef425c6d-6c23-4c23-b494-31e8cdc0b17d")
+			(uuid "7f2286cc-59b9-4a33-a45b-91ba17864ccd")
 		)
 		(pin "27"
-			(uuid "80ec026c-9ea5-4197-b1ef-9328fbc8a7e2")
+			(uuid "42e1cb00-9554-4f2c-8bd7-0dc5adeb56ea")
 		)
 		(pin "34"
-			(uuid "24eaf9b2-ece6-4818-87c8-519f16ddbcee")
+			(uuid "b0dc043d-9426-4dd5-8073-31a19fdd8aae")
 		)
 		(pin "38"
-			(uuid "fb0c1ca3-efc4-4746-905b-18b8fa134565")
+			(uuid "4e0ed899-2cad-4166-b3a1-db2dda4c3a8e")
 		)
 		(pin "9"
-			(uuid "34cb9052-5928-4bf4-bdc5-271e733d6ac3")
+			(uuid "29d82e3c-ddcf-4858-9dba-195926f7c5ba")
 		)
 		(pin "23"
-			(uuid "bceff34e-d80f-432d-87e9-f5110dbeacef")
+			(uuid "0b3f9978-9220-4b1c-b454-d3ac70ddd34b")
 		)
 		(pin "19"
-			(uuid "22df3465-73fe-482b-a6fa-d2a0651c6a36")
+			(uuid "a811517e-147b-4f99-a014-82e411837a8d")
 		)
 		(pin "10"
-			(uuid "e6fa9758-7674-45bf-8b7a-fc00fb5b5621")
+			(uuid "31568d82-fb43-4df4-b55d-a56f36f48ed1")
 		)
 		(pin "12"
-			(uuid "05f46c5b-e4f6-4c76-9c65-d46238b29c5c")
+			(uuid "73294c79-4fac-4d01-9874-90976de598fc")
 		)
 		(pin "4"
-			(uuid "7591a71c-7118-4ea4-8cd0-c913da15e2ba")
+			(uuid "d03d3c38-119e-4dc9-925e-c5d162cb968d")
 		)
 		(pin "6"
-			(uuid "7ffae0e1-aca8-4114-a048-dcb7a5c67dd5")
+			(uuid "08fc20f7-7730-484d-aecd-36debcad12e7")
 		)
 		(pin "7"
-			(uuid "76667b9d-2cb3-4b43-98d0-b11e241ea59b")
+			(uuid "557da856-ab90-49bb-b50c-9228cce30821")
 		)
 		(pin "17"
-			(uuid "9b9f0ef3-3fc6-401e-84d5-f54dad7517cc")
+			(uuid "5c206575-3b00-4a09-a5c6-786643997179")
 		)
 		(pin "18"
-			(uuid "7258668b-5000-425b-8b6c-f174e4342aea")
+			(uuid "935df0d6-0e0e-4676-a743-a7f0f629ee55")
 		)
 		(pin "30"
-			(uuid "1b7e1dea-7757-4e25-a45c-56148b7ef137")
+			(uuid "22fd8a38-befa-425a-8ece-034401438bd1")
 		)
 		(pin "36"
-			(uuid "300c75a9-aabd-42a9-8413-dac59bfcf2c7")
+			(uuid "ce7516d4-54d9-4eab-af1f-7efe2f4b6050")
 		)
 		(pin "3"
-			(uuid "3adffedd-1b0c-43ac-a565-cf95db04178d")
+			(uuid "781c2f8d-8e5d-4b27-8dde-42654e5e6de7")
 		)
 		(pin "20"
-			(uuid "473267fd-4574-47d8-8b9e-9e9170993c96")
+			(uuid "5fb72aa5-c2a7-4b01-9a32-06df0a196292")
 		)
 		(pin "35"
-			(uuid "f22ab5da-6f37-4212-ae23-e72d0cee3d59")
+			(uuid "42f64ff2-d376-4217-b88d-4c76f53db861")
 		)
 		(pin "2"
-			(uuid "65194058-3f9f-44df-a863-ec01812ded7b")
+			(uuid "51ebc0ea-1aa0-4a3e-a0bf-5eef2d77a26a")
 		)
 		(pin "15"
-			(uuid "f72ed3ef-5cbc-45a4-9dbc-feb590e5b518")
+			(uuid "8a5a05cb-0755-4c6e-91e6-63b251d1d59f")
 		)
 		(pin "33"
-			(uuid "4ebe5369-fc21-4c21-8834-e67bb105ea02")
+			(uuid "72ed6bdf-403f-40ab-b7fa-2f12d459daa2")
 		)
 		(pin "21"
-			(uuid "20c7734f-ea7a-420f-9ded-4d0d361f2891")
+			(uuid "e9ea1162-3a90-43ee-ace7-f35a4e3242a9")
 		)
 		(pin "11"
-			(uuid "aa24830a-85c5-4a9f-bc21-e78a0fbe345f")
+			(uuid "20fd7e6a-f732-4b20-b63d-040c9c051471")
 		)
 		(pin "22"
-			(uuid "53179d2a-df34-4d26-b1fd-8c7ef6617ac1")
+			(uuid "30296094-c2fe-4c99-b8e2-fd4e9f3d22f1")
 		)
 		(pin "13"
-			(uuid "637b7a36-49fd-4ed8-ad98-ed515e026c12")
+			(uuid "0a04fb6e-e8fe-45a0-9426-57a13e40b9d9")
 		)
 		(pin "1"
-			(uuid "02939923-6342-451f-a3db-c2e2f844007e")
+			(uuid "1e954926-b826-4c2d-badb-8597ca0f0a1a")
 		)
 		(pin "29"
-			(uuid "7b8c8e6b-7702-4808-b5ed-3b97bb86d761")
+			(uuid "9dcf3d10-a415-465a-a52e-b91b11a2a0cd")
 		)
 		(pin "40"
-			(uuid "fe536306-7011-4ad8-a5f6-436c340a55a6")
+			(uuid "8b597dd7-f46e-41e8-9403-07931c36fe12")
 		)
 		(pin "5"
-			(uuid "4c01a3d8-1298-49e0-a8f5-2235d5f3a0f1")
+			(uuid "c167bc78-b017-4e8c-acf8-378e4c17f7af")
 		)
 		(instances
 			(project "spectre"
@@ -7790,12 +8397,16 @@
 					(reference "U3")
 					(unit 1)
 				)
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/e8db61a9-ea8d-4997-90db-6d7c76c362cb"
+					(reference "U4")
+					(unit 1)
+				)
 			)
 		)
 	)
 	(symbol
 		(lib_id "#bt-db:capacitor/CAPC-00573")
-		(at 73.66 78.74 0)
+		(at 96.52 88.9 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -7805,7 +8416,7 @@
 		(dnp no)
 		(uuid "99d39798-21e9-4eb3-ae8f-94d43eae78d9")
 		(property "Reference" "C15"
-			(at 71.12 76.2062 0)
+			(at 93.98 86.3662 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7816,7 +8427,7 @@
 			)
 		)
 		(property "Value" "100nF"
-			(at 71.12 78.7462 0)
+			(at 93.98 88.9062 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7827,7 +8438,7 @@
 			)
 		)
 		(property "Footprint" "ar_passives:C_0402"
-			(at 73.66 78.74 0)
+			(at 96.52 88.9 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7838,7 +8449,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 73.66 78.74 0)
+			(at 96.52 88.9 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7849,7 +8460,7 @@
 			)
 		)
 		(property "Description" "Ceramic Capacitor, 100nF, ±10%, 10V, X7R, 0402"
-			(at 73.66 78.74 0)
+			(at 96.52 88.9 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7860,7 +8471,7 @@
 			)
 		)
 		(property "IPN" "CAPC-00573"
-			(at 73.66 78.74 0)
+			(at 96.52 88.9 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7871,7 +8482,7 @@
 			)
 		)
 		(property "PartNumber" "GRM155R71A104K"
-			(at 73.66 78.74 0)
+			(at 96.52 88.9 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7882,7 +8493,7 @@
 			)
 		)
 		(property "Manufacturer" "Murata"
-			(at 73.66 78.74 0)
+			(at 96.52 88.9 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7893,7 +8504,7 @@
 			)
 		)
 		(property "Type" "Ceramic"
-			(at 73.66 78.74 0)
+			(at 96.52 88.9 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7904,7 +8515,7 @@
 			)
 		)
 		(property "Tolerance" "10%"
-			(at 73.66 78.74 0)
+			(at 96.52 88.9 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7915,7 +8526,7 @@
 			)
 		)
 		(property "Voltage" "10V"
-			(at 71.12 81.2862 0)
+			(at 93.98 91.4462 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7926,7 +8537,7 @@
 			)
 		)
 		(property "Material" "X7R"
-			(at 73.66 78.74 0)
+			(at 96.52 88.9 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7937,10 +8548,10 @@
 			)
 		)
 		(pin "2"
-			(uuid "d436cd7d-9cfd-456d-a9bd-a06ce4e58ec8")
+			(uuid "8a7b5bae-b4fb-40d6-b3bd-ac33cc0d50e4")
 		)
 		(pin "1"
-			(uuid "90a9845f-866c-49d8-85cb-6fdf6cf6c868")
+			(uuid "4ee1c1f2-2021-4ba1-bd77-5570edc28c66")
 		)
 		(instances
 			(project "spectre"
@@ -7948,12 +8559,16 @@
 					(reference "C15")
 					(unit 1)
 				)
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/e8db61a9-ea8d-4997-90db-6d7c76c362cb"
+					(reference "C24")
+					(unit 1)
+				)
 			)
 		)
 	)
 	(symbol
 		(lib_id "#bt-db:capacitor/CAPC-00622")
-		(at 62.23 57.15 0)
+		(at 85.09 67.31 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -7964,7 +8579,7 @@
 		(dnp no)
 		(uuid "a973720c-a477-4c81-bc5b-ec69adb9a756")
 		(property "Reference" "C12"
-			(at 59.69 54.6162 0)
+			(at 82.55 64.7762 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7975,7 +8590,7 @@
 			)
 		)
 		(property "Value" "1uF"
-			(at 59.69 57.1562 0)
+			(at 82.55 67.3162 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7986,7 +8601,7 @@
 			)
 		)
 		(property "Footprint" "ar_passives:C_0402"
-			(at 62.23 57.15 0)
+			(at 85.09 67.31 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7997,7 +8612,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 62.23 57.15 0)
+			(at 85.09 67.31 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8008,7 +8623,7 @@
 			)
 		)
 		(property "Description" "Ceramic Capacitor, 1uF, ±10%, 6.3V, X7R, 0402"
-			(at 62.23 57.15 0)
+			(at 85.09 67.31 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8019,7 +8634,7 @@
 			)
 		)
 		(property "IPN" "CAPC-00622"
-			(at 62.23 57.15 0)
+			(at 85.09 67.31 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8030,7 +8645,7 @@
 			)
 		)
 		(property "PartNumber" "GRM155R70J105K"
-			(at 62.23 57.15 0)
+			(at 85.09 67.31 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8041,7 +8656,7 @@
 			)
 		)
 		(property "Manufacturer" "Murata"
-			(at 62.23 57.15 0)
+			(at 85.09 67.31 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8052,7 +8667,7 @@
 			)
 		)
 		(property "Type" "Ceramic"
-			(at 62.23 57.15 0)
+			(at 85.09 67.31 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8063,7 +8678,7 @@
 			)
 		)
 		(property "Tolerance" "10%"
-			(at 62.23 57.15 0)
+			(at 85.09 67.31 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8074,7 +8689,7 @@
 			)
 		)
 		(property "Voltage" "6.3V"
-			(at 59.69 59.6962 0)
+			(at 82.55 69.8562 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8085,7 +8700,7 @@
 			)
 		)
 		(property "Material" "X7R"
-			(at 62.23 57.15 0)
+			(at 85.09 67.31 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8096,10 +8711,10 @@
 			)
 		)
 		(pin "2"
-			(uuid "25a3447f-9912-47e4-a3c3-76973ac92775")
+			(uuid "ce4aecb6-6015-4c9e-a36c-e5f925e0d822")
 		)
 		(pin "1"
-			(uuid "17073a37-9fce-4c37-b020-78ae19daa065")
+			(uuid "bf9139db-fe5d-4f14-8c54-0a55c0345fac")
 		)
 		(instances
 			(project "spectre"
@@ -8107,12 +8722,16 @@
 					(reference "C12")
 					(unit 1)
 				)
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/e8db61a9-ea8d-4997-90db-6d7c76c362cb"
+					(reference "C22")
+					(unit 1)
+				)
 			)
 		)
 	)
 	(symbol
 		(lib_id "#bt-db:capacitor/CAPC-00415")
-		(at 172.72 82.55 0)
+		(at 203.2 92.71 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -8123,7 +8742,7 @@
 		(fields_autoplaced yes)
 		(uuid "afca2760-ccec-4ae9-bf13-f3d39dd4f9c1")
 		(property "Reference" "CLF2"
-			(at 175.26 80.0162 0)
+			(at 205.74 90.1762 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8134,7 +8753,7 @@
 			)
 		)
 		(property "Value" "0pF"
-			(at 175.26 82.5562 0)
+			(at 205.74 92.7162 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8145,7 +8764,7 @@
 			)
 		)
 		(property "Footprint" "ar_passives:C_0402"
-			(at 172.72 82.55 0)
+			(at 203.2 92.71 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8156,7 +8775,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 172.72 82.55 0)
+			(at 203.2 92.71 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8167,7 +8786,7 @@
 			)
 		)
 		(property "Description" "Generic Ceramic Capacitor, vvvF, ±x%, uuV, DDD, 0402"
-			(at 172.72 82.55 0)
+			(at 203.2 92.71 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8178,7 +8797,7 @@
 			)
 		)
 		(property "IPN" "CAPC-00415"
-			(at 172.72 82.55 0)
+			(at 203.2 92.71 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8189,7 +8808,7 @@
 			)
 		)
 		(property "PartNumber" "0402_TBD"
-			(at 172.72 82.55 0)
+			(at 203.2 92.71 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8200,7 +8819,7 @@
 			)
 		)
 		(property "Manufacturer" "TBD"
-			(at 172.72 82.55 0)
+			(at 203.2 92.71 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8211,7 +8830,7 @@
 			)
 		)
 		(property "Type" "Ceramic"
-			(at 172.72 82.55 0)
+			(at 203.2 92.71 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8222,7 +8841,7 @@
 			)
 		)
 		(property "Tolerance" "TBD"
-			(at 172.72 82.55 0)
+			(at 203.2 92.71 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8233,7 +8852,7 @@
 			)
 		)
 		(property "Voltage" "TBD"
-			(at 175.26 85.0962 0)
+			(at 205.74 95.2562 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8244,7 +8863,7 @@
 			)
 		)
 		(property "Material" "TBD"
-			(at 172.72 82.55 0)
+			(at 203.2 92.71 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8255,10 +8874,10 @@
 			)
 		)
 		(pin "2"
-			(uuid "99079c9b-d6f3-41a4-a456-26f980e5ceaa")
+			(uuid "40136be9-b08f-4bd4-9560-cd911253b1ba")
 		)
 		(pin "1"
-			(uuid "00269530-1ef5-43ca-8e0b-94b3e5bc3d00")
+			(uuid "0a287927-7f75-4ab3-a5c7-41acfb8d5c14")
 		)
 		(instances
 			(project "spectre"
@@ -8266,12 +8885,16 @@
 					(reference "CLF2")
 					(unit 1)
 				)
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/e8db61a9-ea8d-4997-90db-6d7c76c362cb"
+					(reference "CLF6")
+					(unit 1)
+				)
 			)
 		)
 	)
 	(symbol
 		(lib_id "#bt-db:capacitor/CAPC-00573")
-		(at 80.01 99.06 90)
+		(at 99.06 107.95 90)
 		(mirror x)
 		(unit 1)
 		(body_style 1)
@@ -8283,7 +8906,7 @@
 		(fields_autoplaced yes)
 		(uuid "b86f8858-523a-4eee-a1cf-e82eeb38149a")
 		(property "Reference" "C2"
-			(at 80.0163 102.87 90)
+			(at 99.0663 111.76 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8293,7 +8916,7 @@
 			)
 		)
 		(property "Value" "100nF"
-			(at 80.0163 105.41 90)
+			(at 99.0663 114.3 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8303,7 +8926,7 @@
 			)
 		)
 		(property "Footprint" "ar_passives:C_0402"
-			(at 80.01 99.06 0)
+			(at 99.06 107.95 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8314,7 +8937,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 80.01 99.06 0)
+			(at 99.06 107.95 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8325,7 +8948,7 @@
 			)
 		)
 		(property "Description" "Ceramic Capacitor, 100nF, ±10%, 10V, X7R, 0402"
-			(at 80.01 99.06 0)
+			(at 99.06 107.95 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8336,7 +8959,7 @@
 			)
 		)
 		(property "IPN" "CAPC-00573"
-			(at 80.01 99.06 0)
+			(at 99.06 107.95 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8347,7 +8970,7 @@
 			)
 		)
 		(property "PartNumber" "GRM155R71A104K"
-			(at 80.01 99.06 0)
+			(at 99.06 107.95 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8358,7 +8981,7 @@
 			)
 		)
 		(property "Manufacturer" "Murata"
-			(at 80.01 99.06 0)
+			(at 99.06 107.95 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8369,7 +8992,7 @@
 			)
 		)
 		(property "Type" "Ceramic"
-			(at 80.01 99.06 0)
+			(at 99.06 107.95 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8380,7 +9003,7 @@
 			)
 		)
 		(property "Tolerance" "10%"
-			(at 80.01 99.06 0)
+			(at 99.06 107.95 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8391,7 +9014,7 @@
 			)
 		)
 		(property "Voltage" "10V"
-			(at 80.0163 102.87 90)
+			(at 99.0663 111.76 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8402,7 +9025,7 @@
 			)
 		)
 		(property "Material" "X7R"
-			(at 80.01 99.06 0)
+			(at 99.06 107.95 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8413,10 +9036,10 @@
 			)
 		)
 		(pin "2"
-			(uuid "a77141cc-2cf5-4253-b863-17fc28ae5c4b")
+			(uuid "89735a6a-41c8-4fb9-8100-a5abecd69b77")
 		)
 		(pin "1"
-			(uuid "32a688ed-2024-4570-86b9-7f1bd1feb18b")
+			(uuid "156d3dff-56c8-433c-86ef-f07fc3f014c3")
 		)
 		(instances
 			(project "spectre"
@@ -8424,12 +9047,16 @@
 					(reference "C2")
 					(unit 1)
 				)
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/e8db61a9-ea8d-4997-90db-6d7c76c362cb"
+					(reference "C25")
+					(unit 1)
+				)
 			)
 		)
 	)
 	(symbol
 		(lib_id "#bt-db:capacitor/CAPC-00667")
-		(at 209.55 116.84 0)
+		(at 238.76 127 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -8439,7 +9066,7 @@
 		(dnp no)
 		(uuid "bc4f19f3-8236-45a9-b4ed-7952040b4571")
 		(property "Reference" "C4"
-			(at 212.09 114.3062 0)
+			(at 241.3 124.4662 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8450,7 +9077,7 @@
 			)
 		)
 		(property "Value" "10uF"
-			(at 212.09 116.8462 0)
+			(at 241.3 127.0062 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8461,7 +9088,7 @@
 			)
 		)
 		(property "Footprint" "ar_passives:C_0402"
-			(at 209.55 116.84 0)
+			(at 238.76 127 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8472,7 +9099,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 209.55 116.84 0)
+			(at 238.76 127 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8483,7 +9110,7 @@
 			)
 		)
 		(property "Description" "Ceramic Capacitor, 10uF, ±20%, 6.3V, X5R, 0402"
-			(at 209.55 116.84 0)
+			(at 238.76 127 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8494,7 +9121,7 @@
 			)
 		)
 		(property "IPN" "CAPC-00667"
-			(at 209.55 116.84 0)
+			(at 238.76 127 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8505,7 +9132,7 @@
 			)
 		)
 		(property "PartNumber" "GRM155R60J106M"
-			(at 209.55 116.84 0)
+			(at 238.76 127 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8516,7 +9143,7 @@
 			)
 		)
 		(property "Manufacturer" "Murata"
-			(at 209.55 116.84 0)
+			(at 238.76 127 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8527,7 +9154,7 @@
 			)
 		)
 		(property "Type" "Ceramic"
-			(at 209.55 116.84 0)
+			(at 238.76 127 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8538,7 +9165,7 @@
 			)
 		)
 		(property "Tolerance" "20%"
-			(at 209.55 116.84 0)
+			(at 238.76 127 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8549,7 +9176,7 @@
 			)
 		)
 		(property "Voltage" "6.3V"
-			(at 212.09 119.3862 0)
+			(at 241.3 129.5462 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8560,7 +9187,7 @@
 			)
 		)
 		(property "Material" "X5R"
-			(at 209.55 116.84 0)
+			(at 238.76 127 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8571,10 +9198,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "35fdf171-2b11-4f1f-a116-8395ca82c91a")
+			(uuid "413104e0-f01a-49a2-9321-d84997d69a68")
 		)
 		(pin "2"
-			(uuid "e682dfaf-250e-4763-96d4-e53dea98d3f9")
+			(uuid "bf43e8ba-d1b7-4f00-b6f4-7a449d9d6247")
 		)
 		(instances
 			(project "spectre"
@@ -8582,12 +9209,16 @@
 					(reference "C4")
 					(unit 1)
 				)
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/e8db61a9-ea8d-4997-90db-6d7c76c362cb"
+					(reference "C38")
+					(unit 1)
+				)
 			)
 		)
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 172.72 86.36 0)
+		(at 203.2 96.52 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -8598,7 +9229,7 @@
 		(fields_autoplaced yes)
 		(uuid "bf96bd76-6dce-4d84-8be8-babd8987359f")
 		(property "Reference" "#PWR017"
-			(at 172.72 92.71 0)
+			(at 203.2 102.87 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8609,7 +9240,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 172.72 91.44 0)
+			(at 203.2 101.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8620,7 +9251,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 172.72 86.36 0)
+			(at 203.2 96.52 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8631,7 +9262,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 172.72 86.36 0)
+			(at 203.2 96.52 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8642,7 +9273,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 172.72 86.36 0)
+			(at 203.2 96.52 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8653,7 +9284,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "04ed6047-bd0c-4d53-a026-722bf34caf80")
+			(uuid "41e9a6ba-ca5a-41d9-b997-4d9c8646c671")
 		)
 		(instances
 			(project "spectre"
@@ -8661,12 +9292,16 @@
 					(reference "#PWR017")
 					(unit 1)
 				)
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/e8db61a9-ea8d-4997-90db-6d7c76c362cb"
+					(reference "#PWR035")
+					(unit 1)
+				)
 			)
 		)
 	)
 	(symbol
 		(lib_id "#bt-db:capacitor/CAPC-00514")
-		(at 140.97 116.84 0)
+		(at 170.18 127 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -8676,7 +9311,7 @@
 		(dnp no)
 		(uuid "bf9b90a6-2630-401a-9d26-8363c2e8c2e0")
 		(property "Reference" "C9"
-			(at 143.51 114.3062 0)
+			(at 172.72 124.4662 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8687,7 +9322,7 @@
 			)
 		)
 		(property "Value" "10nF"
-			(at 143.51 116.8462 0)
+			(at 172.72 127.0062 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8698,7 +9333,7 @@
 			)
 		)
 		(property "Footprint" "ar_passives:C_0402"
-			(at 140.97 116.84 0)
+			(at 170.18 127 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8709,7 +9344,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 140.97 116.84 0)
+			(at 170.18 127 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8720,7 +9355,7 @@
 			)
 		)
 		(property "Description" "Ceramic Capacitor, 10nF, ±10%, 16V, X7R, 0402"
-			(at 140.97 116.84 0)
+			(at 170.18 127 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8731,7 +9366,7 @@
 			)
 		)
 		(property "IPN" "CAPC-00514"
-			(at 140.97 116.84 0)
+			(at 170.18 127 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8742,7 +9377,7 @@
 			)
 		)
 		(property "PartNumber" "GRM155R71C103K"
-			(at 140.97 116.84 0)
+			(at 170.18 127 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8753,7 +9388,7 @@
 			)
 		)
 		(property "Manufacturer" "Murata"
-			(at 140.97 116.84 0)
+			(at 170.18 127 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8764,7 +9399,7 @@
 			)
 		)
 		(property "Type" "Ceramic"
-			(at 140.97 116.84 0)
+			(at 170.18 127 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8775,7 +9410,7 @@
 			)
 		)
 		(property "Tolerance" "10%"
-			(at 140.97 116.84 0)
+			(at 170.18 127 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8786,7 +9421,7 @@
 			)
 		)
 		(property "Voltage" "16V"
-			(at 143.51 119.3862 0)
+			(at 172.72 129.5462 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8797,7 +9432,7 @@
 			)
 		)
 		(property "Material" "X7R"
-			(at 140.97 116.84 0)
+			(at 170.18 127 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8808,10 +9443,10 @@
 			)
 		)
 		(pin "2"
-			(uuid "a271bdc6-a43f-472d-a306-157dc345a3af")
+			(uuid "617ba377-984e-4127-aafa-2091a0807b4e")
 		)
 		(pin "1"
-			(uuid "37ec2511-afe5-43e6-a799-53bbed7dd4a9")
+			(uuid "fe3c4036-2a7d-424c-83ac-8810abf7d876")
 		)
 		(instances
 			(project "spectre"
@@ -8819,12 +9454,16 @@
 					(reference "C9")
 					(unit 1)
 				)
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/e8db61a9-ea8d-4997-90db-6d7c76c362cb"
+					(reference "C28")
+					(unit 1)
+				)
 			)
 		)
 	)
 	(symbol
 		(lib_id "power:VCC")
-		(at 73.66 71.12 0)
+		(at 96.52 81.28 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -8835,7 +9474,7 @@
 		(fields_autoplaced yes)
 		(uuid "c01dd422-3434-4e64-9df3-82b46eca6993")
 		(property "Reference" "#PWR020"
-			(at 73.66 74.93 0)
+			(at 96.52 85.09 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8846,7 +9485,7 @@
 			)
 		)
 		(property "Value" "LO1_3V3_BUF"
-			(at 73.66 66.04 0)
+			(at 96.52 76.2 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8856,7 +9495,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 73.66 71.12 0)
+			(at 96.52 81.28 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8867,7 +9506,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 73.66 71.12 0)
+			(at 96.52 81.28 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8878,7 +9517,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"VCC\""
-			(at 73.66 71.12 0)
+			(at 96.52 81.28 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8889,7 +9528,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "c88e74a9-7aa0-42bb-86c6-e3c942ce3092")
+			(uuid "ed2f83b9-7a17-468a-b0ce-ee1fcbc68501")
 		)
 		(instances
 			(project "spectre"
@@ -8897,12 +9536,16 @@
 					(reference "#PWR020")
 					(unit 1)
 				)
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/e8db61a9-ea8d-4997-90db-6d7c76c362cb"
+					(reference "#PWR026")
+					(unit 1)
+				)
 			)
 		)
 	)
 	(symbol
 		(lib_id "#bt-db:capacitor/CAPC-00613")
-		(at 163.83 116.84 180)
+		(at 193.04 127 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -8912,7 +9555,7 @@
 		(dnp no)
 		(uuid "c3c2f5dc-c932-4f28-82d2-b5aa87185035")
 		(property "Reference" "C5"
-			(at 166.37 114.2935 0)
+			(at 195.58 124.4535 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8923,7 +9566,7 @@
 			)
 		)
 		(property "Value" "470nF"
-			(at 166.37 116.8335 0)
+			(at 195.58 126.9935 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8934,7 +9577,7 @@
 			)
 		)
 		(property "Footprint" "ar_passives:C_0402"
-			(at 163.83 116.84 0)
+			(at 193.04 127 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8945,7 +9588,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 163.83 116.84 0)
+			(at 193.04 127 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8956,7 +9599,7 @@
 			)
 		)
 		(property "Description" "Ceramic Capacitor, 470nF, ±10%, 10V, X7R, 0402"
-			(at 163.83 116.84 0)
+			(at 193.04 127 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8967,7 +9610,7 @@
 			)
 		)
 		(property "IPN" "CAPC-00613"
-			(at 163.83 116.84 0)
+			(at 193.04 127 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8978,7 +9621,7 @@
 			)
 		)
 		(property "PartNumber" "GRM155R71A474K"
-			(at 163.83 116.84 0)
+			(at 193.04 127 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8989,7 +9632,7 @@
 			)
 		)
 		(property "Manufacturer" "Murata"
-			(at 163.83 116.84 0)
+			(at 193.04 127 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9000,7 +9643,7 @@
 			)
 		)
 		(property "Type" "Ceramic"
-			(at 163.83 116.84 0)
+			(at 193.04 127 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9011,7 +9654,7 @@
 			)
 		)
 		(property "Tolerance" "10%"
-			(at 163.83 116.84 0)
+			(at 193.04 127 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9022,7 +9665,7 @@
 			)
 		)
 		(property "Voltage" "10V"
-			(at 166.37 119.3735 0)
+			(at 195.58 129.5335 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9033,7 +9676,7 @@
 			)
 		)
 		(property "Material" "X7R"
-			(at 163.83 116.84 0)
+			(at 193.04 127 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9044,10 +9687,10 @@
 			)
 		)
 		(pin "2"
-			(uuid "1580fc66-fa2a-48ed-877e-5cd0f0aca331")
+			(uuid "564215cd-2587-4f5d-ac53-3c8095c1e6fc")
 		)
 		(pin "1"
-			(uuid "25334396-9eaa-4ea3-9eb4-a308c7aea019")
+			(uuid "86eb38d4-c1af-4466-b9b1-f1ed77bf61be")
 		)
 		(instances
 			(project "spectre"
@@ -9055,12 +9698,16 @@
 					(reference "C5")
 					(unit 1)
 				)
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/e8db61a9-ea8d-4997-90db-6d7c76c362cb"
+					(reference "C34")
+					(unit 1)
+				)
 			)
 		)
 	)
 	(symbol
 		(lib_id "#bt-db:capacitor/CAPC-00573")
-		(at 39.37 57.15 0)
+		(at 62.23 67.31 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -9070,7 +9717,7 @@
 		(dnp no)
 		(uuid "c3c74557-a82b-496e-ae2a-4a2419c05931")
 		(property "Reference" "C10"
-			(at 36.83 54.6162 0)
+			(at 59.69 64.7762 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9081,7 +9728,7 @@
 			)
 		)
 		(property "Value" "100nF"
-			(at 36.83 57.1562 0)
+			(at 59.69 67.3162 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9092,854 +9739,6 @@
 			)
 		)
 		(property "Footprint" "ar_passives:C_0402"
-			(at 39.37 57.15 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 39.37 57.15 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Ceramic Capacitor, 100nF, ±10%, 10V, X7R, 0402"
-			(at 39.37 57.15 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "IPN" "CAPC-00573"
-			(at 39.37 57.15 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "PartNumber" "GRM155R71A104K"
-			(at 39.37 57.15 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Manufacturer" "Murata"
-			(at 39.37 57.15 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Type" "Ceramic"
-			(at 39.37 57.15 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Tolerance" "10%"
-			(at 39.37 57.15 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Voltage" "10V"
-			(at 36.83 59.6962 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Material" "X7R"
-			(at 39.37 57.15 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "ce26f082-e517-4ae9-b9c6-5e60647c23b0")
-		)
-		(pin "1"
-			(uuid "68f30a5c-e73f-4103-8bf6-3d0e4e9e9242")
-		)
-		(instances
-			(project "spectre"
-				(path "/e2b3a745-ca2b-407e-8017-842114c52164/bfad2d43-1850-494b-b6df-f5acbe5279ae"
-					(reference "C10")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "#bt-db:capacitor/CAPC-00622")
-		(at 85.09 57.15 0)
-		(mirror y)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "ca7a487a-ae0d-4907-a5ed-167f232c5a4d")
-		(property "Reference" "C14"
-			(at 82.55 54.6162 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "1uF"
-			(at 82.55 57.1562 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "ar_passives:C_0402"
-			(at 85.09 57.15 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 85.09 57.15 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Ceramic Capacitor, 1uF, ±10%, 6.3V, X7R, 0402"
-			(at 85.09 57.15 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "IPN" "CAPC-00622"
-			(at 85.09 57.15 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "PartNumber" "GRM155R70J105K"
-			(at 85.09 57.15 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Manufacturer" "Murata"
-			(at 85.09 57.15 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Type" "Ceramic"
-			(at 85.09 57.15 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Tolerance" "10%"
-			(at 85.09 57.15 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Voltage" "6.3V"
-			(at 82.55 59.6962 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Material" "X7R"
-			(at 85.09 57.15 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "47e9a963-c2a7-4754-8941-eeb7b4b50eb4")
-		)
-		(pin "1"
-			(uuid "fa7a52f4-b85c-438a-80be-54313856c6db")
-		)
-		(instances
-			(project "spectre"
-				(path "/e2b3a745-ca2b-407e-8017-842114c52164/bfad2d43-1850-494b-b6df-f5acbe5279ae"
-					(reference "C14")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 209.55 121.92 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "ceb2d0d3-171f-48b6-956e-ea4eade34d68")
-		(property "Reference" "#PWR08"
-			(at 209.55 128.27 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 209.55 127 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 209.55 121.92 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 209.55 121.92 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 209.55 121.92 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "e3de40e0-3d44-4ea7-b1ca-e62709c850f5")
-		)
-		(instances
-			(project "spectre"
-				(path "/e2b3a745-ca2b-407e-8017-842114c52164/bfad2d43-1850-494b-b6df-f5acbe5279ae"
-					(reference "#PWR08")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 175.26 121.92 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "d05ffd44-f882-47e2-959c-33c2fc48c288")
-		(property "Reference" "#PWR05"
-			(at 175.26 128.27 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 175.26 127 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 175.26 121.92 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 175.26 121.92 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 175.26 121.92 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "06bebd66-ee7b-4c93-bb78-38658a31e84a")
-		)
-		(instances
-			(project "spectre"
-				(path "/e2b3a745-ca2b-407e-8017-842114c52164/bfad2d43-1850-494b-b6df-f5acbe5279ae"
-					(reference "#PWR05")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "#bt-db:capacitor/CAPC-00622")
-		(at 73.66 57.15 0)
-		(mirror y)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "d4303bfd-b860-46b9-8724-fa0a66f7007f")
-		(property "Reference" "C13"
-			(at 71.12 54.6162 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "1uF"
-			(at 71.12 57.1562 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "ar_passives:C_0402"
-			(at 73.66 57.15 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 73.66 57.15 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Ceramic Capacitor, 1uF, ±10%, 6.3V, X7R, 0402"
-			(at 73.66 57.15 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "IPN" "CAPC-00622"
-			(at 73.66 57.15 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "PartNumber" "GRM155R70J105K"
-			(at 73.66 57.15 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Manufacturer" "Murata"
-			(at 73.66 57.15 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Type" "Ceramic"
-			(at 73.66 57.15 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Tolerance" "10%"
-			(at 73.66 57.15 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Voltage" "6.3V"
-			(at 71.12 59.6962 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Material" "X7R"
-			(at 73.66 57.15 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "b1261edf-12eb-4703-a321-29f239dee8d1")
-		)
-		(pin "1"
-			(uuid "e1444187-6136-42c4-a8bf-2335ea64f7e0")
-		)
-		(instances
-			(project "spectre"
-				(path "/e2b3a745-ca2b-407e-8017-842114c52164/bfad2d43-1850-494b-b6df-f5acbe5279ae"
-					(reference "C13")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "#bt-db:capacitor/CAPC-00021")
-		(at 148.59 67.31 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "e164851e-ddfe-440a-b718-21cd5c214212")
-		(property "Reference" "C18"
-			(at 144.78 66.04 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "22pF"
-			(at 152.4 66.04 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "ar_passives:C_0201"
-			(at 148.59 67.31 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 148.59 67.31 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Ceramic Capacitor, 22pF, ±5%, 25V, C0G, 0201"
-			(at 148.59 67.31 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "IPN" "CAPC-00021"
-			(at 148.59 67.31 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "PartNumber" "GRM0335C1E220J"
-			(at 148.59 67.31 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Manufacturer" "Murata"
-			(at 148.59 67.31 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Type" "Ceramic"
-			(at 148.59 67.31 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Tolerance" "5%"
-			(at 148.59 67.31 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Voltage" "25V"
-			(at 148.5963 63.5 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Material" "C0G"
-			(at 148.59 67.31 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "ce3a8243-ba4e-418a-9535-1ed1414809ac")
-		)
-		(pin "1"
-			(uuid "d716d010-12ec-4fbe-b6be-65a49b81ea6e")
-		)
-		(instances
-			(project "spectre"
-				(path "/e2b3a745-ca2b-407e-8017-842114c52164/bfad2d43-1850-494b-b6df-f5acbe5279ae"
-					(reference "C18")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 73.66 83.82 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "e21581a9-cef4-4cd2-9c6e-b46c00c57d7a")
-		(property "Reference" "#PWR09"
-			(at 73.66 90.17 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 73.66 88.9 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 73.66 83.82 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 73.66 83.82 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 73.66 83.82 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "994bdf86-ffc3-46d5-a7a5-8dbe4c4032f4")
-		)
-		(instances
-			(project "spectre"
-				(path "/e2b3a745-ca2b-407e-8017-842114c52164/bfad2d43-1850-494b-b6df-f5acbe5279ae"
-					(reference "#PWR09")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 62.23 60.96 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "f9afff8c-28b5-4a35-b3ef-fd31cf6a8521")
-		(property "Reference" "#PWR012"
 			(at 62.23 67.31 0)
 			(hide yes)
 			(show_name no)
@@ -9950,8 +9749,8 @@
 				)
 			)
 		)
-		(property "Value" "GND"
-			(at 62.23 66.04 0)
+		(property "Datasheet" ""
+			(at 62.23 67.31 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9961,8 +9760,149 @@
 				)
 			)
 		)
-		(property "Footprint" ""
-			(at 62.23 60.96 0)
+		(property "Description" "Ceramic Capacitor, 100nF, ±10%, 10V, X7R, 0402"
+			(at 62.23 67.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "IPN" "CAPC-00573"
+			(at 62.23 67.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PartNumber" "GRM155R71A104K"
+			(at 62.23 67.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Murata"
+			(at 62.23 67.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Type" "Ceramic"
+			(at 62.23 67.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Tolerance" "10%"
+			(at 62.23 67.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Voltage" "10V"
+			(at 59.69 69.8562 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Material" "X7R"
+			(at 62.23 67.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "527b924d-5a35-4df9-843b-498bf11394c9")
+		)
+		(pin "1"
+			(uuid "2c6d87c0-4519-4f84-8895-b194f2e535d7")
+		)
+		(instances
+			(project "spectre"
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/bfad2d43-1850-494b-b6df-f5acbe5279ae"
+					(reference "C10")
+					(unit 1)
+				)
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/e8db61a9-ea8d-4997-90db-6d7c76c362cb"
+					(reference "C20")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "#bt-db:capacitor/CAPC-00622")
+		(at 107.95 67.31 0)
+		(mirror y)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "ca7a487a-ae0d-4907-a5ed-167f232c5a4d")
+		(property "Reference" "C14"
+			(at 105.41 64.7762 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1uF"
+			(at 105.41 67.3162 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "ar_passives:C_0402"
+			(at 107.95 67.31 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9973,7 +9913,170 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 62.23 60.96 0)
+			(at 107.95 67.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Ceramic Capacitor, 1uF, ±10%, 6.3V, X7R, 0402"
+			(at 107.95 67.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "IPN" "CAPC-00622"
+			(at 107.95 67.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PartNumber" "GRM155R70J105K"
+			(at 107.95 67.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Murata"
+			(at 107.95 67.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Type" "Ceramic"
+			(at 107.95 67.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Tolerance" "10%"
+			(at 107.95 67.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Voltage" "6.3V"
+			(at 105.41 69.8562 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Material" "X7R"
+			(at 107.95 67.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "1620f2ba-b047-4324-aa8a-e8215caf7da3")
+		)
+		(pin "1"
+			(uuid "f53bb385-5274-4e15-8256-6ad2536d7a5d")
+		)
+		(instances
+			(project "spectre"
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/bfad2d43-1850-494b-b6df-f5acbe5279ae"
+					(reference "C14")
+					(unit 1)
+				)
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/e8db61a9-ea8d-4997-90db-6d7c76c362cb"
+					(reference "C27")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 238.76 132.08 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ceb2d0d3-171f-48b6-956e-ea4eade34d68")
+		(property "Reference" "#PWR08"
+			(at 238.76 138.43 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 238.76 137.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 238.76 132.08 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 238.76 132.08 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9984,7 +10087,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 62.23 60.96 0)
+			(at 238.76 132.08 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9995,12 +10098,16 @@
 			)
 		)
 		(pin "1"
-			(uuid "59e9a390-941b-42c4-8cdd-945bf8db7d47")
+			(uuid "11701086-9f79-48af-8c31-925c6a9ad836")
 		)
 		(instances
 			(project "spectre"
 				(path "/e2b3a745-ca2b-407e-8017-842114c52164/bfad2d43-1850-494b-b6df-f5acbe5279ae"
-					(reference "#PWR012")
+					(reference "#PWR08")
+					(unit 1)
+				)
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/e8db61a9-ea8d-4997-90db-6d7c76c362cb"
+					(reference "#PWR039")
 					(unit 1)
 				)
 			)
@@ -10008,7 +10115,579 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 39.37 60.96 0)
+		(at 204.47 132.08 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d05ffd44-f882-47e2-959c-33c2fc48c288")
+		(property "Reference" "#PWR05"
+			(at 204.47 138.43 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 204.47 137.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 204.47 132.08 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 204.47 132.08 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 204.47 132.08 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "c972a72e-ac9d-491c-8495-fcf1fbfc09c7")
+		)
+		(instances
+			(project "spectre"
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/bfad2d43-1850-494b-b6df-f5acbe5279ae"
+					(reference "#PWR05")
+					(unit 1)
+				)
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/e8db61a9-ea8d-4997-90db-6d7c76c362cb"
+					(reference "#PWR036")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "#bt-db:capacitor/CAPC-00622")
+		(at 96.52 67.31 0)
+		(mirror y)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "d4303bfd-b860-46b9-8724-fa0a66f7007f")
+		(property "Reference" "C13"
+			(at 93.98 64.7762 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1uF"
+			(at 93.98 67.3162 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "ar_passives:C_0402"
+			(at 96.52 67.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 96.52 67.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Ceramic Capacitor, 1uF, ±10%, 6.3V, X7R, 0402"
+			(at 96.52 67.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "IPN" "CAPC-00622"
+			(at 96.52 67.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PartNumber" "GRM155R70J105K"
+			(at 96.52 67.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Murata"
+			(at 96.52 67.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Type" "Ceramic"
+			(at 96.52 67.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Tolerance" "10%"
+			(at 96.52 67.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Voltage" "6.3V"
+			(at 93.98 69.8562 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Material" "X7R"
+			(at 96.52 67.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "34c98671-2f61-470f-bceb-9a1ecb92b0f5")
+		)
+		(pin "1"
+			(uuid "3807c6dd-924e-47bd-94ba-d28ff441ea32")
+		)
+		(instances
+			(project "spectre"
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/bfad2d43-1850-494b-b6df-f5acbe5279ae"
+					(reference "C13")
+					(unit 1)
+				)
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/e8db61a9-ea8d-4997-90db-6d7c76c362cb"
+					(reference "C23")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "#bt-db:capacitor/CAPC-00021")
+		(at 176.53 77.47 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "e164851e-ddfe-440a-b718-21cd5c214212")
+		(property "Reference" "C18"
+			(at 172.72 76.2 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "22pF"
+			(at 180.34 76.2 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "ar_passives:C_0201"
+			(at 176.53 77.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 176.53 77.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Ceramic Capacitor, 22pF, ±5%, 25V, C0G, 0201"
+			(at 176.53 77.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "IPN" "CAPC-00021"
+			(at 176.53 77.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PartNumber" "GRM0335C1E220J"
+			(at 176.53 77.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Murata"
+			(at 176.53 77.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Type" "Ceramic"
+			(at 176.53 77.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Tolerance" "5%"
+			(at 176.53 77.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Voltage" "25V"
+			(at 176.5363 73.66 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Material" "C0G"
+			(at 176.53 77.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "c7ae8584-1986-4442-8117-0848ccac7664")
+		)
+		(pin "1"
+			(uuid "8ed81ef9-2f49-434d-aa5c-b5247bdb343f")
+		)
+		(instances
+			(project "spectre"
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/bfad2d43-1850-494b-b6df-f5acbe5279ae"
+					(reference "C18")
+					(unit 1)
+				)
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/e8db61a9-ea8d-4997-90db-6d7c76c362cb"
+					(reference "C30")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 96.52 93.98 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e21581a9-cef4-4cd2-9c6e-b46c00c57d7a")
+		(property "Reference" "#PWR09"
+			(at 96.52 100.33 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 96.52 99.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 96.52 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 96.52 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 96.52 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "1d6f0e53-48fc-4602-a09c-209155668ed4")
+		)
+		(instances
+			(project "spectre"
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/bfad2d43-1850-494b-b6df-f5acbe5279ae"
+					(reference "#PWR09")
+					(unit 1)
+				)
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/e8db61a9-ea8d-4997-90db-6d7c76c362cb"
+					(reference "#PWR027")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 85.09 71.12 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f9afff8c-28b5-4a35-b3ef-fd31cf6a8521")
+		(property "Reference" "#PWR012"
+			(at 85.09 77.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 85.09 76.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 85.09 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 85.09 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 85.09 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "0a1142bc-c525-4345-b689-7a3cc0266517")
+		)
+		(instances
+			(project "spectre"
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/bfad2d43-1850-494b-b6df-f5acbe5279ae"
+					(reference "#PWR012")
+					(unit 1)
+				)
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/e8db61a9-ea8d-4997-90db-6d7c76c362cb"
+					(reference "#PWR024")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 62.23 71.12 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -10019,7 +10698,7 @@
 		(fields_autoplaced yes)
 		(uuid "fb5ac773-1fcf-4e71-822f-61fecddf8976")
 		(property "Reference" "#PWR014"
-			(at 39.37 67.31 0)
+			(at 62.23 77.47 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10030,7 +10709,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 39.37 66.04 0)
+			(at 62.23 76.2 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10041,7 +10720,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 39.37 60.96 0)
+			(at 62.23 71.12 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10052,7 +10731,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 39.37 60.96 0)
+			(at 62.23 71.12 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10063,7 +10742,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 39.37 60.96 0)
+			(at 62.23 71.12 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10074,7 +10753,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "15b3914b-8920-4648-b2c8-ab76cf12909c")
+			(uuid "a6ecf4c1-c62a-47e3-b0fe-73c380beb266")
 		)
 		(instances
 			(project "spectre"
@@ -10082,12 +10761,16 @@
 					(reference "#PWR014")
 					(unit 1)
 				)
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/e8db61a9-ea8d-4997-90db-6d7c76c362cb"
+					(reference "#PWR022")
+					(unit 1)
+				)
 			)
 		)
 	)
 	(symbol
 		(lib_id "#bt-db:capacitor/CAPC-00415")
-		(at 140.97 82.55 0)
+		(at 171.45 92.71 0)
 		(mirror x)
 		(unit 1)
 		(body_style 1)
@@ -10099,7 +10782,7 @@
 		(fields_autoplaced yes)
 		(uuid "ffa102b7-a3cf-4ed5-9bd8-126ac5bf4920")
 		(property "Reference" "CLF3"
-			(at 138.43 80.0035 0)
+			(at 168.91 90.1635 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10110,7 +10793,7 @@
 			)
 		)
 		(property "Value" "0pF"
-			(at 138.43 82.5435 0)
+			(at 168.91 92.7035 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10121,7 +10804,7 @@
 			)
 		)
 		(property "Footprint" "ar_passives:C_0402"
-			(at 140.97 82.55 0)
+			(at 171.45 92.71 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10132,7 +10815,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 140.97 82.55 0)
+			(at 171.45 92.71 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10143,7 +10826,7 @@
 			)
 		)
 		(property "Description" "Generic Ceramic Capacitor, vvvF, ±x%, uuV, DDD, 0402"
-			(at 140.97 82.55 0)
+			(at 171.45 92.71 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10154,7 +10837,7 @@
 			)
 		)
 		(property "IPN" "CAPC-00415"
-			(at 140.97 82.55 0)
+			(at 171.45 92.71 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10165,7 +10848,7 @@
 			)
 		)
 		(property "PartNumber" "0402_TBD"
-			(at 140.97 82.55 0)
+			(at 171.45 92.71 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10176,7 +10859,7 @@
 			)
 		)
 		(property "Manufacturer" "TBD"
-			(at 140.97 82.55 0)
+			(at 171.45 92.71 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10187,7 +10870,7 @@
 			)
 		)
 		(property "Type" "Ceramic"
-			(at 140.97 82.55 0)
+			(at 171.45 92.71 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10198,7 +10881,7 @@
 			)
 		)
 		(property "Tolerance" "TBD"
-			(at 140.97 82.55 0)
+			(at 171.45 92.71 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10209,7 +10892,7 @@
 			)
 		)
 		(property "Voltage" "TBD"
-			(at 138.43 85.0835 0)
+			(at 168.91 95.2435 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10220,7 +10903,7 @@
 			)
 		)
 		(property "Material" "TBD"
-			(at 140.97 82.55 0)
+			(at 171.45 92.71 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10231,15 +10914,19 @@
 			)
 		)
 		(pin "2"
-			(uuid "ebd22803-10e8-4d52-8b0d-1ae4bf6b1b40")
+			(uuid "a1c49bda-e195-4ed3-b000-c70ee6525f6a")
 		)
 		(pin "1"
-			(uuid "a3245ba9-0261-48bf-81b6-5c539f941165")
+			(uuid "31198d5a-9549-4f7f-a4c7-9db0d4c4c1b3")
 		)
 		(instances
 			(project "spectre"
 				(path "/e2b3a745-ca2b-407e-8017-842114c52164/bfad2d43-1850-494b-b6df-f5acbe5279ae"
 					(reference "CLF3")
+					(unit 1)
+				)
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/e8db61a9-ea8d-4997-90db-6d7c76c362cb"
+					(reference "CLF4")
 					(unit 1)
 				)
 			)

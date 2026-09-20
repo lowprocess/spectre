@@ -620,7 +620,17 @@
       "sort_asc": true,
       "sort_field": "Reference"
     },
-    "bus_aliases": {},
+    "bus_aliases": {
+      "SYN_CTRL": [
+        "SCK",
+        "MUX",
+        "SDI",
+        "~{CS}",
+        "CE",
+        "RC",
+        "RD"
+      ]
+    },
     "connection_grid_size": 50.0,
     "drawing": {
       "dashed_lines_dash_length_ratio": 12.0,
@@ -661,7 +671,7 @@
         "uuid": "e2b3a745-ca2b-407e-8017-842114c52164"
       }
     ],
-    "used_designators": "U1-4,Y1-2,#PWR1-20,FB1,C1-22,D1-3,L1-3,R1-2,J1,FL1,RN1,RV1,TH1",
+    "used_designators": "RLF4-7,CLF4-9,C1-57,U1-5,D1-3,R1-2,J1,Y1-2,#PWR1-58,FL1,RN1,FB1,L1-3,RV1,TH1",
     "variants": []
   },
   "sheets": [
@@ -702,7 +712,7 @@
       "DEBUG"
     ],
     [
-      "b2640770-48bb-47e1-b43a-de7a613bb406",
+      "e8db61a9-ea8d-4997-90db-6d7c76c362cb",
       "LO2"
     ]
   ],

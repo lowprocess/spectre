@@ -7,7 +7,7 @@
 	(lib_symbols)
 	(bezier
 		(pts
-			(xy 93.98 96.52) (xy 96.52 92.71) (xy 96.52 100.33) (xy 99.06 96.52)
+			(xy 67.31 95.25) (xy 69.85 91.44) (xy 69.85 99.06) (xy 72.39 95.25)
 		)
 		(stroke
 			(width 0)
@@ -56,7 +56,7 @@
 		(uuid "44107c8b-f776-403d-b751-dcded9ab457c")
 	)
 	(circle
-		(center 110.49 96.52)
+		(center 69.85 120.65)
 		(radius 3.5921)
 		(stroke
 			(width 0)
@@ -169,7 +169,7 @@
 	)
 	(bezier
 		(pts
-			(xy 107.95 96.52) (xy 110.49 92.71) (xy 110.49 100.33) (xy 113.03 96.52)
+			(xy 67.31 120.65) (xy 69.85 116.84) (xy 69.85 124.46) (xy 72.39 120.65)
 		)
 		(stroke
 			(width 0)
@@ -181,7 +181,7 @@
 		(uuid "da755e1d-f40f-46d5-8dd2-5c739c77699d")
 	)
 	(circle
-		(center 96.52 96.52)
+		(center 69.85 95.25)
 		(radius 3.5921)
 		(stroke
 			(width 0)
@@ -1565,51 +1565,6 @@
 		)
 	)
 	(sheet
-		(at 104.14 90.17)
-		(size 12.7 12.7)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(fill
-			(color 0 0 0 0)
-		)
-		(uuid "b2640770-48bb-47e1-b43a-de7a613bb406")
-		(property "Sheetname" "LO2"
-			(at 118.11 100.33 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Sheetfile" "lo2.kicad_sch"
-			(at 118.11 101.6 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(instances
-			(project "spectre"
-				(path "/e2b3a745-ca2b-407e-8017-842114c52164"
-					(page "11")
-				)
-			)
-		)
-	)
-	(sheet
 		(at 127 57.15)
 		(size 25.4 19.05)
 		(exclude_from_sim no)
@@ -1700,8 +1655,8 @@
 		)
 	)
 	(sheet
-		(at 90.17 90.17)
-		(size 12.7 12.7)
+		(at 50.8 88.9)
+		(size 38.1 12.7)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -1715,7 +1670,7 @@
 		)
 		(uuid "bfad2d43-1850-494b-b6df-f5acbe5279ae")
 		(property "Sheetname" "LO1"
-			(at 85.09 100.33 0)
+			(at 50.8 85.09 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1726,7 +1681,7 @@
 			)
 		)
 		(property "Sheetfile" "lo1.kicad_sch"
-			(at 71.12 101.6 0)
+			(at 50.8 86.36 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1734,6 +1689,46 @@
 					(size 1.27 1.27)
 				)
 				(justify left top)
+			)
+		)
+		(pin "LO_A{P N}" output
+			(at 88.9 92.71 0)
+			(uuid "c7e4e7c8-441e-4472-a786-754fd8c6fd88")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "LO_B{P N}" output
+			(at 88.9 97.79 0)
+			(uuid "e897782e-4a9c-4707-ac29-3eb910802f35")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "REF{P N}" input
+			(at 50.8 92.71 180)
+			(uuid "010f71a7-fcd5-408a-ac51-c7e2562f2391")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "{SYN_CTRL}" bidirectional
+			(at 50.8 97.79 180)
+			(uuid "adfd9fdb-8dd1-48a1-9dc8-2387ab5b5d37")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(instances
@@ -1785,6 +1780,91 @@
 			(project "spectre"
 				(path "/e2b3a745-ca2b-407e-8017-842114c52164"
 					(page "2")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 50.8 114.3)
+		(size 38.1 12.7)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "e8db61a9-ea8d-4997-90db-6d7c76c362cb")
+		(property "Sheetname" "LO2"
+			(at 50.8 110.49 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "lo2.kicad_sch"
+			(at 50.8 111.76 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "LO_A{P N}" output
+			(at 88.9 118.11 0)
+			(uuid "06f4a8c9-1839-4e6e-8a78-32a3ad21eb85")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "LO_B{P N}" output
+			(at 88.9 123.19 0)
+			(uuid "fc1bd080-7b49-4652-ba4d-2fce54ce34f4")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "REF{P N}" input
+			(at 50.8 118.11 180)
+			(uuid "728e2503-d2f6-4f7f-814d-067d4f1b7d0f")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "{SYN_CTRL}" bidirectional
+			(at 50.8 123.19 180)
+			(uuid "72f3fae7-8ed0-460e-b384-791c897b5b63")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(instances
+			(project "spectre"
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164"
+					(page "10")
 				)
 			)
 		)
