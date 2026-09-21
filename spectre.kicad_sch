@@ -1680,7 +1680,7 @@
 				(justify left bottom)
 			)
 		)
-		(property "Sheetfile" "lo1.kicad_sch"
+		(property "Sheetfile" "lo.kicad_sch"
 			(at 50.8 86.36 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1810,7 +1810,7 @@
 				(justify left bottom)
 			)
 		)
-		(property "Sheetfile" "lo2.kicad_sch"
+		(property "Sheetfile" "lo.kicad_sch"
 			(at 50.8 111.76 0)
 			(show_name no)
 			(do_not_autoplace no)
