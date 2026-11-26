@@ -1,0 +1,4 @@
+(sym_lib_table
+	(version 7)
+	(lib (name "spectre")(type "KiCad")(uri "${KIPRJMOD}/spectre.kicad_sym")(options "")(descr "Parts of the 6.4 GHz proposal"))
+)

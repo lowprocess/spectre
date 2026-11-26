@@ -5454,7 +5454,7 @@
 		)
 		(uuid "f71f1091-d6d2-40ff-a3c8-df5d6a843da5")
 	)
-	(hierarchical_label "{SYN_CTRL}"
+	(hierarchical_label "SYN{SYN_CTRL}"
 		(shape bidirectional)
 		(at 80.01 128.27 180)
 		(effects

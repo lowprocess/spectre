@@ -1,0 +1,7327 @@
+(kicad_sch
+	(version 20260306)
+	(generator "eeschema")
+	(generator_version "10.0")
+	(uuid "4b731c98-e8df-538e-9015-62df3101b0de")
+	(paper "A3")
+	(title_block
+		(title "High band front end: preselection, preamplifier")
+	)
+	(lib_symbols
+		(symbol "spectre:PE42520"
+			(pin_names
+				(offset 1.016)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "U"
+				(at -7.62 13.46 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "PE42520"
+				(at -7.62 11.46 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" "Package_DFN_QFN:QFN-16-1EP_3x3mm_P0.5mm_EP1.7x1.7mm"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" "https://www.psemi.com/pdf/datasheets/pe42520ds.pdf"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "SPDT RF switch, 9 kHz to 13 GHz, absorptive"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "IPN" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "PartNumber" "PE42520C-Z"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Manufacturer" "pSemi"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "PE42520_0_1"
+				(rectangle
+					(start -7.62 10.16)
+					(end 7.62 -10.16)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(circle
+					(center -2.2 2.54)
+					(radius 0.3)
+					(stroke
+						(width 0.2)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 2.2 5.08)
+					(radius 0.3)
+					(stroke
+						(width 0.2)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 2.2 0)
+					(radius 0.3)
+					(stroke
+						(width 0.2)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.9 2.64)
+						(xy 1.9 5.08)
+					)
+					(stroke
+						(width 0.2)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "PE42520_1_1"
+				(pin passive line
+					(at -10.16 1.27 0)
+					(length 2.54)
+					(name "RFC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -10.16 -3.81 0)
+					(length 2.54)
+					(name "CTRL"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "14"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 10.16 3.81 180)
+					(length 2.54)
+					(name "RF1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 10.16 -1.27 180)
+					(length 2.54)
+					(name "RF2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "11"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 5.08 12.7 270)
+					(length 2.54)
+					(name "VDD"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "16"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -2.54 -12.7 90)
+					(length 2.54)
+					(name "LS"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "15"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -12.7 90)
+					(length 2.54)
+					(name "VSS"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "13"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 2.54 -12.7 90)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 -12.7 90)
+					(length 2.54)
+					(hide yes)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 -12.7 90)
+					(length 2.54)
+					(hide yes)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 -12.7 90)
+					(length 2.54)
+					(hide yes)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 -12.7 90)
+					(length 2.54)
+					(hide yes)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 -12.7 90)
+					(length 2.54)
+					(hide yes)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 -12.7 90)
+					(length 2.54)
+					(hide yes)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 -12.7 90)
+					(length 2.54)
+					(hide yes)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 -12.7 90)
+					(length 2.54)
+					(hide yes)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "12"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 -12.7 90)
+					(length 2.54)
+					(hide yes)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "17"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "power:VCC"
+			(power global)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "#PWR"
+				(at 0 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "VCC"
+				(at 0 3.556 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Power symbol creates a global label with name \"VCC\""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "global power"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "VCC_0_1"
+				(polyline
+					(pts
+						(xy -0.762 1.27)
+						(xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54)
+						(xy 0.762 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0)
+						(xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "VCC_1_1"
+				(pin power_in line
+					(at 0 0 90)
+					(length 0)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "power:GND"
+			(power global)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "#PWR"
+				(at 0 -6.35 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "GND"
+				(at 0 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "global power"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "GND_0_1"
+				(polyline
+					(pts
+						(xy 0 0)
+						(xy 0 -1.27)
+						(xy 1.27 -1.27)
+						(xy 0 -2.54)
+						(xy -1.27 -1.27)
+						(xy 0 -1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "GND_1_1"
+				(pin power_in line
+					(at 0 0 270)
+					(length 0)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "spectre:Filter_Printed_BP_Gnd"
+			(pin_names
+				(offset 1.016)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "FL"
+				(at -6.35 10.92 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "Filter_Printed_BP_Gnd"
+				(at -6.35 8.92 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Printed microstrip filter on 0.508 mm RO4003C (dfsynth); see sim/filters"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Filter_Printed_BP_Gnd_0_1"
+				(rectangle
+					(start -6.35 7.62)
+					(end 6.35 -7.62)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(polyline
+					(pts
+						(xy -3 -1.5)
+						(xy -1.5 0.9)
+						(xy 1.5 0.9)
+						(xy 3 -1.5)
+					)
+					(stroke
+						(width 0.2)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "Filter_Printed_BP_Gnd_1_1"
+				(pin passive line
+					(at -8.89 1.27 0)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 8.89 1.27 180)
+					(length 2.54)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 0 -10.16 90)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "spectre:Filter_Printed_LP"
+			(pin_names
+				(offset 1.016)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "FL"
+				(at -6.35 8.38 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "Filter_Printed_LP"
+				(at -6.35 6.38 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Printed microstrip filter on 0.508 mm RO4003C (dfsynth); see sim/filters"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Filter_Printed_LP_0_1"
+				(rectangle
+					(start -6.35 5.08)
+					(end 6.35 -5.08)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(polyline
+					(pts
+						(xy -3 0.9)
+						(xy 0.6 0.9)
+						(xy 3 -1.5)
+					)
+					(stroke
+						(width 0.2)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "Filter_Printed_LP_1_1"
+				(pin passive line
+					(at -8.89 1.27 0)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 8.89 1.27 180)
+					(length 2.54)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "spectre:C"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "C"
+				(at 1.905 1.27 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "C"
+				(at 1.905 -1.27 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" "ar_passives:C_0402"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Ceramic capacitor, 0402"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "IPN" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "PartNumber" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Manufacturer" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "C_0_1"
+				(polyline
+					(pts
+						(xy -1.524 0.508)
+						(xy 1.524 0.508)
+					)
+					(stroke
+						(width 0.3048)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.524 -0.508)
+						(xy 1.524 -0.508)
+					)
+					(stroke
+						(width 0.3048)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "C_1_1"
+				(pin passive line
+					(at 0 2.54 270)
+					(length 2.032)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -2.54 90)
+					(length 2.032)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "spectre:L"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "L"
+				(at 1.905 1.27 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "L"
+				(at 1.905 -1.27 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" "Inductor_SMD:L_0402_1005Metric"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Inductor, 0402"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "IPN" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "PartNumber" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Manufacturer" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "L_0_1"
+				(arc
+					(start 0 -1.778)
+					(mid 0.4445 -1.3335)
+					(end 0 -0.889)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 0 -0.889)
+					(mid 0.4445 -0.4445)
+					(end 0 0)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 0 0)
+					(mid 0.4445 0.4445)
+					(end 0 0.889)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 0 0.889)
+					(mid 0.4445 1.3335)
+					(end 0 1.778)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "L_1_1"
+				(pin passive line
+					(at 0 2.54 270)
+					(length 0.762)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -2.54 90)
+					(length 0.762)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "spectre:PMA3-83LN+"
+			(pin_names
+				(offset 1.016)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "U"
+				(at -11.43 10.92 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "PMA3-83LN+"
+				(at -11.43 8.92 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" "Package_DFN_QFN:QFN-12-1EP_3x3mm_P0.5mm_EP1.65x1.65mm"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" "https://www.minicircuits.com/pdfs/PMA3-83LN+.pdf"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Low-noise amplifier, 0.5 to 8 GHz, NF 1.3 dB, 5 V"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "IPN" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "PartNumber" "PMA3-83LN+"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Manufacturer" "Mini-Circuits"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "PMA3-83LN+_0_1"
+				(rectangle
+					(start -11.43 7.62)
+					(end 11.43 -7.62)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.9 2.5)
+						(xy -1.9 -1.3)
+						(xy 1.9 0.6)
+						(xy -1.9 2.5)
+					)
+					(stroke
+						(width 0.2)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "PMA3-83LN+_1_1"
+				(pin passive line
+					(at -13.97 2.54 0)
+					(length 2.54)
+					(name "RF-IN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 13.97 2.54 180)
+					(length 2.54)
+					(name "RF-OUT"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -2.54 -10.16 90)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "13"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -2.54 -10.16 90)
+					(length 2.54)
+					(hide yes)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -2.54 -10.16 90)
+					(length 2.54)
+					(hide yes)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -2.54 -10.16 90)
+					(length 2.54)
+					(hide yes)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -2.54 -10.16 90)
+					(length 2.54)
+					(hide yes)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -2.54 -10.16 90)
+					(length 2.54)
+					(hide yes)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -2.54 -10.16 90)
+					(length 2.54)
+					(hide yes)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -2.54 -10.16 90)
+					(length 2.54)
+					(hide yes)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -2.54 -10.16 90)
+					(length 2.54)
+					(hide yes)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin no_connect line
+					(at 0 -10.16 90)
+					(length 2.54)
+					(name "NC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "11"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin no_connect line
+					(at 2.54 -10.16 90)
+					(length 2.54)
+					(name "NC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "12"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+	)
+	(junction
+		(at 66.04 113.03)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "70e8acdc-855c-589d-834d-8a8416056611")
+	)
+	(junction
+		(at 182.88 113.03)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "2de2b266-4dc4-5fc2-9b12-e521df17ba04")
+	)
+	(junction
+		(at 248.92 113.03)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "28e20f1d-c937-5f51-96ae-5e0ea63951f9")
+	)
+	(junction
+		(at 281.94 99.06)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "cb27a7bc-b9ea-501a-bfc5-00f6cb149e40")
+	)
+	(junction
+		(at 330.2 99.06)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "12fa98e0-436a-5d15-a454-53a60c931899")
+	)
+	(junction
+		(at 363.22 113.03)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "493ab676-ae13-55b6-81a7-121cafbcb3e8")
+	)
+	(junction
+		(at 137.16 200.66)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "5fbf28b7-a0e8-534a-ace6-b40ed8e64589")
+	)
+	(junction
+		(at 147.32 200.66)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "eb2fdcf7-2846-5944-a490-b2a55c40123d")
+	)
+	(junction
+		(at 157.48 200.66)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "9ba07e96-4048-57d9-bc14-f46e4f4d1be2")
+	)
+	(junction
+		(at 137.16 226.06)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "dd3d44ac-e072-5268-b0c7-a1414cf073e9")
+	)
+	(junction
+		(at 147.32 226.06)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b88bbb8f-c8de-57e9-8ff5-918fbbb94c9c")
+	)
+	(junction
+		(at 63.5 113.03)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f761c3c8-af38-574f-ac78-52792eef87b3")
+	)
+	(junction
+		(at 180.34 113.03)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "8f769040-0fcf-587d-ba23-5d84b5935e05")
+	)
+	(junction
+		(at 246.38 113.03)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "85923dc8-54e8-5a27-96df-f55a0e1c40ac")
+	)
+	(junction
+		(at 360.68 113.03)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a7123915-bf79-5a9b-b6c1-890c85a4a75a")
+	)
+	(bus_entry
+		(at 35.56 175.26)
+		(size 2.54 2.54)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9313f29d-129f-5e36-9eda-10d4ab39ac10")
+	)
+	(bus_entry
+		(at 35.56 177.8)
+		(size 2.54 2.54)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "58c553cd-aeff-5dbf-9e24-c6ef3c5a3e9c")
+	)
+	(wire
+		(pts
+			(xy 71.12 85.09)
+			(xy 71.12 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "51f3e4e6-4fe5-5576-863e-66feb92c10a5")
+	)
+	(wire
+		(pts
+			(xy 63.5 110.49)
+			(xy 63.5 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cc28fc0a-1a1b-542f-a5d7-664c279d0758")
+	)
+	(wire
+		(pts
+			(xy 66.04 110.49)
+			(xy 66.04 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1ece8a09-d93f-55c3-8476-ebbe9088c9f1")
+	)
+	(wire
+		(pts
+			(xy 68.58 110.49)
+			(xy 68.58 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6b83283f-d4b6-50a5-b353-081cec3c9c14")
+	)
+	(wire
+		(pts
+			(xy 63.5 113.03)
+			(xy 68.58 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5a4d6cab-f353-5b91-9f62-49cb4c9c9169")
+	)
+	(wire
+		(pts
+			(xy 55.88 101.6)
+			(xy 44.45 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9827045e-e16b-52d5-bc81-ab07459bdf58")
+	)
+	(wire
+		(pts
+			(xy 30.48 96.52)
+			(xy 55.88 96.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "255b387b-b803-565b-bd61-20a64eb682f2")
+	)
+	(wire
+		(pts
+			(xy 76.2 93.98)
+			(xy 83.82 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8e01b578-fda2-562b-9c4f-baa3cfb85012")
+	)
+	(wire
+		(pts
+			(xy 83.82 93.98)
+			(xy 83.82 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d5dfb51a-ccf5-5fde-9dd0-f0faab5c2ac1")
+	)
+	(wire
+		(pts
+			(xy 83.82 76.2)
+			(xy 96.52 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dbbb5a11-ac45-5ef5-8b3d-d341b26c37ac")
+	)
+	(wire
+		(pts
+			(xy 105.41 87.63)
+			(xy 105.41 90.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1c0bdaf6-6a8e-5644-b8da-1c87f3034d83")
+	)
+	(wire
+		(pts
+			(xy 114.3 76.2)
+			(xy 134.62 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "40052d79-a291-5de6-88c0-a3dda2d68265")
+	)
+	(wire
+		(pts
+			(xy 76.2 99.06)
+			(xy 83.82 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "10a8f191-921a-5103-8d17-740944b28377")
+	)
+	(wire
+		(pts
+			(xy 83.82 99.06)
+			(xy 83.82 127)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d70df32c-2bf7-5f1d-b3af-ab15a6453cbc")
+	)
+	(wire
+		(pts
+			(xy 83.82 127)
+			(xy 96.52 127)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f22899ca-da20-5517-859d-5ee8f713f769")
+	)
+	(wire
+		(pts
+			(xy 105.41 138.43)
+			(xy 105.41 140.97)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "593b6777-78ab-57cf-a232-aaef9c165433")
+	)
+	(wire
+		(pts
+			(xy 114.3 127)
+			(xy 134.62 127)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "56cb05e0-5620-5e76-9670-1cba841c50f5")
+	)
+	(wire
+		(pts
+			(xy 177.8 85.09)
+			(xy 177.8 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b3cc8e6c-c879-5ad6-8da4-1441842d5f32")
+	)
+	(wire
+		(pts
+			(xy 180.34 110.49)
+			(xy 180.34 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "24a5f773-573e-5517-82f3-91b38ed5c160")
+	)
+	(wire
+		(pts
+			(xy 182.88 110.49)
+			(xy 182.88 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "56a5ab78-afd9-545a-ac57-a87789022400")
+	)
+	(wire
+		(pts
+			(xy 185.42 110.49)
+			(xy 185.42 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a51455a0-0aea-5971-95fd-50cb643c4594")
+	)
+	(wire
+		(pts
+			(xy 180.34 113.03)
+			(xy 185.42 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9682c66d-e685-5255-aaf3-10d1467842a9")
+	)
+	(wire
+		(pts
+			(xy 193.04 101.6)
+			(xy 204.47 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e5180565-2297-579d-8a2d-11d06283f157")
+	)
+	(wire
+		(pts
+			(xy 152.4 76.2)
+			(xy 165.1 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0e14ac1b-4748-50de-8849-067039f97b66")
+	)
+	(wire
+		(pts
+			(xy 165.1 76.2)
+			(xy 165.1 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "973e7c39-53dd-5bbe-a756-142ad432b5a0")
+	)
+	(wire
+		(pts
+			(xy 165.1 93.98)
+			(xy 172.72 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3c05d95b-78a5-53ad-836a-691c67795395")
+	)
+	(wire
+		(pts
+			(xy 152.4 127)
+			(xy 165.1 127)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "58a4e509-0f8e-5d26-8c78-0cf1c688d949")
+	)
+	(wire
+		(pts
+			(xy 165.1 127)
+			(xy 165.1 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b2c713dc-4ee1-5d4d-9eb1-9d57d60daf3c")
+	)
+	(wire
+		(pts
+			(xy 165.1 99.06)
+			(xy 172.72 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "98076f8f-3b7e-5627-99dc-922fcd3fbf10")
+	)
+	(wire
+		(pts
+			(xy 193.04 96.52)
+			(xy 238.76 96.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "805ffe9a-bf24-5041-b93e-52c57cca3b7e")
+	)
+	(wire
+		(pts
+			(xy 254 85.09)
+			(xy 254 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "206272a6-c821-5bf2-ab90-a635676c5711")
+	)
+	(wire
+		(pts
+			(xy 246.38 110.49)
+			(xy 246.38 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "41781663-0bad-530d-95f3-927e8285a90f")
+	)
+	(wire
+		(pts
+			(xy 248.92 110.49)
+			(xy 248.92 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "94424c53-4187-5f96-a072-cafeb6b8497d")
+	)
+	(wire
+		(pts
+			(xy 251.46 110.49)
+			(xy 251.46 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c36d6efc-f422-5939-aadd-12b889d4a05c")
+	)
+	(wire
+		(pts
+			(xy 246.38 113.03)
+			(xy 251.46 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b2c075e1-54bc-5c2e-b3c9-f89b07faf68c")
+	)
+	(wire
+		(pts
+			(xy 238.76 101.6)
+			(xy 224.79 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "035d1bc7-2f89-52db-90bc-776aa0634109")
+	)
+	(wire
+		(pts
+			(xy 259.08 99.06)
+			(xy 269.24 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "515ac743-4b79-52ff-b0b8-a88aaafbaa88")
+	)
+	(wire
+		(pts
+			(xy 269.24 99.06)
+			(xy 271.78 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1c4d6434-a7b4-5ff1-b892-cea85f7d5d63")
+	)
+	(wire
+		(pts
+			(xy 276.86 99.06)
+			(xy 281.94 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "df663895-8f41-5266-9ea4-d5a015d02911")
+	)
+	(wire
+		(pts
+			(xy 281.94 99.06)
+			(xy 294.64 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7afe0204-ab51-5578-ab8d-468b858710a7")
+	)
+	(wire
+		(pts
+			(xy 306.07 111.76)
+			(xy 306.07 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d264e0a6-b9a8-5755-95a3-5407fbcbfe42")
+	)
+	(wire
+		(pts
+			(xy 322.58 99.06)
+			(xy 330.2 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cb02eb18-d94c-54bd-b197-7348419132f6")
+	)
+	(wire
+		(pts
+			(xy 330.2 99.06)
+			(xy 337.82 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f33b429e-1755-585f-857a-6fa258eb18e1")
+	)
+	(wire
+		(pts
+			(xy 358.14 85.09)
+			(xy 358.14 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d013fe05-08c0-5106-8e5b-41f27579f6b5")
+	)
+	(wire
+		(pts
+			(xy 360.68 110.49)
+			(xy 360.68 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bc019c05-cf6a-5cba-8969-9939129f73e4")
+	)
+	(wire
+		(pts
+			(xy 363.22 110.49)
+			(xy 363.22 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cebd0925-18b9-5fb6-b50f-1e40d87409e6")
+	)
+	(wire
+		(pts
+			(xy 365.76 110.49)
+			(xy 365.76 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6aafcd1a-4ba4-522d-93d0-ad327be88c1d")
+	)
+	(wire
+		(pts
+			(xy 360.68 113.03)
+			(xy 365.76 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c93efda9-8bfe-59fa-8601-4958c3686184")
+	)
+	(wire
+		(pts
+			(xy 373.38 101.6)
+			(xy 387.35 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9c689716-bb59-5043-a03f-166cfee9eb63")
+	)
+	(wire
+		(pts
+			(xy 342.9 99.06)
+			(xy 353.06 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5ff45d4c-6560-590f-b423-4cf42918cec6")
+	)
+	(wire
+		(pts
+			(xy 259.08 93.98)
+			(xy 264.16 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b605d455-b75b-51d0-ae16-4eea7e9935aa")
+	)
+	(wire
+		(pts
+			(xy 264.16 93.98)
+			(xy 264.16 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "71b69168-872f-5dc8-9ea4-40de56f9c7ed")
+	)
+	(wire
+		(pts
+			(xy 264.16 71.12)
+			(xy 347.98 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e8b8bc91-9202-5590-8e71-c4b1d80e5282")
+	)
+	(wire
+		(pts
+			(xy 347.98 71.12)
+			(xy 347.98 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cf9e5ee0-4867-5dc7-af89-e1a73db82f27")
+	)
+	(wire
+		(pts
+			(xy 347.98 93.98)
+			(xy 353.06 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dbb094cd-c85e-509c-90e1-1d98a5ab37b8")
+	)
+	(wire
+		(pts
+			(xy 373.38 96.52)
+			(xy 388.62 96.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3e8925dd-df9a-5fa8-ac43-861f354a1e9b")
+	)
+	(wire
+		(pts
+			(xy 38.1 177.8)
+			(xy 49.53 177.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2778510e-70a8-5ba9-9ce3-3445e986bbff")
+	)
+	(wire
+		(pts
+			(xy 38.1 180.34)
+			(xy 52.07 180.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1c56edf4-b604-506b-9c36-bae2b90d415c")
+	)
+	(wire
+		(pts
+			(xy 127 200.66)
+			(xy 167.64 200.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fef1f44b-ed93-5238-bf6d-07f0ae4d3d07")
+	)
+	(wire
+		(pts
+			(xy 127 226.06)
+			(xy 157.48 226.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d4ff2659-d06e-5168-928d-db69d7911682")
+	)
+	(bus
+		(pts
+			(xy 30.48 175.26)
+			(xy 35.56 175.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9cef495a-70ed-5bd5-9fa0-46cd11a16781")
+	)
+	(bus
+		(pts
+			(xy 35.56 175.26)
+			(xy 35.56 180.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "883d3e3c-b794-5bcb-9211-cfafe7a18123")
+	)
+	(rectangle
+		(start 121.92 187.96)
+		(end 187.96 241.3)
+		(stroke
+			(width 0)
+			(type dash)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "ec300099-ad67-5427-abd2-67952ffcc0a7")
+	)
+	(text "HIGH BAND FRONT END"
+		(exclude_from_sim no)
+		(at 20.32 25.4 0)
+		(effects
+			(font
+				(size 3 3)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "968d12e3-d866-5888-976a-73c2a36c662e")
+	)
+	(text "3.0 to 6.4 GHz, converted straight to the 12 MHz IF by the second mixer.  Each range has a band-pass and a low-pass."
+		(exclude_from_sim no)
+		(at 20.32 31.75 0)
+		(effects
+			(font
+				(size 1.5 1.5)
+			)
+			(justify left bottom)
+		)
+		(uuid "2e3a6d80-b72c-52fa-9887-86a8070f2053")
+	)
+	(text "H1: 3.0 to 4.4 GHz"
+		(exclude_from_sim no)
+		(at 120.52 66.7 0)
+		(effects
+			(font
+				(size 1.2 1.2)
+			)
+			(justify bottom)
+		)
+		(uuid "57ccaea6-852d-5c5c-aa53-9011a16a996a")
+	)
+	(text "H2: 4.4 to 6.4 GHz"
+		(exclude_from_sim no)
+		(at 120.52 117.5 0)
+		(effects
+			(font
+				(size 1.2 1.2)
+			)
+			(justify bottom)
+		)
+		(uuid "011b1711-c1f3-52bd-953a-a57e31394975")
+	)
+	(text "bypass"
+		(exclude_from_sim no)
+		(at 306.07 70.12 0)
+		(effects
+			(font
+				(size 1.2 1.2)
+			)
+			(justify bottom)
+		)
+		(uuid "d0bef50a-39e5-51a7-8efd-d42e0f35f65d")
+	)
+	(text "Preamplifier, 21 dB, NF 1.3 dB; bypassed when FEH.PRE_BYP is high"
+		(exclude_from_sim no)
+		(at 243.04 120.52 0)
+		(effects
+			(font
+				(size 1.2 1.2)
+			)
+			(justify top)
+		)
+		(uuid "09f0fc02-59cb-5d0a-862b-7167d1883235")
+	)
+	(text "FEH.SEL_1 high: H1.  Low: H2.\nL (TBD): the PMA3-83LN+ data sheet's input and feed inductors."
+		(exclude_from_sim no)
+		(at 20.32 160 0)
+		(effects
+			(font
+				(size 1.2 1.2)
+			)
+			(justify left bottom)
+		)
+		(uuid "9b22e558-7ad2-559c-87f2-2f6907d692dd")
+	)
+	(text "Supply decoupling"
+		(exclude_from_sim no)
+		(at 123.19 186.96 0)
+		(effects
+			(font
+				(size 1.8 1.8)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "f81d7d54-5925-520e-9a7b-b2da6a0529f7")
+	)
+	(text "U300"
+		(exclude_from_sim no)
+		(at 139.06 207.94 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left top)
+		)
+		(uuid "1e41c023-d8f5-5140-86bf-f2638b2a023b")
+	)
+	(text "U301"
+		(exclude_from_sim no)
+		(at 149.22 207.94 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left top)
+		)
+		(uuid "22d83a8f-1e39-5992-8f7e-28a0aedb2a7c")
+	)
+	(text "U302"
+		(exclude_from_sim no)
+		(at 159.38 207.94 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left top)
+		)
+		(uuid "8352cb0c-2bd4-51cb-92e7-7c554bee9c8a")
+	)
+	(text "U304"
+		(exclude_from_sim no)
+		(at 169.54 207.94 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left top)
+		)
+		(uuid "3d5d7807-9e94-5a68-827a-2673876a1d10")
+	)
+	(text "L301"
+		(exclude_from_sim no)
+		(at 139.06 233.34 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left top)
+		)
+		(uuid "6b737f20-62fc-5a80-ab1e-7e63ed81f079")
+	)
+	(text "L301"
+		(exclude_from_sim no)
+		(at 149.22 233.34 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left top)
+		)
+		(uuid "0035280a-5404-5895-944e-0ec4e3bcb926")
+	)
+	(text ""
+		(exclude_from_sim no)
+		(at 159.38 233.34 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left top)
+		)
+		(uuid "dae55633-12ec-5396-b3cc-b01bcc2a36b6")
+	)
+	(label "FEH.SEL_1"
+		(at 44.45 101.6 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "d1086c38-4cca-5797-b7f1-faea8a04906a")
+	)
+	(label "FEH.SEL_1"
+		(at 204.47 101.6 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "d594964f-7133-54a2-8543-d8d6b0581198")
+	)
+	(label "FEH.PRE_BYP"
+		(at 224.79 101.6 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "71e623f1-c43b-5a8f-a6be-0e54714b86fe")
+	)
+	(label "FEH.PRE_BYP"
+		(at 387.35 101.6 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "db3bd599-497d-5254-952d-66de8fa98e68")
+	)
+	(label "FEH.SEL_1"
+		(at 49.53 177.8 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "a1210c23-6803-5837-9bdf-a2f656edb436")
+	)
+	(label "FEH.PRE_BYP"
+		(at 52.07 180.34 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "8ffb67d6-c5f4-5fde-ab29-1bb4550a8a5d")
+	)
+	(hierarchical_label "RF_HIGH"
+		(shape input)
+		(at 30.48 96.52 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "36d5b757-9a6a-5eb1-bc8b-423b03913a10")
+	)
+	(hierarchical_label "RF_HIGH_OUT"
+		(shape output)
+		(at 388.62 96.52 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "19d30ee3-4712-5035-b468-5df6b98ee8e0")
+	)
+	(hierarchical_label "FEH{FE_CTRL}"
+		(shape input)
+		(at 30.48 175.26 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "bd91a074-d8a2-55ca-86c4-d6c5424f5b98")
+	)
+	(symbol
+		(lib_id "spectre:PE42520")
+		(at 66.04 97.79 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "58b803bc-b195-5a90-97fc-06ab2c069f34")
+		(property "Reference" "U300"
+			(at 58.42 83.82 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "PE42520"
+			(at 58.42 86.36 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_DFN_QFN:QFN-16-1EP_3x3mm_P0.5mm_EP1.7x1.7mm"
+			(at 66.04 97.79 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.psemi.com/pdf/datasheets/pe42520ds.pdf"
+			(at 66.04 97.79 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "SPDT RF switch, 9 kHz to 13 GHz, absorptive"
+			(at 66.04 97.79 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "IPN" ""
+			(at 66.04 97.79 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PartNumber" "PE42520C-Z"
+			(at 66.04 97.79 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "pSemi"
+			(at 66.04 97.79 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "7"
+			(uuid "04690249-3495-55b4-8220-80e7dcab18ab")
+		)
+		(pin "14"
+			(uuid "7af04f89-a5e5-55bb-9a80-0df1bb512142")
+		)
+		(pin "2"
+			(uuid "0cf1fb8e-cffa-5d01-b05c-a8778564ed20")
+		)
+		(pin "11"
+			(uuid "c64c29b4-a3d0-5209-85ce-94bada2536f1")
+		)
+		(pin "16"
+			(uuid "dceb529b-19b2-5883-b07d-b99415f35b7d")
+		)
+		(pin "15"
+			(uuid "3c79a4a8-c03c-50f1-8a5f-cf216210a984")
+		)
+		(pin "13"
+			(uuid "d4ccf85e-8e58-5e9e-8b83-921ef298ac40")
+		)
+		(pin "1"
+			(uuid "acb0c549-e16a-5215-9794-71fcb6aa2bd3")
+		)
+		(pin "3"
+			(uuid "1c108543-7e22-5120-b1b9-dc36259e3284")
+		)
+		(pin "4"
+			(uuid "dd0108a3-afc5-5def-827f-4af5fd1f474f")
+		)
+		(pin "5"
+			(uuid "c5f9ac42-754b-5030-a564-c7164eb1fb98")
+		)
+		(pin "6"
+			(uuid "a11db9c9-e05d-5d8b-ac38-cb87fed59673")
+		)
+		(pin "8"
+			(uuid "a27b0255-c44b-5bbf-a25d-e16ed38c1172")
+		)
+		(pin "9"
+			(uuid "daa2e65e-c344-5de1-a970-db7decef9017")
+		)
+		(pin "10"
+			(uuid "852fb392-a2ca-58fa-a459-d76f5691fa8a")
+		)
+		(pin "12"
+			(uuid "66dfb347-7f7d-5868-847c-dfb119ab87a1")
+		)
+		(pin "17"
+			(uuid "e47419f3-d7bf-5179-9bb5-61a5fb5efe1c")
+		)
+		(instances
+			(project "spectre"
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/df8d517c-94d7-5414-8a25-bfdedee8e8ad"
+					(reference "U300")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:VCC")
+		(at 71.12 82.55 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "6630c7c5-0d41-54a6-b914-b8be451dc8d5")
+		(property "Reference" "#PWR1034"
+			(at 71.12 86.36 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+3V3_RF"
+			(at 71.12 78.95 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 71.12 82.55 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 71.12 82.55 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"VCC\""
+			(at 71.12 82.55 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "global power"
+			(at 71.12 82.55 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "b7fed720-6725-54df-bfe7-9e894118b4ac")
+		)
+		(instances
+			(project "spectre"
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/df8d517c-94d7-5414-8a25-bfdedee8e8ad"
+					(reference "#PWR1034")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 63.5 113.03 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "c8de4132-9783-5219-93cb-74d7c55cc19c")
+		(property "Reference" "#PWR1035"
+			(at 63.5 119.38 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 63.5 116.33 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 63.5 113.03 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 63.5 113.03 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 63.5 113.03 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "global power"
+			(at 63.5 113.03 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "9beeba7f-9cbd-5d0a-92f2-058dab47469a")
+		)
+		(instances
+			(project "spectre"
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/df8d517c-94d7-5414-8a25-bfdedee8e8ad"
+					(reference "#PWR1035")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "spectre:Filter_Printed_BP_Gnd")
+		(at 105.41 77.47 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "3ac02f7f-4456-5285-aa1c-01bcbd4ced9a")
+		(property "Reference" "FL300"
+			(at 99.06 66.04 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "BPF 2.9-4.5 GHz"
+			(at 99.06 68.58 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "spectre_filters:h1_bpf_3g0_4g5_stub"
+			(at 105.41 77.47 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 105.41 77.47 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Printed microstrip filter on 0.508 mm RO4003C (dfsynth); see sim/filters"
+			(at 105.41 77.47 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PartNumber" "h1_bpf_3g0_4g5_stub"
+			(at 105.41 77.47 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "PCB"
+			(at 105.41 77.47 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "407977fd-0b24-5722-9752-9439356fd935")
+		)
+		(pin "2"
+			(uuid "c7869b35-71bd-53b6-ac9d-782687c634cb")
+		)
+		(pin "3"
+			(uuid "e11231f5-b5c8-555d-a8a7-112eedd1a660")
+		)
+		(instances
+			(project "spectre"
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/df8d517c-94d7-5414-8a25-bfdedee8e8ad"
+					(reference "FL300")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 105.41 90.17 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "e4faf6e0-d328-54c7-9324-ab605ab2cf4c")
+		(property "Reference" "#PWR1036"
+			(at 105.41 96.52 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 105.41 93.47 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 105.41 90.17 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 105.41 90.17 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 105.41 90.17 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "global power"
+			(at 105.41 90.17 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "1cc23e10-f2b2-5eef-b507-567b2e2be854")
+		)
+		(instances
+			(project "spectre"
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/df8d517c-94d7-5414-8a25-bfdedee8e8ad"
+					(reference "#PWR1036")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "spectre:Filter_Printed_LP")
+		(at 143.51 77.47 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "738ba5f5-d332-5db5-9e80-68d026b71f33")
+		(property "Reference" "FL301"
+			(at 137.16 68.58 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "LPF 5.0 GHz"
+			(at 137.16 71.12 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "spectre_filters:h1_lpf_5g0_radial"
+			(at 143.51 77.47 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 143.51 77.47 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Printed microstrip filter on 0.508 mm RO4003C (dfsynth); see sim/filters"
+			(at 143.51 77.47 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PartNumber" "h1_lpf_5g0_radial"
+			(at 143.51 77.47 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "PCB"
+			(at 143.51 77.47 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "283a40fd-24cd-5895-a29c-5c3ebc8d68ae")
+		)
+		(pin "2"
+			(uuid "052b5e7b-7fe4-578b-ad92-185d54085b6b")
+		)
+		(instances
+			(project "spectre"
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/df8d517c-94d7-5414-8a25-bfdedee8e8ad"
+					(reference "FL301")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "spectre:Filter_Printed_BP_Gnd")
+		(at 105.41 128.27 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "df25b567-f7e7-56a4-8e84-a45661cf7f26")
+		(property "Reference" "FL302"
+			(at 99.06 116.84 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "BPF 4.3-6.4 GHz"
+			(at 99.06 119.38 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "spectre_filters:h2_bpf_4g3_6g4_stub"
+			(at 105.41 128.27 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 105.41 128.27 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Printed microstrip filter on 0.508 mm RO4003C (dfsynth); see sim/filters"
+			(at 105.41 128.27 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PartNumber" "h2_bpf_4g3_6g4_stub"
+			(at 105.41 128.27 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "PCB"
+			(at 105.41 128.27 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "00828258-902f-50ea-a442-3bc99816622d")
+		)
+		(pin "2"
+			(uuid "8d9964f9-6890-54e5-9f8b-8b711ddb542b")
+		)
+		(pin "3"
+			(uuid "05ee328b-7958-5875-848f-b9a84fe31985")
+		)
+		(instances
+			(project "spectre"
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/df8d517c-94d7-5414-8a25-bfdedee8e8ad"
+					(reference "FL302")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 105.41 140.97 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "7a9d5f48-e6d9-57a8-aa42-8c4d6d4412e1")
+		(property "Reference" "#PWR1037"
+			(at 105.41 147.32 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 105.41 144.27 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 105.41 140.97 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 105.41 140.97 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 105.41 140.97 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "global power"
+			(at 105.41 140.97 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "947752db-a3a9-5549-9472-d5772113d8df")
+		)
+		(instances
+			(project "spectre"
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/df8d517c-94d7-5414-8a25-bfdedee8e8ad"
+					(reference "#PWR1037")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "spectre:Filter_Printed_LP")
+		(at 143.51 128.27 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "00ea29d6-f25f-551e-8432-89db09802024")
+		(property "Reference" "FL303"
+			(at 137.16 119.38 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "LPF 7.0 GHz"
+			(at 137.16 121.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "spectre_filters:h2_lpf_7g0_radial"
+			(at 143.51 128.27 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 143.51 128.27 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Printed microstrip filter on 0.508 mm RO4003C (dfsynth); see sim/filters"
+			(at 143.51 128.27 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PartNumber" "h2_lpf_7g0_radial"
+			(at 143.51 128.27 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "PCB"
+			(at 143.51 128.27 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "93f7bd77-29d0-5154-abca-c7cc34fb4bf6")
+		)
+		(pin "2"
+			(uuid "ba26003c-b029-5113-977d-20d45da48599")
+		)
+		(instances
+			(project "spectre"
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/df8d517c-94d7-5414-8a25-bfdedee8e8ad"
+					(reference "FL303")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "spectre:PE42520")
+		(at 182.88 97.79 0)
+		(mirror y)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "ed4b8b75-4676-561b-8519-0968b889bf07")
+		(property "Reference" "U301"
+			(at 190.5 83.82 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "PE42520"
+			(at 190.5 86.36 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_DFN_QFN:QFN-16-1EP_3x3mm_P0.5mm_EP1.7x1.7mm"
+			(at 182.88 97.79 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.psemi.com/pdf/datasheets/pe42520ds.pdf"
+			(at 182.88 97.79 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "SPDT RF switch, 9 kHz to 13 GHz, absorptive"
+			(at 182.88 97.79 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "IPN" ""
+			(at 182.88 97.79 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PartNumber" "PE42520C-Z"
+			(at 182.88 97.79 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "pSemi"
+			(at 182.88 97.79 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "7"
+			(uuid "1465adb1-1681-5409-9909-39bfb98148a2")
+		)
+		(pin "14"
+			(uuid "4e716eab-5946-5e48-bc51-54c70f1d4c88")
+		)
+		(pin "2"
+			(uuid "91d68427-6be0-50a3-9119-3e7127eb3bda")
+		)
+		(pin "11"
+			(uuid "d9013c92-6e66-5378-a699-2dc83a2bd164")
+		)
+		(pin "16"
+			(uuid "6e312085-028f-513b-bdc6-3ac29429dffa")
+		)
+		(pin "15"
+			(uuid "1bf9d839-7d4d-5e81-a69f-43b8e6e24538")
+		)
+		(pin "13"
+			(uuid "664c3294-2519-5630-9b4a-23d4fe35097a")
+		)
+		(pin "1"
+			(uuid "dbf761df-dc6f-5630-b034-8733bbe8ea39")
+		)
+		(pin "3"
+			(uuid "56108bf3-fa4b-52bd-8d4f-3bc623828feb")
+		)
+		(pin "4"
+			(uuid "3997389b-1531-5c28-9956-001ac660c914")
+		)
+		(pin "5"
+			(uuid "6cc1bcc6-f6ec-57ce-a30f-bee6f416833c")
+		)
+		(pin "6"
+			(uuid "353e42b7-f7c0-57c5-be7a-d49aeb09fc87")
+		)
+		(pin "8"
+			(uuid "710c73d7-9c22-5d6f-ada4-d89d42a5baca")
+		)
+		(pin "9"
+			(uuid "d1e13acd-eb1a-5a1f-9271-c7c07147f728")
+		)
+		(pin "10"
+			(uuid "a4eed622-3bb5-5c62-b1f8-310e3c8b98b8")
+		)
+		(pin "12"
+			(uuid "1bc61e5b-af38-5b05-bf0e-1d9d247cfec1")
+		)
+		(pin "17"
+			(uuid "462d2ef6-860a-595b-a7e5-f0206f7c2002")
+		)
+		(instances
+			(project "spectre"
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/df8d517c-94d7-5414-8a25-bfdedee8e8ad"
+					(reference "U301")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:VCC")
+		(at 177.8 82.55 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "cd2320d3-9d6f-5c28-8166-3283678ffb6e")
+		(property "Reference" "#PWR1038"
+			(at 177.8 86.36 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+3V3_RF"
+			(at 177.8 78.95 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 177.8 82.55 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 177.8 82.55 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"VCC\""
+			(at 177.8 82.55 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "global power"
+			(at 177.8 82.55 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "5b26fc90-ac5c-5bb1-b450-39f8693f79c6")
+		)
+		(instances
+			(project "spectre"
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/df8d517c-94d7-5414-8a25-bfdedee8e8ad"
+					(reference "#PWR1038")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 180.34 113.03 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "7b6b0e21-f62b-5537-b10c-893e28cc2b19")
+		(property "Reference" "#PWR1039"
+			(at 180.34 119.38 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 180.34 116.33 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 180.34 113.03 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 180.34 113.03 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 180.34 113.03 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "global power"
+			(at 180.34 113.03 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "48268232-7fa6-5ae1-96b8-dc038186a355")
+		)
+		(instances
+			(project "spectre"
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/df8d517c-94d7-5414-8a25-bfdedee8e8ad"
+					(reference "#PWR1039")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "spectre:PE42520")
+		(at 248.92 97.79 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "cf7e9d1e-2012-5967-90ad-bb6e4b42610a")
+		(property "Reference" "U302"
+			(at 241.3 83.82 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "PE42520"
+			(at 241.3 86.36 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_DFN_QFN:QFN-16-1EP_3x3mm_P0.5mm_EP1.7x1.7mm"
+			(at 248.92 97.79 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.psemi.com/pdf/datasheets/pe42520ds.pdf"
+			(at 248.92 97.79 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "SPDT RF switch, 9 kHz to 13 GHz, absorptive"
+			(at 248.92 97.79 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "IPN" ""
+			(at 248.92 97.79 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PartNumber" "PE42520C-Z"
+			(at 248.92 97.79 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "pSemi"
+			(at 248.92 97.79 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "7"
+			(uuid "d521bccb-8f9c-5ab5-b2bb-1f2fb5d060ed")
+		)
+		(pin "14"
+			(uuid "535502f1-38f3-5769-ace4-a713ce0c3d3b")
+		)
+		(pin "2"
+			(uuid "afd68e6e-a0b6-53bf-9491-26c1a46206e7")
+		)
+		(pin "11"
+			(uuid "2ea6ebb6-cc2b-5da5-9685-6d0098eb225e")
+		)
+		(pin "16"
+			(uuid "f31fdc10-c3d3-529d-a710-af04e08edcb8")
+		)
+		(pin "15"
+			(uuid "81a66616-17f1-5578-89e3-6430d03e0304")
+		)
+		(pin "13"
+			(uuid "d6d8310d-11fc-5b05-9616-543ddeeb77bc")
+		)
+		(pin "1"
+			(uuid "37e0b291-a71a-5d88-8fbc-50176c61f16f")
+		)
+		(pin "3"
+			(uuid "f5881ef9-568a-5332-b4f8-eb72556bb2ad")
+		)
+		(pin "4"
+			(uuid "65002252-f8c6-5824-bc0a-a3effd210625")
+		)
+		(pin "5"
+			(uuid "12b16950-7cb6-59e5-a34c-ddeb88c5030f")
+		)
+		(pin "6"
+			(uuid "fbea8a8b-23a8-58b4-998c-f84e92d4e99d")
+		)
+		(pin "8"
+			(uuid "ff506cb9-7089-5188-ad7e-4a6224c243af")
+		)
+		(pin "9"
+			(uuid "60b92a34-4a10-55e2-94a8-cfc5360affd0")
+		)
+		(pin "10"
+			(uuid "60443b4f-3406-59f5-a33b-dc0d9b852656")
+		)
+		(pin "12"
+			(uuid "55376063-68d1-56a7-8baa-75cc0e14ed9f")
+		)
+		(pin "17"
+			(uuid "db2d558d-ff1b-59f6-9b7d-c91450b6aac8")
+		)
+		(instances
+			(project "spectre"
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/df8d517c-94d7-5414-8a25-bfdedee8e8ad"
+					(reference "U302")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:VCC")
+		(at 254 82.55 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "1568d08c-f831-5371-a21a-097bae674a8d")
+		(property "Reference" "#PWR1040"
+			(at 254 86.36 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+3V3_RF"
+			(at 254 78.95 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 254 82.55 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 254 82.55 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"VCC\""
+			(at 254 82.55 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "global power"
+			(at 254 82.55 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "8f9daa3b-fb58-5b40-917e-c0396b61fc7b")
+		)
+		(instances
+			(project "spectre"
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/df8d517c-94d7-5414-8a25-bfdedee8e8ad"
+					(reference "#PWR1040")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 246.38 113.03 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "036ffc30-4613-53e8-9ac9-a16c7d7b9d74")
+		(property "Reference" "#PWR1041"
+			(at 246.38 119.38 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 246.38 116.33 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 246.38 113.03 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 246.38 113.03 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 246.38 113.03 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "global power"
+			(at 246.38 113.03 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "0e011435-9ed2-5c0c-a268-387f39c2a72c")
+		)
+		(instances
+			(project "spectre"
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/df8d517c-94d7-5414-8a25-bfdedee8e8ad"
+					(reference "#PWR1041")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "spectre:C")
+		(at 274.32 99.06 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "b912d3a1-e506-57c4-b1f9-6d421d175007")
+		(property "Reference" "C300"
+			(at 274.32 94.66 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100pF"
+			(at 274.32 96.76 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "ar_passives:C_0402"
+			(at 274.32 99.06 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 274.32 99.06 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Ceramic capacitor, 0402"
+			(at 274.32 99.06 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "IPN" ""
+			(at 274.32 99.06 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PartNumber" "GRM1555C1H101JA01D"
+			(at 274.32 99.06 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Murata"
+			(at 274.32 99.06 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Voltage" "50V"
+			(at 274.32 99.06 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "7c3ee0f2-f0eb-58a9-8e72-e0f51b2f5582")
+		)
+		(pin "2"
+			(uuid "f241df07-7272-559f-84f7-520c6b9ab223")
+		)
+		(instances
+			(project "spectre"
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/df8d517c-94d7-5414-8a25-bfdedee8e8ad"
+					(reference "C300")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "spectre:L")
+		(at 281.94 101.6 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "c09d738b-e71c-5028-a1f3-3a45f0546532")
+		(property "Reference" "L300"
+			(at 283.84 100.5 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TBD"
+			(at 283.84 102.8 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Inductor_SMD:L_0402_1005Metric"
+			(at 281.94 101.6 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 281.94 101.6 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Inductor, 0402"
+			(at 281.94 101.6 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "IPN" ""
+			(at 281.94 101.6 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PartNumber" ""
+			(at 281.94 101.6 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" ""
+			(at 281.94 101.6 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "5a446716-ae48-55df-958a-bcd0d3dca6df")
+		)
+		(pin "2"
+			(uuid "cd4e7bae-25a7-57cf-aa3b-0a4cb24b4401")
+		)
+		(instances
+			(project "spectre"
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/df8d517c-94d7-5414-8a25-bfdedee8e8ad"
+					(reference "L300")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 281.94 104.14 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "1159e746-40ae-5c7f-a6b0-40a11af7b245")
+		(property "Reference" "#PWR1042"
+			(at 281.94 110.49 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 281.94 107.44 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 281.94 104.14 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 281.94 104.14 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 281.94 104.14 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "global power"
+			(at 281.94 104.14 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "0d7af78b-571a-55c7-ae63-a36024bfdf15")
+		)
+		(instances
+			(project "spectre"
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/df8d517c-94d7-5414-8a25-bfdedee8e8ad"
+					(reference "#PWR1042")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "spectre:PMA3-83LN+")
+		(at 308.61 101.6 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "0492bfe8-6eac-5604-a3e7-84197212ef5c")
+		(property "Reference" "U303"
+			(at 297.18 90.17 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "PMA3-83LN+"
+			(at 297.18 92.71 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_DFN_QFN:QFN-12-1EP_3x3mm_P0.5mm_EP1.65x1.65mm"
+			(at 308.61 101.6 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.minicircuits.com/pdfs/PMA3-83LN+.pdf"
+			(at 308.61 101.6 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Low-noise amplifier, 0.5 to 8 GHz, NF 1.3 dB, 5 V"
+			(at 308.61 101.6 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "IPN" ""
+			(at 308.61 101.6 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PartNumber" "PMA3-83LN+"
+			(at 308.61 101.6 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Mini-Circuits"
+			(at 308.61 101.6 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "bc567bb7-ec8a-5fa9-bfb7-4276f4fc1828")
+		)
+		(pin "8"
+			(uuid "7fb0d532-4657-5d72-a5ba-41d6c0117ba1")
+		)
+		(pin "13"
+			(uuid "922bea80-1d96-5173-a9a0-864b598710b3")
+		)
+		(pin "1"
+			(uuid "51228de4-a7a3-5f0a-af73-6ea41d558016")
+		)
+		(pin "3"
+			(uuid "9b38e668-cc67-5147-becb-4eef8720f457")
+		)
+		(pin "4"
+			(uuid "aaf6741d-e3f3-53cd-a2f3-83497c8d0389")
+		)
+		(pin "5"
+			(uuid "a1858ae3-9375-59dc-aeaa-47d3e8c2ee4f")
+		)
+		(pin "6"
+			(uuid "28bd5221-2084-55a2-b21a-605f069cbfe8")
+		)
+		(pin "7"
+			(uuid "12831c86-d032-51d6-a59c-bf9951de13d2")
+		)
+		(pin "9"
+			(uuid "f1198598-229c-5bd7-bd00-0808a72a367a")
+		)
+		(pin "10"
+			(uuid "cd90075f-40fc-549e-8afb-a641c73c3263")
+		)
+		(pin "11"
+			(uuid "37fa150a-5db2-5d63-abfc-159883164ade")
+		)
+		(pin "12"
+			(uuid "a21aa408-b899-5341-859d-45eadffc74e0")
+		)
+		(instances
+			(project "spectre"
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/df8d517c-94d7-5414-8a25-bfdedee8e8ad"
+					(reference "U303")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 306.07 114.3 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "a4d13946-e7a0-5e6b-9554-6ead32f4a5cd")
+		(property "Reference" "#PWR1043"
+			(at 306.07 120.65 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 306.07 117.6 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 306.07 114.3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 306.07 114.3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 306.07 114.3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "global power"
+			(at 306.07 114.3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "6a278272-27d5-58a8-9aed-21e70f3ce306")
+		)
+		(instances
+			(project "spectre"
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/df8d517c-94d7-5414-8a25-bfdedee8e8ad"
+					(reference "#PWR1043")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "spectre:L")
+		(at 330.2 96.52 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "7c16224d-ff5d-5d8e-8755-b4d0df8a553b")
+		(property "Reference" "L301"
+			(at 332.1 95.42 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TBD"
+			(at 332.1 97.72 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Inductor_SMD:L_0402_1005Metric"
+			(at 330.2 96.52 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 330.2 96.52 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Inductor, 0402"
+			(at 330.2 96.52 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "IPN" ""
+			(at 330.2 96.52 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PartNumber" ""
+			(at 330.2 96.52 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" ""
+			(at 330.2 96.52 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "682724a6-166a-53bb-950a-826962fc440e")
+		)
+		(pin "2"
+			(uuid "8489445f-02e7-5bb0-b2e2-08196dccee1e")
+		)
+		(instances
+			(project "spectre"
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/df8d517c-94d7-5414-8a25-bfdedee8e8ad"
+					(reference "L301")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:VCC")
+		(at 330.2 93.98 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "c26f704a-bec6-50c4-9994-9ed3216a5f18")
+		(property "Reference" "#PWR1044"
+			(at 330.2 97.79 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+5V_RF"
+			(at 330.2 90.38 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 330.2 93.98 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 330.2 93.98 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"VCC\""
+			(at 330.2 93.98 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "global power"
+			(at 330.2 93.98 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "24d255d0-11c0-57c9-8ac4-f75a0d439f84")
+		)
+		(instances
+			(project "spectre"
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/df8d517c-94d7-5414-8a25-bfdedee8e8ad"
+					(reference "#PWR1044")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "spectre:C")
+		(at 340.36 99.06 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "3864123b-a454-51f7-bceb-244003da0620")
+		(property "Reference" "C301"
+			(at 340.36 94.66 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100pF"
+			(at 340.36 96.76 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "ar_passives:C_0402"
+			(at 340.36 99.06 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 340.36 99.06 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Ceramic capacitor, 0402"
+			(at 340.36 99.06 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "IPN" ""
+			(at 340.36 99.06 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PartNumber" "GRM1555C1H101JA01D"
+			(at 340.36 99.06 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Murata"
+			(at 340.36 99.06 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Voltage" "50V"
+			(at 340.36 99.06 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "5f745d87-2109-5bad-b2dd-9cf79ee08e15")
+		)
+		(pin "2"
+			(uuid "8a88bbc1-d37c-5fce-8529-5fa6b8000edb")
+		)
+		(instances
+			(project "spectre"
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/df8d517c-94d7-5414-8a25-bfdedee8e8ad"
+					(reference "C301")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "spectre:PE42520")
+		(at 363.22 97.79 0)
+		(mirror y)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "f6b4e982-8016-5952-8303-b7956ffe9e5a")
+		(property "Reference" "U304"
+			(at 370.84 83.82 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "PE42520"
+			(at 370.84 86.36 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_DFN_QFN:QFN-16-1EP_3x3mm_P0.5mm_EP1.7x1.7mm"
+			(at 363.22 97.79 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.psemi.com/pdf/datasheets/pe42520ds.pdf"
+			(at 363.22 97.79 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "SPDT RF switch, 9 kHz to 13 GHz, absorptive"
+			(at 363.22 97.79 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "IPN" ""
+			(at 363.22 97.79 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PartNumber" "PE42520C-Z"
+			(at 363.22 97.79 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "pSemi"
+			(at 363.22 97.79 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "7"
+			(uuid "021f0a76-ec5e-528a-9241-15666856e245")
+		)
+		(pin "14"
+			(uuid "5cfa756d-16a5-5d39-b428-6724f080d39a")
+		)
+		(pin "2"
+			(uuid "aa4aba79-f11f-5897-a3dd-87a772364dc7")
+		)
+		(pin "11"
+			(uuid "fdbaaf55-6961-5543-9e8a-709d7c6fb36f")
+		)
+		(pin "16"
+			(uuid "3787ed9f-06ea-5dee-84d2-a31679621e11")
+		)
+		(pin "15"
+			(uuid "43f95295-eef8-578b-8ef3-4e8ccc6a7a3f")
+		)
+		(pin "13"
+			(uuid "80109d72-fc1c-5a8f-95a2-34050b940f63")
+		)
+		(pin "1"
+			(uuid "07fcdc3c-6564-586b-bb57-d4f1423c2287")
+		)
+		(pin "3"
+			(uuid "5fcb30f4-4f96-59c5-92d7-99fc3167226e")
+		)
+		(pin "4"
+			(uuid "06602cf9-4efd-59e0-9ba2-e03d7dd97e3e")
+		)
+		(pin "5"
+			(uuid "e92fac36-ae5e-5b31-9fca-fc9a87ecfcac")
+		)
+		(pin "6"
+			(uuid "a2c603cf-abbc-59da-9953-bc55c4d4f9fd")
+		)
+		(pin "8"
+			(uuid "15692182-a7d2-563d-bec3-b7b6b4674ab3")
+		)
+		(pin "9"
+			(uuid "a2b155a7-2921-565b-bf8d-e29aaafebbcb")
+		)
+		(pin "10"
+			(uuid "b399baa9-a6cb-59ba-be7a-e139093fa557")
+		)
+		(pin "12"
+			(uuid "7362145c-328d-57c1-b060-7574de02e926")
+		)
+		(pin "17"
+			(uuid "3668156b-521b-5456-86c5-79813ed884ba")
+		)
+		(instances
+			(project "spectre"
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/df8d517c-94d7-5414-8a25-bfdedee8e8ad"
+					(reference "U304")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:VCC")
+		(at 358.14 82.55 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "b1936e70-1e54-5c97-88b2-fd78558d36a0")
+		(property "Reference" "#PWR1045"
+			(at 358.14 86.36 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+3V3_RF"
+			(at 358.14 78.95 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 358.14 82.55 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 358.14 82.55 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"VCC\""
+			(at 358.14 82.55 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "global power"
+			(at 358.14 82.55 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "40e7f85f-401e-54d7-9737-8d8bfa94fd16")
+		)
+		(instances
+			(project "spectre"
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/df8d517c-94d7-5414-8a25-bfdedee8e8ad"
+					(reference "#PWR1045")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 360.68 113.03 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "b7863a82-f7f0-571b-8f86-726b8bce1b85")
+		(property "Reference" "#PWR1046"
+			(at 360.68 119.38 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 360.68 116.33 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 360.68 113.03 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 360.68 113.03 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 360.68 113.03 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "global power"
+			(at 360.68 113.03 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "dddec01f-d3b3-5338-89f9-781c7dd97ea0")
+		)
+		(instances
+			(project "spectre"
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/df8d517c-94d7-5414-8a25-bfdedee8e8ad"
+					(reference "#PWR1046")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:VCC")
+		(at 127 200.66 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "6becfa49-8efb-5df7-af7c-9180cdc9bf07")
+		(property "Reference" "#PWR1047"
+			(at 127 204.47 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+3V3_RF"
+			(at 127 197.06 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 127 200.66 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 127 200.66 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"VCC\""
+			(at 127 200.66 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "global power"
+			(at 127 200.66 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "3060a867-7774-5b0a-993a-f13d2cde6f0e")
+		)
+		(instances
+			(project "spectre"
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/df8d517c-94d7-5414-8a25-bfdedee8e8ad"
+					(reference "#PWR1047")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "spectre:C")
+		(at 137.16 203.2 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "37bc37c1-bd3b-5be5-a329-89139b5459fb")
+		(property "Reference" "C302"
+			(at 139.06 202.1 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100nF"
+			(at 139.06 204.4 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "ar_passives:C_0402"
+			(at 137.16 203.2 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 137.16 203.2 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Ceramic capacitor, 0402"
+			(at 137.16 203.2 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "IPN" "CAPC-00573"
+			(at 137.16 203.2 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PartNumber" "GRM155R71A104K"
+			(at 137.16 203.2 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Murata"
+			(at 137.16 203.2 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Voltage" "10V"
+			(at 137.16 203.2 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "096fb2a9-1c12-5118-88a3-737b6019761a")
+		)
+		(pin "2"
+			(uuid "cc95827d-3a7f-5f43-9de0-b14e5258a504")
+		)
+		(instances
+			(project "spectre"
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/df8d517c-94d7-5414-8a25-bfdedee8e8ad"
+					(reference "C302")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 137.16 205.74 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "c61c2ec0-5d37-59e7-b01e-85627a63b295")
+		(property "Reference" "#PWR1048"
+			(at 137.16 212.09 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 137.16 209.04 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 137.16 205.74 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 137.16 205.74 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 137.16 205.74 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "global power"
+			(at 137.16 205.74 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "6a204cd6-3a46-5be1-aee3-591c9ebcd4e5")
+		)
+		(instances
+			(project "spectre"
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/df8d517c-94d7-5414-8a25-bfdedee8e8ad"
+					(reference "#PWR1048")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "spectre:C")
+		(at 147.32 203.2 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "a47db4d5-c40e-5c6f-b23d-d8b5691517c3")
+		(property "Reference" "C303"
+			(at 149.22 202.1 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100nF"
+			(at 149.22 204.4 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "ar_passives:C_0402"
+			(at 147.32 203.2 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 147.32 203.2 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Ceramic capacitor, 0402"
+			(at 147.32 203.2 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "IPN" "CAPC-00573"
+			(at 147.32 203.2 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PartNumber" "GRM155R71A104K"
+			(at 147.32 203.2 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Murata"
+			(at 147.32 203.2 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Voltage" "10V"
+			(at 147.32 203.2 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "32345319-a6b4-57bf-bc20-b13cc123d7a6")
+		)
+		(pin "2"
+			(uuid "fcc31053-b4c7-50ab-9b4e-21a2dcb3ffaf")
+		)
+		(instances
+			(project "spectre"
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/df8d517c-94d7-5414-8a25-bfdedee8e8ad"
+					(reference "C303")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 147.32 205.74 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "a3b293a7-e80b-5041-b25d-295f6511a978")
+		(property "Reference" "#PWR1049"
+			(at 147.32 212.09 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 147.32 209.04 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 147.32 205.74 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 147.32 205.74 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 147.32 205.74 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "global power"
+			(at 147.32 205.74 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "c4bc6b55-6220-57a4-b556-9ba69d11dc68")
+		)
+		(instances
+			(project "spectre"
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/df8d517c-94d7-5414-8a25-bfdedee8e8ad"
+					(reference "#PWR1049")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "spectre:C")
+		(at 157.48 203.2 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "4258c7ee-405d-5251-918b-1d1f6871cb16")
+		(property "Reference" "C304"
+			(at 159.38 202.1 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100nF"
+			(at 159.38 204.4 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "ar_passives:C_0402"
+			(at 157.48 203.2 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 157.48 203.2 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Ceramic capacitor, 0402"
+			(at 157.48 203.2 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "IPN" "CAPC-00573"
+			(at 157.48 203.2 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PartNumber" "GRM155R71A104K"
+			(at 157.48 203.2 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Murata"
+			(at 157.48 203.2 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Voltage" "10V"
+			(at 157.48 203.2 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "1df96055-2238-532a-a608-0a27306bc750")
+		)
+		(pin "2"
+			(uuid "b6e3afaf-4b46-52f9-a7ba-eafe78c52811")
+		)
+		(instances
+			(project "spectre"
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/df8d517c-94d7-5414-8a25-bfdedee8e8ad"
+					(reference "C304")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 157.48 205.74 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "4519d2e9-f520-5a7f-b07c-2274a64675c7")
+		(property "Reference" "#PWR1050"
+			(at 157.48 212.09 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 157.48 209.04 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 157.48 205.74 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 157.48 205.74 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 157.48 205.74 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "global power"
+			(at 157.48 205.74 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "7624fb67-d9e9-5cc0-a02f-50f86702ec41")
+		)
+		(instances
+			(project "spectre"
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/df8d517c-94d7-5414-8a25-bfdedee8e8ad"
+					(reference "#PWR1050")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "spectre:C")
+		(at 167.64 203.2 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "305eddbf-3c6d-5819-b743-0109ba9e7892")
+		(property "Reference" "C305"
+			(at 169.54 202.1 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100nF"
+			(at 169.54 204.4 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "ar_passives:C_0402"
+			(at 167.64 203.2 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 167.64 203.2 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Ceramic capacitor, 0402"
+			(at 167.64 203.2 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "IPN" "CAPC-00573"
+			(at 167.64 203.2 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PartNumber" "GRM155R71A104K"
+			(at 167.64 203.2 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Murata"
+			(at 167.64 203.2 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Voltage" "10V"
+			(at 167.64 203.2 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "a88ea7ff-8e21-58d1-9fce-45db81d22cbe")
+		)
+		(pin "2"
+			(uuid "e983711e-669b-501c-9754-09eaa9f74b6e")
+		)
+		(instances
+			(project "spectre"
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/df8d517c-94d7-5414-8a25-bfdedee8e8ad"
+					(reference "C305")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 167.64 205.74 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "3ef71449-069e-59fb-a620-622b055353ef")
+		(property "Reference" "#PWR1051"
+			(at 167.64 212.09 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 167.64 209.04 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 167.64 205.74 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 167.64 205.74 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 167.64 205.74 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "global power"
+			(at 167.64 205.74 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "351bd6ce-4ce0-5ea1-8bf3-e3ae27285906")
+		)
+		(instances
+			(project "spectre"
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/df8d517c-94d7-5414-8a25-bfdedee8e8ad"
+					(reference "#PWR1051")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:VCC")
+		(at 127 226.06 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "ffb9edfa-d3a8-546e-91cd-b807d0b4c774")
+		(property "Reference" "#PWR1052"
+			(at 127 229.87 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+5V_RF"
+			(at 127 222.46 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 127 226.06 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 127 226.06 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"VCC\""
+			(at 127 226.06 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "global power"
+			(at 127 226.06 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "24d49aa0-827d-56db-be4a-cd1b406b839b")
+		)
+		(instances
+			(project "spectre"
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/df8d517c-94d7-5414-8a25-bfdedee8e8ad"
+					(reference "#PWR1052")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "spectre:C")
+		(at 137.16 228.6 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "3244ae23-b013-506c-a666-49ee1239bfc1")
+		(property "Reference" "C306"
+			(at 139.06 227.5 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100nF"
+			(at 139.06 229.8 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "ar_passives:C_0402"
+			(at 137.16 228.6 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 137.16 228.6 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Ceramic capacitor, 0402"
+			(at 137.16 228.6 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "IPN" "CAPC-00573"
+			(at 137.16 228.6 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PartNumber" "GRM155R71A104K"
+			(at 137.16 228.6 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Murata"
+			(at 137.16 228.6 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Voltage" "10V"
+			(at 137.16 228.6 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "808ae94e-d36a-5c2c-87bd-36b658636696")
+		)
+		(pin "2"
+			(uuid "8d21119c-f8db-5298-b65d-3fcba6591cc8")
+		)
+		(instances
+			(project "spectre"
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/df8d517c-94d7-5414-8a25-bfdedee8e8ad"
+					(reference "C306")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 137.16 231.14 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "2117b1e4-5fd6-51bf-ae6d-74bc9b3e9df2")
+		(property "Reference" "#PWR1053"
+			(at 137.16 237.49 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 137.16 234.44 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 137.16 231.14 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 137.16 231.14 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 137.16 231.14 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "global power"
+			(at 137.16 231.14 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "0049e7b9-bb0e-554e-8f09-6beb21951d96")
+		)
+		(instances
+			(project "spectre"
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/df8d517c-94d7-5414-8a25-bfdedee8e8ad"
+					(reference "#PWR1053")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "spectre:C")
+		(at 147.32 228.6 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "76bd43c2-37f5-5a7f-9769-d6b6980677c7")
+		(property "Reference" "C307"
+			(at 149.22 227.5 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100pF"
+			(at 149.22 229.8 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "ar_passives:C_0402"
+			(at 147.32 228.6 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 147.32 228.6 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Ceramic capacitor, 0402"
+			(at 147.32 228.6 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "IPN" ""
+			(at 147.32 228.6 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PartNumber" "GRM1555C1H101JA01D"
+			(at 147.32 228.6 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Murata"
+			(at 147.32 228.6 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Voltage" "50V"
+			(at 147.32 228.6 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "cb31d5d6-7a9c-56e6-9426-2b7e65ffb900")
+		)
+		(pin "2"
+			(uuid "06129135-0cac-513b-a26c-691c11c88462")
+		)
+		(instances
+			(project "spectre"
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/df8d517c-94d7-5414-8a25-bfdedee8e8ad"
+					(reference "C307")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 147.32 231.14 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "2cfeeb5e-b56f-50a1-a078-6f40be72ce61")
+		(property "Reference" "#PWR1054"
+			(at 147.32 237.49 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 147.32 234.44 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 147.32 231.14 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 147.32 231.14 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 147.32 231.14 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "global power"
+			(at 147.32 231.14 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "e20e739a-4f89-5056-96db-ef123ae501b4")
+		)
+		(instances
+			(project "spectre"
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/df8d517c-94d7-5414-8a25-bfdedee8e8ad"
+					(reference "#PWR1054")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "spectre:C")
+		(at 157.48 228.6 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "e87c37c9-5749-52fc-8564-db452bacd13f")
+		(property "Reference" "C308"
+			(at 159.38 227.5 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10uF"
+			(at 159.38 229.8 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "ar_passives:C_0402"
+			(at 157.48 228.6 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 157.48 228.6 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Ceramic capacitor, 0402"
+			(at 157.48 228.6 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "IPN" "CAPC-00667"
+			(at 157.48 228.6 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PartNumber" "GRM155R60J106M"
+			(at 157.48 228.6 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Murata"
+			(at 157.48 228.6 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Voltage" "6.3V"
+			(at 157.48 228.6 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "c6d66689-1ce5-54e4-9d42-97066db11f6b")
+		)
+		(pin "2"
+			(uuid "35a487ee-852a-5e96-a0e3-47cafda481b6")
+		)
+		(instances
+			(project "spectre"
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/df8d517c-94d7-5414-8a25-bfdedee8e8ad"
+					(reference "C308")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 157.48 231.14 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "b2d3910e-13d8-5573-8aca-d7ae743262f3")
+		(property "Reference" "#PWR1055"
+			(at 157.48 237.49 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 157.48 234.44 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 157.48 231.14 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 157.48 231.14 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 157.48 231.14 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "global power"
+			(at 157.48 231.14 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "317d05c0-6495-530c-9505-9d2f3da9cefa")
+		)
+		(instances
+			(project "spectre"
+				(path "/e2b3a745-ca2b-407e-8017-842114c52164/df8d517c-94d7-5414-8a25-bfdedee8e8ad"
+					(reference "#PWR1055")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(embedded_fonts no)
+)

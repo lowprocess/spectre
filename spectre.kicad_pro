@@ -642,6 +642,28 @@
         "CE",
         "RC",
         "RD"
+      ],
+      "IN_CTRL": [
+        "SCK",
+        "SDI",
+        "LE",
+        "V1",
+        "V2"
+      ],
+      "FE_CTRL": [
+        "SEL_1",
+        "PRE_BYP"
+      ],
+      "IF_CTRL": [
+        "SCK",
+        "SDI",
+        "LE",
+        "SEL_MIX"
+      ],
+      "ADC_CTRL": [
+        "~{CS}",
+        "SCK",
+        "SDIO"
       ]
     },
     "connection_grid_size": 50.0,
