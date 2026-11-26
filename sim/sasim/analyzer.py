@@ -1,21 +1,21 @@
 """
-The analyzer: its three signal paths built from the parts, its tuning (where
-each LO sits for a wanted input frequency), one capture (4096 ADC samples, an
-FFT, and the bins mapped back to input frequency and input power), and a sweep
-of captures.
+The analyzer: its signal paths built from the parts, its tuning (where each
+LO sits for a wanted input frequency), one capture (4096 ADC samples, an FFT,
+and the bins mapped back to input frequency and input power), and a sweep of
+captures.
 
-    Band A   to 2.29 GHz with two LMX2582: up-conversion in the first mixer to
-             a 3.2 GHz first IF (LO1 = f + IF1, 3.2-5.5 GHz), the printed
-             band-pass, the second mixer down to 10 MHz
-    Each band has a preamp after its first filter, between two switches:
-    `preamp=True` puts both in, and they are bypassed otherwise.
-    Band B1  2.29-3.45 GHz, band B2 3.45-5.49 GHz: straight into the second
-             mixer, LO2 10 MHz from the signal: no image rejection in hardware
+Two designs, built by Analyzer._build_proposal and Analyzer._build_board:
+their docstrings draw each chain.  A band is one of three kinds:
+
+    superhet  up-conversion in the first mixer to the first IF (LO1 = f +
+              IF1), the IF band-pass, the second mixer down to the second IF
+    direct    straight into the second mixer, LO2 the second IF away
+    sample    no mixer: the ADC samples the input
 
 Image rejection in software: every step can be captured twice, the second
-time with the second LO on the other side of the signal (and, in band A, both
-LOs moved 10 MHz), and the lower of the two readings kept.  A real response
-reads the same both times; an image, and most spurs, do not.
+time with the second LO on the other side of the signal (and, in a superhet
+band, both LOs moved 10 MHz), and the lower of the two readings kept.  A real
+response reads the same both times; an image, and most spurs, do not.
 """
 
 import os
@@ -55,7 +55,7 @@ def passband_centre(part, lo=2.5 * GHZ, hi=4.0 * GHZ):
 
 class Analyzer:
     """design: 'board', the chain of the repository's docs/block-diagram and
-    schematic notes, or 'proposal', the two-band chain of block_diagram.svg.
+    schematic notes, or 'proposal', the 6.4 GHz chain of block_diagram.svg.
 
     What `preamp` switches in differs: the board's input buffer (its 20 dB
     amplifier after the attenuator is always in circuit, unless
@@ -66,25 +66,25 @@ class Analyzer:
     def __init__(self, design="board", lo1=None, lo2=None, att_db=10.0,
                  if_att_db=None, preamp=False, nfft=4096, seed=1,
                  mixer1=None, mixer2=None, adc=None,
-                 lna_powered_in_band_a=False, extra_lpf=False, pad1_db=3.0,
-                 pad2_db=3.0, fixed_lna=True):
+                 lna_powered_in_band_a=False, pad1_db=3.0, pad2_db=6.0,
+                 fixed_lna=True):
         if design not in ("board", "proposal"):
             raise ValueError("design: 'board' or 'proposal'")
         self.design = design
         board = design == "board"
-        # the board's LOs are LMX2572 (lo.kicad_sch); its second LO sits
-        # 12 MHz from the first IF, which a 2 MHz phase detector reaches
-        self.lo1 = lo1 or (lmx2572() if board else lmx2582())
-        self.lo2 = lo2 or (lmx2572(fpd=2e6) if board else lmx2582())
+        # both LOs are LMX2572 (lo.kicad_sch); the second sits 12 MHz from
+        # the first IF or the signal, which a 2 MHz phase detector reaches
+        self.lo1 = lo1 or lmx2572()
+        self.lo2 = lo2 or lmx2572(fpd=2e6)
         self.att_db, self.preamp = att_db, preamp
+        # None: the board's 0 dB, the proposal's own trim for each band
         self.if_att_db = if_att_db if if_att_db is not None else (
-            0.0 if board else 6.0)
+            0.0 if board else None)
         self.nfft, self.seed = nfft, seed
         self.mx1 = mixer1 or Mixer()
         self.mx2 = mixer2 or Mixer()
-        self.adc = adc or (parts.adc_sd9609_40() if board else parts.Adc())
+        self.adc = adc or parts.adc_sd9609_40()
         self.lna_powered_in_band_a = lna_powered_in_band_a
-        self.extra_lpf = extra_lpf
         self.pad1_db, self.pad2_db = pad1_db, pad2_db
         self.fixed_lna = fixed_lna
         if board:
@@ -100,7 +100,7 @@ class Analyzer:
                  preamp=self.preamp, nfft=self.nfft, seed=self.seed,
                  mixer1=self.mx1, mixer2=self.mx2, adc=self.adc,
                  lna_powered_in_band_a=self.lna_powered_in_band_a,
-                 extra_lpf=self.extra_lpf, pad1_db=self.pad1_db,
+                 pad1_db=self.pad1_db,
                  pad2_db=self.pad2_db, fixed_lna=self.fixed_lna)
         d.update(kw)
         return Analyzer(**d)
@@ -174,89 +174,134 @@ class Analyzer:
         self.fs_node_dbm = self.adc.fs_dbm_at_driver_input
 
     def _build_proposal(self):
-        P = parts
-        self.if2 = 10 * MHZ          # a quarter of 40 MSPS
-        self.if1_bpf = P.em_filter(
-            "IF1 band-pass (hairpin N=5)", "if1_bpf_3g2_hairpin.s2p",
-            "3.2 GHz, 180 MHz, RO4003C 0.508 mm")
-        self.if1_lpf = P.em_filter(
-            "IF1 low-pass (radial stub N=7)", "if1_lpf_4g0_radial.s2p",
-            "4.0 GHz, RO4003C 0.508 mm")
-        b_bpf = {
-            "B1": P.em_filter("band B1 preselector (stub N=5)",
-                              "b1_bpf_2g3_3g5_stub.s2p",
-                              "2.3-3.5 GHz, RO4003C 0.508 mm"),
-            "B2": P.em_filter("band B2 preselector (stub N=5)",
-                              "b2_bpf_3g4_5g5_stub.s2p",
-                              "3.4-5.5 GHz, RO4003C 0.508 mm")}
-        # a stub band-pass passes again above its band (B1's at 5.5 GHz and
-        # 8-11 GHz, mom25d finds): each is followed by a low-pass
-        b_lpf = {
-            "B1": self.if1_lpf,
-            "B2": P.em_filter("band B2 low-pass (radial stub N=7)",
-                              "b2_lpf_6g4_radial.s2p",
-                              "6.4 GHz, RO4003C 0.508 mm")}
-        # the first IF sits where this board's filter does
-        self.if1 = round(passband_centre(self.if1_bpf) / self.step) * self.step
-        self.a_top = min(2.3 * GHZ, np.floor(
-            (self.lo1.fmax - self.if1) / self.step) * self.step)
-        self.b_split = 3.45 * GHZ
-        self.b_top = self.top = self.lo2.fmax - self.if2
-        self.kinds = {"A": "superhet", "B1": "direct", "B2": "direct"}
+        """block_diagram.svg: 0.1 MHz to 6.4 GHz with two LMX2572, two
+        SIM-83+ and the board's 10 bit ADC.
 
-        front = [Lin(P.dc_block_limiter()),
-                 Lin(P.pe43711(self.att_db, "input PE43711"))]
+            low band   L1 to 2.29 GHz, L2 to 3.0 GHz: each its own input
+                       filter, then the first mixer up to a 3.4 GHz first IF
+                       (LO1 = f + 3.4 GHz, to 6.4 GHz) and the second down
+                       to 12 MHz
+            high band  H1 to 4.4 GHz, H2 to 6.4 GHz: a preselector each,
+                       straight into the second mixer, LO2 12 MHz away
+            direct     under 15 MHz, into the IF chain with no mixer
+
+        No gain ahead of a mixer that cannot be switched out, a preamp
+        after each band's first filter, and IF gain enough to dither the
+        ADC in every band (the IF attenuator trims it per band)."""
+        P = parts
+        self.if2 = 12 * MHZ
+
+        def em(name, file, what):
+            return P.em_filter(name, file, what + ", RO4003C 0.508 mm")
+        self.if1_bpf = em("IF1 band-pass (hairpin N=5)",
+                          "if1_bpf_3g4_hairpin.s2p", "3.4 GHz, 180 MHz")
+        self.if1 = round(passband_centre(self.if1_bpf) / self.step) * self.step
+        self.l_split = 2.29 * GHZ
+        self.a_top = min(3.0 * GHZ, np.floor(
+            (self.lo1.fmax - self.if1) / self.step) * self.step)
+        self.h_split = 4.4 * GHZ
+        # the second LO can sit below a signal up to its own top, and on
+        # both sides of it (which the image rejection needs) to if2 less
+        self.top = np.floor(self.lo2.fmax / self.step) * self.step
+        self.two_sided_top = self.lo2.fmax - self.if2
+        self.kinds = {"D": "sample", "L1": "superhet", "L2": "superhet",
+                      "H1": "direct", "H2": "direct"}
+
+        def sw(name):
+            return Lin(P.pe42540("on", name))
 
         def preamp(band, lna):
             """A preamp between two switches: through it, or past it."""
-            sw = [Lin(P.pe42540("on", "band %s preamp switch (%s)" % (band, n)))
-                  for n in ("in", "out")]
-            return [sw[0]] + ([Lin(lna)] if lna is not None else []) + [sw[1]]
+            return ([sw("%s preamp switch (in)" % band)]
+                    + ([Lin(lna)] if lna is not None else [])
+                    + [sw("%s preamp switch (out)" % band)])
 
         on = self.preamp
-        pre_a = preamp("A", P.trf37d73("band A preamp TRF37D73")
+        pre_l = preamp("low band", P.trf37d73("low band preamp TRF37D73")
                        if on else None)
-        pre_b = preamp("B", P.pma3_83ln("band B preamp PMA3-83LN+")
+        pre_h = preamp("high band", P.pma3_83ln("high band preamp PMA3-83LN+")
                        if on else None)
-        # band B's preamp while band A is selected: switched in and powered
-        # down, for what isolation that adds to the band switches'
-        pre_b_idle = preamp("B", P.pma3_83ln("band B preamp PMA3-83LN+")
-                            if self.lna_powered_in_band_a else
-                            P.amplifier_off("band B preamp (unpowered)"))
+        # the high band's preamp while the low band is selected: switched
+        # in and powered down, for the isolation that adds
+        pre_h_idle = preamp("high band", P.pma3_83ln(
+            "high band preamp PMA3-83LN+") if self.lna_powered_in_band_a
+            else P.amplifier_off("high band preamp (unpowered)"))
         if2_out = (0.0, backend.OSR * self.adc.fs / 2)
+        front = [Lin(P.dc_block_limiter()),
+                 Lin(P.pe43704(self.att_db, "input PE43704"))]
 
-        a = (front + [Lin(P.pe42540("on", "SW1 (band select)")),
-                      Lin(P.lfcn2250()), Lin(P.lfcn2250())]
-             + ([Lin(self.if1_lpf)] if self.extra_lpf else [])
-             + pre_a
-             + [Lin(P.pad(self.pad1_db, "%g dB pad (mixer 1 IF port)"
-                          % self.pad1_db)),
-                Mix(self.mx1, "lo1", "up", out=(0.2 * GHZ, 14 * GHZ)),
-                Lin(P.pad(self.pad2_db, "%g dB pad (mixer 1 RF port)"
-                          % self.pad2_db)),
-                Lin(self.if1_bpf),
-                Lin(P.pma3_83ln("IF1 amp PMA3-83LN+")),
-                Lin(self.if1_lpf),
-                Lin(P.pe42540("on", "SW2 (mixer 2 select)")),
-                Mix(self.mx2, "lo2", "down", out=if2_out)])
-        leak = ([Lin(P.pe42540("off", "SW1")), Lin(b_bpf["B2"]),
-                 Lin(b_lpf["B2"]), Lin(P.pe42540("on", "SW3 (B1/B2)"))]
-                + pre_b_idle + [Lin(P.pe42540("off", "SW2"))])
-        self.chains = {"A": Chain("A", a, leak, fork=2, join=len(a) - 1)}
-        for b in ("B1", "B2"):
-            self.chains[b] = Chain(b, front + [
-                Lin(P.pe42540("on", "SW1 (band select)")), Lin(b_bpf[b]),
-                Lin(b_lpf[b]),
-                Lin(P.pe42540("on", "SW3 (B1/B2)"))] + pre_b + [
-                Lin(P.pe42540("on", "SW2 (mixer 2 select)")),
-                Mix(self.mx2, "lo2", "down", out=if2_out)])
-        if_parts = [P.diplexer_lp(), P.lmh6629(20.0, "LMH6629 #1"),
-                    P.pe43711(self.if_att_db, "IF PE43711"),
-                    P.antialias(), P.lmh6629(20.0, "LMH6629 #2"),
+        low_in = {
+            "L1": [Lin(P.lfcn2250()), Lin(P.lfcn2250())],
+            "L2": [Lin(em("L2 band-pass 2.3-3.0 GHz (interdigital N=7)",
+                          "l2_bpf_2g3_3g0_interdigital.s2p",
+                          "2.25-3.05 GHz"))]}
+        high_in = {
+            "H1": [Lin(em("H1 band-pass 3.0-4.5 GHz (stub N=5)",
+                          "h1_bpf_3g0_4g5_stub.s2p", "2.95-4.55 GHz")),
+                   Lin(em("H1 low-pass 5.0 GHz (radial stub N=7)",
+                          "h1_lpf_5g0_radial.s2p", "5.0 GHz"))],
+            "H2": [Lin(em("H2 band-pass 4.3-6.4 GHz (stub N=5)",
+                          "h2_bpf_4g3_6g4_stub.s2p", "4.25-6.45 GHz")),
+                   Lin(em("H2 low-pass 7.0 GHz (radial stub N=7)",
+                          "h2_lpf_7g0_radial.s2p", "7.0 GHz"))]}
+        low_tail = (
+            [sw("SW2 (L1/L2)"),
+             Lin(em("low band low-pass 4.0 GHz (radial stub N=7)",
+                    "if1_lpf_4g0_radial.s2p", "4.0 GHz"))]
+            + pre_l
+            + [Lin(P.pad(self.pad1_db, "%g dB pad (mixer 1 IF port)"
+                         % self.pad1_db)),
+               Mix(self.mx1, "lo1", "up", out=(0.2 * GHZ, 14 * GHZ)),
+               Lin(P.pma3_83ln("IF1 amp PMA3-83LN+")),
+               Lin(P.pad(self.pad2_db, "%g dB pad (after the IF1 amp)"
+                         % self.pad2_db)),
+               Lin(em("IF1 low-pass 4.0 GHz (radial stub N=7)",
+                      "if1_lpf_4g0_radial.s2p", "4.0 GHz")),
+               Lin(self.if1_bpf),
+               sw("SW5 (mixer 2 select)"),
+               Mix(self.mx2, "lo2", "down", out=if2_out)])
+        leak = ([Lin(P.pe42540("off", "SW1")), sw("SW3 (H1/H2)")]
+                + high_in["H2"] + [sw("SW4 (H1/H2)")] + pre_h_idle
+                + [Lin(P.pe42540("off", "SW5"))])
+        self.chains = {}
+        for b in ("L1", "L2"):
+            main = (front + [sw("SW1 (band select)")] + low_in[b]
+                    + low_tail)
+            self.chains[b] = Chain(b, main, leak, fork=2, join=len(main) - 1)
+        for b in ("H1", "H2"):
+            self.chains[b] = Chain(b, (
+                front + [sw("SW1 (band select)"), sw("SW3 (H1/H2)")]
+                + high_in[b] + [sw("SW4 (H1/H2)")] + pre_h
+                + [sw("SW5 (mixer 2 select)"),
+                   Mix(self.mx2, "lo2", "down", out=if2_out)]))
+        self.chains["D"] = Chain("D", front + [
+            sw("SW1 (band select)"),
+            Lin(P.diplexer_lp(30 * MHZ, "direct-sample low-pass (30 MHz)"))],
+            out=if2_out)
+
+        # the IF attenuator trims the gain so that each band's noise is
+        # just under an LSB rms at the ADC: enough to dither it, and no
+        # more of its range spent on noise than that takes.  A preamp
+        # brings its own gain, which the attenuator takes back out
+        lo, hi = (14.0, 9.0) if on else (3.0, 0.0)
+        trim = {"L1": lo, "L2": lo, "H1": hi, "H2": hi, "D": 0.0}
+        self.if_trim = trim
+        self.if_chain = {}
+        for b in self.chains:
+            att = self.if_att_db if self.if_att_db is not None else trim[b]
+            tail = [P.pe42540("on", "SW6 (IF select)"),
+                    P.lmh6629(26.0, "LMH6629 #1 (26 dB)"),
+                    P.pe43711(att, "IF PE43711"),
+                    # ninth order: 70 dB from 21.5 MHz, where the first
+                    # alias of the kept 7-17 MHz starts at 23 (a seventh
+                    # order's stop band starts at 25.5)
+                    P.antialias(17.5 * MHZ, order=9),
+                    P.lmh6629(26.0, "LMH6629 #2 (26 dB)"),
                     P.ths4541()]
-        self.if_chain = {b: if_parts for b in self.chains}
+            self.if_chain[b] = (tail if b == "D" else
+                                [P.diplexer_lp()] + tail)
         self.fs_node_dbm = (self.adc.fs_dbm_at_driver_input
-                            + float(if_parts[-1].g(self.if2)))
+                            + float(tail[-1].g(self.if2)))
 
     def all_parts(self):
         out = []
@@ -277,14 +322,18 @@ class Analyzer:
                 return "S"
             raise ValueError("%.4f GHz is above the board's %.4f GHz"
                              % (fc / GHZ, self.a_top / GHZ))
+        if fc <= self.step:
+            return "D"
+        if fc <= self.l_split:
+            return "L1"
         if fc <= self.a_top:
-            return "A"
-        if fc < self.b_split:
-            return "B1"
-        if fc <= self.b_top:
-            return "B2"
+            return "L2"
+        if fc < self.h_split:
+            return "H1"
+        if fc <= self.top:
+            return "H2"
         raise ValueError("%.4f GHz is above the analyzer's %.4f GHz"
-                         % (fc / GHZ, self.b_top / GHZ))
+                         % (fc / GHZ, self.top / GHZ))
 
     def tune(self, fc, shifted=False):
         """The LOs for a capture centred on fc, and how an IF bin maps to
@@ -299,6 +348,13 @@ class Analyzer:
             if not shifted:
                 lo1, lo2 = fc + self.if1, self.if1 - self.if2
                 base, sign = lo1 - lo2, -1
+            elif fc < 4 * self.step:
+                # the two LOs would be fc - if2 apart, and the first LO's
+                # leak through the first mixer would land in the IF at
+                # full strength: here the second capture keeps its side
+                # and moves the second LO 4 MHz, which moves an image 8
+                lo1, lo2 = fc + self.if1, self.if1 - self.if2 + 4 * MHZ
+                base, sign = lo1 - lo2, -1
             else:
                 lo1 = fc + self.if1 - self.step
                 lo2 = self.if1 - self.step + self.if2
@@ -306,9 +362,12 @@ class Analyzer:
             self.lo1.check(lo1)
             self.lo2.check(lo2)
         else:
+            # (above the second LO's top less the IF, it can only sit
+            # below the signal: both captures are then the same one)
             lo1 = None
-            lo2 = fc + self.if2 if not shifted else fc - self.if2
-            base, sign = lo2, (-1 if not shifted else +1)
+            below = shifted or fc + self.if2 > self.lo2.fmax
+            lo2 = fc - self.if2 if below else fc + self.if2
+            base, sign = lo2, (+1 if below else -1)
             self.lo2.check(lo2)
         st = State(lo={"lo1": lo1, "lo2": lo2},
                    synth={"lo1": self.lo1, "lo2": self.lo2})
@@ -387,9 +446,7 @@ class Analyzer:
     def centres(self, f0, f1):
         k0 = int(np.floor(f0 / self.step + 0.5))
         k1 = int(np.ceil(f1 / self.step - 0.5))
-        first = 0 if self.design == "board" else 1    # 0: the sample path
-        return [k * self.step for k in range(max(k0, first),
-                                             max(k1, k0) + 1)]
+        return [k * self.step for k in range(max(k0, 0), max(k1, k0) + 1)]
 
     def _step(self, signals, fc, image_reject, sweep=0):
         f, p, info = self.capture(signals, fc, False, sweep)

@@ -6,7 +6,7 @@ show what it does with real signals.
     python run.py                  the board's chain: every case, figures and
                                    report.md in out/
     python run.py --design proposal
-                                   the two-band proposal's
+                                   the proposal's, to 6.4 GHz
     python run.py compare budget   chosen cases
     python run.py --list
 
@@ -16,19 +16,20 @@ The cases:
     cw            a carrier at 1 GHz: its image, its skirts, the noise floor
     im3           two tones 1 MHz apart: third-order products against the
                   input attenuator
-    direct        board: its direct-sample path, and what folds into it
+    direct        the direct-sample path, and what folds into it
     compression   reading against input level, to the ADC's clipping
     feedthrough   a signal on the first IF, seen from the superheterodyne path
     residuals     nothing connected: the analyzer's own spurs
-    bandb         proposal: band B: a carrier and its image, and a bursting
-                  18 MHz wide signal, which two captures show only in pieces
+    high          proposal: the high band: a carrier and its image, and a
+                  bursting 18 MHz wide signal, which two captures show only
+                  in pieces
     full          the whole span with several signals
     strong        one 0 dBm signal: every product the analyzer makes of it
 
 Options: --design board|proposal, --att DB (input attenuator), --if-att DB,
 --preamp (board: its input buffer; proposal: its preamps), --seed N,
---out DIR, --no-lna (board: without its 20 dB amplifier), and for the
-proposal --lo2 lmx2572 (band B to 6.39 GHz), --pads DB DB, --extra-lpf.
+--out DIR, --no-lna (board: without its 20 dB amplifier), --pads DB DB
+(proposal: at the first mixer's IF port and after the IF1 amplifier).
 """
 
 import argparse
@@ -203,18 +204,21 @@ def case_budget(sa, rep, a):
     rep.say("## Budget")
     rep.say()
     board = sa.design == "board"
-    rep.say("Input attenuator %g dB, IF attenuator %g dB, %s. The first IF "
+    ifa = ("%g dB" % sa.if_att_db if sa.if_att_db is not None else
+           "at each band's trim (%g dB low band, %g dB high band)"
+           % (sa.if_trim["L1"], sa.if_trim["H1"]))
+    rep.say("Input attenuator %g dB, IF attenuator %s, %s. The first IF "
             "is %.3f GHz (this filter's centre) and the second %g MHz; the "
             "superheterodyne path ends at %.2f GHz."
-            % (sa.att_db, sa.if_att_db,
+            % (sa.att_db, ifa,
                ("input buffer %s" if board else "preamps %s")
                % ("in" if sa.preamp else "bypassed"), sa.if1 / GHZ,
                sa.if2 / MHZ, sa.a_top / GHZ))
     rep.say()
     rows = []
-    for f in (0.005, 0.1, 0.5, 1.0, 1.5, 2.0, 2.29, 2.5, 3.0, 3.4, 4.0, 5.0,
-              5.49, 6.0, 6.39):
-        if f * GHZ > sa.top or (f < 0.01 and not board):
+    for f in (0.005, 0.1, 0.5, 1.0, 1.5, 2.0, 2.29, 2.6, 3.0, 3.4, 4.0, 4.4,
+              5.0, 5.5, 6.0, 6.4):
+        if f * GHZ > sa.top:
             continue
         _, s = sa.budget(f * GHZ)
         rows.append(("%.3g" % f, s["band"], "%.1f" % s["gain_to_adc"],
@@ -239,14 +243,15 @@ def case_budget(sa, rep, a):
     else:
         variants = [(f, "preamps %s" % ("in" if pre else "bypassed"),
                      dict(preamp=pre))
-                    for f, pre in ((0.1, False), (0.1, True), (1.0, False),
-                                   (1.0, True), (2.0, True), (2.5, False),
-                                   (2.5, True), (4.0, False), (4.0, True),
-                                   (5.4, True)) if f * GHZ <= sa.top]
+                    for f, pre in ((0.005, False), (0.1, False), (0.1, True),
+                                   (1.0, False), (1.0, True), (2.6, False),
+                                   (2.6, True), (4.0, False), (4.0, True),
+                                   (6.2, False), (6.2, True))
+                    if f * GHZ <= sa.top]
         rep.say("With the input attenuator at 0 dB (the most sensitive "
-                "setting), without and with the preamps (a TRF37D73 in band "
-                "A, a PMA3-83LN+ in band B, each after its band's first "
-                "filter):")
+                "setting), without and with the preamps (a TRF37D73 in the "
+                "low band, a PMA3-83LN+ in the high band, each after its "
+                "band's first filter):")
     rep.say()
     rows = []
     for f, what, kw in variants:
@@ -284,7 +289,7 @@ def case_budget(sa, rep, a):
                 "dither it." % (lsb, one, sa.att_db,
                                  20 * np.log10(0.5 / lsb)))
         rep.say()
-    for f in (1.0 * GHZ, 4.0 * GHZ):
+    for f in (1.0 * GHZ, 5.0 * GHZ):
         if f > sa.top:
             continue
         rws, s = sa.budget(f)
@@ -458,34 +463,48 @@ def case_compression(sa, rep, a):
 
 def case_feedthrough(sa, rep, a):
     # a level the input stages take without compressing
-    lv = -30.0 if sa.design == "board" else 0.0
+    lv = -30.0 if sa.design == "board" else -10.0
     rep.say("## A %g dBm signal on the first IF (%.2f GHz), seen from the "
             "superheterodyne path" % (lv, sa.if1 / GHZ))
     rep.say()
     sig = [Signal(sa.if1 + 1.3 * MHZ, lv, name="IF1 signal")]
-    f, p, clip = sa.sweep(sig, 0.5 * GHZ, 0.7 * GHZ, image_reject=False)
-    f, p2, _ = sa.sweep(sig, 0.5 * GHZ, 0.7 * GHZ, image_reject=True)
-    worst = float(p.max())
-    fw = float(f[np.argmax(p)])
-    made = why(sa, sig, fw, worst)
-    fc = sa.centres(0.6 * GHZ, 0.6 * GHZ)[0]
-    band, st, _, _ = sa.tune(fc)
-    lpf = -sum(float(x.part.g(sa.if1)) - float(x.part.g(0.6 * GHZ))
-               for x in sa.chains[band].main
-               if hasattr(x, "part") and "low-pass" in x.name.lower()
-               or hasattr(x, "part") and "LFCN" in x.name)
-    rep.say("With one capture per step it reads up to %.1f dBm, %.0f dB "
-            "under the signal, at every tuning: here at %.2f MHz, made by "
-            "%s. With two captures, %.1f dBm. The input low-pass is %.0f dB "
-            "down at the first IF; the rest of the rejection is the "
-            "mixer's own isolation between its ports."
-            % (worst, lv - worst, fw / MHZ, made, float(p2.max()), lpf))
+    spans = [(0.5 * GHZ, 0.7 * GHZ)]
+    if sa.design == "proposal":
+        spans.append((2.5 * GHZ, 2.7 * GHZ))
+    rows, traces = [], []
+    for f0, f1 in spans:
+        f, p, clip = sa.sweep(sig, f0, f1, image_reject=False)
+        f, p2, _ = sa.sweep(sig, f0, f1, image_reject=True)
+        worst = float(p.max())
+        fw = float(f[np.argmax(p)])
+        fc = sa.centres(f0, f0)[0]
+        band, st, _, _ = sa.tune(fc)
+        mid = 0.5 * (f0 + f1)
+        main = sa.chains[band].main
+        first = next(i for i, m in enumerate(main) if not hasattr(m, "part"))
+        filt = -sum(float(x.part.g(sa.if1)) - float(x.part.g(mid))
+                    for x in main[:first]
+                    if "pass" in x.name or "LFCN" in x.name)
+        seen = worst > floor_dbm(p) + 12 or dither(sa)[0] < 0.5
+        rows.append(("%.1f-%.1f GHz (%s)" % (f0 / GHZ, f1 / GHZ, band),
+                     "%.0f" % filt,
+                     "%.1f" % worst if seen else "in the noise",
+                     "%.0f" % (lv - worst) if seen else
+                     "over %.0f" % (lv - floor_dbm(p) - 12),
+                     "%.1f" % float(p2.max()),
+                     why(sa, sig, fw, worst) if seen else ""))
+        traces.append((f, p, "%.1f-%.1f GHz" % (f0 / GHZ, f1 / GHZ)))
+    rep.table(["while sweeping", "input filters at the first IF, dB down",
+               "reads, dBm", "dB under the signal",
+               "with two captures, dBm", "made by"], rows)
+    rep.say("What the input filters leave of it goes straight through the "
+            "first mixer (its isolation between ports is the rest of the "
+            "rejection) and reads at every tuning.")
     rep.say()
+    f, p, label = traces[-1]
     fig = spectrum_figure(
-        [(f, p, "one capture per step"),
-         (f, p2, "two captures, the lower kept")],
-        "A %g dBm signal at %.4f GHz during a 500-700 MHz sweep"
-        % (lv, (sa.if1 + 1.3 * MHZ) / GHZ))
+        [(f, p, "")], "A %g dBm signal at %.4f GHz during a %s sweep, one "
+        "capture per step" % (lv, (sa.if1 + 1.3 * MHZ) / GHZ, label))
     rep.figure(fig, "feedthrough.png", "IF feedthrough")
 
 
@@ -518,33 +537,36 @@ def case_residuals(sa, rep, a):
     rep.figure(fig, "residuals.png", "Residual responses")
 
 
-def case_bandb(sa, rep, a):
-    rep.say("## Band B: a carrier at 4 GHz, and a bursting 18 MHz wide signal "
-            "at 2.442 GHz")
+def case_high(sa, rep, a):
+    rep.say("## The high band: a carrier at 5 GHz, and a bursting 18 MHz "
+            "wide signal at 5.5 GHz")
     rep.say()
-    cw = [Signal(4.0 * GHZ, -40.0)]
-    f, p, _ = sa.sweep(cw, 3.9 * GHZ, 4.1 * GHZ, image_reject=False)
-    _, p2, _ = sa.sweep(cw, 3.9 * GHZ, 4.1 * GHZ, image_reject=True)
-    img = 4.0 * GHZ - 2 * sa.if2
+    fc = 5.0 * GHZ
+    cw = [Signal(fc, -40.0)]
+    f, p, _ = sa.sweep(cw, fc - 0.1 * GHZ, fc + 0.1 * GHZ,
+                       image_reject=False)
+    _, p2, _ = sa.sweep(cw, fc - 0.1 * GHZ, fc + 0.1 * GHZ,
+                        image_reject=True)
+    img = fc - 2 * sa.if2
     rep.table(["reading, dBm", "one capture per step",
                "two captures, the lower kept"],
-              [("carrier, 4 GHz", "%.1f" % reading(f, p, 4.0 * GHZ),
-                "%.1f" % reading(f, p2, 4.0 * GHZ)),
-               ("image, 20 MHz below", "%.1f" % reading(f, p, img, 6e6),
-                "%.1f" % reading(f, p2, img, 6e6)),
-               ("noise floor", "%.1f" % floor_dbm(p), "%.1f" % floor_dbm(p2))])
+              [("carrier, 5 GHz", "%.1f" % reading(f, p, fc),
+                "%.1f" % reading(f, p2, fc)),
+               ("image, about %g MHz below" % (2 * sa.if2 / MHZ),
+                "%.1f" % reading(f, p, img, sa.if2),
+                "%.1f" % reading(f, p2, img, sa.if2)),
+               ("noise floor", floor_text(sa, p), floor_text(sa, p2))])
     fig = spectrum_figure(
         [(f, p, "one capture per step"),
          (f, p2, "two captures, the lower kept")],
-        "A -40 dBm carrier at 4 GHz, band B2 (no image filter)",
-        marks=[(img, reading(f, p, img, 6e6), "image")])
-    rep.figure(fig, "bandb_cw.png", "Band B carrier")
+        "A -40 dBm carrier at 5 GHz, high band (no image filter)")
+    rep.figure(fig, "high_cw.png", "High band carrier")
 
-    bw, lv = 18 * MHZ, -40.0
-    burst = [Signal(2.442 * GHZ, lv, bw=bw, duty=0.35, name="burst")]
-    steady = [Signal(2.442 * GHZ, lv, bw=bw, name="steady")]
-    f0, f1 = 2.38 * GHZ, 2.50 * GHZ
-    inrbw = lv - 10 * np.log10(bw / sa.capture([], 2.44 * GHZ)[2]["enbw"])
+    fb, bw, lv = 5.5 * GHZ, 18 * MHZ, -40.0
+    burst = [Signal(fb, lv, bw=bw, duty=0.35, name="burst")]
+    steady = [Signal(fb, lv, bw=bw, name="steady")]
+    f0, f1 = fb - 60 * MHZ, fb + 60 * MHZ
+    inrbw = lv - 10 * np.log10(bw / sa.capture([], fb)[2]["enbw"])
     traces, rows = [], []
     for ir, label in ((False, "one capture per step"),
                       (True, "two captures, the lower kept")):
@@ -554,9 +576,9 @@ def case_bandb(sa, rep, a):
             acc = p if acc is None else np.maximum(acc, p)
         traces.append((f, acc, label))
         _, ps, _ = sa.sweep(steady, f0, f1, image_reject=ir)
-        own = np.abs(f - 2.442 * GHZ) < 8 * MHZ
-        ghost = np.abs(f - (2.442 * GHZ - 2 * sa.if2)) < 6 * MHZ
-        rows.append((label, "%.1f" % level(f, ps, 2.442 * GHZ, 8 * MHZ),
+        own = np.abs(f - fb) < 8 * MHZ
+        ghost = np.abs(f - (fb - 2 * sa.if2)) < 5 * MHZ
+        rows.append((label, "%.1f" % level(f, ps, fb, 8 * MHZ),
                      "%.1f" % np.median(acc[own]),
                      "%.0f %%" % (100 * np.mean(acc[own] > inrbw - 10)),
                      "%.1f" % np.median(acc[ghost])))
@@ -566,16 +588,16 @@ def case_bandb(sa, rep, a):
             % (bw / MHZ, lv, inrbw))
     rep.say()
     rep.table(["", "steady: reads, dBm", "bursting: reads (median), dBm",
-               "bursting: share of its band shown", "20 MHz below: reads, "
-               "dBm"], rows)
+               "bursting: share of its band shown", "%g MHz below: reads, "
+               "dBm" % (2 * sa.if2 / MHZ)], rows)
     rep.say("One capture per step shows the signal and its image side by "
             "side. Keeping the lower of two captures removes the image, but "
             "a step shows a bursting signal only when both of its captures "
             "caught it: the signal is shown in pieces, and low.")
     rep.say()
-    fig = spectrum_figure(traces, "A bursting 18 MHz wide signal at 2.442 "
-                          "GHz, band B1, max hold of 8 sweeps")
-    rep.figure(fig, "bandb_burst.png", "Band B burst")
+    fig = spectrum_figure(traces, "A bursting 18 MHz wide signal at 5.5 "
+                          "GHz, max hold of 8 sweeps")
+    rep.figure(fig, "high_burst.png", "High band burst")
 
 
 def spurs(sa, signals, f, p, over=15.0, guard=3 * MHZ):
@@ -597,14 +619,13 @@ def spurs(sa, signals, f, p, over=15.0, guard=3 * MHZ):
 
 
 def case_full(sa, rep, a):
-    f0 = 0.1 * MHZ if sa.design == "board" else 10 * MHZ
+    f0 = 0.1 * MHZ
     rep.say("## %g MHz to %.2f GHz" % (f0 / MHZ, sa.top / GHZ))
     rep.say()
     sig = [Signal(100.3 * MHZ, -45.0), Signal(915.2 * MHZ, -35.0),
            Signal(1575.4 * MHZ, -60.0), Signal(2.4401 * GHZ, -40.0),
-           Signal(5.2003 * GHZ, -45.0)]
-    if sa.design == "board":
-        sig.insert(0, Signal(3.3 * MHZ, -45.0))
+           Signal(5.2003 * GHZ, -45.0), Signal(6.2003 * GHZ, -45.0)]
+    sig.insert(0, Signal(3.3 * MHZ, -45.0))
     t0 = time.time()
     f, p1, _ = sa.sweep(sig, f0, sa.top, image_reject=False)
     _, p, clip = sa.sweep(sig, f0, sa.top, image_reject=True)
@@ -643,12 +664,12 @@ def case_full(sa, rep, a):
 
 def case_strong(sa, rep, a):
     lv, fs = 0.0, 915.2 * MHZ
-    att = 31.5 if sa.design == "board" else 20.0
+    att = 31.5 if sa.design == "board" else 31.75      # all there is
     rep.say("## One strong signal: %g dBm at %.1f MHz, attenuator %g dB"
             % (lv, fs / MHZ, att))
     rep.say()
     s2 = sa.like(att_db=att)
-    f0 = 0.1 * MHZ if sa.design == "board" else 10 * MHZ
+    f0 = 0.1 * MHZ
     sig = [Signal(fs, lv)]
     f, p1, _ = s2.sweep(sig, f0, s2.top, image_reject=False)
     _, p, clip = s2.sweep(sig, f0, s2.top, image_reject=True)
@@ -696,9 +717,9 @@ def case_direct(sa, rep, a):
                ("27.2 MHz at -40 dBm, folded to %.1f MHz" % (alias / MHZ),
                 "%.1f" % reading(f, p, alias)),
                ("noise floor (median)", floor_text(sa, p))])
-    rep.say("Nothing but the 18 MHz low-pass stands between this path and "
-            "the ADC, so a signal between 22 and 38 MHz folds into it, less "
-            "what that filter takes off. Noise figure %.1f dB, ADC full "
+    rep.say("Only low-pass filtering stands between this path and the ADC, "
+            "so a signal between 22 and 38 MHz folds into it, less what "
+            "those filters take off. Noise figure %.1f dB, ADC full "
             "scale %+.1f dBm at the input with this attenuation."
             % (s["nf_effective"], s["adc_full_scale_dbm"]))
     rep.say()
@@ -778,12 +799,12 @@ def case_compare(sa, rep, a):
 
 
 # the cases that only one of the designs has the hardware for
-ONLY = dict(bandb="proposal", direct="board", compare="board")
+ONLY = dict(high="proposal")
 
 CASES = dict(compare=case_compare, budget=case_budget, cw=case_cw,
              im3=case_im3, direct=case_direct,
              compression=case_compression, feedthrough=case_feedthrough,
-             residuals=case_residuals, bandb=case_bandb, full=case_full,
+             residuals=case_residuals, high=case_high, full=case_full,
              strong=case_strong)
 
 
@@ -800,12 +821,9 @@ def main(argv=None):
     ap.add_argument("--seed", type=int, default=1)
     ap.add_argument("--lo1", choices=("lmx2582", "lmx2572"), default=None)
     ap.add_argument("--lo2", choices=("lmx2582", "lmx2572"), default=None)
-    ap.add_argument("--pads", type=float, nargs=2, default=(3.0, 3.0),
+    ap.add_argument("--pads", type=float, nargs=2, default=(3.0, 6.0),
                     metavar="DB", help="proposal: the pads at the first "
-                    "mixer's IF and RF ports")
-    ap.add_argument("--extra-lpf", action="store_true",
-                    help="proposal: a printed 4 GHz low-pass after the two "
-                    "LFCN-2250+")
+                    "mixer's IF port and after the IF1 amplifier")
     ap.add_argument("--no-lna", action="store_true",
                     help="board: without its 20 dB amplifier")
     ap.add_argument("--out", default=os.path.join(
@@ -821,7 +839,7 @@ def main(argv=None):
                   lo1=getattr(lo, a.lo1)() if a.lo1 else None,
                   lo2=getattr(lo, a.lo2)() if a.lo2 else None,
                   att_db=a.att, if_att_db=a.if_att, preamp=a.preamp,
-                  seed=a.seed, extra_lpf=a.extra_lpf, pad1_db=a.pads[0],
+                  seed=a.seed, pad1_db=a.pads[0],
                   pad2_db=a.pads[1], fixed_lna=not a.no_lna)
     rep = Report(a.out)
     rep.say("# Spectrum analyzer simulation: the %s"

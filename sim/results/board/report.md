@@ -6,18 +6,18 @@ LO1 LMX2572, LO2 LMX2572, two SIM-83+, 40 MSPS SD9609-40 (as an AD9609-40), 4096
 
 |  | board, as drawn | proposal, preamp bypassed | proposal, preamp in |
 |---|---|---|---|
-| highest frequency | 3.00 GHz | 5.49 GHz | 5.49 GHz |
-| noise figure of the chain alone, dB | 7.3 | 21.1 | 8.0 |
-| noise figure with the image and the ADC, dB | 20.7 | 24.4 | 11.0 |
-| noise floor, dBm/Hz | -153.3 | -149.6 | -163.0 |
-| chain noise at the ADC, LSB rms (0.5 or more dithers it) | 0.08 | 1.26 | 3.16 |
-| smallest signal seen alone in a 19.6 kHz RBW, dBm | -73 (one LSB) | -107 | -120 |
-| IIP3, dBm | -7.0 | +9.1 | -11.9 |
-| ADC full scale at the input, dBm | -19.2 | -16.3 | -37.4 |
-| level at the first mixer when the ADC is at full scale, dBm | -2.5 | -24.1 | -24.1 |
-| largest input that keeps the first mixer at -25 dBm (most attenuation), dBm | -10.2 | +14.5 | -6.6 |
-| largest input before the ADC clips or the mixer compresses, dBm | +12.3 | +15.4 | -5.7 |
-| a signal on the first IF reads this many dB down | 33 | 85 | 89 |
+| highest frequency | 3.00 GHz | 6.40 GHz | 6.40 GHz |
+| noise figure of the chain alone, dB | 7.3 | 20.1 | 8.6 |
+| noise figure with the image and the ADC, dB | 20.7 | 22.5 | 12.0 |
+| noise floor, dBm/Hz | -153.3 | -151.5 | -162.0 |
+| chain noise at the ADC, LSB rms (0.5 or more dithers it) | 0.08 | 0.83 | 0.78 |
+| smallest signal seen alone in a 19.6 kHz RBW, dBm | -73 (one LSB) | -109 | -119 |
+| IIP3, dBm | -7.0 | +4.7 | -9.3 |
+| ADC full scale at the input, dBm | -19.2 | -26.5 | -36.6 |
+| level at the first mixer when the ADC is at full scale, dBm | -2.5 | -35.1 | -24.1 |
+| largest input that keeps the first mixer at -25 dBm (most attenuation), dBm | -10.2 | +15.3 | -5.7 |
+| largest input before the ADC clips or the mixer compresses, dBm | +12.3 | +5.2 | -4.8 |
+| a signal on the first IF reads this many dB down | 33 | 86 | 90 |
 | two -30 dBm signals at 3.90 and 4.95 GHz make, at 1050 MHz, dBm | -97 | nothing | nothing |
 
 At 1 GHz with the input attenuator at 0 dB, except the two largest-input rows. The mixer is a level 7 part: clean to about -25 dBm, 1 dB compressed at +1 dBm. The last two rows are what the chain makes ahead of the ADC, referred to the input.
@@ -35,7 +35,7 @@ Input attenuator 10 dB, IF attenuator 0 dB, input buffer bypassed. The first IF 
 | 1.5 | S | 18.2 | 17.6 | 31.6 | -142.4 | +3.9 | -5.4 | -8.2 | 98 |
 | 2 | S | 17.3 | 18.0 | 32.5 | -141.5 | +4.9 | -4.4 | -7.3 | 98 |
 | 2.29 | S | 16.7 | 18.2 | 33.1 | -140.9 | +5.5 | -3.8 | -6.7 | 98 |
-| 2.5 | S | 16.2 | 18.3 | 33.5 | -140.5 | +5.9 | -3.4 | -6.2 | 98 |
+| 2.6 | S | 16.0 | 18.4 | 33.7 | -140.3 | +6.1 | -3.1 | -6.0 | 98 |
 | 3 | S | 15.2 | 18.8 | 34.5 | -139.5 | +7.0 | -2.3 | -5.2 | 98 |
 
 With the input attenuator at 0 dB (the most sensitive setting):
@@ -117,7 +117,7 @@ With no attenuation the product is the chain's, near the budget's, whose cascade
 | 27.2 MHz at -40 dBm, folded to 12.8 MHz | -82.7 |
 | noise floor (median) | none: the ADC is not dithered |
 
-Nothing but the 18 MHz low-pass stands between this path and the ADC, so a signal between 22 and 38 MHz folds into it, less what that filter takes off. Noise figure 42.9 dB, ADC full scale +3.4 dBm at the input with this attenuation.
+Only low-pass filtering stands between this path and the ADC, so a signal between 22 and 38 MHz folds into it, less what those filters take off. Noise figure 42.9 dB, ADC full scale +3.4 dBm at the input with this attenuation.
 
 ![Direct-sample path](direct.png)
 
@@ -129,7 +129,11 @@ The ADC's full scale is -9.2 dBm at the input (budget); the first clipped sample
 
 ## A -30 dBm signal on the first IF (3.40 GHz), seen from the superheterodyne path
 
-With one capture per step it reads up to -63.0 dBm, 33 dB under the signal, at every tuning: here at 688.70 MHz, made by `1LO2-1[1x[IF1 signal] through SIM-83+]`. With two captures, -112.6 dBm. The input low-pass is 2 dB down at the first IF; the rest of the rejection is the mixer's own isolation between its ports.
+| while sweeping | input filters at the first IF, dB down | reads, dBm | dB under the signal | with two captures, dBm | made by |
+|---|---|---|---|---|---|
+| 0.5-0.7 GHz (S) | 2 | -63.0 | 33 | -112.6 | `1LO2-1[1x[IF1 signal] through SIM-83+]` |
+
+What the input filters leave of it goes straight through the first mixer (its isolation between ports is the rest of the rejection) and reads at every tuning.
 
 ![IF feedthrough](feedthrough.png)
 
@@ -151,19 +155,20 @@ none.
 | 1575.4 | -60.0 | -61.0 |
 | 2440.1 | -40.0 | -40.0 |
 | 5200.3 | -45.0 | above the range |
+| 6200.3 | -45.0 | above the range |
 
 Readings 15 dB or more over the local floor that are not the signals: 6 with one capture per step, 2 with two (0.0 % of the ADC's samples clipped at worst).
 
 | at, MHz | one capture, dBm | two captures, dBm | made by |
 |---|---|---|---|
 | 888.80 | -35.2 | -124.0 | `1LO2-1[1LO1-1[915.2 MHz]]` |
-| 2423.90 | -40.1 | -123.9 | `1LO2-1[1LO1-1[2440.1 MHz]]` |
+| 2423.90 | -40.1 | -122.0 | `1LO2-1[1LO1-1[2440.1 MHz]]` |
 | 83.70 | -45.0 | -136.5 | `1LO2-1[1LO1-1[100.3 MHz]]` |
-| 1548.60 | -60.9 | no reading | `1LO2-1[1LO1-1[1575.4 MHz]]` |
+| 1548.60 | -60.9 | -162.6 | `1LO2-1[1LO1-1[1575.4 MHz]]` |
 | 10.30 | -72.4 | -72.4 | harmonic 9 of [3.3 MHz] in the IF amplifiers and ADC |
 | 7.00 | -73.1 | -73.1 | harmonic 10 of [3.3 MHz] in the IF amplifiers and ADC |
 
-903 captures of 4096 samples, 25 s of simulation.
+903 captures of 4096 samples, 26 s of simulation.
 
 ![Full sweep](full.png)
 

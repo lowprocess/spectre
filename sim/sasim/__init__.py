@@ -1,4 +1,4 @@
-"""A behavioural simulation of a two-LMX2582, two-SIM-83+ spectrum analyzer
+"""A behavioural simulation of a two-synthesizer, two-SIM-83+ spectrum analyzer
 (see ../README.md)."""
 
 from . import backend, lo, parts, rf

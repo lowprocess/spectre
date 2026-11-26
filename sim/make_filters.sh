@@ -42,14 +42,16 @@ make if1_bpf_3g4_hairpin 10.0 1991 --type bandpass --topology hairpin \
      --f0 3.4G --bw 180M --order 5 --em-tune 2
 make in_lpf_3g4_radial 12.0 1196 --type lowpass --topology radial \
      --f0 3.4G --order 7 --em-tune 1
-# the proposal's
-make if1_bpf_3g2_hairpin 10.0 1991 --type bandpass --topology hairpin \
-     --f0 3.2G --bw 180M --order 5 --em-tune 2
+# the proposal's: it shares the 3.4 GHz band-pass
 make if1_lpf_4g0_radial 12.0 1196 --type lowpass --topology radial \
      --f0 4.0G --order 7 --em-tune 1
-make b1_bpf_2g3_3g5_stub 12.0 1196 --type bandpass --topology stub \
-     --f0 2.9G --bw 1.2G --order 5 --em-tune 1
-make b2_bpf_3g4_5g5_stub 14.0 1396 --type bandpass --topology stub \
-     --f0 4.45G --bw 2.1G --order 5 --em-tune 1
-make b2_lpf_6g4_radial 16.0 1596 --type lowpass --topology radial \
-     --f0 6.4G --order 7 --em-tune 1
+make l2_bpf_2g3_3g0_interdigital 12.0 1196 --type bandpass \
+     --topology interdigital --f0 2.59G --bw 740M --order 7 --em-tune 3
+make h1_bpf_3g0_4g5_stub 14.0 1396 --type bandpass --topology stub \
+     --f0 3.75G --bw 1.6G --order 5 --em-tune 1
+make h1_lpf_5g0_radial 14.0 1396 --type lowpass --topology radial \
+     --f0 5.0G --order 7 --em-tune 1
+make h2_bpf_4g3_6g4_stub 16.0 1596 --type bandpass --topology stub \
+     --f0 5.35G --bw 2.2G --order 5 --em-tune 1
+make h2_lpf_7g0_radial 18.0 1796 --type lowpass --topology radial \
+     --f0 7.0G --order 7 --em-tune 1

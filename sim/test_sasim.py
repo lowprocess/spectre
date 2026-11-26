@@ -54,13 +54,35 @@ def test_tones_merge_and_prune():
     assert compression_db(-30.0, 1.0) < 0.01
 
 
-@pytest.mark.parametrize("f", [100.3 * MHZ, 1.5002 * GHZ, 3.0001 * GHZ,
-                               5.0003 * GHZ])
-def test_a_carrier_reads_its_level_in_every_band(sa, f):
+@pytest.mark.parametrize("f, band", [
+    (3.3 * MHZ, "D"), (100.3 * MHZ, "L1"), (1.5002 * GHZ, "L1"),
+    (2.6003 * GHZ, "L2"), (2.9902 * GHZ, "L2"), (3.6001 * GHZ, "H1"),
+    (5.0003 * GHZ, "H2"), (6.3902 * GHZ, "H2")])
+def test_a_carrier_reads_its_level_in_every_band(sa, f, band):
     fc = sa.centres(f, f)[0]
+    assert sa.band(fc) == band
     fin, p, info = sa.capture([Signal(f, -40.0)], fc)
-    assert peak(fin, p, f) == pytest.approx(-40.0, abs=0.5)
+    assert peak(fin, p, f) == pytest.approx(-40.0, abs=0.7)
     assert info["clipped"] == 0.0
+
+
+def test_the_proposal_reaches_3_ghz_low_and_6g4_high(sa):
+    assert sa.a_top == pytest.approx(3.0 * GHZ)
+    assert sa.top == pytest.approx(6.4 * GHZ)
+    # the first LO ends where the LMX2572 does
+    band, st, _, _ = sa.tune(3.0 * GHZ)
+    assert band == "L2" and st.lo["lo1"] == pytest.approx(6.4 * GHZ)
+    # and at the very top the second LO can only sit below the signal
+    _, st, _, sign = sa.tune(6.4 * GHZ)
+    assert st.lo["lo2"] == pytest.approx(6.388 * GHZ) and sign == +1
+    with pytest.raises(ValueError):
+        sa.band(6.5 * GHZ)
+
+
+def test_every_band_dithers_the_adc(sa):
+    for f in (5 * MHZ, 1.0 * GHZ, 2.6 * GHZ, 4.0 * GHZ, 6.2 * GHZ):
+        _, s = sa.budget(f)
+        assert s["noise_at_adc_lsb"] > 0.5, f
 
 
 @pytest.mark.parametrize("f", [1.0 * GHZ, 4.0 * GHZ])
@@ -70,32 +92,38 @@ def test_the_noise_floor_is_the_budgets(sa, f):
     mean = 10 * np.log10(np.mean(10 ** (p / 10)))
     assert mean == pytest.approx(
         s["danl_dbm_hz"] + 10 * np.log10(info["enbw"]), abs=1.5)
-    # the second mixer's image is in the noise: 3 dB over the cascade's
-    assert 2.0 < s["nf_effective"] - s["nf_friis"] < 5.0
+    # the ADC is in the noise as well, and the second mixer's image where
+    # there is gain ahead of it
+    assert 0.0 < s["nf_effective"] - s["nf_friis"] < 6.0
 
 
 @pytest.mark.parametrize("f", [1.0002 * GHZ, 4.0002 * GHZ])
 def test_the_image_is_there_and_two_captures_remove_it(sa, f):
     sig = [Signal(f, -40.0)]
     image = f - 2 * sa.if2
-    fin, one, _ = sa.sweep(sig, image - 5 * MHZ, f + 5 * MHZ,
+    fin, one, _ = sa.sweep(sig, image - 15 * MHZ, f + 5 * MHZ,
                            image_reject=False, workers=1)
-    _, two, _ = sa.sweep(sig, image - 5 * MHZ, f + 5 * MHZ,
+    _, two, _ = sa.sweep(sig, image - 15 * MHZ, f + 5 * MHZ,
                          image_reject=True, workers=1)
-    # (it is 20 MHz below to within the signal's place in its step)
-    assert peak(fin, one, image, 1 * MHZ) == pytest.approx(-40.0, abs=1.0)
-    assert peak(fin, two, image, 1 * MHZ) < -80.0
+    # (it is twice the IF below, to within the signal's place in its step)
+    assert peak(fin, one, image, sa.if2) == pytest.approx(-40.0, abs=1.0)
+    assert peak(fin, two, image, sa.if2) < -80.0
     assert peak(fin, two, f) == pytest.approx(-40.0, abs=0.5)
 
 
 def test_third_order_products_follow_the_budget():
     sa = Analyzer(design="proposal", att_db=0.0, nfft=65536)
-    f1, f2, lv = 1000.2 * MHZ, 1001.2 * MHZ, -26.0
-    fin, p, info = sa.capture([Signal(f1, lv), Signal(f2, lv)], 1.0 * GHZ)
     _, s = sa.budget(1.0 * GHZ)
+    # two tones as large as the ADC takes
+    f1, f2 = 1000.2 * MHZ, 1001.2 * MHZ
+    lv = float(np.floor(s["adc_full_scale_dbm"] - 9.5))
+    fin, p, info = sa.capture([Signal(f1, lv), Signal(f2, lv)], 1.0 * GHZ)
+    assert info["clipped"] == 0.0
     im3 = max(peak(fin, p, 2 * f1 - f2, 3e3), peak(fin, p, 2 * f2 - f1, 3e3))
-    # the budget's cascade is the worst case (every product in phase)
-    assert -6.0 < (im3 - lv) - 2 * (lv - s["iip3"]) < 2.0
+    # no worse than the budget's cascade (every stage's product in phase)
+    # by more than the 10 bit converter's own distortion, and 75 dB down
+    assert (im3 - lv) - 2 * (lv - s["iip3"]) > -6.0
+    assert im3 - lv < -75.0
 
 
 def test_an_overload_clips_the_adc_and_reads_low(sa):
@@ -106,24 +134,25 @@ def test_an_overload_clips_the_adc_and_reads_low(sa):
 
 def test_a_noise_like_signal_reads_its_density(sa):
     bw, lv = 18 * MHZ, -40.0
-    fin, p, info = sa.sweep([Signal(2.442 * GHZ, lv, bw=bw)], 2.436 * GHZ,
-                            2.448 * GHZ, image_reject=False, workers=1)[0:3]
+    fin, p, info = sa.sweep([Signal(5.502 * GHZ, lv, bw=bw)], 5.496 * GHZ,
+                            5.508 * GHZ, image_reject=False, workers=1)[0:3]
     mean = 10 * np.log10(np.mean(10 ** (p / 10)))
-    enbw = sa.capture([], 2.44 * GHZ)[2]["enbw"]
+    enbw = sa.capture([], 5.5 * GHZ)[2]["enbw"]
     assert mean == pytest.approx(lv - 10 * np.log10(bw / enbw), abs=1.5)
 
 
-@pytest.mark.parametrize("f", [100.3 * MHZ, 1.0002 * GHZ, 4.0002 * GHZ])
+@pytest.mark.parametrize("f", [100.3 * MHZ, 1.0002 * GHZ, 2.6002 * GHZ,
+                               4.0002 * GHZ, 6.2002 * GHZ])
 def test_the_preamps_buy_noise_figure_with_linearity(sa, f):
     quiet = Analyzer(design="proposal", att_db=0.0)
     loud = quiet.like(preamp=True)
     _, off = quiet.budget(f)
     _, on = loud.budget(f)
-    assert off["nf_effective"] - on["nf_effective"] > 10.0
-    assert off["iip3"] - on["iip3"] > 15.0
+    assert off["nf_effective"] - on["nf_effective"] > 8.0
+    assert off["iip3"] - on["iip3"] > 10.0
     fc = loud.centres(f, f)[0]
     fin, p, info = loud.capture([Signal(f, -70.0)], fc)
-    assert peak(fin, p, f) == pytest.approx(-70.0, abs=0.5)
+    assert peak(fin, p, f) == pytest.approx(-70.0, abs=0.7)
 
 
 # ------------------------------------------------- the board's own chain

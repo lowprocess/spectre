@@ -148,6 +148,28 @@ def pe43711(att_db=0.0, name="PE43711 DSA"):
     return p
 
 
+def pe43704(att_db=0.0, name="PE43704 DSA"):
+    """pSemi PE43704 7-bit step attenuator, 9 kHz-8 GHz: the proposal's
+    input attenuator, because the board's BDA4601 ends at 4 GHz.  Datasheet
+    DOC-51214 tables 3 and 4: insertion loss 1.3 / 1.7 / 2.4 / 2.5 dB
+    typical in 9k-2G / 2-4G / 4-6G / 6-7G, IIP3 +61 dBm, input 1 dB
+    compression +34 dBm; 0.25 dB steps to 6 GHz, 0.5 dB to 7 GHz."""
+    att = round(float(att_db) * 4) / 4
+    if not 0 <= att <= 31.75:
+        raise ValueError("PE43704: 0 to 31.75 dB")
+    il = table([(0, 1.3), (1.0 * GHZ, 1.3), (3.0 * GHZ, 1.7),
+                (5.0 * GHZ, 2.4), (6.5 * GHZ, 2.5), (8.0 * GHZ, 3.0),
+                (12 * GHZ, 5.0)])
+    p = _from_file(name, "PE43704", lambda f: -il(f),
+                   "pSemi datasheet DOC-51214 tables 3-4 (typical insertion "
+                   "loss by band, IIP3, compression); past 7 GHz assumed",
+                   iip3=61.0, iip2=100.0, ip1db=34.0)
+    base = p.gain
+    p.gain = lambda f: base(f) - att
+    p.name = "%s (%g dB)" % (name, att)
+    return p
+
+
 def pe42540(state="on", name="PE42540 switch"):
     """pSemi PE42540 SP4T, 10 Hz-8 GHz.  Datasheet table: insertion loss
     0.7 / 0.8 / 1.0 / 1.1 / 1.2 dB at LF / 3 / 6 / 7.5 / 8 GHz; RFC-RFx
@@ -203,8 +225,8 @@ def pma3_83ln(name="PMA3-83LN+"):
 
 
 def trf37d73(name="TRF37D73"):
-    """TI TRF37D73 gain block, 1 MHz-6 GHz: the band A preamp, because it
-    covers all of band A (the PMA3-83LN+ starts at 0.5 GHz).  Datasheet
+    """TI TRF37D73 gain block, 1 MHz-6 GHz: the low band's preamp, because
+    it covers all of it (the PMA3-83LN+ starts at 0.5 GHz).  Datasheet
     SLASE43 table 6.5: gain 22 / 19.5 / 18 / 15.5 / 13 / 10 dB at 0.4 / 2 / 3
     / 4 / 5 / 6 GHz, and at 2 GHz NF 3.25 dB, OIP3 +27.5 dBm, output P1dB
     +16.5 dBm.  Assumed: the gain under 400 MHz (flat: it depends on the
@@ -226,11 +248,11 @@ def amplifier_off(name="PMA3-83LN+ (unpowered)", iso_db=20.0):
 
 # ------------------------------------------------------------- IF2 (10 MHz)
 
-def diplexer_lp(fc=30 * MHZ):
+def diplexer_lp(fc=30 * MHZ, name=None):
     """The low-pass arm of a third-order constant-resistance diplexer at the
     second mixer's IF port (the high-pass arm ends in 50 ohm, so the mixer
     sees 50 ohm at its sum products): a Butterworth response."""
-    return Part("IF2 diplexer (LP arm, %g MHz)" % (fc / MHZ),
+    return Part(name or "IF2 diplexer (LP arm, %g MHz)" % (fc / MHZ),
                 "ideal 3rd-order Butterworth, 0.3 dB loss assumed",
                 lambda f: -0.3 - 10 * np.log10(
                     1 + (np.asarray(f, float) / fc) ** 6))
@@ -254,9 +276,10 @@ def lmh6629(gain_db=20.0, name="LMH6629 gain stage"):
 
 
 def antialias(fc=16.5 * MHZ, order=7, ripple=0.1, stop=70.0, loss=1.0):
-    """The anti-alias low-pass in front of the ADC: a 7th-order elliptic LC
-    ladder, 0.1 dB ripple, 70 dB stop band (from 1.3 fc).  Its response is the
-    ideal prototype's (scipy.signal.ellip), with 1 dB for the inductors' Q."""
+    """The anti-alias low-pass in front of the ADC: an elliptic LC ladder,
+    0.1 dB ripple, 70 dB stop band (from 1.46 fc at order 7, 1.23 fc at
+    order 9).  Its response is the ideal prototype's (scipy.signal.ellip),
+    with 1 dB for the inductors' Q."""
     from scipy import signal
     b, a = signal.ellip(order, ripple, stop, 2 * np.pi * fc, analog=True)
 

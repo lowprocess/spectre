@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1240 770" role="img" aria-label="Block diagram: RF in, a step attenuator and a band switch; band A up-converts in the first mixer to a 3.21 GHz first IF and comes down to 10 MHz in the second; bands B1 and B2 go through a preselector straight into the second mixer; the 10 MHz IF is amplified, filtered and sampled at 40 MSPS, and an RP2350 sends the captures to a PC.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1392 840" role="img" aria-label="Block diagram: RF in, a step attenuator and a four-way band switch. The low band, in two filtered halves to 3 GHz, is up-converted in the first mixer to a 3.4 GHz first IF and comes down to 12 MHz in the second. The high band, in two preselected halves to 6.4 GHz, goes straight into the second mixer. A direct path under 15 MHz goes to the IF chain with no mixer. The 12 MHz IF is amplified, filtered and sampled at 40 MSPS by a 10 bit ADC, and an RP2350 sends the captures to a PC.">
 <style>
 svg { --bg: #f6f7f9; --surface: #ffffff; --fg: #17202b; --muted: #566273;
       --line: #b9c2ce; --a: #1d6fd6; --b: #c2571a;
@@ -27,203 +27,239 @@ svg { --bg: #f6f7f9; --surface: #ffffff; --fg: #17202b; --muted: #566273;
 .wc { stroke: var(--muted); stroke-width: 1.3; stroke-dasharray: 5 4; }
 .hwc { fill: var(--muted); }
 </style>
-<rect width="1240" height="770" class="ground"/>
+<rect width="1392" height="840" class="ground"/>
 <text x="24" y="30" class="sec" text-anchor="start">RF FRONT END</text>
-<circle cx="34" cy="270" r="5" class="mix"/>
-<text x="34" y="254" class="t1" text-anchor="middle">RF in</text>
-<text x="18" y="314" class="t2" text-anchor="start">10 MHz to</text>
-<text x="18" y="327" class="t2" text-anchor="start">5.49 GHz</text>
-<polyline points="39,270 58,270" class="w"/>
-<polygon points="64,270 56,273.6 56,266.4" class="hw"/>
-<rect x="64" y="244" width="80" height="52" rx="4" class="blk"/>
-<text x="104" y="267.5" class="t1" text-anchor="middle">DC block</text>
-<text x="104" y="280.5" class="t2" text-anchor="middle">+ limiter</text>
-<polyline points="144,270 156,270" class="w"/>
-<polygon points="162,270 154,273.6 154,266.4" class="hw"/>
-<rect x="162" y="244" width="80" height="52" rx="4" class="blk"/>
-<text x="202" y="261" class="t1" text-anchor="middle">Attenuator</text>
-<text x="202" y="274" class="t2" text-anchor="middle">PE43711</text>
-<text x="202" y="287" class="t2" text-anchor="middle">0–31.75 dB</text>
-<polyline points="242,270 256,270" class="w"/>
-<polygon points="262,270 254,273.6 254,266.4" class="hw"/>
-<rect x="262" y="122" width="40" height="296" rx="4" class="blk"/>
-<text x="282" y="274" class="t1" text-anchor="middle" transform="rotate(-90 282 270)">SW1 · PE42540 SP4T · band select</text>
-<text x="310" y="114" class="lbl" text-anchor="start">Band A · 10 MHz–2.29 GHz</text>
+<circle cx="34" cy="331" r="5" class="mix"/>
+<text x="34" y="315" class="t1" text-anchor="middle">RF in</text>
+<text x="18" y="375" class="t2" text-anchor="start">0.1 MHz to</text>
+<text x="18" y="388" class="t2" text-anchor="start">6.4 GHz</text>
+<polyline points="39,331 58,331" class="w"/>
+<polygon points="64,331 56,334.6 56,327.4" class="hw"/>
+<rect x="64" y="305" width="80" height="52" rx="4" class="blk"/>
+<text x="104" y="328.5" class="t1" text-anchor="middle">DC block</text>
+<text x="104" y="341.5" class="t2" text-anchor="middle">+ limiter</text>
+<polyline points="144,331 156,331" class="w"/>
+<polygon points="162,331 154,334.6 154,327.4" class="hw"/>
+<rect x="162" y="305" width="80" height="52" rx="4" class="blk"/>
+<text x="202" y="322" class="t1" text-anchor="middle">Attenuator</text>
+<text x="202" y="335" class="t2" text-anchor="middle">PE43704</text>
+<text x="202" y="348" class="t2" text-anchor="middle">0–31.75 dB</text>
+<polyline points="242,331 256,331" class="w"/>
+<polygon points="262,331 254,334.6 254,327.4" class="hw"/>
+<rect x="262" y="122" width="40" height="418" rx="4" class="blk"/>
+<text x="282" y="335" class="t1" text-anchor="middle" transform="rotate(-90 282 331)">SW1 · PE42540 SP4T · band select</text>
+<text x="310" y="116" class="lbl" text-anchor="start">L1 · 15 MHz–2.29 GHz</text>
 <polyline points="302,150 322,150" class="wa"/>
 <polygon points="328,150 320,153.6 320,146.4" class="hwa"/>
 <rect x="328" y="124" width="96" height="52" rx="4" class="blk"/>
 <text x="376" y="141" class="t1" text-anchor="middle">Low-pass</text>
 <text x="376" y="154" class="t2" text-anchor="middle">2× LFCN-2250+</text>
 <text x="376" y="167" class="t2" text-anchor="middle">2.3 GHz</text>
-<polyline points="424,150 434,150" class="wa"/>
-<polygon points="440,150 432,153.6 432,146.4" class="hwa"/>
-<rect x="440" y="124" width="104" height="52" rx="4" class="blk"/>
-<text x="492" y="141" class="t1" text-anchor="middle">Preamp</text>
-<text x="492" y="154" class="t2" text-anchor="middle">TRF37D73</text>
-<text x="492" y="167" class="t2" text-anchor="middle">~+21 dB, or bypass</text>
-<polyline points="544,150 554,150" class="wa"/>
-<polygon points="560,150 552,153.6 552,146.4" class="hwa"/>
-<rect x="560" y="133" width="34" height="34" rx="4" class="blk"/>
-<text x="577" y="154" class="t2" text-anchor="middle">3 dB</text>
-<polyline points="594,150 604,150" class="wa"/>
-<polygon points="610,150 602,153.6 602,146.4" class="hwa"/>
-<circle cx="627" cy="150" r="17" class="mix"/>
-<path d="M616.8 139.8 L637.2 160.2 M616.8 160.2 L637.2 139.8" class="mixx"/>
-<text x="627" y="186" class="t1" text-anchor="middle">MIX1 · SIM-83+</text>
-<text x="627" y="199" class="t2" text-anchor="middle">in: IF port, out: RF port</text>
-<polyline points="644,150 654,150" class="wa"/>
-<polygon points="660,150 652,153.6 652,146.4" class="hwa"/>
-<rect x="660" y="133" width="34" height="34" rx="4" class="blk"/>
-<text x="677" y="154" class="t2" text-anchor="middle">3 dB</text>
-<polyline points="694,150 706,150" class="wa"/>
-<polygon points="712,150 704,153.6 704,146.4" class="hwa"/>
-<text x="712" y="114" class="lbl" text-anchor="start">first IF 3.21 GHz</text>
-<rect x="712" y="124" width="84" height="52" rx="4" class="blk printed"/>
-<text x="754" y="141" class="t1" text-anchor="middle">Band-pass</text>
-<text x="754" y="154" class="t2" text-anchor="middle">hairpin, N=5</text>
-<text x="754" y="167" class="t2" text-anchor="middle">3.21 GHz</text>
-<polyline points="796,150 808,150" class="wa"/>
-<polygon points="814,150 806,153.6 806,146.4" class="hwa"/>
-<rect x="814" y="124" width="84" height="52" rx="4" class="blk"/>
-<text x="856" y="141" class="t1" text-anchor="middle">IF1 amp</text>
-<text x="856" y="154" class="t2" text-anchor="middle">PMA3-83LN+</text>
-<text x="856" y="167" class="t2" text-anchor="middle">+21 dB</text>
-<polyline points="898,150 910,150" class="wa"/>
-<polygon points="916,150 908,153.6 908,146.4" class="hwa"/>
-<rect x="916" y="124" width="84" height="52" rx="4" class="blk printed"/>
-<text x="958" y="141" class="t1" text-anchor="middle">Low-pass</text>
-<text x="958" y="154" class="t2" text-anchor="middle">radial stub</text>
-<text x="958" y="167" class="t2" text-anchor="middle">4.0 GHz</text>
-<polyline points="1000,150 1026,150" class="wa"/>
-<polygon points="1032,150 1024,153.6 1024,146.4" class="hwa"/>
-<rect x="552" y="34" width="150" height="46" rx="4" class="blk"/>
-<text x="627" y="53" class="t1" text-anchor="middle">LO1 · LMX2582</text>
-<text x="627" y="67" class="t2" text-anchor="middle">f + 3.21 GHz: 3.21–5.50 GHz</text>
-<polyline points="627,80 627,127" class="wl"/>
-<polygon points="627,133 623.4,125 630.6,125" class="hwl"/>
-<text x="310" y="256" class="lbl" text-anchor="start">Band B1 · 2.29–3.45 GHz</text>
-<polyline points="302,290 322,290" class="wb"/>
-<polygon points="328,290 320,293.6 320,286.4" class="hwb"/>
-<rect x="328" y="264" width="84" height="52" rx="4" class="blk printed"/>
-<text x="370" y="281" class="t1" text-anchor="middle">Band-pass</text>
-<text x="370" y="294" class="t2" text-anchor="middle">stub, N=5</text>
-<text x="370" y="307" class="t2" text-anchor="middle">2.3–3.5 GHz</text>
-<polyline points="412,290 424,290" class="wb"/>
-<polygon points="430,290 422,293.6 422,286.4" class="hwb"/>
-<rect x="430" y="264" width="84" height="52" rx="4" class="blk printed"/>
-<text x="472" y="281" class="t1" text-anchor="middle">Low-pass</text>
-<text x="472" y="294" class="t2" text-anchor="middle">radial stub</text>
-<text x="472" y="307" class="t2" text-anchor="middle">4.0 GHz</text>
-<polyline points="514,290 534,290" class="wb"/>
-<polygon points="540,290 532,293.6 532,286.4" class="hwb"/>
-<text x="310" y="356" class="lbl" text-anchor="start">Band B2 · 3.45–5.49 GHz</text>
+<polyline points="424,150 442,150" class="wa"/>
+<polygon points="448,150 440,153.6 440,146.4" class="hwa"/>
+<text x="310" y="196" class="lbl" text-anchor="start">L2 · 2.29–3.0 GHz</text>
+<polyline points="302,230 322,230" class="wa"/>
+<polygon points="328,230 320,233.6 320,226.4" class="hwa"/>
+<rect x="328" y="204" width="96" height="52" rx="4" class="blk printed"/>
+<text x="376" y="221" class="t1" text-anchor="middle">Band-pass</text>
+<text x="376" y="234" class="t2" text-anchor="middle">interdigital, N=7</text>
+<text x="376" y="247" class="t2" text-anchor="middle">2.3–3.0 GHz</text>
+<polyline points="424,230 442,230" class="wa"/>
+<polygon points="448,230 440,233.6 440,226.4" class="hwa"/>
+<rect x="448" y="126" width="40" height="128" rx="4" class="blk"/>
+<text x="468" y="194" class="t1" text-anchor="middle" transform="rotate(-90 468 190)">SW2</text>
+<polyline points="488,190 496,190" class="wa"/>
+<polygon points="502,190 494,193.6 494,186.4" class="hwa"/>
+<rect x="502" y="164" width="80" height="52" rx="4" class="blk printed"/>
+<text x="542" y="181" class="t1" text-anchor="middle">Low-pass</text>
+<text x="542" y="194" class="t2" text-anchor="middle">radial stub</text>
+<text x="542" y="207" class="t2" text-anchor="middle">4.0 GHz</text>
+<polyline points="582,190 590,190" class="wa"/>
+<polygon points="596,190 588,193.6 588,186.4" class="hwa"/>
+<rect x="596" y="164" width="108" height="52" rx="4" class="blk"/>
+<text x="650" y="181" class="t1" text-anchor="middle">Preamp</text>
+<text x="650" y="194" class="t2" text-anchor="middle">TRF37D73</text>
+<text x="650" y="207" class="t2" text-anchor="middle">~+21 dB, or bypass</text>
+<polyline points="704,190 712,190" class="wa"/>
+<polygon points="718,190 710,193.6 710,186.4" class="hwa"/>
+<rect x="718" y="173" width="34" height="34" rx="4" class="blk"/>
+<text x="735" y="194" class="t2" text-anchor="middle">3 dB</text>
+<polyline points="752,190 760,190" class="wa"/>
+<polygon points="766,190 758,193.6 758,186.4" class="hwa"/>
+<circle cx="783" cy="190" r="17" class="mix"/>
+<path d="M772.8 179.8 L793.2 200.2 M772.8 200.2 L793.2 179.8" class="mixx"/>
+<text x="783" y="226" class="t1" text-anchor="middle">MIX1 · SIM-83+</text>
+<text x="783" y="239" class="t2" text-anchor="middle">in: IF port, out: RF port</text>
+<polyline points="800,190 808,190" class="wa"/>
+<polygon points="814,190 806,193.6 806,186.4" class="hwa"/>
+<rect x="814" y="164" width="80" height="52" rx="4" class="blk"/>
+<text x="854" y="181" class="t1" text-anchor="middle">IF1 amp</text>
+<text x="854" y="194" class="t2" text-anchor="middle">PMA3-83LN+</text>
+<text x="854" y="207" class="t2" text-anchor="middle">+21 dB</text>
+<polyline points="894,190 902,190" class="wa"/>
+<polygon points="908,190 900,193.6 900,186.4" class="hwa"/>
+<rect x="908" y="173" width="34" height="34" rx="4" class="blk"/>
+<text x="925" y="194" class="t2" text-anchor="middle">6 dB</text>
+<polyline points="942,190 950,190" class="wa"/>
+<polygon points="956,190 948,193.6 948,186.4" class="hwa"/>
+<rect x="956" y="164" width="80" height="52" rx="4" class="blk printed"/>
+<text x="996" y="181" class="t1" text-anchor="middle">Low-pass</text>
+<text x="996" y="194" class="t2" text-anchor="middle">radial stub</text>
+<text x="996" y="207" class="t2" text-anchor="middle">4.0 GHz</text>
+<polyline points="1036,190 1044,190" class="wa"/>
+<polygon points="1050,190 1042,193.6 1042,186.4" class="hwa"/>
+<text x="1050" y="154" class="lbl" text-anchor="start">first IF 3.4 GHz</text>
+<rect x="1050" y="164" width="80" height="52" rx="4" class="blk printed"/>
+<text x="1090" y="181" class="t1" text-anchor="middle">Band-pass</text>
+<text x="1090" y="194" class="t2" text-anchor="middle">hairpin, N=5</text>
+<text x="1090" y="207" class="t2" text-anchor="middle">3.4 GHz</text>
+<polyline points="1130,190 1146,190" class="wa"/>
+<polygon points="1152,190 1144,193.6 1144,186.4" class="hwa"/>
+<rect x="705" y="34" width="156" height="46" rx="4" class="blk"/>
+<text x="783" y="53" class="t1" text-anchor="middle">LO1 · LMX2572</text>
+<text x="783" y="67" class="t2" text-anchor="middle">f + 3.4 GHz: 3.4–6.4 GHz</text>
+<polyline points="783,80 783,167" class="wl"/>
+<polygon points="783,173 779.4,165 786.6,165" class="hwl"/>
 <polyline points="302,390 322,390" class="wb"/>
 <polygon points="328,390 320,393.6 320,386.4" class="hwb"/>
-<rect x="328" y="364" width="84" height="52" rx="4" class="blk printed"/>
-<text x="370" y="381" class="t1" text-anchor="middle">Band-pass</text>
-<text x="370" y="394" class="t2" text-anchor="middle">stub, N=5</text>
-<text x="370" y="407" class="t2" text-anchor="middle">3.4–5.5 GHz</text>
-<polyline points="412,390 424,390" class="wb"/>
-<polygon points="430,390 422,393.6 422,386.4" class="hwb"/>
-<rect x="430" y="364" width="84" height="52" rx="4" class="blk printed"/>
-<text x="472" y="381" class="t1" text-anchor="middle">Low-pass</text>
-<text x="472" y="394" class="t2" text-anchor="middle">radial stub</text>
-<text x="472" y="407" class="t2" text-anchor="middle">6.4 GHz</text>
-<polyline points="514,390 534,390" class="wb"/>
-<polygon points="540,390 532,393.6 532,386.4" class="hwb"/>
-<rect x="540" y="260" width="40" height="160" rx="4" class="blk"/>
-<text x="560" y="344" class="t1" text-anchor="middle" transform="rotate(-90 560 340)">SW3 · PE42540</text>
-<polyline points="580,340 604,340" class="wb"/>
-<polygon points="610,340 602,343.6 602,336.4" class="hwb"/>
-<rect x="610" y="314" width="104" height="52" rx="4" class="blk"/>
-<text x="662" y="331" class="t1" text-anchor="middle">Preamp</text>
-<text x="662" y="344" class="t2" text-anchor="middle">PMA3-83LN+</text>
-<text x="662" y="357" class="t2" text-anchor="middle">+21 dB, or bypass</text>
-<polyline points="714,340 1026,340" class="wb"/>
-<polygon points="1032,340 1024,343.6 1024,336.4" class="hwb"/>
-<rect x="1032" y="122" width="40" height="246" rx="4" class="blk"/>
-<text x="1052" y="249" class="t1" text-anchor="middle" transform="rotate(-90 1052 245)">SW2 · PE42540 · mixer 2 select</text>
-<polyline points="1072,245 1127,245" class="w"/>
-<polygon points="1133,245 1125,248.6 1125,241.4" class="hw"/>
-<circle cx="1150" cy="245" r="17" class="mix"/>
-<path d="M1139.8 234.8 L1160.2 255.2 M1139.8 255.2 L1160.2 234.8" class="mixx"/>
-<text x="1174" y="242" class="t1" text-anchor="start">MIX2</text>
-<text x="1174" y="255" class="t2" text-anchor="start">SIM-83+</text>
-<rect x="1080" y="118" width="140" height="60" rx="4" class="blk"/>
-<text x="1150" y="137" class="t1" text-anchor="middle">LO2 · LMX2582</text>
-<text x="1150" y="151" class="t2" text-anchor="middle">A: 3.20 or 3.21 GHz</text>
-<text x="1150" y="164" class="t2" text-anchor="middle">B: f ± 10 MHz</text>
-<polyline points="1150,178 1150,222" class="wl"/>
-<polygon points="1150,228 1146.4,220 1153.6,220" class="hwl"/>
-<polyline points="1150,262 1150,476 40,476 40,590 68,590" class="w"/>
-<polygon points="74,590 66,593.6 66,586.4" class="hw"/>
-<text x="1138" y="468" class="lbl" text-anchor="end">second IF · 10 MHz centre, 5–15 MHz kept</text>
-<text x="58" y="530" class="sec" text-anchor="start">IF AND DIGITISER</text>
-<rect x="74" y="564" width="98" height="52" rx="4" class="blk"/>
-<text x="123" y="581" class="t1" text-anchor="middle">Diplexer</text>
-<text x="123" y="594" class="t2" text-anchor="middle">low-pass 30 MHz</text>
-<text x="123" y="607" class="t2" text-anchor="middle">HP arm to 50 Ω</text>
-<polyline points="172,590 190,590" class="w"/>
-<polygon points="196,590 188,593.6 188,586.4" class="hw"/>
-<rect x="196" y="564" width="98" height="52" rx="4" class="blk"/>
-<text x="245" y="581" class="t1" text-anchor="middle">IF amp</text>
-<text x="245" y="594" class="t2" text-anchor="middle">LMH6629</text>
-<text x="245" y="607" class="t2" text-anchor="middle">+20 dB</text>
-<polyline points="294,590 312,590" class="w"/>
-<polygon points="318,590 310,593.6 310,586.4" class="hw"/>
-<rect x="318" y="564" width="98" height="52" rx="4" class="blk"/>
-<text x="367" y="581" class="t1" text-anchor="middle">Attenuator</text>
-<text x="367" y="594" class="t2" text-anchor="middle">PE43711</text>
-<text x="367" y="607" class="t2" text-anchor="middle">0–31.75 dB</text>
-<polyline points="416,590 434,590" class="w"/>
-<polygon points="440,590 432,593.6 432,586.4" class="hw"/>
-<rect x="440" y="564" width="98" height="52" rx="4" class="blk"/>
-<text x="489" y="581" class="t1" text-anchor="middle">Anti-alias LPF</text>
-<text x="489" y="594" class="t2" text-anchor="middle">elliptic, N=7</text>
-<text x="489" y="607" class="t2" text-anchor="middle">16.5 MHz</text>
-<polyline points="538,590 556,590" class="w"/>
-<polygon points="562,590 554,593.6 554,586.4" class="hw"/>
-<rect x="562" y="564" width="98" height="52" rx="4" class="blk"/>
-<text x="611" y="581" class="t1" text-anchor="middle">IF amp</text>
-<text x="611" y="594" class="t2" text-anchor="middle">LMH6629</text>
-<text x="611" y="607" class="t2" text-anchor="middle">+20 dB</text>
-<polyline points="660,590 678,590" class="w"/>
-<polygon points="684,590 676,593.6 676,586.4" class="hw"/>
-<rect x="684" y="564" width="98" height="52" rx="4" class="blk"/>
-<text x="733" y="581" class="t1" text-anchor="middle">ADC driver</text>
-<text x="733" y="594" class="t2" text-anchor="middle">THS4541</text>
-<text x="733" y="607" class="t2" text-anchor="middle">+6 dB, differential</text>
-<polyline points="782,590 800,590" class="w"/>
-<polygon points="806,590 798,593.6 798,586.4" class="hw"/>
-<rect x="806" y="564" width="98" height="52" rx="4" class="blk"/>
-<text x="855" y="581" class="t1" text-anchor="middle">ADC</text>
-<text x="855" y="594" class="t2" text-anchor="middle">12 bit</text>
-<text x="855" y="607" class="t2" text-anchor="middle">40 MSPS</text>
-<polyline points="904,590 922,590" class="w"/>
-<polygon points="928,590 920,593.6 920,586.4" class="hw"/>
-<text x="916" y="556" class="t2" text-anchor="middle">12-bit parallel</text>
-<rect x="928" y="564" width="98" height="52" rx="4" class="blk"/>
-<text x="977" y="581" class="t1" text-anchor="middle">RP2350</text>
-<text x="977" y="594" class="t2" text-anchor="middle">PIO capture</text>
-<text x="977" y="607" class="t2" text-anchor="middle">FFT, control</text>
-<polyline points="1026,590 1044,590" class="w"/>
-<polygon points="1050,590 1042,593.6 1042,586.4" class="hw"/>
-<text x="1038" y="556" class="t2" text-anchor="middle">USB</text>
-<rect x="1050" y="564" width="98" height="52" rx="4" class="blk"/>
-<text x="1099" y="581" class="t1" text-anchor="middle">PC</text>
-<text x="1099" y="594" class="t2" text-anchor="middle">sweep, stitching</text>
-<text x="1099" y="607" class="t2" text-anchor="middle">display</text>
-<rect x="806" y="670" width="98" height="40" rx="4" class="blk"/>
-<text x="855" y="688" class="t1" text-anchor="middle">Oscillator</text>
-<text x="855" y="701" class="t2" text-anchor="middle">40 MHz</text>
-<polyline points="855,670 855,622" class="wc"/>
-<polygon points="855,616 858.6,624 851.4,624" class="hwc"/>
-<polyline points="904,690 977,690 977,622" class="wc"/>
-<polygon points="977,616 980.6,624 973.4,624" class="hwc"/>
-<text x="793" y="688" class="t2" text-anchor="end">also the reference of LO1 and LO2</text>
-<text x="793" y="701" class="t2" text-anchor="end">(÷4: a 10 MHz phase detector, integer-N)</text>
-<text x="991" y="688" class="t2" text-anchor="start">SPI: LO1, LO2, attenuators</text>
-<text x="991" y="701" class="t2" text-anchor="start">GPIO: SW1–SW3</text>
-<rect x="24" y="738" width="26" height="16" rx="3" class="blk printed"/>
-<text x="58" y="750" class="t2" text-anchor="start">printed on the board (0.508 mm RO4003C), from dfsynth and mom25d</text>
+<rect x="328" y="326" width="40" height="128" rx="4" class="blk"/>
+<text x="348" y="394" class="t1" text-anchor="middle" transform="rotate(-90 348 390)">SW3</text>
+<text x="392" y="318" class="lbl" text-anchor="start">H1 · 3.0–4.4 GHz</text>
+<polyline points="368,350 386,350" class="wb"/>
+<polygon points="392,350 384,353.6 384,346.4" class="hwb"/>
+<rect x="392" y="324" width="84" height="52" rx="4" class="blk printed"/>
+<text x="434" y="341" class="t1" text-anchor="middle">Band-pass</text>
+<text x="434" y="354" class="t2" text-anchor="middle">stub, N=5</text>
+<text x="434" y="367" class="t2" text-anchor="middle">3.0–4.5 GHz</text>
+<polyline points="476,350 486,350" class="wb"/>
+<polygon points="492,350 484,353.6 484,346.4" class="hwb"/>
+<rect x="492" y="324" width="84" height="52" rx="4" class="blk printed"/>
+<text x="534" y="341" class="t1" text-anchor="middle">Low-pass</text>
+<text x="534" y="354" class="t2" text-anchor="middle">radial stub</text>
+<text x="534" y="367" class="t2" text-anchor="middle">5.0 GHz</text>
+<polyline points="576,350 594,350" class="wb"/>
+<polygon points="600,350 592,353.6 592,346.4" class="hwb"/>
+<text x="392" y="398" class="lbl" text-anchor="start">H2 · 4.4–6.4 GHz</text>
+<polyline points="368,430 386,430" class="wb"/>
+<polygon points="392,430 384,433.6 384,426.4" class="hwb"/>
+<rect x="392" y="404" width="84" height="52" rx="4" class="blk printed"/>
+<text x="434" y="421" class="t1" text-anchor="middle">Band-pass</text>
+<text x="434" y="434" class="t2" text-anchor="middle">stub, N=5</text>
+<text x="434" y="447" class="t2" text-anchor="middle">4.3–6.4 GHz</text>
+<polyline points="476,430 486,430" class="wb"/>
+<polygon points="492,430 484,433.6 484,426.4" class="hwb"/>
+<rect x="492" y="404" width="84" height="52" rx="4" class="blk printed"/>
+<text x="534" y="421" class="t1" text-anchor="middle">Low-pass</text>
+<text x="534" y="434" class="t2" text-anchor="middle">radial stub</text>
+<text x="534" y="447" class="t2" text-anchor="middle">7.0 GHz</text>
+<polyline points="576,430 594,430" class="wb"/>
+<polygon points="600,430 592,433.6 592,426.4" class="hwb"/>
+<rect x="600" y="326" width="40" height="128" rx="4" class="blk"/>
+<text x="620" y="394" class="t1" text-anchor="middle" transform="rotate(-90 620 390)">SW4</text>
+<polyline points="640,390 662,390" class="wb"/>
+<polygon points="668,390 660,393.6 660,386.4" class="hwb"/>
+<rect x="668" y="364" width="104" height="52" rx="4" class="blk"/>
+<text x="720" y="381" class="t1" text-anchor="middle">Preamp</text>
+<text x="720" y="394" class="t2" text-anchor="middle">PMA3-83LN+</text>
+<text x="720" y="407" class="t2" text-anchor="middle">+21 dB, or bypass</text>
+<polyline points="772,390 1146,390" class="wb"/>
+<polygon points="1152,390 1144,393.6 1144,386.4" class="hwb"/>
+<rect x="1152" y="166" width="40" height="248" rx="4" class="blk"/>
+<text x="1172" y="294" class="t1" text-anchor="middle" transform="rotate(-90 1172 290)">SW5 · mixer 2 select</text>
+<polyline points="1192,290 1235,290" class="w"/>
+<polygon points="1241,290 1233,293.6 1233,286.4" class="hw"/>
+<circle cx="1258" cy="290" r="17" class="mix"/>
+<path d="M1247.8 279.8 L1268.2 300.2 M1247.8 300.2 L1268.2 279.8" class="mixx"/>
+<text x="1282" y="287" class="t1" text-anchor="start">MIX2</text>
+<text x="1282" y="300" class="t2" text-anchor="start">SIM-83+</text>
+<rect x="1204" y="150" width="136" height="60" rx="4" class="blk"/>
+<text x="1272" y="169" class="t1" text-anchor="middle">LO2 · LMX2572</text>
+<text x="1272" y="183" class="t2" text-anchor="middle">low band: 3.388 GHz</text>
+<text x="1272" y="196" class="t2" text-anchor="middle">high band: f ± 12 MHz</text>
+<polyline points="1258,210 1258,267" class="wl"/>
+<polygon points="1258,273 1254.4,265 1261.6,265" class="hwl"/>
+<text x="58" y="640" class="sec" text-anchor="start">IF AND DIGITISER</text>
+<polyline points="1258,307 1258,770 40,770 40,690 58,690" class="w"/>
+<polygon points="64,690 56,693.6 56,686.4" class="hw"/>
+<text x="1246" y="762" class="lbl" text-anchor="end">second IF · 12 MHz centre, 7–17 MHz kept</text>
+<rect x="64" y="664" width="102" height="52" rx="4" class="blk"/>
+<text x="115" y="681" class="t1" text-anchor="middle">Diplexer</text>
+<text x="115" y="694" class="t2" text-anchor="middle">low-pass 30 MHz</text>
+<text x="115" y="707" class="t2" text-anchor="middle">HP arm to 50 Ω</text>
+<polyline points="166,690 256,690" class="w"/>
+<polygon points="262,690 254,693.6 254,686.4" class="hw"/>
+<polyline points="282,540 282,556" class="wb"/>
+<polygon points="282,562 278.4,554 285.6,554" class="hwb"/>
+<rect x="234" y="562" width="96" height="44" rx="4" class="blk"/>
+<text x="282" y="581" class="t1" text-anchor="middle">Low-pass</text>
+<text x="282" y="594" class="t2" text-anchor="middle">30 MHz</text>
+<text x="340" y="581" class="lbl" text-anchor="start">Direct · 0.1–15 MHz</text>
+<text x="340" y="594" class="t2" text-anchor="start">no mixer: the ADC samples it</text>
+<polyline points="282,606 282,658" class="wb"/>
+<polygon points="282,664 278.4,656 285.6,656" class="hwb"/>
+<rect x="262" y="664" width="40" height="52" rx="4" class="blk"/>
+<text x="282" y="694" class="t1" text-anchor="middle">SW6</text>
+<polyline points="302,690 318,690" class="w"/>
+<polygon points="324,690 316,693.6 316,686.4" class="hw"/>
+<rect x="324" y="664" width="92" height="52" rx="4" class="blk"/>
+<text x="370" y="681" class="t1" text-anchor="middle">IF amp</text>
+<text x="370" y="694" class="t2" text-anchor="middle">LMH6629</text>
+<text x="370" y="707" class="t2" text-anchor="middle">+26 dB</text>
+<polyline points="416,690 432,690" class="w"/>
+<polygon points="438,690 430,693.6 430,686.4" class="hw"/>
+<rect x="438" y="664" width="92" height="52" rx="4" class="blk"/>
+<text x="484" y="681" class="t1" text-anchor="middle">Attenuator</text>
+<text x="484" y="694" class="t2" text-anchor="middle">PE43711</text>
+<text x="484" y="707" class="t2" text-anchor="middle">0–31.75 dB</text>
+<polyline points="530,690 546,690" class="w"/>
+<polygon points="552,690 544,693.6 544,686.4" class="hw"/>
+<rect x="552" y="664" width="92" height="52" rx="4" class="blk"/>
+<text x="598" y="681" class="t1" text-anchor="middle">Anti-alias LPF</text>
+<text x="598" y="694" class="t2" text-anchor="middle">elliptic, N=9</text>
+<text x="598" y="707" class="t2" text-anchor="middle">17.5 MHz</text>
+<polyline points="644,690 660,690" class="w"/>
+<polygon points="666,690 658,693.6 658,686.4" class="hw"/>
+<rect x="666" y="664" width="92" height="52" rx="4" class="blk"/>
+<text x="712" y="681" class="t1" text-anchor="middle">IF amp</text>
+<text x="712" y="694" class="t2" text-anchor="middle">LMH6629</text>
+<text x="712" y="707" class="t2" text-anchor="middle">+26 dB</text>
+<polyline points="758,690 774,690" class="w"/>
+<polygon points="780,690 772,693.6 772,686.4" class="hw"/>
+<rect x="780" y="664" width="92" height="52" rx="4" class="blk"/>
+<text x="826" y="681" class="t1" text-anchor="middle">ADC driver</text>
+<text x="826" y="694" class="t2" text-anchor="middle">THS4541</text>
+<text x="826" y="707" class="t2" text-anchor="middle">+6 dB, diff.</text>
+<polyline points="872,690 888,690" class="w"/>
+<polygon points="894,690 886,693.6 886,686.4" class="hw"/>
+<rect x="894" y="664" width="92" height="52" rx="4" class="blk"/>
+<text x="940" y="681" class="t1" text-anchor="middle">ADC</text>
+<text x="940" y="694" class="t2" text-anchor="middle">SD9609-40</text>
+<text x="940" y="707" class="t2" text-anchor="middle">10 bit, 40 MSPS</text>
+<polyline points="986,690 1002,690" class="w"/>
+<polygon points="1008,690 1000,693.6 1000,686.4" class="hw"/>
+<text x="997" y="734" class="t2" text-anchor="middle">10-bit</text>
+<rect x="1008" y="664" width="92" height="52" rx="4" class="blk"/>
+<text x="1054" y="681" class="t1" text-anchor="middle">RP2350</text>
+<text x="1054" y="694" class="t2" text-anchor="middle">PIO capture</text>
+<text x="1054" y="707" class="t2" text-anchor="middle">FFT, control</text>
+<polyline points="1100,690 1116,690" class="w"/>
+<polygon points="1122,690 1114,693.6 1114,686.4" class="hw"/>
+<text x="1111" y="734" class="t2" text-anchor="middle">USB</text>
+<rect x="1122" y="664" width="92" height="52" rx="4" class="blk"/>
+<text x="1168" y="681" class="t1" text-anchor="middle">PC</text>
+<text x="1168" y="694" class="t2" text-anchor="middle">sweep, stitching</text>
+<text x="1168" y="707" class="t2" text-anchor="middle">display</text>
+<rect x="894" y="586" width="92" height="40" rx="4" class="blk"/>
+<text x="940" y="604" class="t1" text-anchor="middle">Oscillator</text>
+<text x="940" y="617" class="t2" text-anchor="middle">40 MHz</text>
+<polyline points="940,626 940,658" class="wc"/>
+<polygon points="940,664 936.4,656 943.6,656" class="hwc"/>
+<polyline points="986,606 1054,606 1054,658" class="wc"/>
+<polygon points="1054,664 1050.4,656 1057.6,656" class="hwc"/>
+<text x="882" y="604" class="t2" text-anchor="end">also the reference of LO1 and LO2</text>
+<text x="882" y="617" class="t2" text-anchor="end">(10 and 2 MHz phase detectors, integer-N)</text>
+<text x="1068" y="604" class="t2" text-anchor="start">SPI: LOs, attenuators</text>
+<text x="1068" y="617" class="t2" text-anchor="start">GPIO: switches, preamps</text>
+<rect x="24" y="808" width="26" height="16" rx="3" class="blk printed"/>
+<text x="58" y="820" class="t2" text-anchor="start">printed on the board (0.508 mm RO4003C), from dfsynth and mom25d</text>
 </svg>
