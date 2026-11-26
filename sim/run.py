@@ -3,27 +3,32 @@
 Run the spectrum analyzer's simulation: its budget, and the test cases that
 show what it does with real signals.
 
-    python run.py                  every case, figures and report.md in out/
-    python run.py budget           the gain / noise / linearity budget only
-    python run.py cw im3           chosen cases
+    python run.py                  the board's chain: every case, figures and
+                                   report.md in out/
+    python run.py --design proposal
+                                   the two-band proposal's
+    python run.py compare budget   chosen cases
     python run.py --list
 
 The cases:
-    budget        stage-by-stage gain, noise figure and IP3 in each band
+    compare       the board's chain against the proposal's, on the same tests
+    budget        stage-by-stage gain, noise figure and IP3
     cw            a carrier at 1 GHz: its image, its skirts, the noise floor
     im3           two tones 1 MHz apart: third-order products against the
                   input attenuator
+    direct        board: its direct-sample path, and what folds into it
     compression   reading against input level, to the ADC's clipping
-    feedthrough   a strong signal on the first IF, seen from band A
-    residuals     band A with nothing connected: the analyzer's own spurs
-    bandb         band B: a carrier and its image, and a bursting 18 MHz
-                  wide signal, which two captures show only in pieces
-    full          10 MHz to 5.49 GHz with five signals
+    feedthrough   a signal on the first IF, seen from the superheterodyne path
+    residuals     nothing connected: the analyzer's own spurs
+    bandb         proposal: band B: a carrier and its image, and a bursting
+                  18 MHz wide signal, which two captures show only in pieces
+    full          the whole span with several signals
     strong        one 0 dBm signal: every product the analyzer makes of it
 
-Options: --att DB (input attenuator), --if-att DB, --preamp, --seed N,
---out DIR, --lo2 lmx2572 (the 6.4 GHz part: band B to 6.39 GHz), --pads DB DB
-(the pads either side of the first mixer), --extra-lpf.
+Options: --design board|proposal, --att DB (input attenuator), --if-att DB,
+--preamp (board: its input buffer; proposal: its preamps), --seed N,
+--out DIR, --no-lna (board: without its 20 dB amplifier), and for the
+proposal --lo2 lmx2572 (band B to 6.39 GHz), --pads DB DB, --extra-lpf.
 """
 
 import argparse
@@ -84,6 +89,22 @@ def floor_dbm(p):
     return float(np.median(p))
 
 
+NO_FLOOR = "none: the ADC is not dithered"
+
+
+def dither(sa, f=1.0e9):
+    """The chain's noise at the ADC in LSB rms, and the input level of a
+    tone one LSB in amplitude there.  Under about half an LSB of noise the
+    converter rests on one code: it has no noise floor to read, and a signal
+    under an LSB does not move it."""
+    _, s = sa.budget(min(f, sa.top))
+    return s["noise_at_adc_lsb"], float(s["one_lsb_dbm"])
+
+
+def floor_text(sa, p):
+    return ("%.1f" % floor_dbm(p) if dither(sa)[0] >= 0.5 else NO_FLOOR)
+
+
 def why(sa, signals, f, reads, shifted=False):
     """The likeliest maker of the reading `reads` at f, as text."""
     found = sa.explain(signals, f, shifted, span=30e3)
@@ -100,6 +121,13 @@ def why(sa, signals, f, reads, shifted=False):
     return "the skirt of `%s`" % wide[0][2] if wide else "-"
 
 
+def _under(cell, limit=-180.0):
+    try:
+        return float(cell) < limit
+    except (TypeError, ValueError):
+        return False
+
+
 class Report:
     def __init__(self, out):
         self.out, self.lines = out, []
@@ -113,6 +141,7 @@ class Report:
         self.say("| " + " | ".join(head) + " |")
         self.say("|" + "|".join("---" for _ in head) + "|")
         for r in rows:
+            r = ["no reading" if _under(c) else c for c in r]
             self.say("| " + " | ".join(str(c) for c in r) + " |")
         self.say()
 
@@ -157,22 +186,38 @@ def spectrum_figure(traces, title, note=None, marks=(), ylim=None):
 
 # --------------------------------------------------------------------- cases
 
+def to_mixer(sa, f):
+    """The gain, in dB, from the input connector to the first mixer in the
+    path of an input at f."""
+    fc = sa.centres(f, f)[0]
+    band, st, _, _ = sa.tune(fc)
+    g = 0.0
+    for s in sa.chains[band].main:
+        if not hasattr(s, "part"):
+            return g
+        g += float(s.part.g(f))
+    return None                         # no mixer in this path
+
+
 def case_budget(sa, rep, a):
     rep.say("## Budget")
     rep.say()
-    rep.say("Input attenuator %g dB, IF attenuator %g dB, preamp %s. The "
-            "first IF is %.3f GHz (this filter's centre); band A ends at "
-            "%.2f GHz." % (sa.att_db, sa.if_att_db,
-                           "on" if sa.preamp else "off", sa.if1 / GHZ,
-                           sa.a_top / GHZ))
+    board = sa.design == "board"
+    rep.say("Input attenuator %g dB, IF attenuator %g dB, %s. The first IF "
+            "is %.3f GHz (this filter's centre) and the second %g MHz; the "
+            "superheterodyne path ends at %.2f GHz."
+            % (sa.att_db, sa.if_att_db,
+               ("input buffer %s" if board else "preamps %s")
+               % ("in" if sa.preamp else "bypassed"), sa.if1 / GHZ,
+               sa.if2 / MHZ, sa.a_top / GHZ))
     rep.say()
     rows = []
-    for f in (0.1, 0.5, 1.0, 1.5, 2.0, 2.29, 2.5, 3.0, 3.4, 4.0, 5.0, 5.49,
-              6.0, 6.39):
-        if f * GHZ > sa.b_top:
+    for f in (0.005, 0.1, 0.5, 1.0, 1.5, 2.0, 2.29, 2.5, 3.0, 3.4, 4.0, 5.0,
+              5.49, 6.0, 6.39):
+        if f * GHZ > sa.top or (f < 0.01 and not board):
             continue
         _, s = sa.budget(f * GHZ)
-        rows.append(("%.2f" % f, s["band"], "%.1f" % s["gain_to_adc"],
+        rows.append(("%.3g" % f, s["band"], "%.1f" % s["gain_to_adc"],
                      "%.1f" % s["nf_friis"], "%.1f" % s["nf_effective"],
                      "%.1f" % s["danl_dbm_hz"], "%+.1f" % s["iip3"],
                      "%+.1f" % s["ip1db"],
@@ -182,38 +227,67 @@ def case_budget(sa, rep, a):
                "NF (effective), dB", "noise floor, dBm/Hz", "IIP3, dBm",
                "P1dB in, dBm", "ADC full scale, dBm", "SFDR, dB (1 Hz)"],
               rows)
+    if board:
+        variants = [(1.0, "as drawn", {}),
+                    (1.0, "input buffer in", dict(preamp=True)),
+                    (1.0, "IF attenuator 20 dB", dict(if_att_db=20.0)),
+                    (1.0, "without the 20 dB amplifier",
+                     dict(fixed_lna=False)),
+                    (3.0, "as drawn", {}), (0.005, "as drawn", {})]
+        rep.say("With the input attenuator at 0 dB (the most sensitive "
+                "setting):")
+    else:
+        variants = [(f, "preamps %s" % ("in" if pre else "bypassed"),
+                     dict(preamp=pre))
+                    for f, pre in ((0.1, False), (0.1, True), (1.0, False),
+                                   (1.0, True), (2.0, True), (2.5, False),
+                                   (2.5, True), (4.0, False), (4.0, True),
+                                   (5.4, True)) if f * GHZ <= sa.top]
+        rep.say("With the input attenuator at 0 dB (the most sensitive "
+                "setting), without and with the preamps (a TRF37D73 in band "
+                "A, a PMA3-83LN+ in band B, each after its band's first "
+                "filter):")
+    rep.say()
     rows = []
-    for f, pre in ((0.1, False), (0.1, True), (1.0, False), (1.0, True),
-                   (2.0, True), (2.5, False), (2.5, True), (4.0, False),
-                   (4.0, True), (5.4, True)):
-        if f * GHZ > sa.b_top:
-            continue
-        s0 = Analyzer(lo1=sa.lo1, lo2=sa.lo2, att_db=0.0, preamp=pre,
-                      if_att_db=sa.if_att_db,
-                      extra_lpf=sa.extra_lpf, pad1_db=sa.pad1_db,
-                      pad2_db=sa.pad2_db)
+    for f, what, kw in variants:
+        s0 = sa.like(att_db=0.0, **kw)
         _, s = s0.budget(f * GHZ)
-        rows.append(("%.1f" % f, s["band"], "on" if pre else "off",
+        gm = to_mixer(s0, f * GHZ)
+        rows.append(("%.3g" % f, s["band"], what,
                      "%.1f" % s["nf_effective"],
                      "%.1f" % s["danl_dbm_hz"], "%+.1f" % s["iip3"],
                      "%+.1f" % s["adc_full_scale_dbm"],
+                     "-" if gm is None else
+                     "%+.1f" % (s["adc_full_scale_dbm"] + gm),
+                     "%.2f" % s["noise_at_adc_lsb"],
                      "%.0f" % s["sfdr_db_1hz"]))
-    rep.say("With the input attenuator at 0 dB (the most sensitive "
-            "setting), without and with the preamps (a TRF37D73 in band A, "
-            "a PMA3-83LN+ in band B, each after its band's first filter):")
-    rep.say()
-    rep.table(["f, GHz", "band", "preamp", "NF (effective), dB",
+    rep.table(["f, GHz", "band", "", "NF (effective), dB",
                "noise floor, dBm/Hz", "IIP3, dBm", "ADC full scale, dBm",
+               "first mixer sees then, dBm", "chain noise at the ADC, LSB rms",
                "SFDR, dB (1 Hz)"], rows)
     rep.say("The effective noise figure is what the noise pass finds: it has "
             "the second mixer's image, the LOs' noise and the ADC's, which "
             "the Friis column leaves out. SFDR is 2/3 (IIP3 - noise floor) "
-            "in 1 Hz; take 2/3 of 10 log(RBW) off for a wider one.")
+            "in 1 Hz; take 2/3 of 10 log(RBW) off for a wider one. A level 7 "
+            "mixer is clean to about -25 dBm and compresses at +1 dBm: "
+            "where the ADC's full scale puts more than that on the first "
+            "mixer, the mixer limits the analyzer before the ADC does.")
     rep.say()
+    lsb, one = dither(sa)
+    if lsb < 0.5:
+        rep.say("**The ADC is not dithered.** The chain puts %.2f LSB rms of "
+                "noise on it, and it wants half an LSB or more: with nothing "
+                "larger in the IF band it rests on one code, the noise "
+                "floors above are not reached, and a signal alone must be "
+                "about %.0f dBm at the input (attenuator %g dB) to move it "
+                "by an LSB. About %.0f dB more gain ahead of the ADC would "
+                "dither it." % (lsb, one, sa.att_db,
+                                 20 * np.log10(0.5 / lsb)))
+        rep.say()
     for f in (1.0 * GHZ, 4.0 * GHZ):
-        rws, s = sa.budget(f)
-        if f > sa.b_top:
+        if f > sa.top:
             continue
+        rws, s = sa.budget(f)
         rep.say("### Stage by stage at %.1f GHz (band %s)" % (f / GHZ,
                                                              s["band"]))
         rep.say()
@@ -237,10 +311,11 @@ def case_cw(sa, rep, a):
     img = 1.0 * GHZ - 2 * sa.if2
     rows = [("carrier", "%.1f" % reading(f, p1, 1.0 * GHZ),
              "%.1f" % reading(f, p2, 1.0 * GHZ)),
-            ("image, 20 MHz below", "%.1f" % reading(f, p1, img, 6e6),
-             "%.1f" % reading(f, p2, img, 6e6)),
-            ("noise floor (median)", "%.1f" % floor_dbm(p1),
-             "%.1f" % floor_dbm(p2))]
+            ("image, about %g MHz below" % (2 * sa.if2 / MHZ),
+             "%.1f" % reading(f, p1, img, sa.if2),
+             "%.1f" % reading(f, p2, img, sa.if2)),
+            ("noise floor (median)", floor_text(sa, p1),
+             floor_text(sa, p2))]
     for off in (100e3, 300e3):
         n1 = level(f, p1, 1.0 * GHZ + off, 15e3)
         n2 = level(f, p2, 1.0 * GHZ + off, 15e3)
@@ -251,7 +326,7 @@ def case_cw(sa, rep, a):
     lo1 = sa.lo1.phase_noise(1.0 * GHZ + sa.if1, 100e3)
     lo2 = sa.lo2.phase_noise(sa.if1 - sa.if2, 100e3)
     rep.say("At 100 kHz the two LOs' phase noise is %.1f and %.1f dBc/Hz "
-            "(LMX2582 datasheet profile at %.2f and %.2f GHz), which in this "
+            "(the synthesizers' datasheet profiles at %.2f and %.2f GHz), which in this "
             "RBW is %.1f dBc: the skirt above."
             % (lo1, lo2, (1.0 * GHZ + sa.if1) / GHZ,
                (sa.if1 - sa.if2) / GHZ,
@@ -265,14 +340,14 @@ def case_cw(sa, rep, a):
     fig = spectrum_figure(
         [(f, p1, "one capture per step"),
          (f, p2, "two captures, the lower kept")],
-        "A -30 dBm carrier at 1 GHz, band A",
-        marks=[(img, reading(f, p1, img, 6e6), "image of the second mixer")])
+        "A -30 dBm carrier at 1 GHz",
+        marks=[(f[np.abs(f - img) <= sa.if2][np.argmax(
+            p1[np.abs(f - img) <= sa.if2])], reading(f, p1, img, sa.if2),
+            "image of the second mixer")])
     rep.figure(fig, "cw.png", "A carrier at 1 GHz")
 
     # close in, with a 64 times longer capture, against the datasheet
-    fine = Analyzer(lo1=sa.lo1, lo2=sa.lo2, att_db=sa.att_db,
-                    if_att_db=sa.if_att_db, seed=sa.seed, nfft=262144,
-                    preamp=sa.preamp)
+    fine = sa.like(nfft=262144)
     fc, pc, info = fine.capture([Signal(1000.2 * MHZ, -15.0)], 1.0 * GHZ)
     off = fc - 1000.2 * MHZ
     car = reading(fc, pc, 1000.2 * MHZ, 2e3)
@@ -307,14 +382,15 @@ def case_cw(sa, rep, a):
 
 
 def case_im3(sa, rep, a):
-    lv = -26.0
+    # as large as the ADC takes with the attenuator at 0 dB
+    lv = float(np.floor(sa.like(att_db=0.0).budget(1.0 * GHZ)[1][
+        "adc_full_scale_dbm"] - 9.5))
     rep.say("## Two tones, 1 MHz apart, %g dBm each" % lv)
     rep.say()
     f1, f2 = 1000.2 * MHZ, 1001.2 * MHZ
     rows, traces = [], []
     for att in (0.0, 10.0, 20.0):
-        s2 = Analyzer(lo1=sa.lo1, lo2=sa.lo2, att_db=att, seed=sa.seed,
-                      if_att_db=sa.if_att_db, nfft=262144)
+        s2 = sa.like(att_db=att, nfft=262144)
         f, p, clip = s2.sweep([Signal(f1, lv), Signal(f2, lv)],
                               996 * MHZ, 1006 * MHZ, image_reject=False,
                               workers=1)
@@ -325,17 +401,16 @@ def case_im3(sa, rep, a):
         rows.append(("%g" % att, "%.1f" % tone, "%.1f" % im,
                      "%.1f" % (im - tone), "%.1f" % (2 * (lv - s["iip3"])),
                      "%.1f" % (lv - s["adc_full_scale_dbm"]),
-                     "%.1f" % floor_dbm(p)))
+                     floor_text(s2, p)))
         traces.append((f, p, "%g dB" % att))
     rep.table(["input attenuator, dB", "tone reads, dBm", "IM3 reads, dBm",
                "IM3, dBc", "from the budget's IIP3, dBc",
                "each tone at the ADC, dBFS", "floor, dBm"], rows)
-    rep.say("With no attenuation the product is the chain's (the two "
-            "mixers, mostly), within 2 dB of the budget, whose cascade "
-            "adds every stage's product in phase. Each 10 dB of attenuation "
-            "should take it down 20 dB; what is left when it does not is "
-            "the ADC's own INL, which stays near -100 dBFS whatever the "
-            "level.")
+    rep.say("With no attenuation the product is the chain's, near the "
+            "budget's, whose cascade adds every stage's product in phase. "
+            "Each 10 dB of attenuation should take it down 20 dB; what is "
+            "left when it does not is the ADC's own distortion, which does "
+            "not fall with the level.")
     rep.say()
     fig = spectrum_figure(traces, "Two %g dBm tones 1 MHz apart, by input "
                           "attenuator (RBW 0.3 kHz)" % lv)
@@ -382,33 +457,40 @@ def case_compression(sa, rep, a):
 
 
 def case_feedthrough(sa, rep, a):
-    rep.say("## A 0 dBm signal on the first IF (%.2f GHz), seen from band A"
-            % (sa.if1 / GHZ))
+    # a level the input stages take without compressing
+    lv = -30.0 if sa.design == "board" else 0.0
+    rep.say("## A %g dBm signal on the first IF (%.2f GHz), seen from the "
+            "superheterodyne path" % (lv, sa.if1 / GHZ))
     rep.say()
-    sig = [Signal(sa.if1 + 1.3 * MHZ, 0.0, name="IF1 signal")]
+    sig = [Signal(sa.if1 + 1.3 * MHZ, lv, name="IF1 signal")]
     f, p, clip = sa.sweep(sig, 0.5 * GHZ, 0.7 * GHZ, image_reject=False)
     f, p2, _ = sa.sweep(sig, 0.5 * GHZ, 0.7 * GHZ, image_reject=True)
     worst = float(p.max())
     fw = float(f[np.argmax(p)])
     made = why(sa, sig, fw, worst)
-    rep.say("With one capture per step it reads up to %.1f dBm (%.0f dB "
-            "under the signal), at every tuning: here at %.2f MHz, made by "
-            "%s. With two captures, %.1f dBm. The rejection is the two "
-            "LFCN-2250+ (their datasheet limit, 30 dB each at this "
-            "frequency), the mixer's own isolation, and the leak around "
-            "the band switches."
-            % (worst, -worst, fw / MHZ, made, float(p2.max())))
+    fc = sa.centres(0.6 * GHZ, 0.6 * GHZ)[0]
+    band, st, _, _ = sa.tune(fc)
+    lpf = -sum(float(x.part.g(sa.if1)) - float(x.part.g(0.6 * GHZ))
+               for x in sa.chains[band].main
+               if hasattr(x, "part") and "low-pass" in x.name.lower()
+               or hasattr(x, "part") and "LFCN" in x.name)
+    rep.say("With one capture per step it reads up to %.1f dBm, %.0f dB "
+            "under the signal, at every tuning: here at %.2f MHz, made by "
+            "%s. With two captures, %.1f dBm. The input low-pass is %.0f dB "
+            "down at the first IF; the rest of the rejection is the "
+            "mixer's own isolation between its ports."
+            % (worst, lv - worst, fw / MHZ, made, float(p2.max()), lpf))
     rep.say()
     fig = spectrum_figure(
         [(f, p, "one capture per step"),
          (f, p2, "two captures, the lower kept")],
-        "A 0 dBm signal at %.4f GHz while band A sweeps 500-700 MHz"
-        % ((sa.if1 + 1.3 * MHZ) / GHZ))
+        "A %g dBm signal at %.4f GHz during a 500-700 MHz sweep"
+        % (lv, (sa.if1 + 1.3 * MHZ) / GHZ))
     rep.figure(fig, "feedthrough.png", "IF feedthrough")
 
 
 def case_residuals(sa, rep, a):
-    rep.say("## Band A with nothing connected")
+    rep.say("## The superheterodyne path with nothing connected")
     rep.say()
     f0, f1 = 20 * MHZ, sa.a_top
     f, p, _ = sa.sweep([], f0, f1, image_reject=False)
@@ -419,8 +501,9 @@ def case_residuals(sa, rep, a):
         rows.append(("%.2f" % (fs / MHZ), "%.1f" % ps,
                      "%.1f" % reading(f, p2, fs, 15e3),
                      why(sa, [], fs, ps)))
-    rep.say("Noise floor %.1f dBm (median). Responses 15 dB or more over "
-            "their step's floor:" % fl)
+    rep.say("Noise floor: %s%s. Responses 15 dB or more over their step's "
+            "floor:" % (floor_text(sa, p), " dBm (median)"
+                        if dither(sa)[0] >= 0.5 else ""))
     rep.say()
     if rows:
         rep.table(["at, MHz", "one capture, dBm", "two captures, dBm",
@@ -431,7 +514,7 @@ def case_residuals(sa, rep, a):
     fig = spectrum_figure(
         [(f, p, "one capture per step"),
          (f, p2, "two captures, the lower kept")],
-        "Band A, input terminated: the analyzer's own responses")
+        "Input terminated: the analyzer's own responses")
     rep.figure(fig, "residuals.png", "Residual responses")
 
 
@@ -500,9 +583,11 @@ def spurs(sa, signals, f, p, over=15.0, guard=3 * MHZ):
     and are not within `guard` of a signal: (f, dBm) of each step's peak."""
     n = int(round(sa.step / (f[1] - f[0])))
     out = []
+    lsb, one = dither(sa)
+    least = one - 25.0 if lsb < 0.5 else -999.0
     for i in range(0, f.size - n + 1, n):
         sf, sp = f[i:i + n], p[i:i + n].copy()
-        med = np.median(sp)
+        med = max(np.median(sp), least)
         for s in signals:
             sp[np.abs(sf - s.f) < guard + s.bw / 2] = -999.0
         j = int(np.argmax(sp))
@@ -512,61 +597,69 @@ def spurs(sa, signals, f, p, over=15.0, guard=3 * MHZ):
 
 
 def case_full(sa, rep, a):
-    rep.say("## 10 MHz to %.2f GHz" % (sa.b_top / GHZ))
+    f0 = 0.1 * MHZ if sa.design == "board" else 10 * MHZ
+    rep.say("## %g MHz to %.2f GHz" % (f0 / MHZ, sa.top / GHZ))
     rep.say()
-    sig = [Signal(100.3 * MHZ, -35.0), Signal(915.2 * MHZ, -25.0),
-           Signal(1575.4 * MHZ, -60.0), Signal(2.4401 * GHZ, -30.0),
+    sig = [Signal(100.3 * MHZ, -45.0), Signal(915.2 * MHZ, -35.0),
+           Signal(1575.4 * MHZ, -60.0), Signal(2.4401 * GHZ, -40.0),
            Signal(5.2003 * GHZ, -45.0)]
+    if sa.design == "board":
+        sig.insert(0, Signal(3.3 * MHZ, -45.0))
     t0 = time.time()
-    f, p1, _ = sa.sweep(sig, 10 * MHZ, sa.b_top, image_reject=False)
-    _, p, clip = sa.sweep(sig, 10 * MHZ, sa.b_top, image_reject=True)
+    f, p1, _ = sa.sweep(sig, f0, sa.top, image_reject=False)
+    _, p, clip = sa.sweep(sig, f0, sa.top, image_reject=True)
     took = time.time() - t0
+    seen = [s for s in sig if s.f <= sa.top]
     rows = [("%.1f" % (s.f / MHZ), "%.1f" % s.dbm,
-             "%.1f" % reading(f, p, s.f)) for s in sig]
+             "%.1f" % reading(f, p, s.f) if s.f <= sa.top
+             else "above the range") for s in sig]
     rep.table(["signal, MHz", "level, dBm", "reads, dBm"], rows)
-    found = sorted(spurs(sa, sig, f, p1), key=lambda x: -x[1])
-    left = spurs(sa, sig, f, p)
+    found = sorted(spurs(sa, seen, f, p1), key=lambda x: -x[1])
+    left = spurs(sa, seen, f, p)
     rows = []
     for fs, ps in found[:16]:
         rows.append(("%.2f" % (fs / MHZ), "%.1f" % ps,
                      "%.1f" % reading(f, p, fs, 15e3),
                      why(sa, sig, fs, ps)))
     rep.say("Readings 15 dB or more over the local floor that are not the "
-            "five signals: %d with one capture per step, %d with two."
-            % (len(found), len(left)))
+            "signals: %d with one capture per step, %d with two (%.1f %% "
+            "of the ADC's samples clipped at worst)."
+            % (len(found), len(left), 100 * clip))
     rep.say()
     if rows:
         rep.table(["at, MHz", "one capture, dBm", "two captures, dBm",
                    "made by"], rows)
     rep.say("%d captures of %d samples, %.0f s of simulation."
-            % (3 * len(sa.centres(10 * MHZ, sa.b_top)), sa.nfft, took))
+            % (3 * len(sa.centres(f0, sa.top)), sa.nfft, took))
     rep.say()
     fig = spectrum_figure([(f, p1, "one capture per step"),
                            (f, p, "two captures, the lower kept")],
-                          "Five signals, 10 MHz to %.2f GHz"
-                          % (sa.b_top / GHZ),
+                          "%d signals, %g MHz to %.2f GHz"
+                          % (len(sig), f0 / MHZ, sa.top / GHZ),
                           marks=[(s.f, reading(f, p, s.f),
-                                  "%.0f dBm" % s.dbm) for s in sig])
+                                  "%.0f dBm" % s.dbm) for s in seen])
     rep.figure(fig, "full.png", "Full sweep")
 
 
 def case_strong(sa, rep, a):
-    lv, att, fs = 0.0, 20.0, 915.2 * MHZ
+    lv, fs = 0.0, 915.2 * MHZ
+    att = 31.5 if sa.design == "board" else 20.0
     rep.say("## One strong signal: %g dBm at %.1f MHz, attenuator %g dB"
             % (lv, fs / MHZ, att))
     rep.say()
-    s2 = Analyzer(lo1=sa.lo1, lo2=sa.lo2, att_db=att, seed=sa.seed,
-                  if_att_db=sa.if_att_db, extra_lpf=sa.extra_lpf,
-                  pad1_db=sa.pad1_db, pad2_db=sa.pad2_db)
+    s2 = sa.like(att_db=att)
+    f0 = 0.1 * MHZ if sa.design == "board" else 10 * MHZ
     sig = [Signal(fs, lv)]
-    f, p1, _ = s2.sweep(sig, 10 * MHZ, s2.b_top, image_reject=False)
-    _, p, clip = s2.sweep(sig, 10 * MHZ, s2.b_top, image_reject=True)
+    f, p1, _ = s2.sweep(sig, f0, s2.top, image_reject=False)
+    _, p, clip = s2.sweep(sig, f0, s2.top, image_reject=True)
     found = sorted(spurs(s2, sig, f, p1), key=lambda x: -x[1])
     left = sorted(spurs(s2, sig, f, p), key=lambda x: -x[1])
-    rep.say("The mixer sees %.0f dBm. The signal reads %.1f dBm. Other "
+    rep.say("The first mixer sees %.0f dBm. The signal reads %.1f dBm. Other "
             "readings 15 dB or more over the local floor: %d with one "
-            "capture per step, %d with two." % (
-                lv - att - 5, reading(f, p, fs), len(found), len(left)))
+            "capture per step, %d with two (%.1f %% of the ADC's samples "
+            "clipped at worst)." % (
+                lv + to_mixer(s2, fs), reading(f, p, fs), len(found),
+                len(left), 100 * clip))
     rep.say()
     rows = []
     kept = {round(x[0] / 1e5) for x in left}
@@ -580,12 +673,9 @@ def case_strong(sa, rep, a):
                    "two captures, dBm", "and in the second capture by"],
                   rows)
     rep.say("`1LO2-1[1LO1-1[x]]` is the plain conversion of x: where it is "
-            "not at x it is the second mixer's image. What survives two "
-            "captures does so because the IF is a quarter of the sampling "
-            "rate: the image in the first capture and the alias (the signal "
-            "at an IF of 25 MHz, folded) in the second land on the same "
-            "frequency, so the image rejection is no better than the "
-            "anti-alias filter's stop band.")
+            "not at x it is the second mixer's image. A reading at a whole "
+            "multiple of the signal's frequency is the analyzer's own "
+            "harmonic distortion.")
     rep.say()
     fig = spectrum_figure([(f, p1, "one capture per step"),
                            (f, p, "two captures, the lower kept")],
@@ -594,7 +684,104 @@ def case_strong(sa, rep, a):
     rep.figure(fig, "strong.png", "One strong signal")
 
 
-CASES = dict(budget=case_budget, cw=case_cw, im3=case_im3,
+def case_direct(sa, rep, a):
+    rep.say("## The direct-sample path: 0.1 to 15 MHz")
+    rep.say()
+    sig = [Signal(3.3 * MHZ, -40.0), Signal(27.2 * MHZ, -40.0)]
+    f, p, clip = sa.sweep(sig, 0.1 * MHZ, 15 * MHZ, workers=1)
+    alias = sa.adc.fs - 27.2 * MHZ
+    _, s = sa.budget(5 * MHZ)
+    rep.table(["", "reads, dBm"],
+              [("3.3 MHz at -40 dBm", "%.1f" % reading(f, p, 3.3 * MHZ)),
+               ("27.2 MHz at -40 dBm, folded to %.1f MHz" % (alias / MHZ),
+                "%.1f" % reading(f, p, alias)),
+               ("noise floor (median)", floor_text(sa, p))])
+    rep.say("Nothing but the 18 MHz low-pass stands between this path and "
+            "the ADC, so a signal between 22 and 38 MHz folds into it, less "
+            "what that filter takes off. Noise figure %.1f dB, ADC full "
+            "scale %+.1f dBm at the input with this attenuation."
+            % (s["nf_effective"], s["adc_full_scale_dbm"]))
+    rep.say()
+    fig = spectrum_figure([(f, p, "")], "The direct-sample path with "
+                          "signals at 3.3 and 27.2 MHz")
+    rep.figure(fig, "direct.png", "Direct-sample path")
+
+
+def case_compare(sa, rep, a):
+    """The board's chain against the proposal's, on the same tests."""
+    rep.say("## The board's chain against the proposal's")
+    rep.say()
+    kw = dict(seed=sa.seed)
+    cols = [("board, as drawn", dict(design="board")),
+            ("proposal, preamp bypassed", dict(design="proposal")),
+            ("proposal, preamp in", dict(design="proposal", preamp=True))]
+    f1 = 1.0 * GHZ
+    res = []
+    for name, d in cols:
+        d = dict(kw, **d)
+        s0 = Analyzer(att_db=0.0, **d)
+        _, b = s0.budget(f1)
+        gm0 = to_mixer(s0, f1)
+        amax = 31.5 if d["design"] == "board" else 31.75
+        smax = Analyzer(att_db=amax, **d)
+        gmx = to_mixer(smax, f1)
+        _, bx = smax.budget(f1)
+        rbw = 10 * np.log10(19.6e3)
+        least = (b["danl_dbm_hz"] + rbw if b["noise_at_adc_lsb"] >= 0.5
+                 else b["one_lsb_dbm"])
+        # a signal on the first IF, and two above the input low-pass that
+        # are 1050 MHz apart: what each makes at the second mixer's output,
+        # referred to the input (no ADC in it)
+        sig = [Signal(s0.if1 + 1.3 * MHZ, -30.0)]
+        ift = [x for x in s0.explain(sig, 0.6 * GHZ - 1.3 * MHZ, span=30e3)
+               if x[1] is not None]
+        oob = [Signal(3.9001 * GHZ, -30.0), Signal(4.9503 * GHZ, -30.0)]
+        im2 = [x for x in s0.explain(oob, 1050.2 * MHZ, span=30e3)
+               if x[1] is not None]
+        res.append([
+            "%.2f GHz" % (s0.top / 1e9),
+            "%.1f" % b["nf_friis"],
+            "%.1f" % b["nf_effective"], "%.1f" % b["danl_dbm_hz"],
+            "%.2f" % b["noise_at_adc_lsb"],
+            "%.0f%s" % (least, "" if b["noise_at_adc_lsb"] >= 0.5
+                        else " (one LSB)"),
+            "%+.1f" % b["iip3"],
+            "%+.1f" % b["adc_full_scale_dbm"],
+            "%+.1f" % (b["adc_full_scale_dbm"] + gm0),
+            "%+.1f" % (-25.0 - gmx),
+            "%+.1f" % min(bx["adc_full_scale_dbm"], 1.0 - gmx),
+            "%.0f" % (-30.0 - ift[0][1]) if ift else "over 100",
+            "%.0f" % im2[0][1] if im2 and im2[0][1] > -130 else "nothing"])
+    names = ["highest frequency",
+             "noise figure of the chain alone, dB",
+             "noise figure with the image and the ADC, dB",
+             "noise floor, dBm/Hz",
+             "chain noise at the ADC, LSB rms (0.5 or more dithers it)",
+             "smallest signal seen alone in a 19.6 kHz RBW, dBm",
+             "IIP3, dBm",
+             "ADC full scale at the input, dBm",
+             "level at the first mixer when the ADC is at full scale, dBm",
+             "largest input that keeps the first mixer at -25 dBm "
+             "(most attenuation), dBm",
+             "largest input before the ADC clips or the mixer compresses, "
+             "dBm",
+             "a signal on the first IF reads this many dB down",
+             "two -30 dBm signals at 3.90 and 4.95 GHz make, at 1050 MHz, "
+             "dBm"]
+    rep.table([""] + [c[0] for c in cols],
+              [[n] + [r[i] for r in res] for i, n in enumerate(names)])
+    rep.say("At 1 GHz with the input attenuator at 0 dB, except the two "
+            "largest-input rows. The mixer is a level 7 part: clean to about "
+            "-25 dBm, 1 dB compressed at +1 dBm. The last two rows are what "
+            "the chain makes ahead of the ADC, referred to the input.")
+    rep.say()
+
+
+# the cases that only one of the designs has the hardware for
+ONLY = dict(bandb="proposal", direct="board", compare="board")
+
+CASES = dict(compare=case_compare, budget=case_budget, cw=case_cw,
+             im3=case_im3, direct=case_direct,
              compression=case_compression, feedthrough=case_feedthrough,
              residuals=case_residuals, bandb=case_bandb, full=case_full,
              strong=case_strong)
@@ -605,19 +792,22 @@ def main(argv=None):
                                  formatter_class=argparse.RawTextHelpFormatter)
     ap.add_argument("cases", nargs="*", help="default: all of them")
     ap.add_argument("--list", action="store_true")
+    ap.add_argument("--design", choices=("board", "proposal"),
+                    default="board")
     ap.add_argument("--att", type=float, default=10.0)
-    ap.add_argument("--if-att", type=float, default=6.0)
+    ap.add_argument("--if-att", type=float, default=None)
     ap.add_argument("--preamp", action="store_true")
     ap.add_argument("--seed", type=int, default=1)
-    ap.add_argument("--lo1", choices=("lmx2582", "lmx2572"),
-                    default="lmx2582")
-    ap.add_argument("--lo2", choices=("lmx2582", "lmx2572"),
-                    default="lmx2582")
+    ap.add_argument("--lo1", choices=("lmx2582", "lmx2572"), default=None)
+    ap.add_argument("--lo2", choices=("lmx2582", "lmx2572"), default=None)
     ap.add_argument("--pads", type=float, nargs=2, default=(3.0, 3.0),
-                    metavar="DB", help="the pads at the first mixer's IF "
-                    "and RF ports")
+                    metavar="DB", help="proposal: the pads at the first "
+                    "mixer's IF and RF ports")
     ap.add_argument("--extra-lpf", action="store_true",
-                    help="a printed 4 GHz low-pass after the two LFCN-2250+")
+                    help="proposal: a printed 4 GHz low-pass after the two "
+                    "LFCN-2250+")
+    ap.add_argument("--no-lna", action="store_true",
+                    help="board: without its 20 dB amplifier")
     ap.add_argument("--out", default=os.path.join(
         os.path.dirname(os.path.abspath(__file__)), "out"))
     a = ap.parse_args(argv)
@@ -627,17 +817,25 @@ def main(argv=None):
     bad = [c for c in a.cases if c not in CASES]
     if bad:
         ap.error("no such case: %s (--list)" % ", ".join(bad))
-    sa = Analyzer(lo1=getattr(lo, a.lo1)(), lo2=getattr(lo, a.lo2)(),
+    sa = Analyzer(design=a.design,
+                  lo1=getattr(lo, a.lo1)() if a.lo1 else None,
+                  lo2=getattr(lo, a.lo2)() if a.lo2 else None,
                   att_db=a.att, if_att_db=a.if_att, preamp=a.preamp,
                   seed=a.seed, extra_lpf=a.extra_lpf, pad1_db=a.pads[0],
-                  pad2_db=a.pads[1])
+                  pad2_db=a.pads[1], fixed_lna=not a.no_lna)
     rep = Report(a.out)
-    rep.say("# Spectrum analyzer simulation")
+    rep.say("# Spectrum analyzer simulation: the %s"
+            % ("board's chain" if a.design == "board" else "proposal"))
     rep.say()
     rep.say("LO1 %s, LO2 %s, two SIM-83+, 40 MSPS %s, %d-point captures."
             % (sa.lo1.name, sa.lo2.name, sa.adc.name, sa.nfft))
     rep.say()
-    for name in (a.cases or list(CASES)):
+    for name in (a.cases or [c for c in CASES
+                             if ONLY.get(c, a.design) == a.design]):
+        if ONLY.get(name, a.design) != a.design:
+            print("[%s: not a case of the %s]" % (name, a.design),
+                  file=sys.stderr)
+            continue
         t0 = time.time()
         CASES[name](sa, rep, a)
         print("[%s: %.0f s]" % (name, time.time() - t0), file=sys.stderr)

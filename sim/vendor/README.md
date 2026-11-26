@@ -10,6 +10,8 @@ prints, for every part, which one it used). Nothing else has to change.
 | `PMA3-83LN+.s2p` | Mini-Circuits PMA3-83LN+ LNA | the same; choose the 6 V file |
 | `PE43711.s2p` | pSemi PE43711 step attenuator, 0 dB state | psemi.com, the part's page, "S-parameters" (behind a licence click-through) |
 | `PE42540.s2p` | pSemi PE42540 switch, RFC to the selected port | the same |
+| `BDA4601.s2p` | BeRex BDA4601 step attenuator, 0 dB state | berex.com, the part's page |
+| `TRF37D73.s2p` | TI TRF37D73 gain block | ti.com, the part's page, "Design tools & simulation" |
 
 These files are not in the repository, and the simulation was not built with
 them: minicircuits.com refuses scripted downloads, and pSemi's models are

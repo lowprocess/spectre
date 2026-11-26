@@ -357,9 +357,10 @@ class Chain:
     after stage `fork` and rejoins it before stage `join` (the unselected
     arm of the band switches)."""
 
-    def __init__(self, name, main, leak=(), fork=0, join=0):
+    def __init__(self, name, main, leak=(), fork=0, join=0, out=None):
         self.name, self.main, self.leak = name, list(main), list(leak)
         self.fork, self.join = fork, join
+        self.out = out          # (fmin, fmax) kept at the output, or all
 
     def run(self, tones, st, psd_in=None):
         """(tones at the output, noise density there as a function of
@@ -379,6 +380,8 @@ class Chain:
                 side.tag = np.array(["leak: " + x for x in side.tag], object)
                 t = Tones.join(t, side).pruned()
             t = s.tones(t, st)
+        if self.out:
+            t = t.pruned(fmin=self.out[0], fmax=self.out[1])
         if psd_in is None:
             noise = lambda f: np.full(np.shape(f), KT0)   # noqa: E731
         else:

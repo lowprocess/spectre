@@ -1,42 +1,42 @@
-# Spectrum analyzer simulation
+# Spectrum analyzer simulation: the proposal
 
 LO1 LMX2582, LO2 LMX2582, two SIM-83+, 40 MSPS ADC12040, 4096-point captures.
 
 ## Budget
 
-Input attenuator 10 dB, IF attenuator 6 dB, preamp off. The first IF is 3.210 GHz (this filter's centre); band A ends at 2.29 GHz.
+Input attenuator 10 dB, IF attenuator 6 dB, preamps bypassed. The first IF is 3.210 GHz (this filter's centre) and the second 10 MHz; the superheterodyne path ends at 2.29 GHz.
 
 | f, GHz | band | gain to ADC, dB | NF (Friis), dB | NF (effective), dB | noise floor, dBm/Hz | IIP3, dBm | P1dB in, dBm | ADC full scale, dBm | SFDR, dB (1 Hz) |
 |---|---|---|---|---|---|---|---|---|---|
-| 0.10 | A | 22.9 | 30.5 | 33.9 | -140.1 | +18.6 | -3.3 | -6.9 | 106 |
-| 0.50 | A | 22.7 | 30.7 | 34.0 | -140.0 | +18.8 | -3.1 | -6.7 | 106 |
-| 1.00 | A | 22.3 | 31.1 | 34.4 | -139.6 | +19.1 | -2.7 | -6.3 | 106 |
-| 1.50 | A | 22.0 | 31.5 | 34.8 | -139.2 | +19.5 | -2.4 | -6.0 | 106 |
-| 2.00 | A | 21.1 | 32.3 | 35.6 | -138.4 | +20.4 | -1.5 | -5.1 | 106 |
+| 0.1 | A | 22.9 | 30.5 | 33.9 | -140.1 | +18.6 | -3.3 | -6.9 | 106 |
+| 0.5 | A | 22.7 | 30.7 | 34.0 | -140.0 | +18.8 | -3.1 | -6.7 | 106 |
+| 1 | A | 22.3 | 31.1 | 34.4 | -139.6 | +19.1 | -2.7 | -6.3 | 106 |
+| 1.5 | A | 22.0 | 31.5 | 34.8 | -139.2 | +19.5 | -2.4 | -6.0 | 106 |
+| 2 | A | 21.1 | 32.3 | 35.6 | -138.4 | +20.4 | -1.5 | -5.1 | 106 |
 | 2.29 | A | 20.2 | 33.3 | 36.6 | -137.4 | +21.3 | -0.6 | -4.2 | 106 |
-| 2.50 | B1 | 14.8 | 31.1 | 34.8 | -139.2 | +27.1 | +4.8 | +1.2 | 111 |
-| 3.00 | B1 | 14.5 | 31.4 | 35.1 | -138.9 | +27.4 | +5.1 | +1.5 | 111 |
-| 3.40 | B1 | 14.1 | 31.8 | 35.5 | -138.5 | +27.9 | +5.5 | +1.9 | 111 |
-| 4.00 | B2 | 14.0 | 31.8 | 35.5 | -138.5 | +27.9 | +5.6 | +2.0 | 111 |
-| 5.00 | B2 | 13.2 | 32.7 | 36.4 | -137.6 | +28.7 | +6.4 | +2.8 | 111 |
+| 2.5 | B1 | 14.8 | 31.1 | 34.8 | -139.2 | +27.1 | +4.8 | +1.2 | 111 |
+| 3 | B1 | 14.5 | 31.4 | 35.1 | -138.9 | +27.4 | +5.1 | +1.5 | 111 |
+| 3.4 | B1 | 14.1 | 31.8 | 35.5 | -138.5 | +27.9 | +5.5 | +1.9 | 111 |
+| 4 | B2 | 14.0 | 31.8 | 35.5 | -138.5 | +27.9 | +5.6 | +2.0 | 111 |
+| 5 | B2 | 13.2 | 32.7 | 36.4 | -137.6 | +28.7 | +6.4 | +2.8 | 111 |
 | 5.49 | B2 | 11.4 | 34.4 | 38.2 | -135.8 | +30.5 | +8.2 | +4.6 | 111 |
 
 With the input attenuator at 0 dB (the most sensitive setting), without and with the preamps (a TRF37D73 in band A, a PMA3-83LN+ in band B, each after its band's first filter):
 
-| f, GHz | band | preamp | NF (effective), dB | noise floor, dBm/Hz | IIP3, dBm | ADC full scale, dBm | SFDR, dB (1 Hz) |
-|---|---|---|---|---|---|---|---|
-| 0.1 | A | off | 23.9 | -150.1 | +8.6 | -16.9 | 106 |
-| 0.1 | A | on | 10.4 | -163.6 | -13.5 | -38.9 | 100 |
-| 1.0 | A | off | 24.4 | -149.6 | +9.1 | -16.3 | 106 |
-| 1.0 | A | on | 11.0 | -163.0 | -11.9 | -37.4 | 101 |
-| 2.0 | A | on | 12.5 | -161.5 | -9.2 | -34.6 | 102 |
-| 2.5 | B1 | off | 24.8 | -149.2 | +17.1 | -8.8 | 111 |
-| 2.5 | B1 | on | 10.4 | -163.6 | -4.0 | -29.9 | 106 |
-| 4.0 | B2 | off | 25.5 | -148.5 | +17.9 | -8.0 | 111 |
-| 4.0 | B2 | on | 11.2 | -162.8 | -2.9 | -28.8 | 107 |
-| 5.4 | B2 | on | 13.1 | -160.9 | -0.9 | -26.7 | 107 |
+| f, GHz | band |  | NF (effective), dB | noise floor, dBm/Hz | IIP3, dBm | ADC full scale, dBm | first mixer sees then, dBm | chain noise at the ADC, LSB rms | SFDR, dB (1 Hz) |
+|---|---|---|---|---|---|---|---|---|---|
+| 0.1 | A | preamps bypassed | 23.9 | -150.1 | +8.6 | -16.9 | -24.1 | 1.27 | 106 |
+| 0.1 | A | preamps in | 10.4 | -163.6 | -13.5 | -38.9 | -24.1 | 3.49 | 100 |
+| 1 | A | preamps bypassed | 24.4 | -149.6 | +9.1 | -16.3 | -24.1 | 1.26 | 106 |
+| 1 | A | preamps in | 11.0 | -163.0 | -11.9 | -37.4 | -24.1 | 3.16 | 101 |
+| 2 | A | preamps in | 12.5 | -161.5 | -9.2 | -34.6 | -24.1 | 2.72 | 102 |
+| 2.5 | B1 | preamps bypassed | 24.8 | -149.2 | +17.1 | -8.8 | -15.2 | 0.45 | 111 |
+| 2.5 | B1 | preamps in | 10.4 | -163.6 | -4.0 | -29.9 | -15.2 | 1.20 | 106 |
+| 4 | B2 | preamps bypassed | 25.5 | -148.5 | +17.9 | -8.0 | -15.2 | 0.45 | 111 |
+| 4 | B2 | preamps in | 11.2 | -162.8 | -2.9 | -28.8 | -15.2 | 1.15 | 107 |
+| 5.4 | B2 | preamps in | 13.1 | -160.9 | -0.9 | -26.7 | -15.2 | 1.12 | 107 |
 
-The effective noise figure is what the noise pass finds: it has the second mixer's image, the LOs' noise and the ADC's, which the Friis column leaves out. SFDR is 2/3 (IIP3 - noise floor) in 1 Hz; take 2/3 of 10 log(RBW) off for a wider one.
+The effective noise figure is what the noise pass finds: it has the second mixer's image, the LOs' noise and the ADC's, which the Friis column leaves out. SFDR is 2/3 (IIP3 - noise floor) in 1 Hz; take 2/3 of 10 log(RBW) off for a wider one. A level 7 mixer is clean to about -25 dBm and compresses at +1 dBm: where the ADC's full scale puts more than that on the first mixer, the mixer limits the analyzer before the ADC does.
 
 ### Stage by stage at 1.0 GHz (band A)
 
@@ -90,12 +90,12 @@ The effective noise figure is what the noise pass finds: it has the second mixer
 | reading, dBm (RBW 19.6 kHz) | one capture per step | two captures, the lower kept |
 |---|---|---|
 | carrier | -30.0 | -30.0 |
-| image, 20 MHz below | -30.0 | -90.2 |
+| image, about 20 MHz below | -30.0 | -90.2 |
 | noise floor (median) | -98.1 | -101.2 |
 | skirt at +100 kHz (mean) | -92.0 | -97.1 |
 | skirt at +300 kHz (mean) | -98.7 | -99.4 |
 
-At 100 kHz the two LOs' phase noise is -110.7 and -113.1 dBc/Hz (LMX2582 datasheet profile at 4.21 and 3.20 GHz), which in this RBW is -65.8 dBc: the skirt above.
+At 100 kHz the two LOs' phase noise is -110.7 and -113.1 dBc/Hz (the synthesizers' datasheet profiles at 4.21 and 3.20 GHz), which in this RBW is -65.8 dBc: the skirt above.
 
 The lower of two readings of noise is 3 dB under either: with two captures the floor, and any noise-like signal, reads 3 dB low.
 
@@ -113,7 +113,7 @@ Close in (a 262144-sample capture, RBW 306 Hz), the reading follows the two LOs'
 | 10 | -26.2 | -106.2 | -80.0 | -90.3 | -19.7 | -115.8 |
 | 20 | -26.2 | -96.5 | -70.3 | -110.3 | -29.7 | -106.1 |
 
-With no attenuation the product is the chain's (the two mixers, mostly), within 2 dB of the budget, whose cascade adds every stage's product in phase. Each 10 dB of attenuation should take it down 20 dB; what is left when it does not is the ADC's own INL, which stays near -100 dBFS whatever the level.
+With no attenuation the product is the chain's, near the budget's, whose cascade adds every stage's product in phase. Each 10 dB of attenuation should take it down 20 dB; what is left when it does not is the ADC's own distortion, which does not fall with the level.
 
 ![Two-tone intermodulation](im3.png)
 
@@ -123,15 +123,15 @@ The ADC's full scale is -6.3 dBm at the input (budget); the first clipped sample
 
 ![Compression](compression.png)
 
-## A 0 dBm signal on the first IF (3.21 GHz), seen from band A
+## A 0 dBm signal on the first IF (3.21 GHz), seen from the superheterodyne path
 
-With one capture per step it reads up to -82.0 dBm (82 dB under the signal), at every tuning: here at 698.70 MHz, made by `1LO2-1[1x[IF1 signal] through SIM-83+]`. With two captures, -89.7 dBm. The rejection is the two LFCN-2250+ (their datasheet limit, 30 dB each at this frequency), the mixer's own isolation, and the leak around the band switches.
+With one capture per step it reads up to -82.0 dBm, 82 dB under the signal, at every tuning: here at 698.70 MHz, made by `1LO2-1[1x[IF1 signal] through SIM-83+]`. With two captures, -89.7 dBm. The input low-pass is 59 dB down at the first IF; the rest of the rejection is the mixer's own isolation between its ports.
 
 ![IF feedthrough](feedthrough.png)
 
 ## Band A with nothing connected
 
-Noise floor -97.8 dBm (median). Responses 15 dB or more over their step's floor:
+Noise floor: -97.8 dBm (median). Responses 15 dB or more over their step's floor:
 
 none.
 
@@ -162,29 +162,29 @@ One capture per step shows the signal and its image side by side. Keeping the lo
 
 | signal, MHz | level, dBm | reads, dBm |
 |---|---|---|
-| 100.3 | -35.0 | -35.2 |
-| 915.2 | -25.0 | -25.0 |
+| 100.3 | -45.0 | -45.2 |
+| 915.2 | -35.0 | -35.0 |
 | 1575.4 | -60.0 | -59.9 |
-| 2440.1 | -30.0 | -30.2 |
+| 2440.1 | -40.0 | -40.2 |
 | 5200.3 | -45.0 | -45.2 |
 
-Readings 15 dB or more over the local floor that are not the five signals: 5 with one capture per step, 0 with two.
+Readings 15 dB or more over the local floor that are not the signals: 5 with one capture per step, 0 with two (50.0 % of the ADC's samples clipped at worst).
 
 | at, MHz | one capture, dBm | two captures, dBm | made by |
 |---|---|---|---|
-| 904.80 | -25.0 | -90.8 | `1LO2-1[1LO1-1[915.2 MHz]]` |
-| 2419.90 | -30.2 | -90.6 | `1LO2-1[2440.1 MHz]` |
-| 79.70 | -35.2 | -98.8 | `1LO2-1[1LO1-1[100.3 MHz]]` |
+| 904.80 | -35.0 | -97.4 | `1LO2-1[1LO1-1[915.2 MHz]]` |
+| 2419.90 | -40.2 | -91.3 | `1LO2-1[2440.1 MHz]` |
 | 5179.70 | -45.2 | -88.9 | `1LO2-1[5200.3 MHz]` |
-| 1564.60 | -59.8 | -95.8 | `1LO2-1[1LO1-1[1575.4 MHz]]` |
+| 79.70 | -45.2 | -103.6 | `1LO2-1[1LO1-1[100.3 MHz]]` |
+| 1564.60 | -59.8 | -95.9 | `1LO2-1[1LO1-1[1575.4 MHz]]` |
 
-1647 captures of 4096 samples, 23 s of simulation.
+1647 captures of 4096 samples, 22 s of simulation.
 
 ![Full sweep](full.png)
 
 ## One strong signal: 0 dBm at 915.2 MHz, attenuator 20 dB
 
-The mixer sees -25 dBm. The signal reads -0.0 dBm. Other readings 15 dB or more over the local floor: 4 with one capture per step, 1 with two.
+The first mixer sees -28 dBm. The signal reads -0.0 dBm. Other readings 15 dB or more over the local floor: 4 with one capture per step, 1 with two (50.0 % of the ADC's samples clipped at worst).
 
 | at, MHz | one capture, dBm | made by | two captures, dBm | and in the second capture by |
 |---|---|---|---|---|
@@ -193,7 +193,7 @@ The mixer sees -25 dBm. The signal reads -0.0 dBm. Other readings 15 dB or more 
 | 919.60 | -68.0 | harmonic 2 of [1LO2-1[1LO1-1[915.2 MHz]]] in the IF amplifiers and ADC | -84.3 |  |
 | 885.07 | -72.1 | the skirt of `1LO2-1[1LO1-1[915.2 MHz]]` | -81.6 |  |
 
-`1LO2-1[1LO1-1[x]]` is the plain conversion of x: where it is not at x it is the second mixer's image. What survives two captures does so because the IF is a quarter of the sampling rate: the image in the first capture and the alias (the signal at an IF of 25 MHz, folded) in the second land on the same frequency, so the image rejection is no better than the anti-alias filter's stop band.
+`1LO2-1[1LO1-1[x]]` is the plain conversion of x: where it is not at x it is the second mixer's image. A reading at a whole multiple of the signal's frequency is the analyzer's own harmonic distortion.
 
 ![One strong signal](strong.png)
 

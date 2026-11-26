@@ -21,7 +21,7 @@ GHZ, MHZ = 1e9, 1e6
 
 @pytest.fixture(scope="module")
 def sa():
-    return Analyzer()
+    return Analyzer(design="proposal")
 
 
 def peak(f, p, at, span=40e3):
@@ -89,7 +89,7 @@ def test_the_image_is_there_and_two_captures_remove_it(sa, f):
 
 
 def test_third_order_products_follow_the_budget():
-    sa = Analyzer(att_db=0.0, nfft=65536)
+    sa = Analyzer(design="proposal", att_db=0.0, nfft=65536)
     f1, f2, lv = 1000.2 * MHZ, 1001.2 * MHZ, -26.0
     fin, p, info = sa.capture([Signal(f1, lv), Signal(f2, lv)], 1.0 * GHZ)
     _, s = sa.budget(1.0 * GHZ)
@@ -115,7 +115,8 @@ def test_a_noise_like_signal_reads_its_density(sa):
 
 @pytest.mark.parametrize("f", [100.3 * MHZ, 1.0002 * GHZ, 4.0002 * GHZ])
 def test_the_preamps_buy_noise_figure_with_linearity(sa, f):
-    quiet, loud = Analyzer(att_db=0.0), Analyzer(att_db=0.0, preamp=True)
+    quiet = Analyzer(design="proposal", att_db=0.0)
+    loud = quiet.like(preamp=True)
     _, off = quiet.budget(f)
     _, on = loud.budget(f)
     assert off["nf_effective"] - on["nf_effective"] > 10.0
@@ -123,3 +124,45 @@ def test_the_preamps_buy_noise_figure_with_linearity(sa, f):
     fc = loud.centres(f, f)[0]
     fin, p, info = loud.capture([Signal(f, -70.0)], fc)
     assert peak(fin, p, f) == pytest.approx(-70.0, abs=0.5)
+
+
+# ------------------------------------------------- the board's own chain
+
+@pytest.fixture(scope="module")
+def board():
+    return Analyzer(design="board")
+
+
+def test_the_board_is_its_schematics_plan(board):
+    assert board.if1 == pytest.approx(3.4 * GHZ)
+    assert board.if2 == pytest.approx(12 * MHZ)
+    assert board.top == pytest.approx(3.0 * GHZ)
+    assert board.band(5 * MHZ) == "D" and board.band(1.0 * GHZ) == "S"
+    band, st, base, sign = board.tune(1.0 * GHZ)
+    assert st.lo["lo2"] == pytest.approx(3.388 * GHZ)
+    with pytest.raises(ValueError):
+        board.band(3.2 * GHZ)
+
+
+@pytest.mark.parametrize("f", [3.3 * MHZ, 100.3 * MHZ, 1.5002 * GHZ,
+                               2.9003 * GHZ])
+def test_the_board_reads_a_carrier_on_both_paths(board, f):
+    fc = board.centres(f, f)[0]
+    fin, p, info = board.capture([Signal(f, -40.0)], fc)
+    assert peak(fin, p, f) == pytest.approx(-40.0, abs=1.0)
+
+
+def test_the_board_does_not_dither_its_adc_and_the_proposal_does(board, sa):
+    _, b = board.like(att_db=0.0).budget(1.0 * GHZ)
+    _, q = sa.like(att_db=0.0).budget(1.0 * GHZ)
+    assert b["noise_at_adc_lsb"] < 0.2 < 0.5 < q["noise_at_adc_lsb"]
+    # and at the ADC's full scale its first mixer is past clean operation
+    gain = sum(float(s.part.g(1.0 * GHZ)) for s in board.like(
+        att_db=0.0).chains["S"].main[:7])
+    assert b["adc_full_scale_dbm"] + gain > -10.0
+
+
+def test_the_boards_low_pass_does_not_stop_its_first_if(board):
+    sig = [Signal(board.if1 + 1.3 * MHZ, -30.0)]
+    found = board.explain(sig, 0.6 * GHZ - 1.3 * MHZ, span=30e3)
+    assert found and -30.0 - found[0][1] < 45.0

@@ -37,6 +37,12 @@ make() {  # name fmax_GHz points dfsynth-arguments...
     echo "$name: done"
 }
 
+# the board's own plan (a 3.4 GHz first IF, DC to 3 GHz)
+make if1_bpf_3g4_hairpin 10.0 1991 --type bandpass --topology hairpin \
+     --f0 3.4G --bw 180M --order 5 --em-tune 2
+make in_lpf_3g4_radial 12.0 1196 --type lowpass --topology radial \
+     --f0 3.4G --order 7 --em-tune 1
+# the proposal's
 make if1_bpf_3g2_hairpin 10.0 1991 --type bandpass --topology hairpin \
      --f0 3.2G --bw 180M --order 5 --em-tune 2
 make if1_lpf_4g0_radial 12.0 1196 --type lowpass --topology radial \

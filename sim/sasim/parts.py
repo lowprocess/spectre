@@ -269,7 +269,7 @@ def antialias(fc=16.5 * MHZ, order=7, ripple=0.1, stop=70.0, loss=1.0):
                 "ideal elliptic prototype, %g dB loss assumed" % loss, gain)
 
 
-def ths4541(name="THS4541 ADC driver"):
+def ths4541(name="THS4541 ADC driver", gain_db=6.0):
     """TI THS4541 fully differential driver, 2 V/V from a matched 50 ohm
     input.  Datasheet SLOS375: HD2 -95 dBc and HD3 -90 dBc at 10 MHz and 2
     Vpp, so (in 50 ohm terms, +10 dBm) OIP2 = +99 dBm and OIP3 = +50 dBm.
@@ -277,8 +277,85 @@ def ths4541(name="THS4541 ADC driver"):
     (2.2 nV/rtHz and the resistors: an estimate), which the 37 dB in front of
     it makes irrelevant."""
     return Part(name, "TI datasheet SLOS375 (HD2, HD3 at 10 MHz); noise "
-                "figure estimated", const(6.0), nf=const(20.0), oip3=50.0,
+                "figure estimated", const(gain_db), nf=const(20.0), oip3=50.0,
                 oip2=99.0, op1db=22.0)
+
+
+# ------------------------------------------ the board's parts (docs/, .sch)
+
+def bda4601(att_db=0.0, name="BDA4601 DSA"):
+    """BeRex BDA4601 6-bit step attenuator, 1 MHz-4 GHz, 31.5 dB in 0.5 dB
+    steps.  Its datasheet could not be fetched: the insertion loss (0.8 to
+    2.3 dB across the band) is from a distributor's summary, read from a
+    search result, and its IIP3 (+50 dBm) and compression (+30 dBm) are
+    assumed."""
+    att = round(float(att_db) * 2) / 2
+    if not 0 <= att <= 31.5:
+        raise ValueError("BDA4601: 0 to 31.5 dB")
+    il = table([(0, 0.8), (4 * GHZ, 2.3), (6 * GHZ, 4.0), (9 * GHZ, 7.0)])
+    p = _from_file(name, "BDA4601", lambda f: -il(f),
+                   "insertion loss 0.8-2.3 dB over 1 MHz-4 GHz (a "
+                   "distributor's summary, via a search result); IIP3 and "
+                   "compression assumed", iip3=50.0, iip2=95.0, ip1db=30.0)
+    base = p.gain
+    p.gain = lambda f: base(f) - att
+    p.name = "%s (%g dB)" % (name, att)
+    return p
+
+
+def if_attenuator(att_db=0.0, top=20.0, name="IF attenuator"):
+    """The board's 0-20 dB IF attenuator: no part is named, so 1.3 dB of
+    insertion loss and no distortion are assumed."""
+    if not 0 <= att_db <= top:
+        raise ValueError("%s: 0 to %g dB" % (name, top))
+    return Part("%s (%g dB)" % (name, att_db), "assumed (no part named): "
+                "1.3 dB insertion loss", const(-1.3 - att_db))
+
+
+def gain_block(name, gain_db, nf_db, oip3, op1db, oip2=INF, fmax=8 * GHZ):
+    """An amplifier the block diagram gives only a gain for: that gain, flat
+    to fmax and falling 12 dB an octave above, with assumed noise and
+    linearity."""
+    def gain(f):
+        f = np.maximum(np.asarray(f, float), 1.0)
+        return gain_db - 10 * np.log10(1 + (f / fmax) ** 4)
+    return Part(name, "assumed (the block diagram gives %g dB and no part): "
+                "NF %g dB, OIP3 %+g dBm" % (gain_db, nf_db, oip3), gain,
+                nf=const(nf_db), oip3=oip3, oip2=oip2, op1db=op1db)
+
+
+def lc_bandpass(f1, f2, order=5, ripple=0.1, loss=1.0, name=None):
+    """An LC band-pass the block diagram gives only its band for: the ideal
+    Chebyshev prototype of that band (scipy.signal.cheby1), with a flat loss
+    for the inductors' Q."""
+    from scipy import signal
+    b, a = signal.cheby1(order, ripple, [2 * np.pi * f1, 2 * np.pi * f2],
+                         btype="bandpass", analog=True)
+
+    def gain(f):
+        w = 2 * np.pi * np.maximum(np.atleast_1d(np.asarray(f, float)), 1.0)
+        _, h = signal.freqs(b, a, w)
+        g = 20 * np.log10(np.maximum(np.abs(h), 1e-9)) - loss
+        return g.reshape(np.shape(f))
+    return Part(name or "band-pass %g-%g MHz (Chebyshev N=%d)"
+                % (f1 / MHZ, f2 / MHZ, order),
+                "assumed (the block diagram gives the band only): ideal "
+                "Chebyshev prototype, %g dB loss" % loss, gain)
+
+
+def adc_sd9609_40():
+    """The board's SD9609-40, a 10 bit 40 MSPS converter, taken to be an
+    equivalent of Analog Devices' AD9609-40 (no datasheet was found for the
+    SD part).  AD9609 figures, read from a search result: SNR 61.5 dBFS and
+    SFDR 75 dBc at 9.7 MHz.  Assumed: 2 Vpp differential full scale, INL
+    0.3 LSB, DNL 0.15 LSB, aperture jitter 0.2 ps, HD2 -80 dBc."""
+    return Adc(name="SD9609-40 (as an AD9609-40)",
+               source="AD9609 figures via a search result (SNR, SFDR); INL, "
+               "DNL, jitter and the full scale assumed",
+               bits=10, snr_db=61.5, snr_ref_dbfs=0.0, hd2_dbc=-80.0,
+               hd3_dbc=-75.0,
+               inl_lsb=0.3, dnl_lsb=0.15, jitter_s=0.2e-12,
+               fs_dbm_at_driver_input=10.0)
 
 
 @dataclass
@@ -294,6 +371,7 @@ class Adc:
     bits: int = 12
     fs: float = 40e6
     snr_db: float = 69.5
+    snr_ref_dbfs: float = -0.5          # the input level the SNR is against
     hd2_dbc: float = -86.0
     hd3_dbc: float = -84.0
     inl_lsb: float = 0.7

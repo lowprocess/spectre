@@ -82,7 +82,8 @@ class AdcModel:
         self.levels = 2 ** adc.bits
         self.half = self.levels // 2
         q = 2.0 / self.levels
-        total = (10 ** (-0.5 / 20) / np.sqrt(2)) * 10 ** (-adc.snr_db / 20)
+        total = (10 ** (adc.snr_ref_dbfs / 20) / np.sqrt(2)
+                 * 10 ** (-adc.snr_db / 20))
         self.sigma = np.sqrt(max(total ** 2 - q * q / 12, 0.0))
         # a fixed INL for this converter: three slow sinusoids and a random
         # walk (the DNL), scaled to the datasheet's typical sizes

@@ -1,82 +1,104 @@
-# A spectrum analyzer from two LMX2582 and two SIM-83+: its simulation
+# The analyzer's signal chain, simulated
 
-A behavioural simulation of a 10 MHz to 5.5 GHz spectrum analyzer built from
-two TI LMX2582 synthesizers, two Mini-Circuits SIM-83+ mixers and a 40 MSPS
-ADC: what it reads for a given set of input signals, with its noise, its
-images, its spurs, its distortion and its ADC in it.
+A behavioural simulation of this spectrum analyzer: what it reads for a given
+set of input signals, with its noise, images, spurs, distortion and ADC in
+it. It holds two designs, on the same parts models and the same tests:
+
+- **board**: the chain of [docs/block-diagram.svg](../docs/block-diagram.svg)
+  and the notes on `spectre.kicad_sch`;
+- **proposal**: a two-band alternative, [block_diagram.svg](block_diagram.svg).
 
 ```bash
 pip install numpy scipy scikit-rf matplotlib
-python sim/run.py                      # every case: 2 minutes
-python sim/run.py budget cw --att 0
+python sim/run.py                      # the board: every case, 2.5 minutes
+python sim/run.py --design proposal    # the proposal
+python sim/run.py compare              # one against the other
 python -m pytest sim/test_sasim.py
 ```
 
-`run.py` writes `out/report.md` and its figures. The report of the design as
-it stands is kept in [results/report.md](results/report.md).
+`run.py` writes `out/report.md` and its figures. The reports as they stand
+are [results/board/report.md](results/board/report.md) and
+[results/proposal/report.md](results/proposal/report.md).
 
-## The design
+## The board's chain, as simulated
 
-This is the design the simulation models. It is not yet the board's: where
-[docs/block-diagram.svg](../docs/block-diagram.svg) says a 12 MHz second IF,
-a BDA4601 attenuator and an SD9609-40 ADC, the simulation has 10 MHz, a
-PE43711 and an ADC12040.
+```
+in - termination switch - buffer (or bypass) - BDA4601 - 20 dB - switch -+- low-pass - MIX1 - 6 dB -
+                                                                         |  band-pass - MIX2 - 6 dB - 2-18 MHz - 20 dB - attenuator - 2-16 MHz -+
+                                                                         +----------------------- direct-sample path ---------------------------+
+- switch - ADC driver - 18 MHz low-pass - SD9609-40 (10 bit, 40 MSPS)
+```
 
-![Block diagram: a step attenuator and band switch; band A through the first
-mixer to a 3.21 GHz IF; bands B1 and B2 through a preselector; all three into
-the second mixer, a 10 MHz IF, a 40 MSPS ADC and an RP2350](block_diagram.svg)
+The repository's three descriptions of the board do not agree, and the
+simulation follows the newest, the schematic's notes:
 
-`make_block_diagram.py` draws it.
+| | first IF | first LO | input low-pass | second LO | synthesizers |
+|---|---|---|---|---|---|
+| `docs/block-diagram.drawio` | 3.2 GHz | 3.3-5.5 GHz | 2.3-2.5 GHz | "3.29" | LMX2582 (three boxes, one unconnected) |
+| `docs/block-diagram.svg` | 3.2 GHz | 3.3-6.4 GHz | 3.4 GHz | "3.29" | LMX2572 and LMX2581E |
+| `spectre.kicad_sch` notes, `lo.kicad_sch` | 3.4 GHz | 3400 MHz (there "LO2") | - | 3388 MHz (there "LO1") | LMX2572, both |
+| simulated | 3.4 GHz | 3.4-6.4 GHz | 3.4 GHz | 3388 MHz | LMX2572, both |
 
-| band | range | path |
-|---|---|---|
-| A | 10 MHz to 2.29 GHz | up-conversion in the first mixer (used backwards: in at its IF port) to a 3.21 GHz first IF, LO1 = f + IF1 (3.2 to 5.5 GHz); printed band-pass; second mixer down to 10 MHz |
-| B1, B2 | 2.29 to 3.45, 3.45 to 5.49 GHz | straight into the second mixer, LO2 10 MHz from the signal |
-
-Both LOs run integer-N from a 10 MHz phase detector (40 MHz / 4): the LO moves
-in 10 MHz steps (5 MHz below 3.55 GHz) and the FFT does the rest, so there are
-no fractional spurs to model. One capture is 4096 samples: 10 MHz of span, an
-RBW of 19.6 kHz.
-
-Each band has a preamp after its first filter (a TRF37D73 in band A, a
-PMA3-83LN+ in band B), between two switches, and bypassed unless asked for.
-
-Neither path rejects the second mixer's image in hardware. The analyzer does
-it in software: each step is captured twice, the second time with LO2 on the
-other side of the signal, and the lower reading is kept (`image_reject`).
+So: DC to 3 GHz, a 3.4 GHz first IF, a 12 MHz second IF, a direct-sample
+path under 15 MHz. Only the attenuator, the mixers, the synthesizers and the
+ADC are named in the drawing. Everything else is a stand-in, listed under
+"Where the numbers come from".
 
 ## What the simulation finds
 
-The numbers are from [results/report.md](results/report.md).
+|  | board, as drawn | proposal, preamp bypassed | proposal, preamp in |
+|---|---|---|---|
+| highest frequency | 3.00 GHz | 5.49 GHz | 5.49 GHz |
+| noise figure of the chain alone, dB | 7.3 | 21.1 | 8.0 |
+| noise figure with the image and the ADC, dB | 20.7 | 24.4 | 11.0 |
+| noise floor, dBm/Hz | -153.3 | -149.6 | -163.0 |
+| chain noise at the ADC, LSB rms (0.5 or more dithers it) | 0.08 | 1.26 | 3.16 |
+| smallest signal seen alone in a 19.6 kHz RBW, dBm | -73 (one LSB) | -107 | -120 |
+| IIP3, dBm | -7.0 | +9.1 | -11.9 |
+| ADC full scale at the input, dBm | -19.2 | -16.3 | -37.4 |
+| level at the first mixer when the ADC is at full scale, dBm | -2.5 | -24.1 | -24.1 |
+| largest input that keeps the first mixer at -25 dBm (most attenuation), dBm | -10.2 | +14.5 | -6.6 |
+| largest input before the ADC clips or the mixer compresses, dBm | +12.3 | +15.4 | -5.7 |
+| a signal on the first IF reads this many dB down | 33 | 85 | 89 |
+| two -30 dBm signals at 3.90 and 4.95 GHz make, at 1050 MHz, dBm | -97 | nothing | nothing |
 
-- **Noise.** With the preamps bypassed and the attenuator at 0 dB, band A
-  has a 21 dB noise figure, 24 dB counting the second mixer's image noise:
-  -150 dBm/Hz. Six of those dB are the two 3 dB pads either side of the first
-  mixer (`--pads 0 0`: 18.5 dB with the image). Band B is 25 dB.
-- **The preamps** (`--preamp`) bring both bands to 10-13 dB, -163 dBm/Hz at
-  1 GHz. They cost their gain in linearity: band A's IIP3 goes from +9 to
-  -12 dBm and the ADC's full scale from -16 to -37 dBm at the input, so they
-  are for weak signals only. Each sits after its band's first filter, so
-  that it never sees the signals that filter removes.
-- **Linearity.** IIP3 is +9.1 dBm at 0 dB attenuation in band A, set by the
-  two mixers; the spur-free range is 106 dB in 1 Hz, 77 dB in this RBW. The
-  ADC clips (-16.3 dBm at the input) before either mixer compresses.
-- **The image** reads at full level, 20 MHz below every signal, with one
-  capture per step. Two captures take it down to -73 dBc and no further:
-  the IF is a quarter of the sampling rate, so the image in one capture and
-  the signal's alias in the other land on the same frequency, and the
-  rejection is the anti-alias filter's stop band.
-- **A bursting signal** (on for 35 % of the captures) is shown over only a
-  third of its band after eight sweeps of two captures, because a step shows
-  it only when both captures caught it. A steady noise-like signal, and the noise
-  floor, read 3 dB low for the same reason.
-- **A signal on the first IF** reads 82 dB down at every tuning in band A.
-- **With nothing connected** no response stands 15 dB over the floor.
-- **Phase noise** is -106 dBc/Hz inside the loop at 1 GHz: -66 dBc in the
-  RBW at 100 kHz from a carrier.
-- **The printed filters** (EM): the hairpin IF filter passes again at 6.0 GHz
-  (-7 dB), and the stub band-pass preselectors pass again above their band
-  (B1 at 5.5 GHz, -2.5 dB). Each is followed by a printed low-pass for that.
+At 1 GHz with the input attenuator at 0 dB, except the two largest-input
+rows. From [results/board/report.md](results/board/report.md).
+
+On the board's chain:
+
+- **The ADC is not dithered.** The chain puts 0.08 LSB rms of noise on the
+  10 bit converter, where half an LSB is the least that works. With nothing
+  larger in the IF band it rests on one code: the 7 dB noise figure of the
+  front end is never seen, a signal alone has to reach about -73 dBm to move
+  it, and a signal a few LSB in size comes with its harmonics (a 3.3 MHz
+  signal at -45 dBm shows its ninth and tenth, 28 dB under it). About 16 dB
+  more gain ahead of the ADC cures it.
+- **The gain is on the wrong side of the first mixer.** 17 dB ahead of it and
+  12 dB after: when the ADC is at full scale the mixer has -2.5 dBm on it,
+  where a level 7 mixer is clean to about -25 dBm. IIP3 is -7 dBm, and
+  with the attenuator at its 31.5 dB the mixer is past -25 dBm for any input
+  over -10 dBm.
+- **The input low-pass does not stop the first IF.** A filter that passes
+  3 GHz is 2 dB down at 3.4 GHz, so a signal there reads 33 dB down at every
+  tuning (the mixer's isolation and nothing else). The first IF has to sit
+  well above the low-pass's stop band, or the range has to end lower.
+- **The 20 dB amplifier is ahead of that low-pass**, so it sees everything
+  to 6 GHz: two -30 dBm signals at 3.90 and 4.95 GHz make a product at
+  1050 MHz, -97 dBm referred to the input.
+- **Nothing rejects the second mixer's image.** A signal reads again, at full
+  level, about 24 MHz below itself. Capturing each step twice with the
+  second LO on either side removes it in software, which needs that LO to
+  move (3388 and 3402 MHz here) and does not work on bursting signals.
+- **The direct-sample path** has the 18 MHz low-pass and nothing else in
+  front of the ADC: a 27.2 MHz signal folds to 12.8 MHz, 43 dB down.
+- **The printed 3.4 GHz band-pass passes again at 6.4 GHz** (-4 dB, EM),
+  which is the top of the first LO's range.
+
+On the proposal (its own report has the detail): 24 dB noise figure with the
+preamps bypassed and 11 dB with them in; IIP3 +9 dBm; the image removed to
+-73 dBc by two captures; a signal on the first IF 85 dB down; nothing over
+the floor with the input terminated.
 
 ## How it is modelled
 
@@ -91,7 +113,7 @@ The numbers are from [results/report.md](results/report.md).
 
 ## Where the numbers come from
 
-`run.py` prints this for every part. In short:
+`run.py` prints this for every part.
 
 | | source |
 |---|---|
@@ -102,6 +124,11 @@ The numbers are from [results/report.md](results/report.md).
 | TRF37D73 | TI datasheet: gain by frequency; noise figure, OIP3 and compression at 2 GHz. Its OIP2 is assumed |
 | SIM-83+ | conversion loss, isolations and IP3 are datasheet typical values, read from search results (the datasheet could not be fetched). **Its spur table, compression point and out-of-band port response are a generic double-balanced mixer's, not this part's** |
 | LFCN-2250+, PMA3-83LN+ | datasheet figures read from search results; the LFCN-2250+ is its specification limits (30 dB at 3 to 5 GHz), not its typical curve |
+| BDA4601 | insertion loss from a distributor's summary (read from a search result); IIP3 and compression assumed |
+| SD9609-40 | taken to be an AD9609-40: SNR 61.5 dBFS and SFDR 75 dBc from a search result; INL, DNL, jitter and full scale assumed. No datasheet was found for the SD part |
+| the board's switches, 20 dB amplifier, ADC driver | stand-ins with real datasheets behind them: PE42540, TRF37D73, THS4541 |
+| the board's 0 dB buffer, 6 dB and 20 dB IF amplifiers, IF attenuator, IF filters | the figure on the drawing, with assumed noise figure, intercepts and filter order |
+| the board's two microwave filters | this folder's printed designs at 3.4 GHz, standing in for whatever the board will carry |
 
 No manufacturer's S-parameter file is used: minicircuits.com refuses scripted
 downloads and pSemi's are behind a licence click-through. Put the files in
@@ -109,14 +136,17 @@ downloads and pSemi's are behind a licence click-through. Put the files in
 
 ## Limits
 
-- Stages are cascaded by |S21| in 50 ohm. Mismatch between stages (two
-  reflective filters in a row, a mixer port against a filter) is not modelled;
-  it is what the pads are for.
-- The spur levels of both mixers rest on the generic table. Measure the
+- The board's chain is modelled from a block diagram: its conclusions about
+  gain distribution, dither, the first IF and the image hold for any parts
+  of those gains; its absolute noise and distortion figures move with the
+  parts chosen.
+- Stages are cascaded by |S21| in 50 ohm. Mismatch between stages (a mixer
+  port against a filter, with no pad or diplexer between) is not modelled.
+- The spur levels of both mixers rest on a generic table. Measure the
   SIM-83+ and replace `Mixer.spur` before trusting a spur prediction to
   better than 10 dB.
 - A noise-like signal makes no distortion products and loads nothing.
-- No direct-sampling band under 10 MHz, no LO pulling between the two
-  synthesizers, no coupling through the board or the supplies.
-- The ADC is an ADC12040; the INL's shape is synthetic. Set `sasim.parts.Adc`
-  to the converter you have.
+- In the direct-sample path, signals above 160 MHz are taken as removed by
+  the 18 MHz low-pass; a real LC filter leaks at those frequencies.
+- No LO pulling between the two synthesizers, no coupling through the board
+  or the supplies.
